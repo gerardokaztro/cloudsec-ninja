@@ -10,6 +10,8 @@ import IframeResizer from 'iframe-resizer-react';
 import docsearch from '@docsearch/js';
 import '@docsearch/css';
 
+import { Analytics } from '@vercel/analytics/react';
+
 import styles from './index.module.css';
 
 function HomepageHeader() {
