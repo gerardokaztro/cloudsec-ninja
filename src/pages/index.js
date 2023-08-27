@@ -29,6 +29,7 @@ function HomepageHeader() {
             気合 👊
           </Link>
         </div>
+        <Analytics />
       </div>
     </header>
   );
@@ -52,6 +53,7 @@ function TestimonialSection() {
           />
 
         </div>
+        <Analytics />
       </div >
     </section >
   );

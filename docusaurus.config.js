@@ -45,11 +45,11 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         googleAnalytics: {
-          trackingID: 'UA-77-7',
+          trackingID: 'G-LWTRTR89ZG',
           anonymizeIP: true,
         },
         googleTagManager: {
-          containerId: 'G-LR19RMYHX8',
+          containerId: 'GTM-T53L8KND',
         },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
