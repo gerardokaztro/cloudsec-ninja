@@ -1,0 +1,10 @@
+{
+    "label": "Fundamentos",
+    "position": 2,
+    "link": {
+      "slug": "fundamentos",
+      "type": "generated-index",
+      "description": "5 minutes to learn the most important Docusaurus."
+    }
+  }
+  
