@@ -1,7 +1,7 @@
 ---
-slug: /cloud/fundamentos-aws-101
+slug: /cloud/seguridad-aws-101
 sidebar_position: 1
-sidebar_label: 'Fundamentos AWS 101'
+sidebar_label: 'Seguridad AWS 101'
 ---
 
 # 💪 ¿Qué me motiva?
