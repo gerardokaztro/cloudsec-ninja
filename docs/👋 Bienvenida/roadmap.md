@@ -28,5 +28,5 @@ Al momento de la publicación oficial de esta plataforma para toda nuestra comun
 ![Cloud Security Ninja Roadmap](/img/roadmap_p2.svg)
 
 :::info
-Si te gustaría agregar contenido a esta plataforma, envia un **Pull Request**
+Si te gustaría agregar contenido a esta plataforma, envia un **Pull Request.**
 :::

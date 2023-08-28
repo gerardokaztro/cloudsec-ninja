@@ -4,7 +4,7 @@ sidebar_position: 8
 sidebar_label: 'Sponsors'
 ---
 
-# Nuestros patrocinadores
+# 🤝 Nuestros patrocinadores
 
 :::note ¿Eres representante de un Technology Partner?
 Si eres representante de alguna solución de seguridad Cloud Native y te gustaria colaborar el aprendizaje de tu producto 

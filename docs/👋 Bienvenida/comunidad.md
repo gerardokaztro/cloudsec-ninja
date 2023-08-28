@@ -5,7 +5,6 @@ sidebar_label: 'Comunidad'
 ---
 
 # 🎊 ¡Tenemos Discord!
-
 No olvides pasar por nuestro canal en discord, donde tenemos todo un set de canales preparado para armar grupos de estudios, resolver dudas y compartir mas conocimiento.
 
 ![Discord Description](./img/discord.png)
@@ -14,7 +13,6 @@ No olvides pasar por nuestro canal en discord, donde tenemos todo un set de cana
 * Únete al servidor usando el siguiente link [https://discord.gg/cV7syyA5ae](https://discord.gg/cV7syyA5ae).
 * Debes verificar tu cuenta con un correo válido y tu número telefónico, esto para evitar bots y spammers 😉
 * Para mantener una comunidad segura, y donde predomine el respeto, es importante que aceptes las reglas de la casa.
-* If you are confused what a channel is for, you can check out the description part as shown in image below.
 
 <iframe src="https://discord.com/widget?id=1143323924172652705&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 
@@ -26,6 +24,6 @@ No olvides pasar por nuestro canal en discord, donde tenemos todo un set de cana
 * 🔤 A menos que se especifique lo contrario, el idioma predeterminado de los canales es el español.
 * 🚫 Los moderadores prohibirán, expulsarán y silenciarán las infracciones.
 
-¡Sigue haciendo todo el buen trabajo y espero que esta comunidad te resulte útil en tu viaje! ✨
+¡Espero que esta comunidad te resulte útil en tu viaje! 🚀
 
-Saludos! 🥂
+Saludos! 🤜🤛

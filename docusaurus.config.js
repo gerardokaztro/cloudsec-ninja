@@ -35,7 +35,7 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
+    defaultLocale: 'es',
     locales: ['es', 'en'],
   },
 
@@ -61,15 +61,15 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/gerardokaztro/cloudsec-ninja/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/gerardokaztro/cloudsec-ninja/blob/main/docs/templates/shared/',
         },
-        blog: {
-          showReadingTime: true,
+        //blog: {
+          //showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/gerardokaztro/cloudsec-ninja/tree/main/packages/create-docusaurus/templates/shared/',
-        },
+          //editUrl:
+            //'https://github.com/gerardokaztro/cloudsec-ninja/blob/main/docs/templates/shared/',
+        //},
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -80,7 +80,6 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
       image: 'img/social-card.png',
       zoom: {
         selector: '.markdown :not(em) > img',
@@ -92,7 +91,7 @@ const config = {
           }
         }
       },
-      metadata: [{ name: 'keywords', content: 'AWS, Kubernetes, Security, Containers, Docker, Cloud, Cloud Native,Pentest, Hacking, Developers, DevOps, CNCF, k8s, vulnerable, Kubernetes Security, Container Security, Cloud Security, Cloud Native Security, Open Source, DevSecOps' }],
+      metadata: [{ name: 'keywords', content: 'AWS, Cloud, CloudSecurity, CloudSec, Containers, Kubernetes, Docker, Open Source, DevSecOps' }],
       colorMode: {
         defaultMode: 'dark',
         disableSwitch: false,
@@ -100,14 +99,13 @@ const config = {
       },
       announcementBar: {
         id: 'announcementBar-2', // Increment on change
-        content: `🌟 Si te gusta el contenido, regálame una estrella en <a target="_blank" href="https://github.com/gerardokaztro/cloudsec-ninja">Github</a> y comparte en <a target="_blank" href="https://twitter.com/intent/tweet/?text=%23CloudSecNinja%20una%20plataforma%20de%20aprendizaje%20GRATUITA%20para%20desarrollar%20habilidades%20en%20%23CloudSecurity%20usando%20%40aws_cloud%20creada%20por%20%40gerardokaztro.%20Aprende,%20diviértete%20y%20comparte%20%F0%9F%91%8A%20&url=https://acloudsececurity.ninja">Twitter</a> ${TwitterSvg}`,
+        content: `🌟 Si te gusta el contenido, regálame una estrella en <a target="_blank" href="https://github.com/gerardokaztro/cloudsec-ninja">Github</a> y comparte en <a target="_blank" href="https://twitter.com/intent/tweet/?text=%23CloudSecNinja%20una%20plataforma%20de%20aprendizaje%20GRATUITA%20para%20desarrollar%20habilidades%20en%20%23CloudSecurity%20usando%20%40aws_cloud%20creada%20por%20%40gerardokaztro.%20Aprende,%20diviértete%20y%20comparte%20%F0%9F%91%8A%20&url=https://acloudsecurity.ninja">Twitter</a> ${TwitterSvg}`,
       },
       navbar: {
         //title: 'My Site',
         logo: {
           alt: 'Cloud Security Ninja Logo',
           src: 'img/logo_nav.svg',
-          //srcDark: 'img/logodark_nav.svg'
         },
         items: [
           //{to: '/blog', label: '✍️ Blog', position: 'left'},
@@ -123,7 +121,7 @@ const config = {
             label: '💬 Discord'
           },
           //{
-            //to: 'https://twitter.com/intent/tweet?text=%23CloudSecurityNinja%20una%20plataforma%20de%20aprendizaje%20GRATUITA%20para%20desarrollar%20habilidades%20en%20%23CloudSecurity%20usando%20%40aws_cloud%20creada%20por%20%40gerardokaztro.%20Aprende,%20diviértete%20y%20comparte%20%F0%9F%91%8A%20&url=https://acloudsec.ninja', 
+            //to: 'https://twitter.com/intent/tweet?text=%23CloudSecurityNinja%20una%20plataforma%20de%20aprendizaje%20GRATUITA%20para%20desarrollar%20habilidades%20en%20%23CloudSecurity%20usando%20%40aws_cloud%20creada%20por%20%40gerardokaztro.%20Aprende,%20diviértete%20y%20comparte%20%F0%9F%91%8A%20&url=https://acloudsecurity.ninja', 
             // position: 'right',
             // label: '🥰 Tweet'
           // },
