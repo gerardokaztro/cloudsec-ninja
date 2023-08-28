@@ -14,7 +14,7 @@ Puedes hacerlo públicamente en un [tweet](https://twitter.com/intent/tweet/?tex
 Envía un [Pull Request](https://github.com/gerardokaztro/cloudsec-ninja) y agrega tu conocimiento.
 :::
 
-:::info ¿Puedo extraer algún contenido de CloudSecurity Ninja y ponerlo en mi blog? 
+:::info ¿Puedo extraer contenido de CloudSecurity Ninja y ponerlo en mi sitio? 
 Si, pero **no olvides mencionar los enlaces específicos** de donde se tomó el contenido.
 :::
 

@@ -1,3 +1,3 @@
 # Cloud Security Ninja
 
-![Cloud Security Ninja Banner](static/img/portada_readme.svg)
+![Cloud Security Ninja Banner](static/img/portada_readme.png)
