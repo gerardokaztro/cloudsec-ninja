@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://acloudsecurity.ninja">
-    <img alt="Cloud Security Ninja" src="static/img/portada_readme.png)" width="150" />
+    <img alt="Cloud Security Ninja" src="static/img/portada_readme.png" width="150" />
   </a>
 </p>
 
