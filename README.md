@@ -57,4 +57,4 @@ Por lo que si deseas apoyar desde tu conocimiento y experiencia a este proyecto 
 [Código de conducta](https://github.com/gerardokaztro/cloudsec-ninja/blob/main/CODE_OF_CONDUCT.md)
 
 ## 📜 Licencia
-[Apache](https://github.com/gerardokaztro/cloudsec-ninja/blob/main/LICENSE)
+[GNU General Public License v3.0](https://github.com/gerardokaztro/cloudsec-ninja/blob/main/LICENSE)
