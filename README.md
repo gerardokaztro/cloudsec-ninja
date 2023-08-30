@@ -26,8 +26,8 @@
   Cómo iniciar este lindo viaje 🚀
 </h2>
 
-### Sigue estas instrucciones si eres usuario
-Lo primero, es hacer un `git clone` al [repositorio en Github](https://github.com/gerardokaztro/cloudsec-ninja) en una carpeta de tu local. Esto es para que puedas tener todo el código de los ejercicios que se realizarán en cada tema.
+### 👨‍💻 Sigue estas instrucciones si eres end-user
+Lo primero, es hacer un `git clone` a este [repositorio](https://github.com/gerardokaztro/cloudsec-ninja) en una carpeta de tu local. Esto es para que puedas tener todo el código de los ejercicios que se realizarán en cada tema.
 
 ```bash
 git clone https://github.com/gerardokaztro/cloudsec-ninja.git
@@ -37,7 +37,7 @@ Todo el código de los ejercicios que encuentres en cada tema estará ubicado en
 
 > Si te gusta el contenido que ves aquì, no dudes en regalarle una 🌟 al repo
 
-### Sigue estas instrucciones si eres contribuidor
+### 👷‍♀️ Sigue estas instrucciones si eres contributor
 Esta plataforma esta basada en [Docusaurus](https://docusaurus.io) un generador de sitios estáticos hecho en React, una de las principales bibliotecas de JavaScript, como biblioteca de interfaz de usuario para la creación de páginas.
 
 Y se ha utilizado [Vercel](https://vercel.com/) como hosting debido a su capacidad de desplegar, gestionar y escalar aplicaciones y sitios web. Además que Vercel proporciona una amplia gama de funciones, como despliegues automatizados, entre otras funciones interesantes.
