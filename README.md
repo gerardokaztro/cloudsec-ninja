@@ -38,7 +38,13 @@ Todo el código de los ejercicios que encuentres en cada tema estará ubicado en
 > Si te gusta el contenido que ves aquì, no dudes en regalarle una 🌟 al repo
 
 ### Sigue estas instrucciones si eres contribuidor
-Lorem
+Esta plataforma esta basada en [Docusaurus](https://docusaurus.io) un generador de sitios estáticos hecho en React, una de las principales bibliotecas de JavaScript, como biblioteca de interfaz de usuario para la creación de páginas.
+
+Y se ha utilizado [Vercel](https://vercel.com/) como hosting debido a su capacidad de desplegar, gestionar y escalar aplicaciones y sitios web. Además que Vercel proporciona una amplia gama de funciones, como despliegues automatizados, entre otras funciones interesantes.
+
+Gracias a esto, es que la fase `build` se encuentra automatizada.
+
+Por lo que si deseas apoyar desde tu conocimiento y experiencia a este proyecto open-source, por favor revisar la guía de [como contribuir con Cloud Security Ninja](https://github.com/gerardokaztro/cloudsec-ninja/blob/main/CONTRIBUTING.md).
 
 ## 🚨 Descargo de responsabilidad
 > **NO** ejecute ninguno de los laboratorios junto con sus entornos e infraestructura de producción. Recomendamos ejecutar esto en un entorno seguro y aislado.
@@ -46,6 +52,9 @@ Lorem
 > Esta plataforma **NO** ofrece cuentas sandbox ni se hace responsable por los gastos que pueden llegar a generar los laboratorios que se compartan aquí.
 
 > Recuerda que esta plataforma es gratuita y usted asume toda la responsabilidad de los recursos que utilice para el desarrollo de los ejercicios.
+
+## ✋ Reglas de la casa
+[Código de conducta](https://github.com/gerardokaztro/cloudsec-ninja/blob/main/CODE_OF_CONDUCT.md)
 
 ## 📜 Licencia
 [Apache](https://github.com/gerardokaztro/cloudsec-ninja/blob/main/LICENSE)
