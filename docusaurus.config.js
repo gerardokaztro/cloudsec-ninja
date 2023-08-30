@@ -46,10 +46,20 @@ const config = {
       ({
         googleAnalytics: {
           trackingID: 'G-LWTRTR89ZG',
-          anonymizeIP: true,
+          anonymizeIP: false,
+        },
+        gtag: {
+          trackingID: 'G-LWTRTR89ZG',
+          anonymizeIP: false,
         },
         googleTagManager: {
           containerId: 'GTM-T53L8KND',
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
         },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
@@ -131,11 +141,21 @@ const config = {
             label: '🌟 GitHub',
             position: 'right',
           },
-          {
-            type: 'search',
-            position: 'right',
-          },
+          // {
+          //   type: 'search',
+          //   position: 'right',
+          // },
         ],
+      },
+      algolia: {
+        apiKey: '44ed9319bd63254b4430ecdf134e2a66',
+        indexName: 'cloudsecninja',
+        appId: 'QOSJVI7SH7',
+  
+        // Optional: see doc section bellow
+        // contextualSearch: true,
+  
+        //... other Algolia params
       },
       footer: {
         style: 'light',
@@ -196,10 +216,41 @@ const config = {
         ],
       },
     }),
+    
     plugins: [
       require.resolve('docusaurus-plugin-sass'),
       require.resolve('docusaurus-lunr-search'),
       require.resolve("docusaurus-plugin-image-zoom"),
+      
+      [
+        '@docusaurus/plugin-pwa',
+        {
+          debug: true,
+          offlineModeActivationStrategies: [
+            'appInstalled',
+            'standalone',
+            'queryString',
+          ],
+          pwaHead: [
+            {
+              tagName: 'link',
+              rel: 'icon',
+              href: '/img/docusaurus.png',
+            },
+            {
+              tagName: 'link',
+              rel: 'manifest',
+              href: '/manifest.json', // your PWA manifest
+            },
+            {
+              tagName: 'meta',
+              name: 'theme-color',
+              content: 'rgb(37, 194, 160)',
+            },
+          ],
+        },
+      ],
+
     ],
 };
 

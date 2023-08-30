@@ -18,6 +18,7 @@
     "@docusaurus/core": "2.4.1",
     "@docusaurus/plugin-client-redirects": "^2.4.0",
     "@docusaurus/plugin-google-tag-manager": "^2.4.0",
+    "@docusaurus/plugin-pwa": "^2.4.1",
     "@docusaurus/preset-classic": "2.4.1",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
