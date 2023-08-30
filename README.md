@@ -22,3 +22,23 @@
 ![GitHub Followers](https://img.shields.io/github/followers/gerardokaztro?style=social)
 ![GitHub Repo Stars](https://img.shields.io/github/stars/gerardokaztro?style=social)
 
+## Cómo iniciar este lindo viaje
+
+Lo primero, es hacer un `git clone` al [repositorio en Github](https://github.com/gerardokaztro/cloudsec-ninja) en una carpeta de tu local. Esto es para que puedas tener todo el código de los ejercicios que se realizarán en cada tema.
+
+```bash
+$ git clone https://github.com/gerardokaztro/cloudsec-ninja.git
+```
+
+Todo el código de los ejercicios que encuentres en cada tema estará ubicado en la carpeta `code` dentro de la carpeta de cada módulo, por ejemplo: `./aws/code` o `./iam/code`
+
+## 🚨 Disclaimer
+
+> **NO** ejecute ninguno de los laboratorios junto con sus entornos e infraestructura de producción. Recomendamos ejecutar esto en un entorno seguro y aislado.
+
+> Esta plataforma **NO** ofrece cuentas sandbox ni se hace responsable por los gastos que pueden llegar a generar los laboratorios que se compartan aquí.
+
+> Recuerda que esta plataforma es gratuita y usted asume toda la responsabilidad de los recursos que utilice para el desarrollo de los ejercicios.
+
+## 📜 License
+[Apache](https://github.com/gerardokaztro/cloudsec-ninja/blob/main/LICENSE)
