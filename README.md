@@ -16,6 +16,7 @@
     Visita la <b><a href="https://acloudsecurity.ninja/docs">📚 Documentación</a></b> para inciar tu carrera como Cloud Security Engineer.
 </p>
 
+[![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCmWuXyjXOJOpikS4MHmJAcQ?style=social)](https://youtube.com/channel/UCmWuXyjXOJOpikS4MHmJAcQ?sub_confirmation=1)
 [![Discord](https://img.shields.io/discord/1143323924172652705?style=social&label=Discord&logo=discord)](https://discord.gg/cV7syyA5ae)
 [![Twitter Follow](https://img.shields.io/twitter/follow/gerardokaztro?style=social)](https://twitter.com/gerardokaztro)
 ![GitHub Followers](https://img.shields.io/github/followers/gerardokaztro?style=social)
