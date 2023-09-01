@@ -15,8 +15,8 @@ $ git clone https://github.com/gerardokaztro/cloudsec-ninja.git
 
 Todo el código de los ejercicios que encuentres en cada tema estará ubicado en la carpeta `code` dentro de la carpeta de cada módulo, por ejemplo: `./aws/code` o `./iam/code`
 
-<browser url="-">
-<img src={require('@site/static/img/social-card.png').default}/>
+<browser url="acloudsecurity.ninja">
+  <img src={require('@site/static/img/social-card.png').default}/>
 </browser>
 
 En algunos casos, tendras referencias de cómo debes tener el código

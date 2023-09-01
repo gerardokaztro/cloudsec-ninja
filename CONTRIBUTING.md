@@ -32,21 +32,13 @@ Un artículo está compuesto de dos secciones, metadatos y contenido, separadas 
 | sidebar_position    | Orden del artículo dentro del sidebar de la página |
 | sidebar_label: | Nombre del artículo de como se vera reflejado en la página |
 
-Un [ejemplo de artículo](https://raw.githubusercontent.com/gerardokaztro/cloudsec-ninja/main/docs/%F0%9F%91%8B%20Bienvenida/empezando.md) sería:
+Aquí tienes un ejemplo de la [estructura de un artículo](https://raw.githubusercontent.com/gerardokaztro/cloudsec-ninja/main/docs/%F0%9F%91%8B%20Bienvenida/empezando.md).
 
-```md
-Title: Ya se puede domiciliar la cuota de Python España
-Date: 2017-09-03
-Summary: Los socios y las socias lleváis tiempo pidiendo poder domiciliar la cuota de la Asociación. Tras mucho esfuerzo, al fin podemos comunicaros que ¡ya se puede hacer!
-Author: Yamila Moreno
+Cuando hayas terminado de editar, envía tu "*Pull Request*"
+
+> Intenta que el slug y sidebar_label tengan un nombre cortito. Luego en el contenido de la página puedes usar un H1 con un title mas largo.
 
 
-Los socios y las socias lleváis tiempo pidiendo poder domiciliar la cuota de la Asociación. Tras mucho esfuerzo, al fin podemos comunicaros que ¡ya se puede hacer!
-
-Hasta hace poco la asociación estaba atada a un banco con condiciones draconianas para varias operaciones, entre ellas la domiciliación. Desde la Junta Directiva no veíamos bien que de los 30€ de la cuota, una parte significativa se fuera para pagar la comisión del banco.
-```
-
-Cuando hayas terminado de editar, haz click sobre el botón "_Propose new file_"
 
 ## Manteniendo el sitio web
 Otra forma de contribuir con este proyecto es echando un [vistazo a las _issues_ abiertas](https://github.com/gerardokaztro/cloudsec-ninja/issues), escoger una y solucionarla.

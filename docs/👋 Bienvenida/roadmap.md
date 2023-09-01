@@ -22,10 +22,10 @@ Si ya cuentas con dominio en esos módulos introductorios, siéntete libre de om
 Al momento de la publicación oficial de esta plataforma para toda nuestra comunidad en internet, pueda que no veas la mayoria de estos temas, eso es porque lanzaremos un **EARLY PREVIEW** e iremos actualizando el contenido de manera mensual, **el desarrollo del contenido sera paulatino pero constante,** estimamos que al cabo de un año, podamos concluir una v1.0 y en adelante procuraremos mantener el contenido actualizado y **agregar contenido potencialmente nuevo.**
 
 **Q4 del 2023 - Q1 del 2024**
-![Cloud Security Ninja Roadmap](/img/roadmap_p1.svg)
+![Cloud Security Ninja Roadmap](./img/roadmap_p1.svg)
 
 **Q2 - Q4 del 2024**
-![Cloud Security Ninja Roadmap](/img/roadmap_p2.svg)
+![Cloud Security Ninja Roadmap](./img/roadmap_p2.svg)
 
 :::info
 Si te gustaría agregar contenido a esta plataforma, envia un **Pull Request.**

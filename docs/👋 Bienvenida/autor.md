@@ -18,6 +18,6 @@ Gera fue **AWS Community Builder for Security & Identity** desde 2020 al 2023, y
 
 En el 2023 obtuvo 2 nominaciones por parte de **AWS** como **AWS Security Black Belt** y la mas reciente y destacada **[AWS Security Hero](https://aws.amazon.com/es/developer/community/heroes/gerardo-castro/)** considerada un hito al ser nominado dentro del primer cohort a nivel mundial y ser el primero en Hispanoamérica.
 
-![Cloud Security Ninja Banner](/img/securityhero_logo.png)
+![Cloud Security Ninja Banner](./img/securityhero_logo.png)
 
 Conoce a los demás **[AWS Heroes de Hispanoamérica](https://aws.amazon.com/developer/community/heroes/?nc1=h_ls&community-heroes-all.sort-by=item.additionalFields.sortPosition&community-heroes-all.sort-order=asc&awsf.filter-hero-category=*all&awsf.filter-location=location%23latam&awsf.filter-year=*all&awsf.filter-activity=*all).**
