@@ -4,7 +4,7 @@ Escribir contenido para la página web, mantener la información contenida actua
 
 Recuerda que, tanto contribuir a este repositorio como administrarlo, supone la aceptación de nuestro [código de conducta](https://github.com/gerardokaztro/cloudsec-ninja/blob/main/CODE_OF_CONDUCT.md).
 
-## Informando de un problema
+## Informando un problema
 La forma más sencilla de contribuir con la página web es informar de un error detectado. Introduce un título corto y, en el espacio para comentarios, indica la dirección web donde detectaste el problema, y añade una pequeña descripción del mismo. Recuerda que puedes **añadir imágenes**, como capturas de pantalla, arrastrando la imagen sobre el editor.
 
 ## Editando contenido
@@ -20,20 +20,19 @@ Explora esta [ruta](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/do
 Una vez hayas encontrado el fichero, edita el contenido desde tu local o Github, corrige el error pertinente y envía el **Pull Request.**
 
 ### Añadiendo contenido nuevo
-Si quieres añadir o proponer un nuevo tema, entra en la carpeta [`docs`](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs).
+Si quieres añadir o proponer un nuevo tema, entra en la carpeta [`docs`](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs). Y crea un archivo markdown dentro de la sub-carpeta tópico del tema que quieres introducir. Por ejemplo si quieres añadir tema sobre *Detección de amenazas* es importante que tu archivo se encuentre dentro de `docs/Detección%20de%20Amenazas`.
 
-Introduce un nombre para el nuevo archivo con el formato `AAAA-MM-DD-titulo-del-post.md` (donde `AAAA-MM-DD` es la fecha en la que te gustaría publicar el post). No incluyas ni tildes, ni espacios, y si no estás seguro sobre la fecha, pon la de hoy. Un ejemplo de título válido es `2017-09-03-domiciliacion-cuotas.md`.
+Luego, introduce un nombre para el nuevo archivo con el formato `titulo-del-post.md`. No incluyas ni tildes, ni espacios, ni mayúsculas. Un ejemplo de título válido es `oauth-vs-saml2.md`.
 
 Un artículo está compuesto de dos secciones, metadatos y contenido, separadas por dos líneas vacías. Los metadatos **son obligatorios** y sirven para clasificar el artículo. Son los siguientes:
 
 | Clave   | Descripción                                  |
 |---------|----------------------------------------------|
-| Title   | Título del artículo                          |
-| Date    | Fecha de publicación en formato `AAAA-MM-DD` |
-| Summary | Resúmen o extracto del artículo              |
-| Author  | Nombre del autor                             |
+| slug   | define la parte final de la URL que identifica una página dentro de un sitio web |
+| sidebar_position    | Orden del artículo dentro del sidebar de la página |
+| sidebar_label: | Nombre del artículo de como se vera reflejado en la página |
 
-El contenido se ha de escribir utilizando [Markdown](https://daringfireball.net/projects/markdown/syntax). Un [ejemplo de artículo](https://raw.githubusercontent.com/python-spain/web/master/content/2017-09-03-domiciliacion-cuotas.md) sería:
+Un [ejemplo de artículo](https://raw.githubusercontent.com/gerardokaztro/cloudsec-ninja/main/docs/%F0%9F%91%8B%20Bienvenida/empezando.md) sería:
 
 ```md
 Title: Ya se puede domiciliar la cuota de Python España
