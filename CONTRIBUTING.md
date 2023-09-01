@@ -38,7 +38,19 @@ Cuando hayas terminado de editar, envía tu "*Pull Request*"
 
 > Intenta que el slug y sidebar_label tengan un nombre cortito. Luego en el contenido de la página puedes usar un H1 con un title mas largo.
 
+Antes de envíar tus Pull Requests, puedes ejecutar un ambiente de prueba en tu local que te permita previsualizar los cambios. Para eso deberás hacer uso de `npm`
 
+Teniendo en cuenta de que clonaste el repositorio y estás ubicado dentro del directorio, primero instala node.js versión minima requerida 18.x.x
+
+Luego podrás ejecutar este comando que te permitirá tener un preview en `localhost`
+
+```bash
+npm start
+```
+
+De estar sastifecho, siéntete a gusto de enviar el *Pull Request*.
+
+> No es necesario ejecutar `npm run build` debido a que la parte del `build` ya esta automatizada en Vercel.
 
 ## Manteniendo el sitio web
 Otra forma de contribuir con este proyecto es echando un [vistazo a las _issues_ abiertas](https://github.com/gerardokaztro/cloudsec-ninja/issues), escoger una y solucionarla.
