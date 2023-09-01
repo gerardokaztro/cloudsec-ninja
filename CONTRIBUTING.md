@@ -4,32 +4,19 @@ Escribir contenido para la página web, mantener la información contenida actua
 
 Recuerda que, tanto contribuir a este repositorio como administrarlo, supone la aceptación de nuestro [código de conducta](https://github.com/gerardokaztro/cloudsec-ninja/blob/main/CODE_OF_CONDUCT.md).
 
-
 ## Informando de un problema
-La forma más sencilla de contribuir con la página web es informar de un error detectado. Introduce un título corto y, en el espacio para comentarios, indica la dirección web donde detectaste el problema, y añade una pequeña descripción del mismo. Recuerda que puedes **añadir imágenes**, como capturas de pantalla, arrastrando la imagen sobre el editor. Por ejemplo:
+La forma más sencilla de contribuir con la página web es informar de un error detectado. Introduce un título corto y, en el espacio para comentarios, indica la dirección web donde detectaste el problema, y añade una pequeña descripción del mismo. Recuerda que puedes **añadir imágenes**, como capturas de pantalla, arrastrando la imagen sobre el editor.
 
-```
-Dónde pone "title": Los comandos de instalación de Docker son incorrectos o están desactualizados
-Dónde pone "leave a comment": En la sección "Como instalar Docker": https://acloudsecurity.ninja/docs/hazte-socio.html
-A partir de este año Docker ha cambiado sus ejecutables de instlacion por lo que recomiendo actualizar el contenido.
-```
+## Editando contenido
+Todo el contenido de Cloud Security Ninja se encuentra en el directorio [`docs`](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs) y está escrito en **[Markdown](https://www.markdownguide.org/)** pero también podrás hacer uso de **[MDX](https://mdxjs.com/).** Cualquier cambio que se realize sobre cualquier otro fichero fuera de la carpeta `docs` **no** será aprobado, ya que puede producir algun error sobre la compilación de la plataforma.
 
-## Escribiendo contenido
-Si prefieres pasar a la acción, habrás de comenzar [creando una cuenta en GitHub](https://github.com/join). Con ella **podrás [administrar los archivos del sitio web desde el navegador](https://help.github.com/articles/managing-files-on-github/)**.
+### Corrigiendo contenido ya existente
+Explora esta [ruta](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs) y localiza la página donde se encuentre el error.
 
-El contenido del sitio web de la asociación se encuentra en el directorio [`content`](https://github.com/python-spain/web/tree/master/content) y está escrito en [Markdown](https://daringfireball.net/projects/markdown/syntax), lenguage de marcado sencillo que habrás de utilizar.
+Una vez hayas encontrado el fichero, edita el contenido desde tu local o Github, corrige el error pertinente y envía el **Pull Request.**
 
-Las revisiones por parte del equipo editorial se realizan a través de la web de GitHub y, aunque el procedimiento es bastante intuitivo, habrás de [familiarizarte con el procedimiento de revisión](#proceso-de-revisión).
-
-> **NOTA**: si prefieres tareas más técnicas o editar el proyecto en un equipo local utilizando `git`, consulta el [README](https://github.com/python-spain/web/#sitio-web-de-la-asociación-python-españa) donde se explica cómo descargar, configurar y probar el sitio web.
-
-### Editando contenido ya existente
-Explora el [repositorio original de la asociación](https://github.com/python-spain/web/) y localiza el artículo o página donde se encuentre el error. Si se trata de un artículo, estará bajo la carpeta [`content`](https://github.com/python-spain/web/tree/master/content) directamente. Si se trata de una página, estará bajo la carpeta [`pages`](https://github.com/python-spain/web/tree/master/content/pages).
-
-Una vez hayas encontrado el fichero, edita el contenido desde GitHub, corrige el error pertinente y envía el cambio haciendo click en el botón "_Propose file change_".
-
-### Añadiendo un artículo
-Si quieres añadir un artículo, entra en la carpeta [`content`](https://github.com/python-spain/web/tree/master/content) y haz click en el botón "_Create new file_".
+### Añadiendo contenido
+Si quieres añadir contenido nuevo sea en un fichero nuevo o en uno existente, entra en la carpeta [`docs`](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs).
 
 Introduce un nombre para el nuevo archivo con el formato `AAAA-MM-DD-titulo-del-post.md` (donde `AAAA-MM-DD` es la fecha en la que te gustaría publicar el post). No incluyas ni tildes, ni espacios, y si no estás seguro sobre la fecha, pon la de hoy. Un ejemplo de título válido es `2017-09-03-domiciliacion-cuotas.md`.
 
