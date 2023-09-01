@@ -1,5 +1,5 @@
-# Cómo contribuir con Cloud Security Ninja
-Existen muchas formas de contribuir con [Cloud Security Ninja](http://acloudsecurity.ninja).
+# ¿Cómo contribuir en este proyecto?
+Existen muchas maneras de contribuir con [Cloud Security Ninja](http://acloudsecurity.ninja).
 Escribir contenido para la página web, mantener la información contenida actualizada, [detectar problemas](https://github.com/gerardokaztro/cloudsec-ninja/issues/new) o corregirlos son formas efectivas de mejorar la comunidad.
 
 Recuerda que, tanto contribuir a este repositorio como administrarlo, supone la aceptación de nuestro [código de conducta](https://github.com/gerardokaztro/cloudsec-ninja/blob/main/CODE_OF_CONDUCT.md).
@@ -8,15 +8,19 @@ Recuerda que, tanto contribuir a este repositorio como administrarlo, supone la 
 La forma más sencilla de contribuir con la página web es informar de un error detectado. Introduce un título corto y, en el espacio para comentarios, indica la dirección web donde detectaste el problema, y añade una pequeña descripción del mismo. Recuerda que puedes **añadir imágenes**, como capturas de pantalla, arrastrando la imagen sobre el editor.
 
 ## Editando contenido
-Todo el contenido de Cloud Security Ninja se encuentra en el directorio [`docs`](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs) y está escrito en **[Markdown](https://www.markdownguide.org/)** pero también podrás hacer uso de **[MDX](https://mdxjs.com/).** Cualquier cambio que se realize sobre cualquier otro fichero fuera de la carpeta `docs` **no** será aprobado, ya que puede producir algun error sobre la compilación de la plataforma.
+Todo el contenido de Cloud Security Ninja se encuentra en el directorio [`docs`](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs) y está escrito en **[Markdown](https://www.markdownguide.org/)** pero también podrás hacer uso de **[MDX](https://mdxjs.com/).** 
 
-### Corrigiendo contenido ya existente
-Explora esta [ruta](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs) y localiza la página donde se encuentre el error.
+Es importante saber que cualquier cambio que se realize sobre algún otro fichero fuera de la carpeta `docs` **no** será aprobado, ya que puede producir algun error sobre la compilación de la plataforma y son ficheros que únicamente administra el autor de este proyecto.
+
+### Editando contenido ya existente
+Es probable que el contenido de esta plataforma no sea perfecto y que muy seguramente existan mejores formas de explicar algunos de los temas. Siéntete libre de proponer una mejor forma de explicar cualquiera de nuestros temas. Puedes incluir diagramas, imágenes, vídeos, código, entre otras.
+
+Explora esta [ruta](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs) y localiza la página donde se encuentre el error o el contenido que quieras mejorar.
 
 Una vez hayas encontrado el fichero, edita el contenido desde tu local o Github, corrige el error pertinente y envía el **Pull Request.**
 
-### Añadiendo contenido
-Si quieres añadir contenido nuevo sea en un fichero nuevo o en uno existente, entra en la carpeta [`docs`](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs).
+### Añadiendo contenido nuevo
+Si quieres añadir o proponer un nuevo tema, entra en la carpeta [`docs`](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs).
 
 Introduce un nombre para el nuevo archivo con el formato `AAAA-MM-DD-titulo-del-post.md` (donde `AAAA-MM-DD` es la fecha en la que te gustaría publicar el post). No incluyas ni tildes, ni espacios, y si no estás seguro sobre la fecha, pon la de hoy. Un ejemplo de título válido es `2017-09-03-domiciliacion-cuotas.md`.
 
@@ -45,16 +49,11 @@ Hasta hace poco la asociación estaba atada a un banco con condiciones draconian
 
 Cuando hayas terminado de editar, haz click sobre el botón "_Propose new file_"
 
-
 ## Manteniendo el sitio web
-No todo es crear contenido. La web también necesita un mantenimiento tanto de de sus capacidades, como de su estructura y diseño. Otra forma de contribuir con el sitio web de la asociación Python España es echando un [vistazo a las _issues_ abiertas](https://github.com/python-spain/web/issues), escoger una y solucionarla.
+Otra forma de contribuir con este proyecto es echando un [vistazo a las _issues_ abiertas](https://github.com/gerardokaztro/cloudsec-ninja/issues), escoger una y solucionarla.
 
-Estas tareas son técnicas y es recomendable trabajar en un entorno de desarrollo local, utilizando `git` para clonar el repositorio. Consulta el [README](https://github.com/python-spain/web/#sitio-web-de-la-asociación-python-españa) donde se explica cómo descargar, configurar y probar el sitio web.
-
-## Mejorando la documentación
-Uno de los objetivos de este repositorio es que sea accesible y fácil de editar para personas sin perfil técnico. Esta guía, por ejemplo, recoge cómo realizar modificaciones diréctamente desde la web. Sin embargo el contenido no es perfecto y seguro que hay mejores maneras de explicar algo o cuestiones que podrían aclararse con una imagen.
-
-Mejorar los documentos [`README.md`](https://github.com/python-spain/web/tree/master/README.md) y [`CONTRIBUTING.md`](https://github.com/python-spain/web/tree/master/CONTRIBUTING.md) es también una forma útil de contribuir con la asociación. Utiliza el mismo procedimiento explicado en la sección [Editando contenido ya existente](#editando-contenido-ya-existente) para proponer cambios en estos ficheros.
+## ¿Qué pasa si no tengo perfil técnico? ¿Puedo contribuir?
+Si, puedes mejorar los ficheros [`README.md`](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/README.md) y [`CONTRIBUTING.md`](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/CONTRIBUTING.md) para que pueda ser entendible por todo tipo de perfil, a lo mejor mientras redacto estos ficheros, lo estoy haciendo desde un punto de vista muy técnico. Utiliza el mismo procedimiento explicado en la sección [Editando contenido ya existente](#editando-contenido-ya-existente) para proponer cambios en estos ficheros.
 
 ## Proceso de revisión
 Cuando propongas algún cambio, GitHub creará un _pull request_. Un _pull request_ es una petición en tu nombre, con las alteraciones propuestas, que permite discutir sobre las mismas. El equipo editorial realizará una revisión de la petición y GitHub te irá notificando en tu correo electrónico conforme se añadan nuevos comentarios.
