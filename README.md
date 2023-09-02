@@ -33,7 +33,7 @@ Lo primero, es hacer un `git clone` a este [repositorio](https://github.com/gera
 git clone https://github.com/gerardokaztro/cloudsec-ninja.git
 ```
 
-Todo el código de los ejercicios que encuentres en cada tema estará ubicado en la carpeta `code` dentro de la carpeta de cada módulo, por ejemplo: `./aws/code` o `./iam/code`
+Todo el código de los ejercicios que encuentres en cada tema estará ubicado en la carpeta `code` dentro de la carpeta de cada módulo, por ejemplo: `docs/aws/code` o `docs/iam/code` luego sigue las instrucciones del laboratorio.
 
 > Si te gusta el contenido que ves aquì, no dudes en regalarle una 🌟 al repo
 
@@ -42,9 +42,26 @@ Esta plataforma esta basada en [Docusaurus](https://docusaurus.io) un generador 
 
 Y se ha utilizado [Vercel](https://vercel.com/) como hosting debido a su capacidad de desplegar, gestionar y escalar aplicaciones y sitios web. Además que Vercel proporciona una amplia gama de funciones, como despliegues automatizados, entre otras funciones interesantes.
 
-Gracias a esto, es que la fase `build` se encuentra automatizada.
+Con esto, la fase `build` se encuentra automatizada al momento de merguear los cambios a la rama `main`,
 
-Por lo que si deseas apoyar desde tu conocimiento y experiencia a este proyecto open-source, por favor revisar la guía de [como contribuir con Cloud Security Ninja](https://github.com/gerardokaztro/cloudsec-ninja/blob/main/CONTRIBUTING.md).
+> Asegúrate de echarle un vistazo a nuestra [guía para contribuidores](https://github.com/gerardokaztro/cloudsec-ninja/blob/main/CONTRIBUTING.md) antes de empezar como contributor.
+
+#### Pre requisitos
+
+- Tener instalado Git
+- Tener instalado Node.js version 18.x.x o superior
+- Clonar este repositorio
+```bash
+git clone https://github.com/gerardokaztro/cloudsec-ninja.git
+```
+- Crear rama `developement` en tu local
+```bash
+git checkout -b development
+```
+- Antes de iniciar en editar contenido, puedes tener un preview de la plataforma en tu localhost
+```bash
+npm start
+```
 
 ## 🚨 Descargo de responsabilidad
 > **NO** ejecute ninguno de los laboratorios junto con sus entornos e infraestructura de producción. Recomendamos ejecutar esto en un entorno seguro y aislado.
