@@ -84,6 +84,7 @@ Cuando hayas terminado de editar, envía tu "*Pull Request*"
 <h2 align="center">
   Descargo de responsabilidad 🚨
 </h2>
+
 > **NO** ejecute ninguno de los laboratorios junto con sus entornos e infraestructura de producción. Recomendamos ejecutar esto en un entorno seguro y aislado.
 
 > Esta plataforma **NO** ofrece cuentas sandbox ni se hace responsable por los gastos que pueden llegar a generar los laboratorios que se compartan aquí.
