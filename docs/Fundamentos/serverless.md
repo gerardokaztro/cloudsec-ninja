@@ -4,6 +4,6 @@ sidebar_position: 3
 sidebar_label: 'Serverless 101'
 ---
 
-# 💪 ¿Qué me motiva?
+# 👻 Introducción a Serverless
 
 sas

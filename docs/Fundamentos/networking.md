@@ -4,7 +4,7 @@ sidebar_position: 1
 sidebar_label: 'Networking 101'
 ---
 
-# 💪 ¿Qué me motiva?
+# 🕸️ Introducción a las redes
 
 Linea insertada desde rama `Development`
 

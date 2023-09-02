@@ -4,6 +4,6 @@ sidebar_position: 2
 sidebar_label: 'Contenedores 101'
 ---
 
-# 💪 ¿Qué me motiva?
+# 🐳 Introducción a los contenedores
 
 sas

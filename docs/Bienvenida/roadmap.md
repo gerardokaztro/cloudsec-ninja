@@ -1,5 +1,5 @@
 ---
-slug: /roadmap
+slug: /bienvenida/roadmap
 sidebar_label: 'Roadmap'
 sidebar_position: 4
 ---
