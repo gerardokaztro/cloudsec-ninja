@@ -46,7 +46,7 @@ Con esto, la fase `build` se encuentra automatizada al momento de merguear los c
 
 > Asegúrate de echarle un vistazo a nuestra [guía para contribuidores](https://github.com/gerardokaztro/cloudsec-ninja/blob/main/CONTRIBUTING.md) antes de empezar como contributor.
 
-#### Pre requisitos
+#### 🎮 Pre requisitos
 
 - Tener instalado Git
 - Tener instalado Node.js version 18.x.x o superior
@@ -62,7 +62,7 @@ git checkout -b development
 ```bash
 npm start
 ```
-##### Añade tu contenido
+##### 📝 Añade tu contenido
 Dirígete hacia la carpeta [`docs/`](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs) y crea un archivo markdown dentro de la sub-carpeta del tema en el que quieras contribuir. Por ejemplo si quieres añadir tema sobre *Detección de amenazas* es importante que tu archivo se encuentre dentro de `docs/Detección%20de%20Amenazas`.
 
 Luego, introduce un nombre para el nuevo archivo con el formato `titulo-del-post.md`. No incluyas ni tildes, ni espacios, ni mayúsculas. Un ejemplo de título válido es `oauth-vs-saml2.md`.
