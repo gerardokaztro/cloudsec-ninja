@@ -1,5 +1,5 @@
 ---
-slug: /comunidad
+slug: /bienvenida/comunidad
 sidebar_position: 6
 sidebar_label: 'Comunidad'
 ---

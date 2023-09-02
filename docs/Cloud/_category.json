@@ -1,0 +1,10 @@
+{
+    "label": "Cloud",
+    "position": 3,
+    "link": {
+      "slug": "cloud",
+      "type": "generated-index",
+      "description": "5 minutes to learn the most important Docusaurus."
+    }
+  }
+  
