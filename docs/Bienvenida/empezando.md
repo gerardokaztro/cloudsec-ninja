@@ -29,7 +29,7 @@ Con esto, la fase `build` se encuentra automatizada al momento de merguear los c
 
 > Asegúrate de echarle un vistazo a nuestra [guía para contribuidores](https://github.com/gerardokaztro/cloudsec-ninja/blob/main/CONTRIBUTING.md) antes de empezar como contributor.
 
-### 🎮 Pre requisitos
+### Pre requisitos
 
 - Tener instalado Git
 - Tener instalado Node.js version 18.x.x o superior
@@ -37,7 +37,7 @@ Con esto, la fase `build` se encuentra automatizada al momento de merguear los c
 ```bash
 $ git clone https://github.com/gerardokaztro/cloudsec-ninja.git
 ```
-- Crear rama `developement` en tu local y agrega tus cambios
+- Crear rama `developement` en tu local y [agrega tus cambios](https://github.com/gerardokaztro/cloudsec-ninja/tree/main#-a%C3%B1ade-tu-contenido)
 ```bash
 $ git checkout -b development
 ```

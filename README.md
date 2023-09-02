@@ -54,7 +54,7 @@ Con esto, la fase `build` se encuentra automatizada al momento de merguear los c
 ```bash
 git clone https://github.com/gerardokaztro/cloudsec-ninja.git
 ```
-- Crear rama `developement` en tu local y agrega tus cambios
+- Crear rama `developement` en tu local y [agrega tus cambios](#-añade-tu-contenido)
 ```bash
 git checkout -b development
 ```
@@ -73,7 +73,7 @@ $ git push origin development
 Finalmente, crea un **Pull Request** a `main`
 
 ##### 📝 Añade tu contenido
-Dirígete hacia la carpeta [`docs/`](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs) y crea un archivo markdown dentro de la sub-carpeta del tema en el que quieras contribuir. Por ejemplo si quieres añadir tema sobre *Detección de amenazas* es importante que tu archivo se encuentre dentro de `docs/Detección%20de%20Amenazas`.
+Dirígete hacia la carpeta [`docs/`](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs) y crea un archivo markdown dentro de la sub-carpeta del tema en el que quieras contribuir. Por ejemplo si quieres añadir tema sobre *Detección de amenazas* es importante que tu archivo se encuentre dentro de `docs/deteccion/`.
 
 Luego, introduce un nombre para el nuevo archivo con el formato `titulo-del-post.md`. No incluyas ni tildes, ni espacios, ni mayúsculas. Un ejemplo de título válido es `oauth-vs-saml2.md`.
 
@@ -87,14 +87,7 @@ Un artículo está compuesto de dos secciones, metadatos y contenido, separadas 
 
 > Intenta que el slug y sidebar_label tengan un nombre cortito. Luego en el contenido de la página puedes usar un H1 con un title mas largo.
 
-Aquí tienes un ejemplo de la [estructura de un artículo](https://raw.githubusercontent.com/gerardokaztro/cloudsec-ninja/main/docs/%F0%9F%91%8B%20Bienvenida/empezando.md).
-
-Cuando hayas terminado de editar, envia tus cambios hacia la rama `development` del repositorio en Github
-```bash
-git push origin development
-```
-
-Finalmente envía tu "*Pull Request*"
+Aquí tienes un ejemplo de la [estructura de un artículo](https://raw.githubusercontent.com/gerardokaztro/cloudsec-ninja/main/docs/Bienvenida/empezando.md).
 
 <h2 align="center">
   Descargo de responsabilidad 🚨
