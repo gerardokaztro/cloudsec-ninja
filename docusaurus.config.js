@@ -153,7 +153,7 @@ const config = {
         appId: 'ZLMIOZBCWU',
   
         // Optional: see doc section bellow
-        // contextualSearch: true,
+        contextualSearch: true,
   
         //... other Algolia params
       },
