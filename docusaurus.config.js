@@ -148,9 +148,9 @@ const config = {
         ],
       },
       algolia: {
-        apiKey: '44ed9319bd63254b4430ecdf134e2a66',
-        indexName: 'cloudsecninja',
-        appId: 'QOSJVI7SH7',
+        apiKey: '46eadf34239e60f3e091f6e882a9b1066',
+        indexName: 'acloudsecurity',
+        appId: 'ZLMIOZBCWU',
   
         // Optional: see doc section bellow
         // contextualSearch: true,
