@@ -63,11 +63,11 @@ git checkout -b development
 npm start
 ```
 ##### Añade tu contenido
-Si quieres añadir o proponer un nuevo tema, entra en la carpeta [`docs`](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs). Y crea un archivo markdown dentro de la sub-carpeta tópico del tema que quieres introducir. Por ejemplo si quieres añadir tema sobre *Detección de amenazas* es importante que tu archivo se encuentre dentro de `docs/Detección%20de%20Amenazas`.
+Dirígete hacia la carpeta [`docs/`](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs) y crea un archivo markdown dentro de la sub-carpeta del tema en el que quieras contribuir. Por ejemplo si quieres añadir tema sobre *Detección de amenazas* es importante que tu archivo se encuentre dentro de `docs/Detección%20de%20Amenazas`.
 
 Luego, introduce un nombre para el nuevo archivo con el formato `titulo-del-post.md`. No incluyas ni tildes, ni espacios, ni mayúsculas. Un ejemplo de título válido es `oauth-vs-saml2.md`.
 
-Un artículo está compuesto de dos secciones, metadatos y contenido, separadas por dos líneas vacías. Los metadatos **son obligatorios** y sirven para clasificar el artículo. Son los siguientes:
+Un artículo está compuesto de dos secciones, metadatos y contenido, separadas por dos líneas vacías. Los metadatos **son obligatorios** y sirven para clasificar el artículo y son los siguientes:
 
 | Clave   | Descripción                                  |
 |---------|----------------------------------------------|
@@ -75,21 +75,27 @@ Un artículo está compuesto de dos secciones, metadatos y contenido, separadas 
 | sidebar_position    | Orden del artículo dentro del sidebar de la página |
 | sidebar_label: | Nombre del artículo de como se vera reflejado en la página |
 
+> Intenta que el slug y sidebar_label tengan un nombre cortito. Luego en el contenido de la página puedes usar un H1 con un title mas largo.
+
 Aquí tienes un ejemplo de la [estructura de un artículo](https://raw.githubusercontent.com/gerardokaztro/cloudsec-ninja/main/docs/%F0%9F%91%8B%20Bienvenida/empezando.md).
 
 Cuando hayas terminado de editar, envía tu "*Pull Request*"
 
-> Intenta que el slug y sidebar_label tengan un nombre cortito. Luego en el contenido de la página puedes usar un H1 con un title mas largo.
-
-## 🚨 Descargo de responsabilidad
+<h2 align="center">
+  Descargo de responsabilidad 🚨
+</h2>
 > **NO** ejecute ninguno de los laboratorios junto con sus entornos e infraestructura de producción. Recomendamos ejecutar esto en un entorno seguro y aislado.
 
 > Esta plataforma **NO** ofrece cuentas sandbox ni se hace responsable por los gastos que pueden llegar a generar los laboratorios que se compartan aquí.
 
 > Recuerda que esta plataforma es gratuita y usted asume toda la responsabilidad de los recursos que utilice para el desarrollo de los ejercicios.
 
-## ✋ Reglas de la casa
+<h2 align="center">
+  Reglas de la casa ✋
+</h2>
 [Código de conducta](https://github.com/gerardokaztro/cloudsec-ninja/blob/main/CODE_OF_CONDUCT.md)
 
-## 📜 Licencia
+<h2 align="center">
+  Licencia 📜
+</h2>
 [GNU General Public License v3.0](https://github.com/gerardokaztro/cloudsec-ninja/blob/main/LICENSE)
