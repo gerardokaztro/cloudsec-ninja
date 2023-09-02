@@ -79,7 +79,12 @@ Un artículo está compuesto de dos secciones, metadatos y contenido, separadas 
 
 Aquí tienes un ejemplo de la [estructura de un artículo](https://raw.githubusercontent.com/gerardokaztro/cloudsec-ninja/main/docs/%F0%9F%91%8B%20Bienvenida/empezando.md).
 
-Cuando hayas terminado de editar, envía tu "*Pull Request*"
+Cuando hayas terminado de editar, envia tus cambios hacia la rama `development` del repositorio en Github
+```bash
+git push origin development
+```
+
+Finalmente envía tu "*Pull Request*"
 
 <h2 align="center">
   Descargo de responsabilidad 🚨
