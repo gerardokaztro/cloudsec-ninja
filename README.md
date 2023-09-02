@@ -33,9 +33,9 @@ Lo primero, es hacer un `git clone` a este [repositorio](https://github.com/gera
 git clone https://github.com/gerardokaztro/cloudsec-ninja.git
 ```
 
-Todo el código de los ejercicios que encuentres en cada tema estará ubicado en la carpeta `code` dentro de la carpeta de cada módulo, por ejemplo: `docs/aws/code` o `docs/iam/code` luego sigue las instrucciones del laboratorio.
-
 > Si te gusta el contenido que ves aquì, no dudes en regalarle una 🌟 al repo
+
+Todo el código de los ejercicios que encuentres en cada tema estará ubicado en la carpeta `code` dentro de la carpeta de cada módulo, por ejemplo: `docs/aws/code` o `docs/iam/code` luego sigue las instrucciones del laboratorio.
 
 ### 👷‍♀️ Sigue estas instrucciones si eres contributor
 Esta plataforma esta basada en [Docusaurus](https://docusaurus.io) un generador de sitios estáticos hecho en React, una de las principales bibliotecas de JavaScript, como biblioteca de interfaz de usuario para la creación de páginas.
@@ -54,7 +54,7 @@ Con esto, la fase `build` se encuentra automatizada al momento de merguear los c
 ```bash
 git clone https://github.com/gerardokaztro/cloudsec-ninja.git
 ```
-- Crear rama `developement` en tu local
+- Crear rama `developement` en tu local y agrega tus cambios
 ```bash
 git checkout -b development
 ```
@@ -62,6 +62,16 @@ git checkout -b development
 ```bash
 npm start
 ```
+
+> Esto permite obtener una previsualización de tus cambios en tu `localhost`
+
+- Envia tus cambios a la rama `development` del repositorio
+```bash
+$ git push origin development
+```
+
+Finalmente, crea un **Pull Request** a `main`
+
 ##### 📝 Añade tu contenido
 Dirígete hacia la carpeta [`docs/`](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs) y crea un archivo markdown dentro de la sub-carpeta del tema en el que quieras contribuir. Por ejemplo si quieres añadir tema sobre *Detección de amenazas* es importante que tu archivo se encuentre dentro de `docs/Detección%20de%20Amenazas`.
 
