@@ -58,10 +58,28 @@ git clone https://github.com/gerardokaztro/cloudsec-ninja.git
 ```bash
 git checkout -b development
 ```
-- Antes de iniciar en editar contenido, puedes tener un preview de la plataforma en tu localhost
+- Obtén un preview de la plataforma en tu localhost
 ```bash
 npm start
 ```
+##### Añade tu contenido
+Si quieres añadir o proponer un nuevo tema, entra en la carpeta [`docs`](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs). Y crea un archivo markdown dentro de la sub-carpeta tópico del tema que quieres introducir. Por ejemplo si quieres añadir tema sobre *Detección de amenazas* es importante que tu archivo se encuentre dentro de `docs/Detección%20de%20Amenazas`.
+
+Luego, introduce un nombre para el nuevo archivo con el formato `titulo-del-post.md`. No incluyas ni tildes, ni espacios, ni mayúsculas. Un ejemplo de título válido es `oauth-vs-saml2.md`.
+
+Un artículo está compuesto de dos secciones, metadatos y contenido, separadas por dos líneas vacías. Los metadatos **son obligatorios** y sirven para clasificar el artículo. Son los siguientes:
+
+| Clave   | Descripción                                  |
+|---------|----------------------------------------------|
+| slug   | define la parte final de la URL que identifica una página dentro de un sitio web |
+| sidebar_position    | Orden del artículo dentro del sidebar de la página |
+| sidebar_label: | Nombre del artículo de como se vera reflejado en la página |
+
+Aquí tienes un ejemplo de la [estructura de un artículo](https://raw.githubusercontent.com/gerardokaztro/cloudsec-ninja/main/docs/%F0%9F%91%8B%20Bienvenida/empezando.md).
+
+Cuando hayas terminado de editar, envía tu "*Pull Request*"
+
+> Intenta que el slug y sidebar_label tengan un nombre cortito. Luego en el contenido de la página puedes usar un H1 con un title mas largo.
 
 ## 🚨 Descargo de responsabilidad
 > **NO** ejecute ninguno de los laboratorios junto con sus entornos e infraestructura de producción. Recomendamos ejecutar esto en un entorno seguro y aislado.
