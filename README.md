@@ -94,9 +94,11 @@ Cuando hayas terminado de editar, envía tu "*Pull Request*"
 <h2 align="center">
   Reglas de la casa ✋
 </h2>
+
 [Código de conducta](https://github.com/gerardokaztro/cloudsec-ninja/blob/main/CODE_OF_CONDUCT.md)
 
 <h2 align="center">
   Licencia 📜
 </h2>
+
 [GNU General Public License v3.0](https://github.com/gerardokaztro/cloudsec-ninja/blob/main/LICENSE)
