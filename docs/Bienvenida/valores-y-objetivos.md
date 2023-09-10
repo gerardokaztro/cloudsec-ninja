@@ -1,6 +1,4 @@
 ---
-slug: /bienvenida/valores-y-objetivos
-sidebar_position: 2
 sidebar_label: 'Valores & Objetivos'
 ---
 

@@ -1,7 +1,6 @@
 ---
-slug: /
-sidebar_position: 1
-sidebar_label: 'Bienvenida'
+slug: /index
+sidebar_label: 'Cloud Security Ninja'
 ---
 
 # 👋 Bienvenido/a

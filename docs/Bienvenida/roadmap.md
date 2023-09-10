@@ -1,7 +1,5 @@
 ---
-slug: /bienvenida/roadmap
 sidebar_label: 'Roadmap'
-sidebar_position: 4
 ---
 
 # 🛣️ Ruta de aprendizaje
