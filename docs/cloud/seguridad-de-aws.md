@@ -1,10 +1,6 @@
 ---
-sidebar_label: 'Seguridad DE la nube'
-sidebar_class_name: green
-last_update:
-  date: 1/1/2023
-  author: Gerardo Castro
-tags: [nivel 100, redes]
+sidebar_label: 'Seguridad DE la nube' #Es el nombre que mostrara en el sidebar
+tags: [nivel 100, redes] # Son los tags de la pagina
 ---
 
 # Easy Tutorial
