@@ -46,7 +46,7 @@ $ npm start
 
 > Esto permite obtener una previsualización de tus cambios en tu `localhost`
 <browser url="localhost:3000">
-  <img src={require('@site/docs/Bienvenida/img/preview_localhost.png').default}/>
+  <img src={require('@site/docs/bienvenida/img/preview_localhost.png').default}/>
 </browser>
 
 - Envia tus cambios a la rama `development` del repositorio
@@ -79,4 +79,4 @@ Algunos de los temas de esta plataforma, tendran secciones explicadas en formato
 
 <ReactPlayer controls url='https://www.youtube.com/watch?v=B2FNRK3gZWE' /> <br/>
 
-Si tienes dudas sobre alguno de los ejercicios, o alguna duda sobre cualquier de los temas explicados, recuerda que tenemos una comunidad en [Discord](/docs/Bienvenida/comunidad.md), donde podrás dejar todas tus dudas y ayudar a responder las consultas de los demás.
+Si tienes dudas sobre alguno de los ejercicios, o alguna duda sobre cualquier de los temas explicados, recuerda que tenemos una comunidad en [Discord](/docs/bienvenida/comunidad.md), donde podrás dejar todas tus dudas y ayudar a responder las consultas de los demás.

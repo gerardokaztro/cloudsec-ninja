@@ -6,7 +6,7 @@ sidebar_label: 'Roadmap'
 
 Esta ruta de aprendizaje toma como referencia el **[Ramp-Up Guide de AWS Security](https://d1.awsstatic.com/training-and-certification/ramp-up_guides/Ramp-Up_Guide_Security.pdf)** que te ayudará a aprender acerca de los fundamentos de seguridad en la nube y aspectos especializados de seguridad en la nube de AWS.
 
-Esta guía tambien ofrece un path para aquellos nivel usuario que deseen encaminarse como futuros Cloud Security Engineers. Por lo que te recomendamos echar un vistazo al módulo de **[Fundamentos](/docs/fundamentos/networking-101)** y si tampoco tienes conocimientos y/o experiencia usando la nube de AWS, te recomendamos darte una vuelta por nuestro módulo de **[AWS 101](/docs/cloud/fundamentos-en-aws)**.
+Esta guía tambien ofrece un path para aquellos nivel usuario que deseen encaminarse como futuros Cloud Security Engineers. Por lo que te recomendamos echar un vistazo al módulo de **[Fundamentos](/docs/fundamentos/redes)** y si tampoco tienes conocimientos y/o experiencia usando la nube de AWS, te recomendamos darte una vuelta por nuestro módulo de **[AWS 101](/docs/cloud/aws)**.
 
 ## Plan de aprendizaje
 Se ha tenido en cuenta una serie de etapas que van desde un módulo fundamentos, para quienes no esten familiarizados con tecnología y puedan aprender conceptos como **Networking, Contenedores, Ciberseguridad y Serverless.**
