@@ -122,7 +122,7 @@ const config = {
           {
             //type: 'docSidebar',
             //sidebarId: 'tutorialSidebar',
-            to: '/docs',
+            to: '/docs/index',
             position: 'right',
             label: '📚 Documentación',
           },

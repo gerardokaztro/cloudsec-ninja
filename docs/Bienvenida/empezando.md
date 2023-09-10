@@ -1,6 +1,4 @@
 ---
-slug: /bienvenida/empezando
-sidebar_position: 5
 sidebar_label: 'Empezando'
 ---
 import ReactPlayer from 'react-player'

@@ -1,6 +1,4 @@
 ---
-slug: /bienvenida/sobre-el-autor
-sidebar_position: 3
 sidebar_label: 'Sobre el autor'
 ---
 

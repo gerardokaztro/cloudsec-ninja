@@ -1,6 +1,4 @@
 ---
-slug: /bienvenida/sponsors
-sidebar_position: 8
 sidebar_label: 'Sponsors'
 ---
 
