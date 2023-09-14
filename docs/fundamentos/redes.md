@@ -84,9 +84,9 @@ Por ejemplo, las paginas web en internet que empiecen con **"HTTPS"** o tengan e
 ![https](https://topofthelist.net/wp-content/uploads/2019/05/https-url.jpg)
 
 ### ¿Cómo funciona SSL/TLS?
-1. Respecto a la **privacidad**: SSL cifra los datos que se transmiten por la web para que cualquiera que intercepte estos mensajes, no pueda leerlos.
-2. Respecto a la **autenticación**: inicia un proceso conocido como establecimiento de comunicación entre dos dispositivos para asegurar que sean realmente quienes dicen ser.
-3. Respecto a la **integridad**: firma digitalmente los datos, con lo que puede verificar que estos no hayan sido alterados por un atacante.
+1. Ofrece **privacidad**: SSL cifra los datos que se transmiten por la web para que cualquiera que intercepte estos mensajes, no pueda leerlos.
+2. Ofrece **autenticación**: inicia un proceso conocido como establecimiento de comunicación entre dos dispositivos para asegurar que sean realmente quienes dicen ser.
+3. Ofrece **integridad**: firma digitalmente los datos, con lo que puede verificar que estos no hayan sido alterados por un atacante.
 
 ### ¿Porqué es importante usar SSL/TLS?
 Imagina que tienes un sitio web de ventas de artiñiculos donde integraste una pasarela de pagos, para que tus clientes puedan efectuar su compra en línea desde la comodidad de sus hogares. Pero no implementaste SSL/TLS en tu pagina web. Entonces, los datos bancarios (numero de tarjeta, fecha de caducidad, cvv, entre otros) que tu cliente ingrese en la pasarela de pago que desarrollaste, viajaran por internet de manera legíble (texto plano), por lo que si son interceptados por un atacante, este podra leer y hacer uso de esos datos con facilidad.
@@ -125,8 +125,16 @@ Pero esto no es la mejor opción, ya que no hay ninguna autoridad externa que ve
 ### ¿Qué tipos de certificados SSL hay?
 Segun sea el tipo, los certificados pueden aplicarse a un solo sitio web o a varios:
 
-**Único dominio**: aplicable a un único dominio sin mas, ejemplo `workshops.aws` por lo que si en adelante crean un subdominio `test.workshop.aws` no podran hacer uso del mismo certificado SSL.
+- **Único dominio**: aplicable a un único dominio sin mas, ejemplo `workshops.aws` por lo que si en adelante crean un subdominio `test.workshop.aws` no podran hacer uso del mismo certificado SSL.
 
-**Comodín**: aplicable a un único dominio con la ventaja de que si se puede usar el mismo certificado SSL para todos los subdominios del dominio principal, ejemplo `test.workshop.aws`, `dev.workshop.aws`, `prod.workshop.aws`.
+- **Comodín**: aplicable a un único dominio con la ventaja de que si se puede usar el mismo certificado SSL para todos los subdominios del dominio principal, ejemplo `test.workshop.aws`, `dev.workshop.aws`, `prod.workshop.aws`.
 
-**Multidominio**: aplican a varios dominios no relacionados necesariamente, por ejemplo `acloudsecurity.ninja`, `awssecuritylatam.com` entre otros.
+- **Multidominio**: aplican a varios dominios no relacionados necesariamente, por ejemplo `acloudsecurity.ninja`, `awssecuritylatam.com` entre otros.
+
+Los certificados SSL también cuentan con diferentes niveles de validación. Un nivel de validación es como una revisión de antecedentes, y el nivel cambia dependiendo de la exhaustividad de la revisión.
+
+- **Validación del dominio:** es el nivel de validación menos estricto y el más barato. Se valida con la comprobación de que eres el dueño del dominio que asociaras con el certificado.
+
+- **Validación de la organización:** es un poco mas costoso pero a la vez mas confiable. la Certificate Authority se pone en contacto directamente con la persona o empresa que solicita el certificado.
+
+- **Validación extendida:** la mas costosa y confiable de las tres. Requiere una comprobación completa de los antecedentes de una organización antes de que se emita el certificado SSL.
