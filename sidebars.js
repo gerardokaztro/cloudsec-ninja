@@ -16,7 +16,7 @@ const sidebars = {
   docs: [
     {
       type: 'category',
-      label: 'Bienvenida',
+      label: '🙋‍♂️ Bienvenida',
       collapsible: false,
       link: {
         slug: '/',
@@ -38,7 +38,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Fundamentos Tech',
+      label: '🤓 Fundamentos Tech',
       link: {
         slug: '/fundamentos',
         type: 'generated-index',
@@ -56,7 +56,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Fundamentos Cloud',
+      label: '☁️ Fundamentos Cloud',
       customProps: {
         badges: ['new', 'green'],
         featured: true,
@@ -71,6 +71,24 @@ const sidebars = {
       items: [
         'cloud/aws',
         'cloud/seguridad-de-aws',
+      ],
+    },
+    {
+      type: 'category',
+      label: '👩‍⚖️ Gobierno de Seguridad',
+      link: {
+        slug: '/gobierno',
+        type: 'generated-index',
+        title: 'Módulo de Gobierno de seguridad',
+        description:
+          "Aprende como llegar a ser Cloud Security Engineer desde cero.",
+      },
+      items: [
+        'gobierno/organizations',
+        'gobierno/controltower',
+        'gobierno/servicecatalog',
+        'gobierno/awsram',
+        'gobierno/trustedadvisor'
       ],
     },
   ]
