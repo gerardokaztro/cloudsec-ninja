@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-    Visita la <b><a href="https://acloudsecurity.ninja/docs">📚 Documentación</a></b> para inciar tu carrera como Cloud Security Engineer.
+    Visita la <b><a href="https://acloudsecurity.ninja/docs/index">📚 Documentación</a></b> para inciar tu carrera como Cloud Security Engineer.
 </p>
 
 [![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCmWuXyjXOJOpikS4MHmJAcQ?style=social)](https://youtube.com/channel/UCmWuXyjXOJOpikS4MHmJAcQ?sub_confirmation=1)
@@ -26,18 +26,34 @@
   Cómo iniciar este lindo viaje 🚀
 </h2>
 
-### 👨‍💻 Sigue estas instrucciones si eres end-user
+### 👨‍💻 Sigue estas instrucciones si eres usuario
 Lo primero, es hacer un `git clone` a este [repositorio](https://github.com/gerardokaztro/cloudsec-ninja) en una carpeta de tu local. Esto es para que puedas tener todo el código de los ejercicios que se realizarán en cada tema.
 
 ```bash
 git clone https://github.com/gerardokaztro/cloudsec-ninja.git
 ```
 
-> Si te gusta el contenido que ves aquì, no dudes en regalarle una 🌟 al repo
+> Si te gusta el contenido que ves aquí, no dudes en regalarle una 🌟 al repo
 
-Todo el código de los ejercicios que encuentres en cada tema estará ubicado en la carpeta `code` dentro de la carpeta de cada módulo, por ejemplo: `docs/aws/code` o `docs/iam/code` luego sigue las instrucciones del laboratorio.
+Todo el contenido de las diferentes secciones de aprendizaje de la plataforma se encuentran dentro de la carpeta `docs`. Algunas secciones tendran código que podras usar para realizar los laboratorios, podrás encontralo dentro de la carpeta `code`. Por ejemplo: `docs/fundamentos/code` o `docs/cloud/code`.
 
-### 👷‍♀️ Sigue estas instrucciones si eres contributor
+```
+.docs
+├── cloud
+│   ├── code/
+│   ├── img/
+│   └── .
+├── fundamentos
+│   ├── code/
+│   ├── img/
+│   └── .
+└── gobierno
+    ├── code/
+    ├── img/
+    └── .
+```
+
+### 👷‍♀️ Sigue estas instrucciones si eres contribuidor
 Esta plataforma esta basada en [Docusaurus](https://docusaurus.io) un generador de sitios estáticos hecho en React, una de las principales bibliotecas de JavaScript, como biblioteca de interfaz de usuario para la creación de páginas.
 
 Y se ha utilizado [Vercel](https://vercel.com/) como hosting debido a su capacidad de desplegar, gestionar y escalar aplicaciones y sitios web. Además que Vercel proporciona una amplia gama de funciones, como despliegues automatizados, entre otras funciones interesantes.
@@ -54,7 +70,7 @@ Con esto, la fase `build` se encuentra automatizada al momento de merguear los c
 ```bash
 git clone https://github.com/gerardokaztro/cloudsec-ninja.git
 ```
-- Crear rama `developement` en tu local y [agrega tus cambios](#-añade-tu-contenido)
+- Crear rama `developement` en tu local
 ```bash
 git checkout -b development
 ```
@@ -62,32 +78,48 @@ git checkout -b development
 ```bash
 npm start
 ```
-
 > Esto permite obtener una previsualización de tus cambios en tu `localhost`
+<p align="center">
+    <img alt="preview" src="docs/bienvenida/img/preview_localhost.png" />
+</p>
 
-- Envia tus cambios a la rama `development` del repositorio
+- Cambia a la carpeta `docs` y [añade tu contenido](#cómo-añadir-mi-contenido)
 ```bash
-$ git push origin development
+cd docs/
+```
+- Envía tus cambios al repositorio
+```bash
+git push origin development
 ```
 
-Finalmente, crea un **Pull Request** a `main`
+Finalmente, crea un **[Pull Request](https://github.com/gerardokaztro/cloudsec-ninja/compare/main...development)** a `main`.
 
-##### 📝 Añade tu contenido
-Dirígete hacia la carpeta [`docs/`](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs) y crea un archivo markdown dentro de la sub-carpeta del tema en el que quieras contribuir. Por ejemplo si quieres añadir tema sobre *Detección de amenazas* es importante que tu archivo se encuentre dentro de `docs/deteccion/`.
+> Esto será revisado por los *code owners* y presta atención por si dejan algún comentario que debas revisar y responder, para que decidan aprobar tu cambio. 
 
-Luego, introduce un nombre para el nuevo archivo con el formato `titulo-del-post.md`. No incluyas ni tildes, ni espacios, ni mayúsculas. Un ejemplo de título válido es `oauth-vs-saml2.md`.
+##### Cómo añadir mi contenido
 
-Un artículo está compuesto de dos secciones, metadatos y contenido, separadas por dos líneas vacías. Los metadatos **son obligatorios** y sirven para clasificar el artículo y son los siguientes:
+Todo contenido que deseen añadir como contribuidores, debe estar alineado a cualquiera de las secciones o dominios que se presentan en [roadmap](https://acloudsecurity.ninja/docs/bienvenida/roadmap).
 
-| Clave   | Descripción                                  |
-|---------|----------------------------------------------|
-| slug   | define la parte final de la URL que identifica una página dentro de un sitio web |
-| sidebar_position    | Orden del artículo dentro del sidebar de la página |
-| sidebar_label: | Nombre del artículo de como se vera reflejado en la página |
+Sin embargo, si quieres proponer un nuevo tema asegúrate de contactar con el autor para que pueda revisar tu nueva propuesta y realice una actualización en el roadmap.
 
-> Intenta que el slug y sidebar_label tengan un nombre cortito. Luego en el contenido de la página puedes usar un H1 con un title mas largo.
+1. Si vas añadir contenido dentro de un archivo existente, entonces ubica el archivo y empeza a escribir.
 
-Aquí tienes un ejemplo de la [estructura de un artículo](https://raw.githubusercontent.com/gerardokaztro/cloudsec-ninja/main/docs/Bienvenida/empezando.md).
+    1.1 Por ejemplo, quieres añadir un video sobre AWS Control Tower, o quizas hacer una correción sobre una característica mal explicada, entonces la ruta seria [`docs/gobierno/controltower.md`](https://github.com/gerardokaztro/cloudsec-ninja/blob/development/docs/gobierno/controltower.md)
+
+2. Si vas a añadir contenido sobre una página aun no creada y ya validaste que forma parte del roadmap, entonces puedes crearla tu mismo, asi:
+
+    2.1 Por ejemplo si quieres escribir sobre AWS Organization, la ruta seria [`docs/gobierno/`](https://github.com/gerardokaztro/cloudsec-ninja/blob/development/docs/gobierno/)
+
+    2.2 Luego, crear el nuevo fichero, y colocar un nombre con el formato `titulo-del-post.md` o `titulo-del-post.md`. No incluyas ni tildes, ni espacios, ni mayúsculas, ni underscope (_). Un ejemplo de título válido es `aws-organizations.md` o `awsorganizations.md` o `organizations.md`.
+
+3. Un artículo está compuesto de dos secciones, metadatos y contenido, separadas por dos líneas vacías. Los metadatos **son obligatorios** y sirven para clasificar el artículo y son los siguientes:
+
+    | Clave   | Descripción                                  |
+    |---------|----------------------------------------------|
+    | sidebar_label: | Nombre del artículo de como se verá reflejado en el sidebar de la página |
+    | tags: | Array que contiene las etiquetas para clasificar el contenido |
+
+> 💡 Usa este artículo como referencia, contiene la [estructura de un artículo](https://raw.githubusercontent.com/gerardokaztro/cloudsec-ninja/development/docs/fundamentos/redes.md) que debes seguir al momento de escribir tu contenido.
 
 <h2 align="center">
   Descargo de responsabilidad 🚨

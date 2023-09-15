@@ -3,22 +3,11 @@ sidebar_label: 'Roadmap'
 ---
 
 # 🛣️ Ruta de aprendizaje
+Esta ruta de aprendizaje toma como referencia e inspiración algunas publicaciones como el **[Ramp-Up Guide de AWS Security](https://d1.awsstatic.com/training-and-certification/ramp-up_guides/Ramp-Up_Guide_Security.pdf)** y el **[Pilar de Seguridad de AWS](https://docs.aws.amazon.com/es_es/wellarchitected/latest/security-pillar/welcome.html)** que estan relacionados con el dominio de seguridad en nube. Esta guía no está destinada a ser consumida en su totalidad. Diferentes secciones abordan diferentes objetivos que pueden tomarse por separado.
 
-Esta ruta de aprendizaje toma como referencia el **[Ramp-Up Guide de AWS Security](https://d1.awsstatic.com/training-and-certification/ramp-up_guides/Ramp-Up_Guide_Security.pdf)** que te ayudará a aprender acerca de los fundamentos de seguridad en la nube y aspectos especializados de seguridad en la nube de AWS.
-
-Esta guía tambien ofrece un path para aquellos nivel usuario que deseen encaminarse como futuros Cloud Security Engineers. Por lo que te recomendamos echar un vistazo al módulo de **[Fundamentos](/docs/fundamentos/redes)** y si tampoco tienes conocimientos y/o experiencia usando la nube de AWS, te recomendamos darte una vuelta por nuestro módulo de **[AWS 101](/docs/cloud/aws)**.
-
-## Plan de aprendizaje
-Se ha tenido en cuenta una serie de etapas que van desde un módulo fundamentos, para quienes no esten familiarizados con tecnología y puedan aprender conceptos como **Networking, Contenedores, Ciberseguridad y Serverless.**
-
-Si ya cuentas con dominio en esos módulos introductorios, siéntete libre de omitirlos y en su lugar puedes iniciar con los dominios de seguridad en la nube.
-
-:::info
-Si te gustaría agregar contenido a esta plataforma, echa un vistazo a **[README](https://github.com/gerardokaztro/cloudsec-ninja#readme)**
-:::
+Sin embargo, se recomienda que para aquellos nivel usuario que deseen encaminarse como futuros Cloud Security Engineers, sigan el orden propuesto, empezando por echar un vistazo al módulo de **[Fundamentos Tech](/docs/fundamentos/)** y si tampoco tienes conocimientos y/o experiencia usando la nube de AWS, te recomendamos darte una vuelta por nuestro módulo de **[Fundamentos Cloud](/docs/cloud/)**.
 
 ## Nuestro roadmap
-
 Al momento de la publicación oficial de esta plataforma para toda nuestra comunidad en internet, pueda que no veas la mayoria de estos temas, eso es porque lanzaremos un **EARLY PREVIEW** e iremos actualizando el contenido de manera mensual, **el desarrollo del contenido sera paulatino pero constante,** estimamos que al cabo de un año, podamos concluir una v1.0 y en adelante procuraremos mantener el contenido actualizado y **agregar contenido potencialmente nuevo.**
 
 **Q4 del 2023 - Q1 del 2024**
