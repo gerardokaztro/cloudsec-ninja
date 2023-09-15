@@ -5,7 +5,7 @@ import ReactPlayer from 'react-player'
 
 # 🏁 Cómo iniciar este lindo viaje
 
-## Instrucciones para end-user
+## Instrucciones para usuarios
 
 Lo primero, es hacer un `git clone` a este [repositorio](https://github.com/gerardokaztro/cloudsec-ninja) en una carpeta de tu local. Esto es para que puedas tener todo el código de los ejercicios que se realizarán en cada tema.
 
@@ -13,11 +13,27 @@ Lo primero, es hacer un `git clone` a este [repositorio](https://github.com/gera
 $ git clone https://github.com/gerardokaztro/cloudsec-ninja.git
 ```
 
-> Si te gusta el contenido que ves aquì, no dudes en regalarle una 🌟 al repo
+> Si te gusta el contenido que ves aquí, no dudes en regalarle una 🌟 al repo
 
-Todo el código de los ejercicios que encuentres en cada tema estará ubicado en la carpeta `code` dentro de la carpeta de cada módulo, por ejemplo: `docs/fundamentos/code` o `docs/cloud/code` luego sigue las instrucciones del laboratorio.
+Todo el contenido de las diferentes secciones de aprendizaje de la plataforma se encuentran dentro de la carpeta `docs`. Algunas secciones tendran código que podras usar para realizar los laboratorios, podrñas encontralo dentro de ruta carpeta `code`. Por ejemplo: `docs/fundamentos/code` o `docs/cloud/code`.
 
-## Instrucciones para contributor
+```
+.docs
+├── cloud
+│   ├── code/
+│   ├── img/
+│   └── .
+├── fundamentos
+│   ├── code/
+│   ├── img/
+│   └── .
+└── gobierno
+    ├── code/
+    ├── img/
+    └── .
+```
+
+## Instrucciones para contribuidores
 
 Esta plataforma esta basada en [Docusaurus](https://docusaurus.io) un generador de sitios estáticos hecho en React, una de las principales bibliotecas de JavaScript, como biblioteca de interfaz de usuario para la creación de páginas.
 
@@ -49,34 +65,16 @@ $ npm start
   <img src={require('@site/docs/bienvenida/img/preview_localhost.png').default}/>
 </browser>
 
-- Envia tus cambios a la rama `development` del repositorio
+- Cambia a la carpeta `docs`
+```bash
+$ cd docs/
+```
+- Ubica la sección donde quieras agregar tus cambios y envíalos a la rama `development` del repositorio
 ```bash
 $ git push origin development
 ```
 
-Finalmente, crea un **Pull Request** a `main`
+Finalmente, crea un **[Pull Request](https://github.com/gerardokaztro/cloudsec-ninja/compare/main...development)** a `main`.
+Esto será revisado por los *code owners* y presta atención por si dejan algún comentario que debas revisar antes de aprobar tu cambio.
 
-#### Bonus
-
-En algunos casos, tendras referencias de cómo debes tener el código
-```js title="docusaurus.config.js"
-module.exports = {
-  themeConfig: {
-    navbar: {
-      items: [
-        // highlight-start
-        {
-          type: 'docsVersionDropdown',
-        },
-        // highlight-end
-      ],
-    },
-  },
-};
-```
-
-Algunos de los temas de esta plataforma, tendran secciones explicadas en formato de vídeo.
-
-<ReactPlayer controls url='https://www.youtube.com/watch?v=B2FNRK3gZWE' /> <br/>
-
-Si tienes dudas sobre alguno de los ejercicios, o alguna duda sobre cualquier de los temas explicados, recuerda que tenemos una comunidad en [Discord](/docs/bienvenida/comunidad.md), donde podrás dejar todas tus dudas y ayudar a responder las consultas de los demás.
+> 💡 Si tienes dudas sobre alguno de los ejercicios, o alguna duda sobre cualquier de los temas explicados, recuerda que tenemos una comunidad en [Discord](/docs/bienvenida/comunidad.md), donde podrás dejar todas tus dudas y ayudar a responder las consultas de los demás.

@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-    Visita la <b><a href="https://acloudsecurity.ninja/docs">📚 Documentación</a></b> para inciar tu carrera como Cloud Security Engineer.
+    Visita la <b><a href="https://acloudsecurity.ninja/docs/index">📚 Documentación</a></b> para inciar tu carrera como Cloud Security Engineer.
 </p>
 
 [![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCmWuXyjXOJOpikS4MHmJAcQ?style=social)](https://youtube.com/channel/UCmWuXyjXOJOpikS4MHmJAcQ?sub_confirmation=1)
@@ -26,18 +26,34 @@
   Cómo iniciar este lindo viaje 🚀
 </h2>
 
-### 👨‍💻 Sigue estas instrucciones si eres end-user
+### 👨‍💻 Sigue estas instrucciones si eres usuario
 Lo primero, es hacer un `git clone` a este [repositorio](https://github.com/gerardokaztro/cloudsec-ninja) en una carpeta de tu local. Esto es para que puedas tener todo el código de los ejercicios que se realizarán en cada tema.
 
 ```bash
-git clone https://github.com/gerardokaztro/cloudsec-ninja.git
+$ git clone https://github.com/gerardokaztro/cloudsec-ninja.git
 ```
 
-> Si te gusta el contenido que ves aquì, no dudes en regalarle una 🌟 al repo
+> Si te gusta el contenido que ves aquí, no dudes en regalarle una 🌟 al repo
 
-Todo el código de los ejercicios que encuentres en cada tema estará ubicado en la carpeta `code` dentro de la carpeta de cada módulo, por ejemplo: `docs/aws/code` o `docs/iam/code` luego sigue las instrucciones del laboratorio.
+Todo el contenido de las diferentes secciones de aprendizaje de la plataforma se encuentran dentro de la carpeta `docs`. Algunas secciones tendran código que podras usar para realizar los laboratorios, podrñas encontralo dentro de ruta carpeta `code`. Por ejemplo: `docs/fundamentos/code` o `docs/cloud/code`.
 
-### 👷‍♀️ Sigue estas instrucciones si eres contributor
+```
+.docs
+├── cloud
+│   ├── code/
+│   ├── img/
+│   └── .
+├── fundamentos
+│   ├── code/
+│   ├── img/
+│   └── .
+└── gobierno
+    ├── code/
+    ├── img/
+    └── .
+```
+
+### 👷‍♀️ Sigue estas instrucciones si eres contribuidor
 Esta plataforma esta basada en [Docusaurus](https://docusaurus.io) un generador de sitios estáticos hecho en React, una de las principales bibliotecas de JavaScript, como biblioteca de interfaz de usuario para la creación de páginas.
 
 Y se ha utilizado [Vercel](https://vercel.com/) como hosting debido a su capacidad de desplegar, gestionar y escalar aplicaciones y sitios web. Además que Vercel proporciona una amplia gama de funciones, como despliegues automatizados, entre otras funciones interesantes.
@@ -65,12 +81,17 @@ npm start
 
 > Esto permite obtener una previsualización de tus cambios en tu `localhost`
 
-- Envia tus cambios a la rama `development` del repositorio
+- Cambia a la carpeta `docs`
+```bash
+$ cd docs/
+```
+- Ubica la sección donde quieras agregar tus cambios y envíalos a la rama `development` del repositorio
 ```bash
 $ git push origin development
 ```
 
-Finalmente, crea un **Pull Request** a `main`
+Finalmente, crea un **[Pull Request](https://github.com/gerardokaztro/cloudsec-ninja/compare/main...development)** a `main`.
+Esto será revisado por los *code owners* y presta atención por si dejan algún comentario que debas revisar antes de aprobar tu cambio. 
 
 ##### 📝 Añade tu contenido
 Dirígete hacia la carpeta [`docs/`](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs) y crea un archivo markdown dentro de la sub-carpeta del tema en el que quieras contribuir. Por ejemplo si quieres añadir tema sobre *Detección de amenazas* es importante que tu archivo se encuentre dentro de `docs/deteccion/`.
@@ -81,9 +102,8 @@ Un artículo está compuesto de dos secciones, metadatos y contenido, separadas 
 
 | Clave   | Descripción                                  |
 |---------|----------------------------------------------|
-| slug   | define la parte final de la URL que identifica una página dentro de un sitio web |
-| sidebar_position    | Orden del artículo dentro del sidebar de la página |
 | sidebar_label: | Nombre del artículo de como se vera reflejado en la página |
+| tags: | Array que contiene las etiquetas para clasificar el contenido|
 
 > Intenta que el slug y sidebar_label tengan un nombre cortito. Luego en el contenido de la página puedes usar un H1 con un title mas largo.
 

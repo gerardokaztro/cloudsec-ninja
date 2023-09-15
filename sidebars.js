@@ -21,9 +21,9 @@ const sidebars = {
       link: {
         slug: '/',
         type: 'generated-index',
-        title: 'Bienvenidos a Cloud Security Ninja',
+        title: 'Bienvenidos a ☁️🔐🥷',
         description:
-          "Aprende como llegar a ser Cloud Security Engineer desde cero.",
+          "Échale un vistazo a esta sección, encontrarás una guía útil para saber como empezar de forma fácil y rápida.",
       },
       items: [
         'bienvenida/index',
@@ -42,9 +42,9 @@ const sidebars = {
       link: {
         slug: '/fundamentos',
         type: 'generated-index',
-        title: 'Módulo de fundamentos de tecnologías',
+        title: 'Fundamentos de tecnologías',
         description:
-          "Aprende como llegar a ser Cloud Security Engineer desde cero.",
+          "Échale un vistazo a este módulo si crees no tener las bases necesarias en el mundo techie.",
       },
       items: [
         'fundamentos/redes',
@@ -57,16 +57,12 @@ const sidebars = {
     {
       type: 'category',
       label: '☁️ Fundamentos Cloud',
-      customProps: {
-        badges: ['new', 'green'],
-        featured: true,
-      },
       link: {
         slug: '/cloud',
         type: 'generated-index',
-        title: 'Módulo de fundamentos de Cloud Computing',
+        title: 'Fundamentos de computación en la nube',
         description:
-          "Aprende como llegar a ser Cloud Security Engineer desde cero.",
+          "Échale un vistazo a este módulo si crees no tener las bases sobre computación en la nube.",
       },
       items: [
         'cloud/aws',
@@ -79,9 +75,9 @@ const sidebars = {
       link: {
         slug: '/gobierno',
         type: 'generated-index',
-        title: 'Módulo de Gobierno de seguridad',
+        title: 'Gestión y Gobierno de la Seguridad',
         description:
-          "Aprende como llegar a ser Cloud Security Engineer desde cero.",
+          "Lorem.",
       },
       items: [
         'gobierno/organizations',

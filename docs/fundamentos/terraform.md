@@ -370,3 +370,21 @@ variable "filename" {
 ```
 
 ## Constrains
+
+#### Bonus
+En algunos casos, tendras referencias de cómo debes tener el código
+```js title="docusaurus.config.js"
+module.exports = {
+  themeConfig: {
+    navbar: {
+      items: [
+        // highlight-start
+        {
+          type: 'docsVersionDropdown',
+        },
+        // highlight-end
+      ],
+    },
+  },
+};
+```
