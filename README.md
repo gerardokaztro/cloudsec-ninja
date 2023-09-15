@@ -83,7 +83,7 @@ npm start
     <img alt="preview" src="docs/bienvenida/img/preview_localhost.png" />
 </p>
 
-- Cambia a la carpeta `docs` y [agrega tus cambios](#-como-añadir-mi-contenido)
+- Cambia a la carpeta `docs` y [añade tu contenido](#como-añadir-mi-contenido)
 ```bash
 cd docs/
 ```
@@ -108,6 +108,7 @@ Un artículo está compuesto de dos secciones, metadatos y contenido, separadas 
 
 Aquí tienes un ejemplo de la [estructura de un artículo](https://raw.githubusercontent.com/gerardokaztro/cloudsec-ninja/main/docs/fundamentos/redes.md), úsala como referencia.
 
+- Envía tus cambios al repositorio
 ```bash
 git push origin development
 ```
