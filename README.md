@@ -87,6 +87,13 @@ npm start
 ```bash
 cd docs/
 ```
+- Envía tus cambios al repositorio
+```bash
+git push origin development
+```
+
+Finalmente, crea un **[Pull Request](https://github.com/gerardokaztro/cloudsec-ninja/compare/main...development)** a `main`.
+Esto será revisado por los *code owners* y presta atención por si dejan algún comentario que debas revisar y responder, para que decidan aprobar tu cambio. 
 
 ##### Cómo añadir mi contenido
 - Ubica la sección/página donde quieras agregar tus cambios y envíalos a la rama `development` del repositorio
@@ -106,15 +113,7 @@ Un artículo está compuesto de dos secciones, metadatos y contenido, separadas 
 | tags: | Array que contiene las etiquetas para clasificar el contenido|
 
 
-Aquí tienes un ejemplo de la [estructura de un artículo](https://raw.githubusercontent.com/gerardokaztro/cloudsec-ninja/main/docs/fundamentos/redes.md), úsala como referencia.
-
-- Envía tus cambios al repositorio
-```bash
-git push origin development
-```
-
-Finalmente, crea un **[Pull Request](https://github.com/gerardokaztro/cloudsec-ninja/compare/main...development)** a `main`.
-Esto será revisado por los *code owners* y presta atención por si dejan algún comentario que debas revisar antes de aprobar tu cambio. 
+💡 Usa este artículo como referencia, contiene la [estructura de un artículo](https://raw.githubusercontent.com/gerardokaztro/cloudsec-ninja/main/docs/fundamentos/redes.md) que debes seguir al momento de escribir tu contenido.
 
 <h2 align="center">
   Descargo de responsabilidad 🚨
