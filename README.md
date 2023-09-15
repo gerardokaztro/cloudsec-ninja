@@ -30,12 +30,12 @@
 Lo primero, es hacer un `git clone` a este [repositorio](https://github.com/gerardokaztro/cloudsec-ninja) en una carpeta de tu local. Esto es para que puedas tener todo el código de los ejercicios que se realizarán en cada tema.
 
 ```bash
-$ git clone https://github.com/gerardokaztro/cloudsec-ninja.git
+git clone https://github.com/gerardokaztro/cloudsec-ninja.git
 ```
 
 > Si te gusta el contenido que ves aquí, no dudes en regalarle una 🌟 al repo
 
-Todo el contenido de las diferentes secciones de aprendizaje de la plataforma se encuentran dentro de la carpeta `docs`. Algunas secciones tendran código que podras usar para realizar los laboratorios, podrñas encontralo dentro de ruta carpeta `code`. Por ejemplo: `docs/fundamentos/code` o `docs/cloud/code`.
+Todo el contenido de las diferentes secciones de aprendizaje de la plataforma se encuentran dentro de la carpeta `docs`. Algunas secciones tendran código que podras usar para realizar los laboratorios, podrás encontralo dentro de la carpeta `code`. Por ejemplo: `docs/fundamentos/code` o `docs/cloud/code`.
 
 ```
 .docs
@@ -78,9 +78,10 @@ git checkout -b development
 ```bash
 npm start
 ```
-
 > Esto permite obtener una previsualización de tus cambios en tu `localhost`
-
+<p align="center">
+    <img alt="preview" src="docs/bienvenida/img/preview_localhost.png" />
+</p>
 - Cambia a la carpeta `docs`
 ```bash
 cd docs/
