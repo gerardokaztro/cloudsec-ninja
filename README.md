@@ -83,11 +83,11 @@ npm start
 
 - Cambia a la carpeta `docs`
 ```bash
-$ cd docs/
+cd docs/
 ```
 - Ubica la sección donde quieras agregar tus cambios y envíalos a la rama `development` del repositorio
 ```bash
-$ git push origin development
+git push origin development
 ```
 
 Finalmente, crea un **[Pull Request](https://github.com/gerardokaztro/cloudsec-ninja/compare/main...development)** a `main`.
