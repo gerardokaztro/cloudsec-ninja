@@ -82,10 +82,13 @@ npm start
 <p align="center">
     <img alt="preview" src="docs/bienvenida/img/preview_localhost.png" />
 </p>
-- Cambia a la carpeta `docs`
+
+- Cambia a la carpeta `docs` y [agrega tus cambios](#-como-añadir-mi-contenido)
 ```bash
 cd docs/
 ```
+
+##### Cómo añadir mi contenido
 - Ubica la sección/página donde quieras agregar tus cambios y envíalos a la rama `development` del repositorio
   - ⚠️ Tu contenido debe estar alineado a la lista de temas que se muestran en [roadmap](https://acloudsecurity.ninja/docs/bienvenida/roadmap). Sin embargo, si quieres proponer un nuevo tema asegúrate de contactar con el autor para que pueda revisar tu nueva propuesta.
   - Dentro de la carpeta [`docs/`](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs) se encuentran las sub-carpetas que representan cada una de las secciones o dominios del roadmap antes mencionado.
@@ -108,7 +111,6 @@ Aquí tienes un ejemplo de la [estructura de un artículo](https://raw.githubuse
 ```bash
 git push origin development
 ```
-y [agrega tus cambios](#-añade-tu-contenido)
 
 Finalmente, crea un **[Pull Request](https://github.com/gerardokaztro/cloudsec-ninja/compare/main...development)** a `main`.
 Esto será revisado por los *code owners* y presta atención por si dejan algún comentario que debas revisar antes de aprobar tu cambio. 
