@@ -70,7 +70,7 @@ Con esto, la fase `build` se encuentra automatizada al momento de merguear los c
 ```bash
 git clone https://github.com/gerardokaztro/cloudsec-ninja.git
 ```
-- Crear rama `developement` en tu local y [agrega tus cambios](#-añade-tu-contenido)
+- Crear rama `developement` en tu local
 ```bash
 git checkout -b development
 ```
@@ -85,18 +85,14 @@ npm start
 ```bash
 cd docs/
 ```
-- Ubica la sección donde quieras agregar tus cambios y envíalos a la rama `development` del repositorio
-```bash
-git push origin development
-```
-
-Finalmente, crea un **[Pull Request](https://github.com/gerardokaztro/cloudsec-ninja/compare/main...development)** a `main`.
-Esto será revisado por los *code owners* y presta atención por si dejan algún comentario que debas revisar antes de aprobar tu cambio. 
-
-##### 📝 Añade tu contenido
-Dirígete hacia la carpeta [`docs/`](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs) y crea un archivo markdown dentro de la sub-carpeta del tema en el que quieras contribuir. Por ejemplo si quieres añadir tema sobre *Detección de amenazas* es importante que tu archivo se encuentre dentro de `docs/deteccion/`.
-
-Luego, introduce un nombre para el nuevo archivo con el formato `titulo-del-post.md`. No incluyas ni tildes, ni espacios, ni mayúsculas. Un ejemplo de título válido es `oauth-vs-saml2.md`.
+- Ubica la sección/página donde quieras agregar tus cambios y envíalos a la rama `development` del repositorio
+  - ⚠️ Tu contenido debe estar alineado a la lista de temas que se muestran en [roadmap](https://acloudsecurity.ninja/docs/bienvenida/roadmap). Sin embargo, si quieres proponer un nuevo tema asegúrate de contactar con el autor para que pueda revisar tu nueva propuesta.
+  - Dentro de la carpeta [`docs/`](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs) se encuentran las sub-carpetas que representan cada una de las secciones o dominios del roadmap antes mencionado.
+    - Si vas añadir contenido dentro de un archivo existente, entonces ubica el archivo y empeza a escribir.
+      - Por ejemplo, quieres añadir un video sobre AWS Control Tower, o quizas hacer una correción sobre una característica mal explicada, entonces la ruta seria `./docs/gobierno/controltower.md`
+    - Si vas a añadir contenido sobre una página aun no creada y ya validaste que forma parte del roadmap, entonces puedes crearla tu mismo, asi:
+      - Por ejemplo si quieres escribir sobre AWS Organization, la ruta seria `./docs/gobierno/`
+      - 🚨 Luego, introduce un nombre para el nuevo archivo con el formato `titulo-del-post.md` o `titulo-del-post.md`. No incluyas ni tildes, ni espacios, ni mayúsculas, ni underscope (_). Un ejemplo de título válido es `aws-organizations.md` o `awsorganizations.md` o `organizations.md`.
 
 Un artículo está compuesto de dos secciones, metadatos y contenido, separadas por dos líneas vacías. Los metadatos **son obligatorios** y sirven para clasificar el artículo y son los siguientes:
 
@@ -105,9 +101,16 @@ Un artículo está compuesto de dos secciones, metadatos y contenido, separadas 
 | sidebar_label: | Nombre del artículo de como se vera reflejado en la página |
 | tags: | Array que contiene las etiquetas para clasificar el contenido|
 
-> Intenta que el slug y sidebar_label tengan un nombre cortito. Luego en el contenido de la página puedes usar un H1 con un title mas largo.
 
-Aquí tienes un ejemplo de la [estructura de un artículo](https://raw.githubusercontent.com/gerardokaztro/cloudsec-ninja/main/docs/Bienvenida/empezando.md).
+Aquí tienes un ejemplo de la [estructura de un artículo](https://raw.githubusercontent.com/gerardokaztro/cloudsec-ninja/main/docs/fundamentos/redes.md), úsala como referencia.
+
+```bash
+git push origin development
+```
+y [agrega tus cambios](#-añade-tu-contenido)
+
+Finalmente, crea un **[Pull Request](https://github.com/gerardokaztro/cloudsec-ninja/compare/main...development)** a `main`.
+Esto será revisado por los *code owners* y presta atención por si dejan algún comentario que debas revisar antes de aprobar tu cambio. 
 
 <h2 align="center">
   Descargo de responsabilidad 🚨
