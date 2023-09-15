@@ -83,7 +83,7 @@ npm start
     <img alt="preview" src="docs/bienvenida/img/preview_localhost.png" />
 </p>
 
-- Cambia a la carpeta `docs` y [añade tu contenido](#como-añadir-mi-contenido)
+- Cambia a la carpeta `docs` y [añade tu contenido](#cómo-añadir-mi-contenido)
 ```bash
 cd docs/
 ```
@@ -103,16 +103,21 @@ Todo contenido que deseen añadir como contribuidores, debe estar alineado a cua
 Sin embargo, si quieres proponer un nuevo tema asegúrate de contactar con el autor para que pueda revisar tu nueva propuesta y realice una actualización en el roadmap.
 
 1. Si vas añadir contenido dentro de un archivo existente, entonces ubica el archivo y empeza a escribir.
-  1.1 Por ejemplo, quieres añadir un video sobre AWS Control Tower, o quizas hacer una correción sobre una característica mal explicada, entonces la ruta seria `./docs/gobierno/controltower.md`
+
+  1.1 Por ejemplo, quieres añadir un video sobre AWS Control Tower, o quizas hacer una correción sobre una característica mal explicada, entonces la ruta seria [`docs/gobierno/controltower.md`](https://github.com/gerardokaztro/cloudsec-ninja/blob/development/docs/gobierno/controltower.md)
+
 2. Si vas a añadir contenido sobre una página aun no creada y ya validaste que forma parte del roadmap, entonces puedes crearla tu mismo, asi:
-  2.1 Por ejemplo si quieres escribir sobre AWS Organization, la ruta seria `./docs/gobierno/`
+
+  2.1 Por ejemplo si quieres escribir sobre AWS Organization, la ruta seria [`docs/gobierno/`](https://github.com/gerardokaztro/cloudsec-ninja/blob/development/docs/gobierno/)
+
   2.2 Luego, crear el nuevo fichero, y colocar un nombre con el formato `titulo-del-post.md` o `titulo-del-post.md`. No incluyas ni tildes, ni espacios, ni mayúsculas, ni underscope (_). Un ejemplo de título válido es `aws-organizations.md` o `awsorganizations.md` o `organizations.md`.
+
 3. Un artículo está compuesto de dos secciones, metadatos y contenido, separadas por dos líneas vacías. Los metadatos **son obligatorios** y sirven para clasificar el artículo y son los siguientes:
 
-| Clave   | Descripción                                  |
-|---------|----------------------------------------------|
-| sidebar_label: | Nombre del artículo de como se verá reflejado en el sidebar de la página |
-| tags: | Array que contiene las etiquetas para clasificar el contenido |
+  | Clave   | Descripción                                  |
+  |---------|----------------------------------------------|
+  | sidebar_label: | Nombre del artículo de como se verá reflejado en el sidebar de la página |
+  | tags: | Array que contiene las etiquetas para clasificar el contenido |
 
 > 💡 Usa este artículo como referencia, contiene la [estructura de un artículo](https://raw.githubusercontent.com/gerardokaztro/cloudsec-ninja/main/docs/fundamentos/redes.md) que debes seguir al momento de escribir tu contenido.
 
