@@ -104,7 +104,7 @@ Sin embargo, si quieres proponer un nuevo tema asegúrate de contactar con el au
 
 1. Si vas añadir contenido dentro de un archivo existente, entonces ubica el archivo y empeza a escribir.
 
-  1.1 Por ejemplo, quieres añadir un video sobre AWS Control Tower, o quizas hacer una correción sobre una característica mal explicada, entonces la ruta seria [`docs/gobierno/controltower.md`](https://github.com/gerardokaztro/cloudsec-ninja/blob/development/docs/gobierno/controltower.md)
+    1.1 Por ejemplo, quieres añadir un video sobre AWS Control Tower, o quizas hacer una correción sobre una característica mal explicada, entonces la ruta seria [`docs/gobierno/controltower.md`](https://github.com/gerardokaztro/cloudsec-ninja/blob/development/docs/gobierno/controltower.md)
 
 2. Si vas a añadir contenido sobre una página aun no creada y ya validaste que forma parte del roadmap, entonces puedes crearla tu mismo, asi:
 
