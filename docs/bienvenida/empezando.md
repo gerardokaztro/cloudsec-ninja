@@ -103,5 +103,3 @@ Sin embargo, si quieres proponer un nuevo tema asegúrate de contactar con el au
   | tags: | Array que contiene las etiquetas para clasificar el contenido |
 
 > 💡 Usa este artículo como referencia, contiene la [estructura de un artículo](https://raw.githubusercontent.com/gerardokaztro/cloudsec-ninja/development/docs/fundamentos/redes.md) que debes seguir al momento de escribir tu contenido.
-
-> 💡 Si tienes dudas sobre alguno de los ejercicios, o alguna duda sobre cualquier de los temas explicados, recuerda que tenemos una comunidad en [Discord](/docs/bienvenida/comunidad.md), donde podrás dejar todas tus dudas y ayudar a responder las consultas de los demás.
