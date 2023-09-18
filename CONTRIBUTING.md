@@ -7,17 +7,35 @@ Recuerda que, tanto contribuir a este repositorio como administrarlo, supone la 
 ## Informando un problema
 La forma más sencilla de contribuir con la página web es informar de un error detectado. Introduce un título corto y, en el espacio para comentarios, indica la dirección web donde detectaste el problema, y añade una pequeña descripción del mismo. Recuerda que puedes **añadir imágenes**, como capturas de pantalla, arrastrando la imagen sobre el editor.
 
-## Editando contenido
-Todo el contenido de Cloud Security Ninja se encuentra en el directorio [`docs`](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs) y está escrito en **[Markdown](https://www.markdownguide.org/)** pero también podrás hacer uso de **[MDX](https://mdxjs.com/).** 
+## Estrategias efectivas para la redacción de artículos técnicos
+Esta guía para contribuidores tiene por objetivo que todos quienes redactemos contenido para esta plataforma, sigamos una semámtica clara y ordenada.
 
-Es importante saber que cualquier cambio que se realize sobre algún otro fichero fuera de la carpeta `docs` **no** será aprobado, ya que puede producir algun error sobre la compilación de la plataforma y son ficheros que únicamente administra el autor de este proyecto.
+### Cantidad de palabras
+- Artículos de introducción o generales: 800-1200 palabras.
+- Artículos detallados y técnicos: 1500-2500 palabras.
+> Esto depende del alcance y la complejidad del tema. Sin embargo, el objetivo debe ser siempre proporcionar un valor sustancial al lector.
 
-## Editando contenido ya existente
-Es probable que el contenido de esta plataforma no sea perfecto y que muy seguramente existan mejores formas de explicar algunos de los temas. Siéntete libre de proponer una mejor forma de explicar cualquiera de nuestros temas. Puedes incluir diagramas, imágenes, vídeos, código, entre otras.
+### Punto de vista
+- Primera persona ("Yo"): Esto puede hacer que el artículo sea más personal y relatable. Es especialmente útil si estás compartiendo experiencias personales u opiniones.
+- Tercera persona ("Se debe hacer", "los usuarios pueden"): Esto da un tono más formal y puede ser más apropiado para artículos puramente técnicos o instructivos.
 
-Explora esta [ruta](https://github.com/gerardokaztro/cloudsec-ninja/tree/main/docs) y localiza la página donde se encuentre el error o el contenido que quieras mejorar.
+### Uso de Referencias
+- Citar estudios, estadísticas, y referencias técnicas para validar tus puntos.
+- Cuando hagas afirmaciones técnicas, es útil apuntar a la documentación oficial o papers relevantes.
+- Asegúrate de dar crédito a las fuentes y, si es posible, incluir enlaces a la información original.
 
-Una vez hayas encontrado el fichero, edita el contenido desde tu local o Github, corrige el error pertinente y envía el **Pull Request.**
+### Estructura Sugerida
+- Introducción: Presenta el problema o el tema central.
+- Contexto o Fundamento: Proporciona información de fondo necesaria.
+- Cuerpo Principal: Desglosa la solución o el tema en subsecciones.
+- Ejemplos prácticos: Específicamente en AWS, mostrar ejemplos de código o configuraciones puede ser muy valioso.
+- Conclusión: Resumen y próximos pasos.
+- Referencias: Lista de todas las fuentes citadas.
+
+### Estilo y tono
+- Utiliza un lenguaje claro y conciso.
+- Evita el uso excesivo de jerga técnica a menos que sea absolutamente necesario.
+- Puedes utilizar imágenes, gráficos o tablas para ilustrar puntos complejos.
 
 ## Manteniendo el sitio web
 Otra forma de contribuir con este proyecto es echando un [vistazo a las _issues_ abiertas](https://github.com/gerardokaztro/cloudsec-ninja/issues), escoger una y solucionarla.
