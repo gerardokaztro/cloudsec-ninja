@@ -4,9 +4,24 @@ tags: [nivel 100, ciberseguridad]
 ---
 
 # 🔐 Introducción a la Ciberseguridad
+Hoy en día uno de los activos más importantes que tienen las organizaciones son sus datos; estos son clave para el crecimiento de los negocios, adquirirlos y mantenerlos implica gran inversión de dinero y tiempo por lo que la ciberseguridad y la protección de dichos datos e infraestructura empresarial es un factor clave. 
+
+Definimos ciberseguridad como “Un conjunto de medidas de protección de la información, a través del tratamiento de las amenazas que ponen en riesgo la información que es tratada por los sistemas de información que se encuentran interconectados”, según ISACA (Information Systems Audit and Control Association – Asociación de Auditoría y Control sobre los Sistemas de Información).
+
+# Pilares de la seguridad 
+
+Conocido como el triángulo CIA por sus siglas en inglés, son la Confidencialidad, Integridad, y Disponibilidad. 
+
+- Confidencialidad: Por confidencialidad entendemos a la cualidad de la información para no ser divulgada a personas o sistemas no autorizados.  Se trata básicamente de la propiedad por la que esa información sólo resultará accesible con la debida y comprobada autorización de los dueños de esa información.
+¿Cómo se pierde la confidencialidad? Generalmente, haciendo caso omiso a las recomendaciones de seguridad o no implantando un sistema adecuado; como por ejemplo cuando se comparten contraseñas entre usuarios, se decomisionan equipos sin eliminar los datos, se dejan sesiones abiertas, se transmite información mediante protocolos inseguros,  no ciframos los datos de manera adecuada, la información deja de ser confidencial (o está en alto riesgo).
+- Integridad: El diccionario define el término como “estado de lo que está completo o tiene todas sus partes”. La integridad hace referencia a la cualidad de la información para ser correcta y no haber sido modificada, manteniendo sus datos exactamente tal cual fueron generados, sin manipulaciones ni alteraciones por parte de terceros. Esta integridad se pierde cuando la información se modifica,  cuando parte de ella se elimina, o se crean datos espurios.
+- Disponibilidad: Por disponible entendemos aquella información a la que puedan acceder las personas autorizadas, cuando la requieran, a través de los canales adecuados y siguiendo los procesos correctos.
+A esta tríada se agregan dos pilares adicionales que son Autenticidad y No repudio.
+- Autenticidad: Establece la validez de una transmisión, mensaje u originador, o un medio para verificar la autorización de un individuo para recibir información específica. La autenticación evita la suplantación de identidad y requiere que los usuarios confirmen sus identidades antes de que se les permita el acceso a los sistemas y recursos. Esto incluye nombres de usuario, contraseñas, correos electrónicos, datos biométricos y otros.
+- No repudio: Este atributo garantiza que el remitente de los datos reciba una prueba de entrega y que el destinatario reciba una prueba de la identidad del remitente, por lo que ninguna de las partes puede negar el envío, la recepción o el acceso a los datos. Deben utilizarse principios de seguridad para probar identidades y validar el proceso de comunicación.
 
 ## Vulnerabilidades y Amenazas
-En el campo de la ciberseguridad, es de suma importancia adentrarse en la comprensión de dos conceptos fundamentales: vulnerabilidad y amenaza.
+Por lo mencionado, es fundamental adentrarse en la comprensión de dos conceptos fundamentales: vulnerabilidad y amenaza.
 
 ### Vulnerabilidad
 Una vulnerabilidad puede considerarse como el eslabón más débil de un sistema, una debilidad o un fallo que expone al sistema a riesgos potenciales. Estas debilidades pueden surgir por diversas razones, ya sea debido a librerías de terceros utilizadas en el código, deficiencias en la lógica interna del sistema, fallos en el diseño de la arquitectura e incluso problemas en el hardware subyacente del sistema.
@@ -62,7 +77,6 @@ La combinación de estos distintos modos de autenticación es denominada MFA: mu
 La ventaja de implementar MFA al momento de autenticación es que en caso de comprometerse uno de los factores de autenticación, al carecer del segundo factor el atacante no podrá ingresar al sistema. Asimismo, es útil para prevenir ataques realizados mediante scripts que prueban de diferentes combinaciones de usuarios/contraseñas. Si bien hay quienes afirman que activar MFA puede prevenir hasta un 99.9% ([ver el siguiente link](https://www.microsoft.com/en-us/security/blog/2019/08/20/one-simple-action-you-can-take-to-prevent-99-9-percent-of-account-attacks/)), es conveniente destacar que no es invulnerable y que existen ataques orientados a romper esta barrera como lo son la interceptación de códigos MFA o los ataques de fatiga de MFA.
 
 Las credenciales proporcionadas por el usuario se verifican a través de un Gestor de Identidad (IAM, _Identity Access Manager_), que es una parte esencial de cualquier sistema de autenticación. El IAM valida las credenciales ingresadas por el usuario y, si son legítimas, otorga acceso al sistema. Sin embargo, es crucial comprender que la autenticación es solo el primer paso en el proceso de seguridad. Las acciones que un usuario puede realizar dentro del sistema dependen en gran medida del proceso de autorización.
-
 
 ### Autorización
 La autorización es el segundo componente de la Triple A. En el proceso de autorización se definen las acciones que podrá realizar el usuario o la aplicación dentro de nuestro sistema. Este proceso es recomendable que esté separado del proceso de autorización para prevenir que un atacante pueda modificar los permisos mediante el robo de credenciales de un usuario en cuestión. Los principales modelos para estructurar permisos son el control de acceso en base a roles (RBAC, _Role Based Access Control_) y el control de acceso en base a atributos (ABAC, _Attribute Based Access Control_). 
