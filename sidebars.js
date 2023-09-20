@@ -29,6 +29,7 @@ const sidebars = {
         'bienvenida/index',
         'bienvenida/valores-y-objetivos',
         'bienvenida/autor',
+        'bienvenida/coautores',
         'bienvenida/ruta-de-aprendizaje',
         'bienvenida/empezando',
         'bienvenida/comunidad'
@@ -64,37 +65,19 @@ const sidebars = {
       type: 'doc',
       id: 'seguridad-de-la-nube',
     },
-    // {
-    //   type: 'category',
-    //   label: '☁️ Fundamentos en Nube',
-    //   link: {
-    //     slug: '/cloud',
-    //     type: 'generated-index',
-    //     title: 'Fundamentos de computación en la nube',
-    //     description:
-    //       "Échale un vistazo a este módulo si crees no tener las bases sobre computación en la nube.",
-    //   },
-    //   items: [
-    //     'cloud/cloud-computing',
-    //     'cloud/aws',
-    //   ],
-    // },
     {
       type: 'category',
-      label: '👩‍⚖️ Gobierno de Seguridad',
+      label: '👩‍⚖️ Estructuras Multi-Cuenta',
       link: {
-        slug: '/gobierno',
+        slug: '/estructuras-multi-cuentas',
         type: 'generated-index',
-        title: 'Gestión y Gobierno de la Seguridad',
+        title: 'Estructura de múltiples cuentas en AWS',
         description:
           "Lorem.",
       },
       items: [
         'gobierno/organizations',
         'gobierno/controltower',
-        'gobierno/servicecatalog',
-        'gobierno/awsram',
-        'gobierno/trustedadvisor'
       ],
     },
     {
