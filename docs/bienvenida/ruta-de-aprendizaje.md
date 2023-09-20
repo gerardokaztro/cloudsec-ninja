@@ -13,25 +13,25 @@ Esta ruta de aprendizaje toma como referencia e inspiración algunas publicacion
         <tr>
             <td><font color="#ff9900"><b>Fundamentos de TI</b></font></td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >Redes</a>
+                <a href="/docs/fundamentos/redes" >Redes</a>
                 <br/>
-                <a href="/es/1.-quickwins/choose-regions/" >Serverless</a>
+                <a href="/docs/fundamentos/serverless" >Serverless</a>
                 <br/>
-                <a href="/es/1.-quickwins/choose-regions/" >DevOps</a>
+                <a href="/docs/fundamentos/devops" >DevOps</a>
             </td>
             <td> 
-                <a href="/es/1.-quickwins/choose-regions/" >Contenedores</a>
+                <a href="/docs/fundamentos/contenedores" >Contenedores</a>
                 <br/>
-                <a href="/es/2.-foundational/identify-compliance-requirements/" >Infraestructura como Código</a>
+                <a href="/docs/fundamentos/iac" >Infraestructura como Código</a>
                 <br/>
-                <a href="/es/3.-efficient/threat-modeling/" >Computación en la nube</a>
+                <a href="/docs/computacion-en-la-nube" >Computación en la nube</a>
             </td>
             <td> 
-                <a href="/es/3.-efficient/threat-modeling/" >Ciberseguridad</a>
+                <a href="/docs/ciberseguridad" >Ciberseguridad</a>
                 <br/>
             </td>
             <td> 
-                <a href="/es/4.-optimized/chaos-engineering/" >Seguridad DE la nube de AWS</a>
+                <a href="/docs/seguridad-de-la-nube" >Seguridad DE la nube de AWS</a>
             </td>
         </tr>
     </tbody>
@@ -45,187 +45,187 @@ Les pedimos que tengan mucha empatía, esto es totalmente gratis para todos uste
 <table border="0" width="100%"> 
     <tbody>
         <tr>
-            <td width="120"><a href="" target="_blank" class="highlight">Categoría</a></td>
+            <td width="120"><b>Categoría</b></td>
             <td colspan="7"><font color="#ff9900"><b>Servicio, Estrategia o Solución</b></font></td>
         </tr>
         <tr bgcolor="#BED3E1">
             <td><font color="#ff9900"><b>Cloud Foundations: Estructuras Multi-Cuenta</b></font></td>
             <td colspan="3"> 
-                <a href="/es/1.-quickwins/assign-security-contacts/" >AWS Organizations</a>
+                <a href="/docs/gobierno/organization" >AWS Organizations</a>
             </td>
             <td colspan="4">
-                <a href="/es/1.-quickwins/assign-security-contacts/" >AWS Control Tower</a>
+                <a href="/docs/gobierno/controltower" >AWS Control Tower</a>
             </td>
         </tr>
         <tr bgcolor="#BED3E1">
             <td><font color="#ff9900"><b>Gestión de identidades y accesos</b></font></td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >AWS IAM</a>
+                <a href="" >AWS IAM</a>
             </td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >AWS Identity Center</a>
+                <a href="" >AWS Identity Center</a>
             </td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >IAM Access Analyzer</a>
+                <a href="" >IAM Access Analyzer</a>
             </td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >AWS Secrets Manager</a>
+                <a href="" >AWS Secrets Manager</a>
             </td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >Amazon Cognito</a>
+                <a href="" >Amazon Cognito</a>
             </td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >Amazon Verified Permissions</a>
+                <a href="" >Amazon Verified Permissions</a>
             </td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >EC2 instance Metadata Service</a>
+                <a href="" >EC2 instance Metadata Service</a>
             </td>
         </tr>
         <tr bgcolor="#BED3E1">
             <td><font color="#ff9900"><b>Protección de los datos</b></font></td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >Seguridad y Privacidad de los datos en la nube de AWS</a>
+                <a href="" >Seguridad y Privacidad de los datos en la nube de AWS</a>
             </td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >Cifrado en Reposo</a>
+                <a href="" >Cifrado en Reposo</a>
             </td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >Cifrado en Tránsito</a>
+                <a href="" >Cifrado en Tránsito</a>
             </td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >Seguridad y Privacidad en Amazon S3</a>
+                <a href="" >Seguridad y Privacidad en Amazon S3</a>
             </td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >Gestión de accesos en Amazon S3</a>
+                <a href="" >Gestión de accesos en Amazon S3</a>
             </td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >Descubrimiento y clasificación de datos con Amazon Macie</a>
+                <a href="" >Descubrimiento y clasificación de datos con Amazon Macie</a>
             </td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >AWS Wickr</a>
+                <a href="" >AWS Wickr</a>
             </td>
         </tr>
         <tr bgcolor="#BED3E1">
             <td><font color="#ff9900"><b>Protección de la infraestructura</b></font></td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >NACLs Security Groups</a>
+                <a href="" >NACLs Security Groups</a>
             </td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >AWS WAF</a>
+                <a href="" >AWS WAF</a>
             </td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >AWS Shield</a>
+                <a href="" >AWS Shield</a>
             </td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >AWS Network Firewall</a>
+                <a href="" >AWS Network Firewall</a>
             </td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >Amazon Route 53 Resolver DNS Firewall</a>
+                <a href="" >Amazon Route 53 Resolver DNS Firewall</a>
             </td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >AWS Firewall Manager</a>
+                <a href="" >AWS Firewall Manager</a>
             </td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >AWS Verified Access</a>
+                <a href="" >AWS Verified Access</a>
             </td>
         </tr>
         <tr bgcolor="#BED3E1">
             <td><font color="#ff9900"><b>Gestión de la seguridad</b></font></td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >Amazon Inspector</a>
+                <a href="" >Amazon Inspector</a>
             </td>
             <td colspan="2">
-                <a href="/es/1.-quickwins/assign-security-contacts/" >AWS Systems Manager</a>
+                <a href="" >AWS Systems Manager</a>
             </td>
             <td colspan="2">
-                <a href="/es/1.-quickwins/assign-security-contacts/" >EC2 Instance Connect Endpoint</a>
+                <a href="" >EC2 Instance Connect Endpoint</a>
             </td>
             <td colspan="2">
-                <a href="/es/1.-quickwins/assign-security-contacts/" >AWS Resource Access Manager</a>
+                <a href="" >AWS Resource Access Manager</a>
             </td>
         </tr>
         <tr bgcolor="#BED3E1">
             <td><font color="#ff9900"><b>Seguridad en aplicaciones</b></font></td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >Revisión de seguridad en aplicaciones a escala</a>
+                <a href="" >Revisión de seguridad en aplicaciones a escala</a>
             </td>
             <td colspan="2">
-                <a href="/es/1.-quickwins/assign-security-contacts/" >Application Security Testing en AWS</a>
+                <a href="" >Application Security Testing en AWS</a>
             </td>
             <td colspan="2">
-                <a href="/es/1.-quickwins/assign-security-contacts/" >DevSecOps</a>
+                <a href="" >DevSecOps</a>
             </td>
             <td colspan="2">
-                <a href="/es/1.-quickwins/assign-security-contacts/" >API Security</a>
+                <a href="" >API Security</a>
             </td>
         </tr>
         <tr bgcolor="#BED3E1">
             <td><font color="#ff9900"><b>Compliance Continuo</b></font></td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >AWS CloudTrail</a>
+                <a href="" >AWS CloudTrail</a>
             </td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >AWS CloudWatch Logs</a>
+                <a href="" >AWS CloudWatch Logs</a>
             </td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >AWS Config</a>
+                <a href="" >AWS Config</a>
             </td>
             <td colspan="2">
-                <a href="/es/1.-quickwins/assign-security-contacts/" >AWS Security Hub</a>
+                <a href="" >AWS Security Hub</a>
             </td>
             <td colspan="2">
-                <a href="/es/1.-quickwins/assign-security-contacts/" >AWS Audit Manager</a>
+                <a href="" >AWS Audit Manager</a>
             </td>
         </tr>
         <tr bgcolor="#BED3E1">
             <td><font color="#ff9900"><b>Controles de detección</b></font></td>
             <td colspan="2">
-                <a href="/es/1.-quickwins/assign-security-contacts/" >Amazon GuardDuty</a>
+                <a href="" >Amazon GuardDuty</a>
             </td>
             <td colspan="2">
-                <a href="/es/1.-quickwins/assign-security-contacts/" >AWS Security Lake</a>
+                <a href="" >AWS Security Lake</a>
             </td>
             <td colspan="3">
-                <a href="/es/1.-quickwins/assign-security-contacts/" >Opciones de SIEM en AWS</a>
+                <a href="" >Opciones de SIEM en AWS</a>
             </td>
         </tr>
         <tr bgcolor="#BED3E1">
             <td><font color="#ff9900"><b>Respuesta ante incidentes</b></font></td>
             <td colspan="2">
-                <a href="/es/1.-quickwins/assign-security-contacts/" >AWS Customer Incident Response Team</a>
+                <a href="" >AWS Customer Incident Response Team</a>
             </td>
             <td colspan="2">
-                <a href="/es/1.-quickwins/assign-security-contacts/" >Cómo evitar y responder ante los siguientes tipos de incidentes</a>
+                <a href="" >Cómo evitar y responder ante los siguientes tipos de incidentes</a>
             </td>
             <td colspan="3">
-                <a href="/es/1.-quickwins/assign-security-contacts/" >Cyber Threat Hunting - Amazon Detective</a>
+                <a href="" >Cyber Threat Hunting - Amazon Detective</a>
             </td>
         </tr>
         <tr bgcolor="#BED3E1">
             <td><font color="#ff9900"><b>Seguridad en contenedores</b></font></td>
             <td>
-                <a href="/es/1.-quickwins/assign-security-contacts/" >Problemática de seguridad en contenedores</a>
+                <a href="" >Problemática de seguridad en contenedores</a>
             </td>
             <td colspan="2">
-                <a href="/es/1.-quickwins/assign-security-contacts/" >Modelo de responsabilidad compartida en ECS / EKS</a>
+                <a href="" >Modelo de responsabilidad compartida en ECS / EKS</a>
             </td>
             <td colspan="2">
-                <a href="/es/1.-quickwins/assign-security-contacts/" >Defensa en profundidad en contenedores</a>
+                <a href="" >Defensa en profundidad en contenedores</a>
             </td>
             <td colspan="2">
-                <a href="/es/1.-quickwins/assign-security-contacts/" >Buenas prácticas de seguridad en contenedores</a>
+                <a href="" >Buenas prácticas de seguridad en contenedores</a>
             </td>
         </tr>
         <tr bgcolor="#BED3E1">
             <td><font color="#ff9900"><b>Delegación de permisos</b></font></td>
             <td colspan="2">
-                <a href="/es/1.-quickwins/assign-security-contacts/" >IAM Permission Boundaries</a>
+                <a href="" >IAM Permission Boundaries</a>
             </td>
             <td colspan="2">
-                <a href="/es/1.-quickwins/assign-security-contacts/" >Data Perimeter</a>
+                <a href="" >Data Perimeter</a>
             </td>
             <td colspan="3">
-                <a href="/es/1.-quickwins/assign-security-contacts/" >IAM generation pipeline</a>
+                <a href="" >IAM generation pipeline</a>
             </td>
         </tr>
         <tr bgcolor="#BED3E1">
