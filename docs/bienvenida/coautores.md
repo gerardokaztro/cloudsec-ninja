@@ -15,23 +15,16 @@ Echa un vistazo a los perfiles de cada uno de nuestros co-autores
     <TabItem value="Argentina" label="Argentina 🇦🇷" default>
         <table>
             <tr>
-                <td align="center"><a href="https://github.com/josecastineiras"><img alt="Jose R. Castiñeiras"
-                        src="https://avatars.githubusercontent.com/u/66186218?v=4" width="100" /><br />Jose Castiñeiras</a></td>
-            </tr>
-        </table>
-    </TabItem>
-    <TabItem value="Colombia" label="Colombia 🇨🇴">
-        <table>
-            <tr>
-                
+                <td align="center"><a href="https://www.linkedin.com/in/josercastineiras/"><img alt="Jose R. Castiñeiras"
+                        src="https://media.licdn.com/dms/image/C4E03AQG0C1Jh20GjRQ/profile-displayphoto-shrink_800_800/0/1587999354848?e=1700697600&v=beta&t=xh8Ez3fxNxbVXLdEmvJVJa1EQD481mfASzC1SRj8Xj8" width="100" /><br />Jose Castiñeiras</a></td>
             </tr>
         </table>
     </TabItem>
     <TabItem value="Uruguay 🇺🇾" label="Uruguay 🇺🇾">
         <table>
             <tr>
-                <td align="center"><a href="https://github.com/rgg1993"><img alt="Rosina Garagorry Guerra"
-                        src="https://avatars.githubusercontent.com/u/70332427?v=4" width="100" /><br />Rosina Garagorry</a></td>
+                <td align="center"><a href="https://www.linkedin.com/in/rosina-garagorry-guerra/"><img alt="Rosina Garagorry Guerra"
+                        src="https://media.licdn.com/dms/image/C4D03AQFOl7pNELA9CQ/profile-displayphoto-shrink_800_800/0/1659650282334?e=1700697600&v=beta&t=zr8G3XR5sesd_zVdrYO2psgJnpYmcY29jOnlu5NNTNU" width="100" /><br />Rosina Garagorry</a></td>
             </tr>
         </table>
     </TabItem>
