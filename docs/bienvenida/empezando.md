@@ -15,14 +15,14 @@ $ git clone https://github.com/gerardokaztro/cloudsec-ninja.git
 
 > Si te gusta el contenido que ves aquí, no dudes en regalarle una 🌟 al repo
 
-Todo el contenido de las diferentes secciones de aprendizaje de la plataforma se encuentran dentro de la carpeta `docs`. Algunas secciones tendran código que podras usar para realizar los laboratorios, podrñas encontralo dentro de ruta carpeta `code`. Por ejemplo: `docs/fundamentos/code` o `docs/cloud/code`.
+Todo el contenido de las diferentes secciones de aprendizaje de la plataforma se encuentran dentro de la carpeta `docs`. Algunas secciones tendran código que podras usar para realizar los laboratorios, podrías encontralo dentro de ruta carpeta `code`. Por ejemplo: `docs/fundamentos/code` o `docs/gobierno/code`.
 
 ```
 .docs
-├── cloud
+├── módulo x
 │   ├── code/
 │   ├── img/
-│   └── .
+│   └── .md
 ├── fundamentos
 │   ├── code/
 │   ├── img/

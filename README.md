@@ -98,7 +98,7 @@ Finalmente, crea un **[Pull Request](https://github.com/gerardokaztro/cloudsec-n
 
 ##### Cómo añadir mi contenido
 
-Todo contenido que deseen añadir como contribuidores, debe estar alineado a cualquiera de las secciones o dominios que se presentan en [roadmap](https://acloudsecurity.ninja/docs/bienvenida/roadmap).
+Todo contenido que deseen añadir como contribuidores, debe estar alineado a cualquiera de las secciones o dominios que se presentan en [Ruta de Aprendizaje](https://acloudsecurity.ninja/docs/ruta-de-aprendizaje).
 
 Sin embargo, si quieres proponer un nuevo tema asegúrate de contactar con el autor para que pueda revisar tu nueva propuesta y realice una actualización en el roadmap.
 
