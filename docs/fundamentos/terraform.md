@@ -2,8 +2,22 @@
 sidebar_label: 'Terraform'
 tags: [nivel 100, terraform, iac]
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # 🏗️ Introducción a Terraform
+
+<Tabs>
+  <TabItem value="apple" label="Apple" default>
+    This is an apple 🍎
+  </TabItem>
+  <TabItem value="orange" label="Orange">
+    This is an orange 🍊
+  </TabItem>
+  <TabItem value="banana" label="Banana">
+    This is a banana 🍌
+  </TabItem>
+</Tabs>
 
 ##  Tipos de herramientas de IAC
 - Gestión de la configuración como Ansible y Puppet

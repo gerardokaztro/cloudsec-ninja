@@ -70,9 +70,9 @@ Revise este vídeo donde se explica que son los modelos conceptuales, que es el 
 ## Protocolos Web
 Los protocolos de internet, definen un conjunto de reglas de como dos o mas dispositivos deben comunucarse entre sí, y en cada una de las capas del Modelo OSI o TCP/IP existen una serie o suite de protocolos que pueden usarse.
 
-![protocolos tcp/ip](https://upload.wikimedia.org/wikipedia/commons/7/73/Suite_de_Protocolos_TCPIP.png)
+![protocolos tcp/ip](https://interpolados.files.wordpress.com/2017/03/16.png)
 
-Revisa este [blog](https://openwebinars.net/blog/protocolo-de-red-que-es-tipos-y-caracteristicas/) escrito por **Elena Limones** que explica cuáles son los protocolos mas usados y conocidos en cada una de las capas del modelo OSI
+Revisa este [blog](https://openwebinars.net/blog/protocolo-de-red-que-es-tipos-y-caracteristicas/#:~:text=funciones%2C%20entre%20otros.-,Qu%C3%A9%20es%20un%20protocolo%20de%20red,-Los%20seres%20humanos) escrito por **Elena Limones** que explica cuáles son los protocolos mas usados y conocidos en cada una de las capas del modelo OSI
 
 ## Protocolo SSL/TLS
 ### ¿Qué es SSL?
@@ -89,7 +89,11 @@ Por ejemplo, las paginas web en internet que empiecen con **"HTTPS"** o tengan e
 3. Ofrece **integridad**: firma digitalmente los datos, con lo que puede verificar que estos no hayan sido alterados por un atacante.
 
 ### ¿Porqué es importante usar SSL/TLS?
-Imagina que tienes un sitio web de ventas de artiñiculos donde integraste una pasarela de pagos, para que tus clientes puedan efectuar su compra en línea desde la comodidad de sus hogares. Pero no implementaste SSL/TLS en tu pagina web. Entonces, los datos bancarios (numero de tarjeta, fecha de caducidad, cvv, entre otros) que tu cliente ingrese en la pasarela de pago que desarrollaste, viajaran por internet de manera legíble (texto plano), por lo que si son interceptados por un atacante, este podra leer y hacer uso de esos datos con facilidad.
+Imagina que tienes un sitio web de ventas de artículos que incluye una pasarela de pagos, tus cliente al desear comprar algunos de tus artículos en venta, deberan ingresar su método de pago, que para este ejemplo, será el uso de sus tarjetas débito o crédito. Con esto nos referimos a que deben ingresar, en la pasarela de pagos del sitio web, la informacion de su tarjeta como los 12 dígitos, la fecha de caducidad, el cvv y el nombre del titular de la tarjeta. Al no tener implementado SSL/TLS en tu sitio web, los datos bancarios y el detalle de la compra viajaran por internet de manera legíble (texto plano), por lo que si son interceptados por un atacante, éste podrá leer y hacer uso de esos datos con facilidad.
+
+![datos bancarios expuesto](https://i0.wp.com/unaaldia.hispasec.com/wp-content/uploads/2020/11/Prestige-Software-Leak-image2.png?resize=1024%2C491&ssl=1)
+
+La recomendación es hacer uso de este protocolo para cifrar los datos que viajan a traves del canal de internet.
 
 ## Certificado SSL
 Son los encargados de que los sitios web usen el "https".
