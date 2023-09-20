@@ -18,7 +18,7 @@ const TwitterSvg =
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Cloud Security Ninja',
-  tagline: 'Desde Genin a nivel Hokage',
+  tagline: 'Desde principiante a nivel avanzado',
   favicon: 'img/favicon.ico',
   url: 'https://acloudsecurity.ninja',
   baseUrl: '/',

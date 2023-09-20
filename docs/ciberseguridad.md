@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'Ciberseguridad'
+sidebar_label: '🔐 Ciberseguridad'
 tags: [nivel 100, ciberseguridad]
 ---
 

@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'Roadmap'
+sidebar_label: 'Ruta de aprendizaje'
 ---
 
 # 🛣️ Ruta de aprendizaje

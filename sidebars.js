@@ -29,16 +29,14 @@ const sidebars = {
         'bienvenida/index',
         'bienvenida/valores-y-objetivos',
         'bienvenida/autor',
-        'bienvenida/roadmap',
+        'bienvenida/ruta-de-aprendizaje',
         'bienvenida/empezando',
-        'bienvenida/comunidad',
-        'bienvenida/sponsors',
-        'bienvenida/faq',
+        'bienvenida/comunidad'
       ],
     },
     {
       type: 'category',
-      label: '🤓 Fundamentos Tech',
+      label: '🤓 Fundamentos de TI',
       link: {
         slug: '/fundamentos',
         type: 'generated-index',
@@ -48,27 +46,39 @@ const sidebars = {
       },
       items: [
         'fundamentos/redes',
-        'fundamentos/ciberseguridad',
         'fundamentos/contenedores',
         'fundamentos/serverless',
-        'fundamentos/terraform',
+        'fundamentos/devops',
+        'fundamentos/iac',
       ],
     },
     {
-      type: 'category',
-      label: '☁️ Fundamentos Cloud',
-      link: {
-        slug: '/cloud',
-        type: 'generated-index',
-        title: 'Fundamentos de computación en la nube',
-        description:
-          "Échale un vistazo a este módulo si crees no tener las bases sobre computación en la nube.",
-      },
-      items: [
-        'cloud/aws',
-        'cloud/seguridad-de-aws',
-      ],
+      type: 'doc',
+      id: 'computacion-en-la-nube',
     },
+    {
+      type: 'doc',
+      id: 'ciberseguridad',
+    },
+    {
+      type: 'doc',
+      id: 'seguridad-de-la-nube',
+    },
+    // {
+    //   type: 'category',
+    //   label: '☁️ Fundamentos en Nube',
+    //   link: {
+    //     slug: '/cloud',
+    //     type: 'generated-index',
+    //     title: 'Fundamentos de computación en la nube',
+    //     description:
+    //       "Échale un vistazo a este módulo si crees no tener las bases sobre computación en la nube.",
+    //   },
+    //   items: [
+    //     'cloud/cloud-computing',
+    //     'cloud/aws',
+    //   ],
+    // },
     {
       type: 'category',
       label: '👩‍⚖️ Gobierno de Seguridad',
@@ -86,6 +96,14 @@ const sidebars = {
         'gobierno/awsram',
         'gobierno/trustedadvisor'
       ],
+    },
+    {
+      type: 'doc',
+      id: 'sponsors',
+    },
+    {
+      type: 'doc',
+      id: 'faq',
     },
   ]
 };
