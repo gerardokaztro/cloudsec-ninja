@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'Terraform'
+sidebar_label: 'Infraestructura como Código'
 tags: [nivel 100, terraform, iac]
 ---
 import Tabs from '@theme/Tabs';

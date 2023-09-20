@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'FAQ'
+sidebar_label: '❓ FAQ'
 ---
 
 # ⁉️ Preguntas y respuestas

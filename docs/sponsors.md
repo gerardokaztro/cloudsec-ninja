@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'Sponsors'
+sidebar_label: '🏛️ Sponsors'
 ---
 
 # 🤝 Nuestros patrocinadores
