@@ -55,3 +55,5 @@ div[class^='announcementBar_'] {
 .footer {
   font-size: 12px;
 }
+
+img[alt=drawing] { width: 50px; }
