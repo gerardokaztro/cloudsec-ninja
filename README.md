@@ -78,7 +78,7 @@ git remote -v
 ```
 - Antes de realizar modificaciones agregar la URL del repositorio **original** del proyecto:
 ```bash
-git remote add upstream https://github.com/gerardokaztro/cloudsec-ninja(Forkeado)
+git remote add upstream https://github.com/gerardokaztro/cloudsec-ninja
 ```
 - Comprobar:
 ```bash
