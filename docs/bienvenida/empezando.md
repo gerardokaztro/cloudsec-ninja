@@ -46,10 +46,27 @@ Con esto, la fase `build` se encuentra automatizada al momento de merguear los c
 ### Pre requisitos
 
 - Tener instalado Git
-- Tener instalado Node.js version 18.x.x o superior
-- Clonar este repositorio
+- Tener instalado Node.js v18.x.x o superior
+- Forkear este [repositorio](https://github.com/gerardokaztro/cloudsec-ninja)
+- Despues de tener el repositorio en nuestra cuenta personal de Github, clonarlo
 ```bash
-$ git clone https://github.com/gerardokaztro/cloudsec-ninja.git
+$ git clone https://github.com/<tu-nombre-de-usuario>/cloudsec-ninja.git
+```
+- Dentro de la carpeta local que genera, comprobar la URL del repositorio:
+```bash
+$ git remote -v
+```
+- Antes de realizar modificaciones agregar la URL del repositorio **original** del proyecto:
+```bash
+$ git remote add upstream https://github.com/gerardokaztro/cloudsec-ninja
+```
+- Comprobar:
+```bash
+$ git remote -v
+```
+- Antes de empezar a trabajar, obtener los últimos cambios del repo Original:
+```bash
+$ git pull -r upstream main
 ```
 - Crear rama `developement` en tu local
 ```bash
