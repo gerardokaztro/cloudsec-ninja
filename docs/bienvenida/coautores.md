@@ -20,6 +20,14 @@ Echa un vistazo a los perfiles de cada uno de nuestros co-autores
             </tr>
         </table>
     </TabItem>
+    <TabItem value="Guatemala" label="Guatemala 🇬🇹" default>
+        <table>
+            <tr>
+                <td align="center"><a href="https://www.linkedin.com/in/hazel-saenz-41554aa7/"><img alt="Hazel Saenz"
+                        src="https://media.licdn.com/dms/image/D4E03AQF7GbF2b9EW_A/profile-displayphoto-shrink_800_800/0/1690936657718?e=1700697600&v=beta&t=MXvomxE5fjF4X1Vjt7WpXB7mLwgJAdM8V2rwSOu4nG8" width="100" /><br />Hazel Saenz</a></td>
+            </tr>
+        </table>
+    </TabItem>
     <TabItem value="Uruguay 🇺🇾" label="Uruguay 🇺🇾">
         <table>
             <tr>
