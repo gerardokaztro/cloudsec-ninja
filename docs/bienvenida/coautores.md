@@ -17,13 +17,15 @@ Echa un vistazo a los perfiles de cada uno de nuestros co-autores
             <tr>
                 <td align="center"><a href="https://www.linkedin.com/in/josercastineiras/"><img alt="Jose R. Castiñeiras"
                         src="https://media.licdn.com/dms/image/C4E03AQG0C1Jh20GjRQ/profile-displayphoto-shrink_800_800/0/1587999354848?e=1700697600&v=beta&t=xh8Ez3fxNxbVXLdEmvJVJa1EQD481mfASzC1SRj8Xj8" width="100" /><br />Jose Castiñeiras</a></td>
+                <td align="center"><a href="https://www.linkedin.com/in/josercastineiras/"><img alt="Martin Ferrini"
+                        src="https://media.licdn.com/dms/image/C4D03AQHC-2tiTYTLlw/profile-displayphoto-shrink_800_800/0/1639062185382?e=1701302400&v=beta&t=yOpuM55oewevW_6Kjx-KW2Yqa_XEKyNtn3TMnCVeRhg" width="100" /><br />Martin Ferrini</a></td>
             </tr>
         </table>
     </TabItem>
     <TabItem value="Guatemala" label="Guatemala 🇬🇹" default>
         <table>
             <tr>
-                <td align="center"><a href="https://www.linkedin.com/in/hazel-saenz-41554aa7/"><img alt="Hazel Saenz"
+                <td align="center"><a href="https://www.linkedin.com/in/martinferrini/"><img alt="Hazel Saenz"
                         src="https://media.licdn.com/dms/image/D4E03AQF7GbF2b9EW_A/profile-displayphoto-shrink_800_800/0/1690936657718?e=1700697600&v=beta&t=MXvomxE5fjF4X1Vjt7WpXB7mLwgJAdM8V2rwSOu4nG8" width="100" /><br />Hazel Saenz</a></td>
             </tr>
         </table>
