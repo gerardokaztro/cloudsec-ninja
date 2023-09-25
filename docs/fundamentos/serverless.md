@@ -57,7 +57,17 @@ En esta solución se utilizan 3 servicios serverless, Amazon API Gateway el cual
 
 ### Construyámoslo juntos:
 
+En este video aprenderas lo siguiente:
+1. Que es una API
+1. Tipos de API's
+1. Que es Serverless
+1. Como crear tu primera API utilizando API Gateway
+1. Como crear tu primera Lambda
+1. Como probar tu API
+
 <ReactPlayer controls url='https://www.youtube.com/watch?v=devsr3JviUw&ab_channel=WomenWhoCode' width="auto" /> <br/>
 
 
-Repo: https://github.com/hsaenzG/DoListsAPI
+:gem: Revisa el codigo acá :arrow_right: Repo https://github.com/hsaenzG/DoListsAPI 
+
+:star::star::star: Si te gusto te invito a que le des star y por favor comparte!
