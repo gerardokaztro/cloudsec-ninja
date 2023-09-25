@@ -14,14 +14,14 @@ AWS ofrece una gran flexibilidad permitiendo realizar nuevas configuraciones y a
 
 Los servicios de AWS están diseñados para trabajar en conjunto para poder desarrollar cualquier tipo de aplicación o carga de trabajo.
 
-## Modelo de Precios, pago y Soporte en AWS
+## Modelo de Precios, Pagos y Soporte en AWS
 
 ### Modelo de Precios
 AWS tiene tres generadores fundamentales de costos: `cómputo`, `almacenamiento` y `transferencia de datos de salida`. Estas características varían ligeramente en función del producto y el modelo de precios de AWS que elijamos. 
 
 En la mayoría de los casos, no se aplican cargos por la transferencia de datos de entrada ni por la transferencia de datos entre otros servicios de AWS dentro de la misma región de AWS. Existen algunas excepciones, así que asegúrese de verificar las tarifas de transferencia de datos antes de empezar a utilizar el servicio de AWS.
 
-Las transferencias de datos de salida se acumulan entre todos los servicios y, luego, se cobran según la tarifa para ese tipo de transferencia. Este monto aparece en el extracto mensual como AWS Data Transfer Out (Transferencia de datos de salida de AWS).
+Las transferencias de datos de salida se acumulan entre todos los servicios y, luego, se cobran según la tarifa para ese tipo de transferencia. Este monto aparece en el extracto mensual como AWS Data Transfer Out (Transferencia de datos de salida de AWS). Para más información [Precios](https://aws.amazon.com/es/pricing/)
 
 ### ¿Cómo se paga en AWS?
 
@@ -70,7 +70,9 @@ Para más información [Compara los planes de AWS Support](https://aws.amazon.co
 
 La `infraestructura global de AWS` se diseñó y se creó para ofrecer un entorno informático en la nube `flexible, confiable, escalable y seguro` con un rendimiento de red global de alta calidad.
 
-[imagen]
+![Global Infrastructure](./fundamentos/img/globalinfra.png)
+
+Para más información [Infraestructura Global](https://aws.amazon.com/es/about-aws/global-infrastructure/)
 
 ### Regiones en AWS
 
@@ -106,9 +108,11 @@ Actualmente en Latinoamérica hay en Lima, Perú - Santiago, Chile - Buenos Aire
 AWS brinda una gran variedad de servicios informáticos para satisfacer las necesidades de las organizaciones, como Amazon Elastic Compute Cloud (EC2), Amazon Elastic Container Service (ECS), Amazon Elastic Container Service for Kubernetes (EKS), Amazon Lightsail, AWS Batch y AWS Lambda, por nombrar algunos. Para algunos servicios como Amazon EC2, se contratan con modalidad IaaS, mientras que para otros, como Lambdas son de tipo SaaS.
 
 Para más información sobre los servicios de informática, podes ir a 
- https://aws.amazon.com/es/products/compute/
+ [Informática - Compute](https://aws.amazon.com/es/products/compute/)
 
 ### Elastic Compute Cloud - EC2
+
+![EC2](./fundamentos/img/amazon-ec2.jpg)
 
 La sigla EC2 en Amazon significa `Elastic Compute Cloud`:
 * `Elastic` se refiere a la capacidad para aumentar o reducir fácilmente la cantidad de servidores que se ejecutan para admitir una aplicación de manera automática, así como para aumentar o reducir el tamaño de los servidores existentes.
@@ -121,11 +125,26 @@ Un sistema operativo que se ejecuta en una máquina virtual suele denominarse si
 
 Con `Amazon EC2`, podemos lanzar cualquier cantidad de instancias de todo tipo de tamaños en cualquier zona de disponibilidad y local zone del mundo y lograrlo en cuestión de minutos. Las instancias se lanzan a partir de `imágenes de Amazon Machine (AMI)`, que son plantillas de máquinas virtuales. 
 
-Puede controlar el tráfico desde y hacia las instancias a través de los grupos de seguridad.
+Podemos controlar el tráfico desde y hacia las instancias a través de los grupos de seguridad.
 
-### ASG
+Para más información [EC2](https://aws.amazon.com/es/ec2/)
+
+### Grupo de Auto escalado EC2 - EC2 Auto Scalling Groups
+
+![ASG](./fundamentos/img/amazon-autoscaling_fund.jpg)
+
+`Auto Scaling Groups` ayuda a mantener la disponibilidad de las aplicaciones y 
+ permite agregar o eliminar instancias EC2 de forma automática según las políticas definidas y las comprobaciones de estados. Cuando especificamos las políticas de escalado, el `Auto Scaling Group` puede lanzar o terminar instancias en función del aumento o la disminución de la demanda de la aplicación. 
+
+`Auto Scaling Group` se integra a Elastic Load Balancing: registra automáticamente nuevas instancias al balanceador de carga para distribuir el tráfico entrante entre las instancias. 
+
+Los `Auto Scaling Group` permiten crear arquitecturas de alta disponibilidad que abarcan varias zonas de disponibilidad en una región. Si una zona de disponibilidad pasa a estar en mal estado o no está disponible, `Auto Scaling Group` lanza nuevas instancias en una zona de disponibilidad que no se haya visto afectada. Cuando la zona de disponibilidad en mal estado vuelve a tener un estado correcto, `Auto Scaling Group` redistribuye automáticamente las instancias de la aplicación de manera uniforme entre todas las zonas de disponibilidad designadas. 
+
+Para más información [Auto Scaling Groups](https://docs.aws.amazon.com/autoscaling/ec2/userguide/index.html)
 
 ### AWS Lambda
+
+![Lambda](./fundamentos/img/lambda_fund.jpg)
 
 AWS ofrece muchas opciones de informática. Por ejemplo, Amazon EC2 brinda máquinas virtuales. Otro ejemplo, Amazon ECS y Amazon EKS son servicios de informática basados en contenedores.
 
@@ -137,7 +156,7 @@ Se puede crear una función de Lambda, que es el recurso de AWS que contiene el 
 
 Se paga por el tiempo que utilicemos los recursos informáticos y no se cobrará nada cuando el código no se ejecute.
 
-![Internet Gateway](./fundamentos/img/lambda_fund.jpg)
+Para más información [Lambda](https://aws.amazon.com/es/lambda/)
 
 ## Servicios de Almacenamiento en AWS
 
@@ -146,6 +165,8 @@ Los servicios de almacenamiento en AWS (Storage Services) permiten el almacenami
 Para más información [Almacenamiento](https://aws.amazon.com/es/products/storage/)
 
 ### Amazon Simple Storage Service (S3) - Buckets de S3
+
+![S3](./fundamentos/img/amazon-s3_fund.png)
 
 `Amazon S3` es una solución administrada de almacenamiento en la nube que se diseñó para brindar un escalado sin problemas y 99,999999999 % (11 nueves) de durabilidad. Además de poder almacenar prácticamente todos los objetos dentro de un bucket, 
  permite realizar operaciones de escritura, lectura y eliminación de los objetos almacenados en el bucket. Los `nombres de los buckets son universales` y deben ser únicos entre todos los nombres de buckets existentes en Amazon S3. Los objetos pueden ser de hasta 5 TB. De forma predeterminada, en Amazon S3 los datos se almacenan de forma redundante en varias instalaciones y en diferentes dispositivos.
@@ -158,8 +179,11 @@ De forma predeterminada, no se comparte ninguno de sus datos públicamente. Tamb
 
 Podemos acceder al bucket de S3 a través de la consola de administración de AWS, de forma programática a través de la API y los SDK, o con soluciones de terceros que utilizan la API o los SDK de AWS.
 
+Para más información [S3](https://aws.amazon.com/es/s3/)
 
 ### Amazon EBS (Elastic Block Storage) - Almacenamiento de Bloque elástico
+
+![EBS](./fundamentos/img/amazon-ebs_fund.jpg)
 
 `Amazon EBS` permite crear volúmenes de almacenamiento individuales y asociarlos a una instancia EC2. Amazon EBS ofrece `almacenamiento a nivel de bloques`, en el cual los  volúmenes se replican automáticamente dentro de su zona de disponibilidad. 
 
@@ -173,8 +197,11 @@ Entre los usos de los volúmenes de EBS, se incluyen los siguientes:
 * Bases de Datos
 * Aplicaciones 
 
+Para más información [EBS](https://aws.amazon.com/es/ebs/)
 
 ### EFS
+
+![EFS](./fundamentos/img/amazon-efs_fund.jpg)
 
 Amazon EFS es un servicio completamente administrado que facilita la configuración y el escalado del almacenamiento de archivos en la nube de AWS. Puede utilizar Amazon EFS para crear un sistema de archivos para big data y análisis, flujos de trabajo de procesamiento multimedia, administración de contenido, servidores web y directorios principales. 
 
@@ -183,6 +210,7 @@ Puede crear sistemas de archivos que sean accesibles para las instancias de Amaz
 Los sistemas de archivos de Amazon EFS pueden escalar automáticamente desde gigabytes hasta petabytes de datos sin necesidad de aprovisionar almacenamiento. Miles de instancias de Amazon EC2 pueden acceder al mismo tiempo a un sistema de archivos de Amazon EFS. Este servicio, además, está diseñado para proporcionar un rendimiento uniforme a cada una de estas instancias. Amazon EFS también está diseñado para ofrecer alta disponibilidad y larga duración. Con Amazon EFS, no hay tarifas mínimas ni costos de configuración; solo paga por el almacenamiento que utiliza.
 
 
+Para más información [EFS](https://aws.amazon.com/es/efs/)
 
 ## Servicios de Redes / Networking en AWS
 
@@ -249,34 +277,105 @@ Cada subred en el VPC debe estar asociada a una Network ACL. Si no asociamos una
 
 ## Servicios de Bases de Datos
 
-### RDS
+Los Servicios de Bases de datos son aquellos que brindan la posibilidad de acceder, almacenar y actualizar datos de la forma que las diferentes aplicaciones lo necesitan.
 
-### Aurora
+Podemos utilizar los siguientes tipos de bases de datos:
+
+* `Relacional` (Amazon Aurora, Amazon RDS, Amazon Redshift)
+* `Clave-valor` (Amazon DynamoDB)
+* `En memoria` (Amazon ElasticCache, Amazon MemoryDB for Redis)
+* `Documento` (Amazon DocumentDB)
+* `Columna ancha` (Amazon Keyspaces)
+* `Grafos` (Amazon Neptune)
+* `Series` Temporales (Amazon Timestream)
+* `Contabilidad-Blockchain` (Amazon Quantum Ledger Database Services)
+
+Para más información [Bases de Datos](https://aws.amazon.com/es/products/databases/)
+
+### Amazon RDS - Amazon Relational Database Service - Servicio de Bases de Datos Relacionales
+
+![RDS](./fundamentos/img/amazon-rds_fund.jpg)
+
+`Amazon RDS` es un servicio administrado que permite configurar y operar una base de datos relacional en AWS. 
+
+`Amazon RDS` permite centrarse en las aplicaciones para poder proporcionarles rendimiento, alta disponibilidad, seguridad y compatibilidad necesarias. Con este servicio, podemos enfocarnos principalmente en los datos y en optimizar la aplicación. 
+
+Las instancias y el almacenamiento de base de datos difieren en cuanto a las características de rendimiento y el precio, permitiendo adaptar el costo y el rendimiento a las necesidades de la base de datos. Cuando eligimos crear una instancia de base de datos, primero tenemos que especificar qué motor de base de datos vamos a ejecutar. Actualmente, Amazon RDS admite seis motores bases de datos relacionales: 
+* MySQL
+* Amazon Aurora
+* Microsoft SQL Server
+* PostgreSQL
+* MariaDB
+* Oracle
+
+Para más información [RDS](https://aws.amazon.com/es/rds/)
+
+### Amazon Aurora
+![Aurora](./fundamentos/img/amazon-aurora_fund.jpg)
+
+`Amazon Aurora` es una base de datos relacional compatible con MySQL y PostgreSQL que se fue creada por AWS. Combina el rendimiento y la disponibilidad de las bases de datos comerciales de alta gama con la simplicidad y la rentabilidad de las bases de datos de código abierto. 
+
+El uso de `Amazon Aurora` permite reducir los costos de la base de datos y, al mismo tiempo, mejorar la fiabilidad y disponibilidad de la base de datos. 
+
+Aurora está diseñado para automatizar tareas cuya realización requieren mucho tiempo, como el aprovisionamiento, la implementación de parches, la realización de copias de seguridad, la recuperación, la detección de errores y la reparación.
+
+Existen versiones Serverless de `Amazon Aurora` permitiendo disponilibilizar únicamente por lo que se va a utilizar. También permite Green/Blue deployment de nuevas versiones del motor de base de datos.
+
+Para más información [Aurora](https://aws.amazon.com/es/rds/aurora/)
 
 ### DynamoDB
+![DynamoDB](./fundamentos/img/amazon-dynamodb_fund.jpg)
+
+`DynamoDB` es un servicio de base de datos NoSQL rápido y flexible para todo tipo de aplicaciones que requieren una latencia uniforme de milisegundos a escala. 
+
+Amazon administra toda la infraestructura subyacente de datos para este servicio y almacena los datos de manera redundante en varias zonas dentro de una región como parte de la arquitectura tolerante a errores. Con `DynamoDB`, podemos crear tablas y elementos. Podemos agregar elementos a una tabla. El sistema particiona los datos automáticamente y cuenta con el almacenamiento de tablas necesario para cumplir con los requisitos de carga de trabajo. No existe ningún límite práctico respecto de la cantidad de elementos que se pueden almacenar en una tabla. 
+
+Uno de los beneficios de las `bases de datos NoSQL` es que los elementos de la misma tabla pueden tener atributos diferentes. Esto brinda flexibilidad para agregar atributos a medida que la aplicación evoluciona. Podemos almacenar elementos con formatos más nuevos junto a otros con formatos más viejos en la misma tabla, sin tener que realizar migraciones de esquemas.
+
+El almacenamiento puede crecer según las necesidades de la aplicación. Todos los datos de `DynamoDB` se almacenan en unidades de estado sólido (SSD), y su lenguaje de consulta simple permite un rendimiento de las consultas uniforme y baja latencia. DynamoDB permite aprovisionar el rendimiento de lectura o escritura que necesita para cada tabla. A medida que aumenta la cantidad de usuarios en una aplicación, las tablas de `DynamoDB` se pueden escalar para admitir el incremento de las solicitudes de lectura y escritura mediante el aprovisionamiento manual. Pudiendo también 
+ habilitar el escalado automático para que `DynamoDB` monitoree la carga de la tabla e incremente o disminuya el rendimiento aprovisionado de manera automática. 
+
+La posibilidad de crear `tablas globales` permite generar réplicas de manera automática en las regiones de AWS que elijamos, el cifrado en reposo y la visibilidad del tiempo de vida (TTL) de los elementos. 
+
+Para más información [DynamoDB](https://aws.amazon.com/es/dynamodb/)
 
 ## Servicios de Monitoreo y Alarmas
 Los servicios de Monitoreo y Alarmas en AWS son los que permite poseer métricas de los servicios de AWS (Cloudwatch Metrics, X-Ray) como también tener archivos de registro (CloudWatch Logs).
 
-También permite la creación de Alarmas basados en las métricas y registros definiendo humbrales (CloudWatcg Alarms)
+También permite la creación de Alarmas basados en las métricas y registros definiendo humbrales (CloudWatch Alarms)
+
+![CloudWatch](./fundamentos/img/amazon-cloudwatch.jpg)
 
 ### CloudWatch Metrics
 
-Amazon CloudWatch Metrics, recopila y procesa los datos sin formato de diferentes servicios de AWS, y los convierte en métricas legibles casi en tiempo real. Estas estadísticas se registran durante un periodo de 15 meses, de forma que podamos acceder a la información histórica y obtener una mejor perspectiva acerca del rendimiento de los servicio y/o aplicación web.
+Amazon `CloudWatch Metrics`, recopila y procesa los datos sin formato de diferentes servicios de AWS, y los convierte en métricas legibles casi en tiempo real. Estas estadísticas se registran durante un periodo de 15 meses, de forma que podamos acceder a la información histórica y obtener una mejor perspectiva acerca del rendimiento de los servicio y/o aplicación web.
 
 De forma predeterminada, el monitoreo básico, envía datos de métricas a CloudWatch en intervalos de 5 minutos. Para enviar los datos de las métricas a CloudWatch cada 1 minuto, podemos habilitar el monitoreo detallado según el servicio. 
 
 Asimismo, Amazon Cloudwatch permite crear "nuevas métricas" instalando el agente de Cloudwatch en las instancias de EC2 (por ejemplo para el monitoreo de la memoria RAM).
 ### CloudWatch Alarms
 
+Las `CloudWatch Alarms` se utilizan para inicializar una acción con respecto a un valor. Una alarma controla una métrica a lo largo de un periodo de tiempo especifico y realiza una o varias acciones en función del valor de la métrica verificando un umbral a lo largo del tiempo.
 
+La acción más común es enviar una notificación a un topico de SNS o a una política de Auto Scaling. 
+
+Las alarmas de CloudWatch no invocan acciones simplemente porque se encuentren en un estado determinado. El estado debe haber cambiado y haberse mantenido durante un número determinado de periodos.
 
 ### CloudWath Logs
+
+Amazon `CloudWatch Logs` permite monitorear y registrar los problemas nuestros sistemas y aplicaciones mediante archivos de log personalizados, de aplicación y de 
+ sistemas existentes.
+
+Podemos utilizar Amazon CloudWatch Logs para monitorearr, almacenar y agrupar archivos de log enviados por instancias de EC2, CloudTrail, Route 53 y otras fuentes.
+
+Los registros de CloudTrail pueden enviarse a CloudWatch Logs para ser monitoreados 
+ en tiempo real.
+
+`CloudWatch Logs` permite realizar filtros de métricas para analizar los datos de registro que genera una métrica de CloudWatch.
 
 ## Buenas prácticas Cloud en AWS
 
 ### CAF
 
-### CAF IA
 
 ### Well Architecture Framework
