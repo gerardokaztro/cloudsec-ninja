@@ -137,7 +137,7 @@ Se puede crear una función de Lambda, que es el recurso de AWS que contiene el 
 
 Se paga por el tiempo que utilicemos los recursos informáticos y no se cobrará nada cuando el código no se ejecute.
 
-![Internet Gateway](./fundamentos/img/lambda.jpg)
+![Internet Gateway](./fundamentos/img/lambda_fund.jpg)
 
 ## Servicios de Almacenamiento en AWS
 
@@ -200,7 +200,7 @@ También permite personalizar la configuración de red del VPC. Por ejemplo, pod
 
 Después de crear una VPC, puede dividirla en una o más subredes. Una subred es un intervalo de direcciones IP en una VPC. Las subredes pertenecen a una única zona de disponibilidad. Puede crear subredes en diferentes zonas de disponibilidad para conseguir un nivel elevado de disponibilidad. En general, las subredes se clasifican como públicas o privadas. Las subredes públicas tienen acceso directo a Internet, pero las subredes privadas, no.
 
-![VPC y Subnet](./fundamentos/img/vpcsubnet.jpg)
+![VPC y Subnet](./fundamentos/img/vpcsubnet_fund.jpg)
 ### Internet Gateway - Gateway de Internet
 
 Un Internet gateway es un componente del VPC escalable, redundante y altamente disponible que permite la comunicación entre instancias en el VPC e Internet. 
@@ -208,15 +208,15 @@ El Internet gateway se configura a nivel regional y se configura 1 para todo el 
 
 Para hacer pública una subred, debemos asociar una Internet Gateway al VPC y agregar una ruta en la tabla de enrutamiento para enviar el tráfico que no es local a Internet (0.0.0.0/0) a través del Internet gateway. 
 
-![Internet Gateway](./fundamentos/img/internetgateway.jpg)
+![Internet Gateway](./fundamentos/img/internetgateway_fund.jpg)
 
 ### NAT Gateway - Gateway de traducción de las direcciones de red (NAT)
-
+ 
 Un NAT Gateway permite a las instancias de la/s subred/es privada/s conectarse a Internet o a otros servicios de AWS, a la vez que impide a Internet iniciar una conexión con esas mismas instancias. 
 
 Para crear un NAT Gateway, debemos especificar la subred pública en la que se debe ubicar la NAT Gateway. También debemos especificar una dirección IP elástica para asociar a la NAT Gateway cuando lo creamos (se puede crear en el momento de creación también). Una vez creado el NAT Gateway, debemos actualizar la tabla de enrutamiento que esté asociada a una o más de las subredes privadas para que dirija el tráfico orientado hacia Internet a través del NAT Gateway. De esta manera, las instancias con subredes privadas podrán comunicarse hacia Internet. 
 
-![NAT Gateway](./fundamentos/img/natgateway.jpg)
+![NAT Gateway](./fundamentos/img/natgateway_fund.jpg)
 
 ### Grupos de Seguridad / Security Group
 
@@ -224,7 +224,7 @@ Un Grupo de Seguridad (Security Group) funciona como un firewall virtual de la i
 
 Basicamente, un grupo de seguridad representa una forma de filtrar el tráfico hacia las instancias.
 
-![Security Group](./fundamentos/img/securitygroup.jpg)
+![Security Group](./fundamentos/img/securitygroup_fund.jpg)
 
 ### NACL - Network ACL - Lista de Control de Acceso a la red
 
@@ -232,7 +232,7 @@ Una lista de control de acceso a la red (Network ACL) es una capa de seguridad o
 
 Cada subred en el VPC debe estar asociada a una Network ACL. Si no asociamos una subred de forma explícita a una Network ACL, la subred se asociará automáticamente a la Network ACL predeterminada. Podemos asociar una Network ACL a varias subredes; sin embargo, una subred solo se puede asociar a una Network ACL a la vez. Cuando se asocia una Network ACL a una subred, se elimina la asociación anterior. 
 
-![NACL](./fundamentos/img/acldered.jpg)
+![NACL](./fundamentos/img/acldered_fund.jpg)
 
 ### ELB
 
