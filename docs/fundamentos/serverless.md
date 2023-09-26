@@ -70,4 +70,4 @@ En este video aprenderas lo siguiente:
 
 :gem: Revisa el codigo acá :arrow_right: Repo https://github.com/hsaenzG/DoListsAPI 
 
-:star::star::star: Si te gusto te invito a que le des star y por favor comparte!
+:star::star::star: Si te gustó el contenido que ves en el repositorio te invito a que le des star y lo compartas!!
