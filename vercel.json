@@ -30,14 +30,9 @@
                 },
                 {
                   "key": "Content-Security-Policy",
-                  "value": "default-src 'self' *.acloudsecurity.ninja;
-                           img-src 'self' data:;
-                           script-src https://vercel.live/ https://vercel.com 'self' 'unsafe-eval' 'unsafe-inline'
-                           connect-src vitals.vercel-insights.com;"
+                  "value": "default-src 'self' *.acloudsecurity.ninja; img-src 'self' data:; script-src 'self' 'unsafe-eval' 'unsafe-inline' connect-src vitals.vercel-insights.com;"
                 }
             ]
         }
     ]
 }
-
-script-src  'unsafe-inline'
