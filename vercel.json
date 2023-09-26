@@ -30,7 +30,7 @@
                 },
                 {
                   "key": "Content-Security-Policy",
-                  "value": "default-src 'self' *.acloudsecurity.ninja; img-src 'self' data:; script-src 'self' 'unsafe-eval' 'unsafe-inline' connect-src vitals.vercel-insights.com;"
+                  "value": "connect-src vitals.vercel-insights.com;"
                 }
             ]
         }
