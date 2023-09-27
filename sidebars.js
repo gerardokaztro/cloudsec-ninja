@@ -64,8 +64,15 @@ const sidebars = {
       ],
     },
     {
-      type: 'doc',
-      id: 'computacion-en-la-nube',
+      type: 'category',
+      label: '☁️ Computación en la nube',
+      link: {
+        type: 'doc',
+        id: 'computacion-en-la-nube',
+      },
+      items: [
+        'aws',
+      ],
     },
     {
       type: 'doc',
