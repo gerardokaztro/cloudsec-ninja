@@ -1,5 +1,6 @@
 ---
 sidebar_label: 'Ruta de aprendizaje'
+hide_table_of_contents: true
 ---
 
 # 🛣️ Ruta de aprendizaje
