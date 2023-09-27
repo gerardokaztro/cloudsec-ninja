@@ -52,7 +52,7 @@ Les pedimos que tengan mucha empatía, esto es totalmente gratis para todos uste
         <tr bgcolor="#BED3E1">
             <td><font color="#ff9900"><b>Cloud Foundations: Estructuras Multi-Cuenta</b></font></td>
             <td colspan="3"> 
-                <a href="/docs/gobierno/organization" >AWS Organizations</a>
+                <a href="/docs/gobierno/organizations" >AWS Organizations</a>
             </td>
             <td colspan="4">
                 <a href="/docs/gobierno/controltower" >AWS Control Tower</a>
