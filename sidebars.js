@@ -50,7 +50,17 @@ const sidebars = {
         'fundamentos/contenedores',
         'fundamentos/serverless',
         'fundamentos/devops',
-        'fundamentos/iac',
+        {
+          type: 'category',
+          label: 'Infraestructura como Código',
+          link: {
+            type: 'doc',
+            id: 'fundamentos/iac',
+          },
+          items: [
+            'fundamentos/terraform',
+          ],
+        },
       ],
     },
     {
