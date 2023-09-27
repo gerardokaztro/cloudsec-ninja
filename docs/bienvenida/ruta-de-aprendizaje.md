@@ -1,5 +1,6 @@
 ---
 sidebar_label: 'Ruta de aprendizaje'
+hide_table_of_contents: true
 ---
 
 # 🛣️ Ruta de aprendizaje
@@ -10,6 +11,10 @@ Esta ruta de aprendizaje toma como referencia e inspiración algunas publicacion
 
 <table border="0" width="100%"> 
     <tbody>
+        <tr>
+            <td width="120"><b>Módulo</b></td>
+            <td colspan="7"><font color="#ff9900"><b>Tópicos introductorios</b></font></td>
+        </tr>
         <tr>
             <td><font color="#ff9900"><b>Fundamentos de TI</b></font></td>
             <td>
@@ -45,7 +50,7 @@ Les pedimos que tengan mucha empatía, esto es totalmente gratis para todos uste
 <table border="0" width="100%"> 
     <tbody>
         <tr>
-            <td width="120"><b>Categoría</b></td>
+            <td width="120"><b>Módulo</b></td>
             <td colspan="7"><font color="#ff9900"><b>Servicio, Estrategia o Solución</b></font></td>
         </tr>
         <tr bgcolor="#BED3E1">
