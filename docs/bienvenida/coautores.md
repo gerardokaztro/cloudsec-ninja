@@ -19,6 +19,8 @@ Echa un vistazo a los perfiles de cada uno de nuestros co-autores
                         src="https://media.licdn.com/dms/image/C4E03AQG0C1Jh20GjRQ/profile-displayphoto-shrink_800_800/0/1587999354848?e=1700697600&v=beta&t=xh8Ez3fxNxbVXLdEmvJVJa1EQD481mfASzC1SRj8Xj8" width="128" /><br />Jose Castiñeiras</a></td>
                 <td align="center"><a href="https://www.linkedin.com/in/josercastineiras/"><img alt="Martin Ferrini"
                         src="https://media.licdn.com/dms/image/C4D03AQHC-2tiTYTLlw/profile-displayphoto-shrink_800_800/0/1639062185382?e=1701302400&v=beta&t=yOpuM55oewevW_6Kjx-KW2Yqa_XEKyNtn3TMnCVeRhg" width="128" /><br />Martin Ferrini</a></td>
+                <td align="center"><a href="https://www.linkedin.com/in/rodrigo-elissamburu/"><img alt="Rodrigo Elissamburu"
+                        src="https://media.licdn.com/dms/image/D4E35AQGROhiEM5MwUA/profile-framedphoto-shrink_800_800/0/1689885950321?e=1696428000&v=beta&t=H7_y86r3KpATpg53lnkW1e7pkxEpB3dohpOym9bnmBE" width="128" /><br />Rodrigo Elissamburu</a></td>
             </tr>
         </table>
     </TabItem>
