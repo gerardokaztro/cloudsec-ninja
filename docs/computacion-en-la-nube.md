@@ -7,7 +7,6 @@ tags: [nivel 100, aws]
 
 ## ¿Qué es la nube?
 
-<<<<<<< HEAD
 Para poder entender ¿qué es la nube?, es necesario entender algunos conceptos básicos en el área tecnología.
 A continuación se presenta una lista de conceptos con una breve explicación y un enlace con información mas detallada de cada uno:
 
@@ -18,13 +17,13 @@ A continuación se presenta una lista de conceptos con una breve explicación y 
 
 
 + **Redes**: Es la conexión entre servidores y los equipos de los usuarios. Nos permite compartir recursos dentro del contexto de la red (servidores, impresoras, discos/almacenamiento compartido, etc.)
-[Aquí mas información sobre este concepto](../fundamentos/redes)
+[Aquí mas información sobre este concepto](fundamentos/redes)
 
 Aclarados estos conceptos, es momento de comenzar a entender qué es _la nube_.
 
 Probablemente, la primera vez que escuchamos sobre _la nube_, imaginamos algo así:
 
-[[[[[[ AQUI VAN IMÁGENES DE NUBES]]]]]]
+![Nubes](./fundamentos/img/clouds.jpg)
 
 E inmediatamente surgen preguntas del tipo: _¿Cómo puede ser que guarden los datos allí? ¿No se pierden? ¿Cómo acceden a esa información? o expresiones como "Eso debe ser complicadísimo!"_
 
@@ -34,7 +33,7 @@ En tecnología, cuando se habla de "la nube", se está haciendo referencia a un 
 
 Por ejemplo: https://aws.amazon.com/es/
 
-[[[[[[ AQUI VA UNA IMAGEN ]]]]]]
+![AWS CONSOLE](./fundamentos/img/aws_console.png)
 
 
 ## Tipos de servicios en la nube
@@ -94,8 +93,6 @@ Y finalmente el modelo de nube híbrida, es una combinación de los dos modelos 
 | Se desea una menor carga de TI | Si no se quiere compartir ningún recurso | Si se quiere trabajar con aplicaciones específicas en una nube privada y, en los momentos de máxima demanda optar por utilizar una nube pública |
     
 
-# ☁️ Introducción a Amazon Web Services
-=======
 # ☁️ Introducción a Amazon Web Services
 
 [Amazon Web Services (AWS)](https://aws.amazon.com/es/what-is-aws/)  es una plataforma en la nube que ofrece un amplio conjunto de productos globales basados en Cloud. Estos productos se entregan a través de Internet, y permiten el acceso bajo demanda a recursos informáticos, de almacenamiento, de red, de base de datos y otros recursos de TI para utilizar en diferentes proyectos, así como las herramientas para administrarlos. A un solo clic se puede aprovisionar y lanzar recursos de AWS. Los recursos estarán listos para que los utilicemos en cuestión de minutos.
@@ -469,4 +466,3 @@ Los registros de CloudTrail pueden enviarse a CloudWatch Logs para ser monitorea
 
 
 ### Well Architecture Framework
->>>>>>> 6994b68d29fbd60b536c637517674e4dd409dd59
