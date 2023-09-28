@@ -78,10 +78,27 @@ const sidebars = {
       type: 'doc',
       id: 'ciberseguridad',
     },
-    {
-      type: 'doc',
-      id: 'seguridad-de-la-nube',
+        {
+      type: 'category',
+      label:'🌤️ Seguridad DE la nube',
+      link: {
+        slug: '/seguridad-aws',
+        type: 'generated-index',
+        title: 'Seguridad DE la nube de AWS',
+        description:
+          "En este modulo conocerás los aspectos de seguridad DE la nube",
+      },
+      items: [
+        'seguridad-aws/responsabilidad-compartida',
+        'seguridad-aws/programas-de-cumplimiento',
+        'seguridad-aws/well-architected-sec',
+      ],
     },
+
+ 
+     
+      
+
     {
       type: 'category',
       label: '👩‍⚖️ Estructuras Multi-Cuenta',
