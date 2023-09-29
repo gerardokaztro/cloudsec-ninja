@@ -32,7 +32,7 @@ Esta ruta de aprendizaje toma como referencia e inspiración algunas publicacion
                 <a href="/docs/computacion-en-la-nube" >Computación en la nube</a>
             </td>
             <td> 
-                <a href="/docs/ciberseguridad" >Ciberseguridad</a>
+                <a href="/docs/ciberseguridad/fundamentos" >Ciberseguridad</a>
                 <br/>
             </td>
             <td> 

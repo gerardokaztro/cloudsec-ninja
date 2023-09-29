@@ -3,7 +3,7 @@ sidebar_label: 'Metodologias y Frameworks'
 tags: [nivel 100, ciberseguridad, metodologia]
 ---
 
-# 📋 Metodologias y Frameworks de ciberseguridad
+# 📋 METODOLOGIAS Y FRAMEWORKS DE CIBERSEGURIDAD
 En la era digital actual, la seguridad de la información y la protección contra amenazas cibernéticas se han convertido en preocupaciones centrales para organizaciones de todos los tamaños y sectores. Aquí es donde las metodologías y frameworks de ciberseguridad entran en juego, proporcionando una estructura sistemática para abordar y gestionar los riesgos asociados a la seguridad de la información.
 
 Pero, ¿qué son exactamente estas metodologías y frameworks? En esencia, son conjuntos de prácticas, procesos y políticas diseñadas para ofrecer una guía detallada sobre cómo proteger los activos digitales y físicos de una organización. Al seguir estas guías, las empresas pueden asegurarse de que están tomando las medidas adecuadas para defenderse contra los ciberataques, minimizar las vulnerabilidades y cumplir con las normativas y leyes relevantes.

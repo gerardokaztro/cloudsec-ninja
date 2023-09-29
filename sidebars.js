@@ -96,27 +96,27 @@ const sidebars = {
       type: 'category',
       label: '🛡️ Fundamentos de Ciberseguridad',
       link: {
-        slug: '/Fundamentos-Cybersec',
+        slug: '/ciberseguridad',
         type: 'generated-index',
         title: 'Fundamentos de Ciberseguridad',
         description:
           "Échale un vistazo a este módulo si crees no tener las bases necesarias en el mundo techie.",
       },
       items: [
-        'Fundamentos-Cybersec/Ciberseguridad',
-        'Fundamentos-Cybersec/Ethical-Hacking',
+        'ciberseguridad/fundamentos',
+        'ciberseguridad/ethical-hacking',
         {
           type: 'category',
           label: 'Metodologias y Frameworks',
           link: {
             type: 'doc',
-            id: 'Fundamentos-Cybersec/Metodologias/Metodologias-Y-Frameworks',
+            id: 'ciberseguridad/metodologias/metodologias-y-frameworks',
           },
           items: [
-            'Fundamentos-Cybersec/Metodologias/MITRE',
-            'Fundamentos-Cybersec/Metodologias/NIST',
-            'Fundamentos-Cybersec/Metodologias/ZeroTrust',
-            'Fundamentos-Cybersec/Metodologias/Principio-Del-Minimo-Privilegio',
+            'ciberseguridad/metodologias/mitre',
+            'ciberseguridad/metodologias/nist',
+            'ciberseguridad/metodologias/zerotrust',
+            'ciberseguridad/metodologias/principio-del-minimo-privilegio',
           ],
         },
       ],

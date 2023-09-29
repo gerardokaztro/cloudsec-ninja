@@ -3,7 +3,7 @@ sidebar_label: '📋 Principio del minimo privilegio'
 tags: [nivel 100, ciberseguridad, metodologia]
 ---
 
-# 📋 Introducción al Principio del minimo privilegio
+# 📋 INTRODUCCIÓN AL PRINCIPIO DEL MINIMO PRIVILEGIO
 Imaginemos por un momento que estamos organizando una gran fiesta en casa. Para que todo salga perfecto, contratamos a algunas personas: un DJ para la música, un bartender para las bebidas y un chef para la comida. Ahora, una pregunta clave: ¿le daríamos una llave maestra de nuestra casa a todos ellos? La respuesta es obvia: no. A cada uno le daríamos acceso solo a las áreas que necesita para realizar su trabajo y nada más. No queremos que el DJ entre en nuestra habitación privada ni que el chef tenga acceso al estudio, ¿verdad?  
 Este mismo concepto, llevado al mundo digital, es lo que conocemos como el principio del mínimo privilegio. En esencia, se trata de otorgar a los usuarios y aplicaciones solo los permisos y accesos estrictamente necesarios para realizar sus tareas, y no uno más.
 En otras palabras, es una estrategia de seguridad que otorga a los usuarios solo los privilegios necesarios para realizar su trabajo, minimizando el riesgo si se compromete una cuenta.  

@@ -3,7 +3,7 @@ sidebar_label: '📋 NIST'
 tags: [nivel 100, ciberseguridad, metodologia]
 ---
 
-# 📋 Introducción a la NIST
+# 📋 INTRODUCCIÓN AL NIST
 Cuando hablamos de ciberseguridad, estándares y buenas prácticas, es inevitable no mencionar al NIST. Pero, ¿qué es exactamente el NIST y por qué se ha convertido en una referencia tan influyente en el mundo de la seguridad informática?  
 El Instituto Nacional de Estándares y Tecnología (NIST, por sus siglas en inglés) es una agencia del gobierno de los Estados Unidos que forma parte del Departamento de Comercio. Su función principal es promover y mantener los estándares en diversas áreas de la ciencia y la industria, incluida la ciberseguridad.
 
