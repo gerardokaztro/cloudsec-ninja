@@ -11,7 +11,7 @@ La filosofía detrás de ZeroTrust es simple pero poderosa: "No confiar en nada 
 ## Los Principios Básicos
 **Verificar Todo:** Independientemente de la ubicación o el acceso, cada intento de conexión a los recursos de una organización debe ser autenticado y autorizado.
 
-**Principio del Mínimo Privilegio:** Los usuarios solo deben tener acceso a lo que estrictamente necesitan, y nada más. [Aprender mas](./Principio-Del-Minimo-Privilegio.md)
+**Principio del Mínimo Privilegio:** Los usuarios solo deben tener acceso a lo que estrictamente necesitan, y nada más. [Aprender mas](./principio-del-minimo-privilegio)
 
 **Microsegmentación:** En lugar de tener amplias redes, las redes se dividen en segmentos más pequeños, reduciendo así el terreno de ataque.
 

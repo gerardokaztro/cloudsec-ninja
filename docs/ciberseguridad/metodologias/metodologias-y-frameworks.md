@@ -16,7 +16,7 @@ En los siguientes artículos, exploraremos en profundidad algunos de los framewo
 
 ### Aprender mas:
 
-- [MITRE](./MITRE)
-- [NIST](./NIST)
-- [ZeroTrust](./ZeroTrust)
-- [Principio del minimo privilegio](./Principio-Del-Minimo-Privilegio)
+- [MITRE](./mitre)
+- [NIST](./nist)
+- [ZeroTrust](./zerotrust)
+- [Principio del minimo privilegio](./principio-del-minimo-privilegio)
