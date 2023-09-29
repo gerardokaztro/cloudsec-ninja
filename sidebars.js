@@ -74,17 +74,13 @@ const sidebars = {
         'aws',
       ],
     },
-    {
-      type: 'doc',
-      id: 'ciberseguridad',
-    },
         {
       type: 'category',
-      label:'🌤️ Seguridad DE la nube',
+      label:'🌤️ Seguridad de la nube',
       link: {
         slug: '/seguridad-aws',
         type: 'generated-index',
-        title: 'Seguridad DE la nube de AWS',
+        title: 'Seguridad de la nube de AWS',
         description:
           "En este modulo conocerás los aspectos de seguridad DE la nube",
       },
@@ -96,7 +92,35 @@ const sidebars = {
     },
 
  
-     
+    {
+      type: 'category',
+      label: '🛡️ Fundamentos de Ciberseguridad',
+      link: {
+        slug: '/ciberseguridad',
+        type: 'generated-index',
+        title: 'Fundamentos de Ciberseguridad',
+        description:
+          "Échale un vistazo a este módulo si crees no tener las bases necesarias en el mundo techie.",
+      },
+      items: [
+        'ciberseguridad/fundamentos',
+        'ciberseguridad/ethical-hacking',
+        {
+          type: 'category',
+          label: 'Metodologias y Frameworks',
+          link: {
+            type: 'doc',
+            id: 'ciberseguridad/metodologias/metodologias-y-frameworks',
+          },
+          items: [
+            'ciberseguridad/metodologias/mitre',
+            'ciberseguridad/metodologias/nist',
+            'ciberseguridad/metodologias/zerotrust',
+            'ciberseguridad/metodologias/principio-del-minimo-privilegio',
+          ],
+        },
+      ],
+    },
       
 
     {
@@ -114,6 +138,7 @@ const sidebars = {
         'gobierno/controltower',
       ],
     },
+    
     {
       type: 'doc',
       id: 'sponsors',

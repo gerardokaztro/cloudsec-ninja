@@ -40,4 +40,12 @@ Echa un vistazo a los perfiles de cada uno de nuestros co-autores
             </tr>
         </table>
     </TabItem>
+    <TabItem value="Colombia" label="Colombia" >
+        <table>
+            <tr>
+                <td align="center"><a href="https://www.linkedin.com/in/gerh/"><img alt="Gerardo Eliasib"
+                        src="https://media.licdn.com/dms/image/D4E03AQFzkfdXi0K13A/profile-displayphoto-shrink_800_800/0/1682623886249?e=1701302400&v=beta&t=nOM5NNQyTWhcE6Y8Ee8Lxldg-yXK9I1K6Mh0bSFpHQs" width="128" /><br />Gerardo Eliasib</a></td>
+            </tr>
+        </table>
+    </TabItem>
 </Tabs>

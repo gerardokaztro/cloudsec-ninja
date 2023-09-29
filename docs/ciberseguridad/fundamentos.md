@@ -3,7 +3,7 @@ sidebar_label: '🔐 Ciberseguridad'
 tags: [nivel 100, ciberseguridad]
 ---
 
-# 🔐 Introducción a la Ciberseguridad
+# 🔐 INTRODUCCIÓN A LA CIBERSEGURIDAD
 Hoy en día uno de los activos más importantes que tienen las organizaciones son sus datos; estos son clave para el crecimiento de los negocios, adquirirlos y mantenerlos implica gran inversión de dinero y tiempo por lo que la ciberseguridad y la protección de dichos datos e infraestructura empresarial es un factor clave. 
 
 Definimos ciberseguridad como “Un conjunto de medidas de protección de la información, a través del tratamiento de las amenazas que ponen en riesgo la información que es tratada por los sistemas de información que se encuentran interconectados”, según ISACA (Information Systems Audit and Control Association – Asociación de Auditoría y Control sobre los Sistemas de Información).
