@@ -17,7 +17,7 @@ A continuación se presenta una lista de conceptos con una breve explicación y 
 
 
 + **Redes**: Es la conexión entre servidores y los equipos de los usuarios. Nos permite compartir recursos dentro del contexto de la red (servidores, impresoras, discos/almacenamiento compartido, etc.)
-[Aquí mas información sobre este concepto](/docs/fundamentos-de-nube/redes)
+[Aquí mas información sobre este concepto](/docs/fundamentos-de-tecnologia/redes)
 
 Aclarados estos conceptos, es momento de comenzar a entender qué es _la nube_.
 
