@@ -1,5 +1,5 @@
 ---
-tags: [nivel 100, iac]
+tags: [nivel 100, IaC]
 ---
 
 # 🏗️ Introducción a Infraestructura como Código

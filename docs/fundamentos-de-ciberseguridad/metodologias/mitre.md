@@ -1,9 +1,9 @@
 ---
-sidebar_label: '📋 MITRE'
+sidebar_label: 'MITRE ATT&CK'
 tags: [nivel 100, ciberseguridad, metodologia]
 ---
 
-# 📋 INTRODUCCIÓN AL MITRE ATT&CK
+# 📋 Introducción a MITRE ATT&CK
 El paisaje de las amenazas cibernéticas evoluciona constantemente, y con él, la necesidad de herramientas y marcos que nos ayuden a entender y contrarrestar estos desafíos. En ese escenario, MITRE ATT&CK ha surgido como una herramienta esencial para quienes trabajan en ciberseguridad. Pero, ¿qué es exactamente y por qué ha ganado tanta notoriedad?  
 MITRE ATT&CK (que se pronuncia "attack" y es un acrónimo de Adversarial Tactics, Techniques & Common Knowledge) es un marco de conocimiento desarrollado por MITRE Corporation que describe y categoriza el comportamiento de los ciberadversarios. Piensa en él como un atlas detallado de rutas que los atacantes pueden tomar cuando buscan comprometer un sistema.
 

@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'Fundamentos de Cloud Computing'
+sidebar_label: 'Introducción al Cloud Computing'
 tags: [nivel 100, cloud]
 ---
 
@@ -23,7 +23,7 @@ Aclarados estos conceptos, es momento de comenzar a entender qué es _la nube_.
 
 Probablemente, la primera vez que escuchamos sobre _la nube_, imaginamos algo así:
 
-![Nubes](./fundamentos/img/clouds.jpg)
+![Nubes](./img/clouds.jpg)
 
 E inmediatamente surgen preguntas del tipo: _¿Cómo puede ser que guarden los datos allí? ¿No se pierden? ¿Cómo acceden a esa información? o expresiones como "Eso debe ser complicadísimo!"_
 
@@ -33,7 +33,7 @@ En tecnología, cuando se habla de "la nube", se está haciendo referencia a un 
 
 Por ejemplo: https://aws.amazon.com/es/
 
-![AWS CONSOLE](./fundamentos/img/aws_console.png)
+![AWS CONSOLE](./img/aws_console.png)
 
 
 ## Tipos de servicios en la nube

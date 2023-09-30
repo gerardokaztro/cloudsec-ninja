@@ -6,7 +6,7 @@ import TabItem from '@theme/TabItem';
 
 # 🫶 Gracias mil
 
-Todo el contenido que ves aquí ha sido también, gracias a la contribución de nuestros co-autores, quienes decidieron ofrecernos parte de su tiempo, esfuerzo, conocimiento y experiencia para co-crear el contenido que hace de **Cloud Security Ninja** un recurso útil, que aporta su granito de arena en la formación de las siguientes generaciones de **Cloud Security Engineers** en hispanoamérica.
+Todo el contenido que ves aquí ha sido también, gracias a la contribución de nuestros co-autores, quienes nos dedicaron parte de su tiempo, esfuerzo, conocimiento y experiencia para co-crear el contenido que hace de **Cloud Security Ninja** un recurso útil, que aporta su granito de arena en la formación de las siguientes generaciones de **Cloud Security Engineers** en hispanoamérica.
 
 ## Conecta con ellos
 Echa un vistazo a los perfiles de cada uno de nuestros co-autores
