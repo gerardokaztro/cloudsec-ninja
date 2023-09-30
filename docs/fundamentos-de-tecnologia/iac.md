@@ -17,7 +17,7 @@ Cuando se declara la definición de una infraestructura mendiante la escritura d
 
 ## Herramientas
 
-Hay muchas herramientas que cumplen con las capacidades de automatización de la infraestructura y utilizan IaC. En términos generales, cualquier marco o herramienta que realice cambios o configure la infraestructura de forma declarativa o imperativa basada en un enfoque programático puede considerarse IaC. Tradicionalmente, se utilizaban herramientas de automatización de servidores (ciclo de vida) y de gestión de la configuración para lograr IaC. Ahora las empresas también utilizan herramientas de automatización de la configuración continua o marcos de IaC independientes, como CloudFormation de AWS o [Terraform de Hashicorp](/docs/fundamentos/terraform) entre otras.
+Hay muchas herramientas que cumplen con las capacidades de automatización de la infraestructura y utilizan IaC. En términos generales, cualquier marco o herramienta que realice cambios o configure la infraestructura de forma declarativa o imperativa basada en un enfoque programático puede considerarse IaC. Tradicionalmente, se utilizaban herramientas de automatización de servidores (ciclo de vida) y de gestión de la configuración para lograr IaC. Ahora las empresas también utilizan herramientas de automatización de la configuración continua o marcos de IaC independientes, como CloudFormation de AWS o [Terraform de Hashicorp](/docs/fundamentos-de-tecnologia/terraform) entre otras.
 
 ## Relacion con DevOps
 El IaC puede ser un atributo clave para permitir las mejores prácticas en los DevOps - Los desarrolladores (Dev) se involucran más en la definición de la configuración y los equipos de operaciones (Ops) se involucran más temprano en el proceso de desarrollo.
