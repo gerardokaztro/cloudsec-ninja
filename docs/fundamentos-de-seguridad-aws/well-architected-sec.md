@@ -1,10 +1,10 @@
 ---
-sidebar_label: 'Well Architected Framework'
+sidebar_label: 'Pilar de seguridad del W.A.F.'
 tags: [nivel 100, aws, seguridad]
 ---
 import ReactPlayer from 'react-player'
 
-# Introducción alWell Architected Framework
+# Introducción al Well Architected Framework
 
 ## ¿Qué es  Well Architected Framework
 
@@ -20,4 +20,3 @@ El Well-Architected Framework es una metodología desarrollada por AWS para ayud
 En este apartado nos enfocaremos en explorar detalladamente el pilar de seguridad, pero si quieres profundizar un poco más sobre los otros pilares, puedes consultar el apartado de [Computación en la nube](https://cloudsec-ninja-development.vercel.app/docs/computacion-en-la-nube)
 
 ## Pilar de Seguridad 
-
