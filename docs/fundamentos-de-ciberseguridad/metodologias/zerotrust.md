@@ -1,9 +1,9 @@
 ---
-sidebar_label: '📋 ZeroTrust'
+sidebar_label: 'Zero Trust'
 tags: [nivel 100, ciberseguridad, metodologia]
 ---
 
-# 📋 INTRODUCCIÓN AL ZEROTRUST
+# 📋 Introducción a Zero Trust
 Hoy en día, las amenazas cibernéticas se multiplican y evolucionan a una velocidad asombrosa. Ante este panorama, es esencial adoptar enfoques innovadores para proteger nuestros activos digitales. Uno de los modelos que ha ganado una notable tracción y reconocimiento es el concepto de ZeroTrust o Confianza Cero. Pero, ¿qué significa exactamente y cómo puede transformar nuestra percepción de la ciberseguridad? 
 
 La filosofía detrás de ZeroTrust es simple pero poderosa: "No confiar en nada por defecto". Tradicionalmente, las organizaciones se han centrado en proteger el perímetro de sus redes, confiando en todo lo que se encuentra dentro y siendo escépticas sobre lo que se encuentra fuera. ZeroTrust desafía esta noción, argumentando que las amenazas pueden surgir tanto interna como externamente.  

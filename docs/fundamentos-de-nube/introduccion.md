@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'Fundamentos de Cloud Computing'
+sidebar_label: 'Introducción al Cloud Computing'
 tags: [nivel 100, cloud]
 ---
 
@@ -17,13 +17,13 @@ A continuación se presenta una lista de conceptos con una breve explicación y 
 
 
 + **Redes**: Es la conexión entre servidores y los equipos de los usuarios. Nos permite compartir recursos dentro del contexto de la red (servidores, impresoras, discos/almacenamiento compartido, etc.)
-[Aquí mas información sobre este concepto](fundamentos/redes)
+[Aquí mas información sobre este concepto](/docs/fundamentos-de-tecnologia/redes)
 
 Aclarados estos conceptos, es momento de comenzar a entender qué es _la nube_.
 
 Probablemente, la primera vez que escuchamos sobre _la nube_, imaginamos algo así:
 
-![Nubes](./fundamentos/img/clouds.jpg)
+![Nubes](./img/clouds.jpg)
 
 E inmediatamente surgen preguntas del tipo: _¿Cómo puede ser que guarden los datos allí? ¿No se pierden? ¿Cómo acceden a esa información? o expresiones como "Eso debe ser complicadísimo!"_
 
@@ -33,7 +33,7 @@ En tecnología, cuando se habla de "la nube", se está haciendo referencia a un 
 
 Por ejemplo: https://aws.amazon.com/es/
 
-![AWS CONSOLE](./fundamentos/img/aws_console.png)
+![AWS CONSOLE](./img/aws_console.png)
 
 
 ## Tipos de servicios en la nube

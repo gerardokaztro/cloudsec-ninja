@@ -67,7 +67,7 @@ Para más información [Compara los planes de AWS Support](https://aws.amazon.co
 
 La `infraestructura global de AWS` se diseñó y se creó para ofrecer un entorno informático en la nube `flexible, confiable, escalable y seguro` con un rendimiento de red global de alta calidad.
 
-![Global Infrastructure](./fundamentos/img/globalinfra.png)
+![Global Infrastructure](./img/globalinfra.png)
 
 Para más información [Infraestructura Global](https://aws.amazon.com/es/about-aws/global-infrastructure/)
 
@@ -109,7 +109,7 @@ Para más información sobre los servicios de informática, podes ir a
 
 ### Elastic Compute Cloud - EC2
 
-![EC2](./fundamentos/img/amazon-ec2.jpg)
+![EC2](./img/amazon-ec2.jpg)
 
 La sigla EC2 en Amazon significa `Elastic Compute Cloud`:
 * `Elastic` se refiere a la capacidad para aumentar o reducir fácilmente la cantidad de servidores que se ejecutan para admitir una aplicación de manera automática, así como para aumentar o reducir el tamaño de los servidores existentes.
@@ -128,7 +128,7 @@ Para más información [EC2](https://aws.amazon.com/es/ec2/)
 
 ### Grupo de Auto escalado EC2 - EC2 Auto Scalling Groups
 
-![ASG](./fundamentos/img/amazon-autoscaling_fund.jpg)
+![ASG](./img/amazon-autoscaling_fund.jpg)
 
 `Auto Scaling Groups` ayuda a mantener la disponibilidad de las aplicaciones y 
  permite agregar o eliminar instancias EC2 de forma automática según las políticas definidas y las comprobaciones de estados. Cuando especificamos las políticas de escalado, el `Auto Scaling Group` puede lanzar o terminar instancias en función del aumento o la disminución de la demanda de la aplicación. 
@@ -141,7 +141,7 @@ Para más información [Auto Scaling Groups](https://docs.aws.amazon.com/autosca
 
 ### AWS Lambda
 
-![Lambda](./fundamentos/img/lambda_fund.jpg)
+![Lambda](./img/lambda_fund.jpg)
 
 AWS ofrece muchas opciones de informática. Por ejemplo, Amazon EC2 brinda máquinas virtuales. Otro ejemplo, Amazon ECS y Amazon EKS son servicios de informática basados en contenedores.
 
@@ -163,7 +163,7 @@ Para más información [Almacenamiento](https://aws.amazon.com/es/products/stora
 
 ### Amazon Simple Storage Service (S3) - Buckets de S3
 
-![S3](./fundamentos/img/amazon-s3_fund.png)
+![S3](./img/amazon-s3_fund.png)
 
 `Amazon S3` es una solución administrada de almacenamiento en la nube que se diseñó para brindar un escalado sin problemas y 99,999999999 % (11 nueves) de durabilidad. Además de poder almacenar prácticamente todos los objetos dentro de un bucket, 
  permite realizar operaciones de escritura, lectura y eliminación de los objetos almacenados en el bucket. Los `nombres de los buckets son universales` y deben ser únicos entre todos los nombres de buckets existentes en Amazon S3. Los objetos pueden ser de hasta 5 TB. De forma predeterminada, en Amazon S3 los datos se almacenan de forma redundante en varias instalaciones y en diferentes dispositivos.
@@ -180,7 +180,7 @@ Para más información [S3](https://aws.amazon.com/es/s3/)
 
 ### Amazon EBS (Elastic Block Storage) - Almacenamiento de Bloque elástico
 
-![EBS](./fundamentos/img/amazon-ebs_fund.jpg)
+![EBS](./img/amazon-ebs_fund.jpg)
 
 `Amazon EBS` permite crear volúmenes de almacenamiento individuales y asociarlos a una instancia EC2. Amazon EBS ofrece `almacenamiento a nivel de bloques`, en el cual los  volúmenes se replican automáticamente dentro de su zona de disponibilidad. 
 
@@ -198,7 +198,7 @@ Para más información [EBS](https://aws.amazon.com/es/ebs/)
 
 ### EFS
 
-![EFS](./fundamentos/img/amazon-efs_fund.jpg)
+![EFS](./img/amazon-efs_fund.jpg)
 
 Amazon EFS es un servicio completamente administrado que facilita la configuración y el escalado del almacenamiento de archivos en la nube de AWS. Puede utilizar Amazon EFS para crear un sistema de archivos para big data y análisis, flujos de trabajo de procesamiento multimedia, administración de contenido, servidores web y directorios principales. 
 
@@ -225,7 +225,7 @@ También permite personalizar la configuración de red del VPC. Por ejemplo, pod
 
 Después de crear una VPC, puede dividirla en una o más subredes. Una subred es un intervalo de direcciones IP en una VPC. Las subredes pertenecen a una única zona de disponibilidad. Puede crear subredes en diferentes zonas de disponibilidad para conseguir un nivel elevado de disponibilidad. En general, las subredes se clasifican como públicas o privadas. Las subredes públicas tienen acceso directo a Internet, pero las subredes privadas, no.
 
-![VPC y Subnet](./fundamentos/img/vpcsubnet_fund.jpg)
+![VPC y Subnet](./img/vpcsubnet_fund.jpg)
 ### Internet Gateway - Gateway de Internet
 
 Un Internet gateway es un componente del VPC escalable, redundante y altamente disponible que permite la comunicación entre instancias en el VPC e Internet. 
@@ -233,7 +233,7 @@ El Internet gateway se configura a nivel regional y se configura 1 para todo el 
 
 Para hacer pública una subred, debemos asociar una Internet Gateway al VPC y agregar una ruta en la tabla de enrutamiento para enviar el tráfico que no es local a Internet (0.0.0.0/0) a través del Internet gateway. 
 
-![Internet Gateway](./fundamentos/img/internetgateway_fund.jpg)
+![Internet Gateway](./img/internetgateway_fund.jpg)
 
 ### NAT Gateway - Gateway de traducción de las direcciones de red (NAT)
  
@@ -241,7 +241,7 @@ Un NAT Gateway permite a las instancias de la/s subred/es privada/s conectarse a
 
 Para crear un NAT Gateway, debemos especificar la subred pública en la que se debe ubicar la NAT Gateway. También debemos especificar una dirección IP elástica para asociar a la NAT Gateway cuando lo creamos (se puede crear en el momento de creación también). Una vez creado el NAT Gateway, debemos actualizar la tabla de enrutamiento que esté asociada a una o más de las subredes privadas para que dirija el tráfico orientado hacia Internet a través del NAT Gateway. De esta manera, las instancias con subredes privadas podrán comunicarse hacia Internet. 
 
-![NAT Gateway](./fundamentos/img/natgateway_fund.jpg)
+![NAT Gateway](./img/natgateway_fund.jpg)
 
 ### Grupos de Seguridad / Security Group
 
@@ -249,7 +249,7 @@ Un Grupo de Seguridad (Security Group) funciona como un firewall virtual de la i
 
 Basicamente, un grupo de seguridad representa una forma de filtrar el tráfico hacia las instancias.
 
-![Security Group](./fundamentos/img/securitygroup_fund.jpg)
+![Security Group](./img/securitygroup_fund.jpg)
 
 ### NACL - Network ACL - Lista de Control de Acceso a la red
 
@@ -257,7 +257,7 @@ Una lista de control de acceso a la red (Network ACL) es una capa de seguridad o
 
 Cada subred en el VPC debe estar asociada a una Network ACL. Si no asociamos una subred de forma explícita a una Network ACL, la subred se asociará automáticamente a la Network ACL predeterminada. Podemos asociar una Network ACL a varias subredes; sin embargo, una subred solo se puede asociar a una Network ACL a la vez. Cuando se asocia una Network ACL a una subred, se elimina la asociación anterior. 
 
-![NACL](./fundamentos/img/acldered_fund.jpg)
+![NACL](./img/acldered_fund.jpg)
 
 ### ELB
 
@@ -291,7 +291,7 @@ Para más información [Bases de Datos](https://aws.amazon.com/es/products/datab
 
 ### Amazon RDS - Amazon Relational Database Service - Servicio de Bases de Datos Relacionales
 
-![RDS](./fundamentos/img/amazon-rds_fund.jpg)
+![RDS](./img/amazon-rds_fund.jpg)
 
 `Amazon RDS` es un servicio administrado que permite configurar y operar una base de datos relacional en AWS. 
 
@@ -308,7 +308,7 @@ Las instancias y el almacenamiento de base de datos difieren en cuanto a las car
 Para más información [RDS](https://aws.amazon.com/es/rds/)
 
 ### Amazon Aurora
-![Aurora](./fundamentos/img/amazon-aurora_fund.jpg)
+![Aurora](./img/amazon-aurora_fund.jpg)
 
 `Amazon Aurora` es una base de datos relacional compatible con MySQL y PostgreSQL que se fue creada por AWS. Combina el rendimiento y la disponibilidad de las bases de datos comerciales de alta gama con la simplicidad y la rentabilidad de las bases de datos de código abierto. 
 
@@ -321,7 +321,7 @@ Existen versiones Serverless de `Amazon Aurora` permitiendo disponilibilizar ún
 Para más información [Aurora](https://aws.amazon.com/es/rds/aurora/)
 
 ### DynamoDB
-![DynamoDB](./fundamentos/img/amazon-dynamodb_fund.jpg)
+![DynamoDB](./img/amazon-dynamodb_fund.jpg)
 
 `DynamoDB` es un servicio de base de datos NoSQL rápido y flexible para todo tipo de aplicaciones que requieren una latencia uniforme de milisegundos a escala. 
 
@@ -341,7 +341,7 @@ Los servicios de Monitoreo y Alarmas en AWS son los que permite poseer métricas
 
 También permite la creación de Alarmas basados en las métricas y registros definiendo humbrales (CloudWatch Alarms)
 
-![CloudWatch](./fundamentos/img/amazon-cloudwatch.jpg)
+![CloudWatch](./img/amazon-cloudwatch.jpg)
 
 ### CloudWatch Metrics
 
