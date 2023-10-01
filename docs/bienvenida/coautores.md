@@ -21,8 +21,6 @@ Echa un vistazo a los perfiles de cada uno de nuestros co-autores
                         src="https://media.licdn.com/dms/image/C4D03AQHC-2tiTYTLlw/profile-displayphoto-shrink_800_800/0/1639062185382?e=1701302400&v=beta&t=yOpuM55oewevW_6Kjx-KW2Yqa_XEKyNtn3TMnCVeRhg" width="128" /><br />Martin Ferrini</a></td>
                 <td align="center"><a href="https://www.linkedin.com/in/rodrigo-elissamburu/"><img alt="Rodrigo Elissamburu"
                         src="https://media.licdn.com/dms/image/D4E35AQGROhiEM5MwUA/profile-framedphoto-shrink_800_800/0/1689885950321?e=1696428000&v=beta&t=H7_y86r3KpATpg53lnkW1e7pkxEpB3dohpOym9bnmBE" width="128" /><br />Rodrigo Elissamburu</a></td>
-                <td align="center"><a href="https://www.linkedin.com/in/llunarg/"><img alt="Luis Lunar"
-                        src="https://media.licdn.com/dms/image/D4E03AQF8MHZ2QkJ96w/profile-displayphoto-shrink_800_800/0/1680293408394?e=1701907200&v=beta&t=XoLCguFl9kHmqqnUytAxnPlqBpb49xZfVcP_sVcWntA" width="128" /><br />Luis Lunar</a></td>
             </tr>
         </table>
     </TabItem> 
@@ -58,11 +56,11 @@ Echa un vistazo a los perfiles de cada uno de nuestros co-autores
             </tr>
         </table>
     </TabItem>
-    <TabItem value="Venezuela" label="Venezuela ??" default>
+    <TabItem value="Venezuela" label="Venezuela 🇻🇪" default>
         <table>
             <tr>
-                <td align="center"><a href="https://www.linkedin.com/in/llunarg/"><img alt="Luis Eduardo Lunar Guevara"
-                        src="https://media.licdn.com/dms/image/C4D03AQFOl7pNELA9CQ/profile-displayphoto-shrink_800_800/0/1659650282334?e=1700697600&v=beta&t=zr8G3XR5sesd_zVdrYO2psgJnpYmcY29jOnlu5NNTNU" width="128" /><br />Luis Lunar</a></td>
+                <td align="center"><a href="https://www.linkedin.com/in/llunarg/"><img alt="Luis Lunar"
+                        src="https://media.licdn.com/dms/image/D4E03AQF8MHZ2QkJ96w/profile-displayphoto-shrink_800_800/0/1680293408394?e=1701907200&v=beta&t=XoLCguFl9kHmqqnUytAxnPlqBpb49xZfVcP_sVcWntA" width="128" /><br />Luis Lunar</a></td>
             </tr>
         </table>
     </TabItem>
