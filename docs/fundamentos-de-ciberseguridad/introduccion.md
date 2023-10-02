@@ -10,7 +10,7 @@ En un mundo cada vez más interconectado, la seguridad de la información ha pas
 **Seguridad de la información** y **Ciberseguridad** son términos que se relacionan entre sí pero tienen algunas diferencias.
 :::
 
-## Garantía de seguridad
+## Principios de seguridad
 ### Conceptos de Seguridad de la Información
 Este es un término que debes haber oído mucho, y no es para menos, hoy en dia la información es un activo muy importante. Este concepto se refiere a la *capacidad de reducir el nivel de peligro, daño o riesgo que puede sufrir la información de modo que se llegue a un nivel que pueda ser aceptable por el dueño de esa información* sin importar cual sea su formato de dicha información: **física, digital u algún otro medio.**
 
@@ -121,7 +121,7 @@ En el mundo digital de ahora, las organizaciones con las que tratamos recopilan 
 - Educar a los usuarios de nuestras organizaciones sobre como pueden proteger su propia informacion personal.
 - Proteger los datos recopilados por las organizaciones.
 
-La informacion privada puede venir en muchas formas, dos de los elementos mas comunes son: la información de identificacion personal (PII) y la información de salud protegida (HPI).
+La informacion privada puede venir en muchas formas, dos de los elementos mas comunes son: la [información de identificacion personal](https://www.proofpoint.com/es/threat-reference/personal-identifiable-information#:~:text=trabajar%20con%20PII-,Significado,en%20el%20robo%20de%20identidades.) (PII) y la [información de salud protegida](https://www.linkedin.com/pulse/informaci%C3%B3n-de-salud-protegida-phi-o-personal-health-javier/?originalSubdomain=es) (PHI).
 
 - PII (Personal Identification Information) incluye toda la información que puede vincularse a un individuo, como: nombre, apellidos, documento de identidad nacional, licencia de conducir, numero de pasaporte, correo electrónico.
 
@@ -164,26 +164,146 @@ Estas son algunas políticas de seguridad comúnes que se encuentran en la mayor
 
 - **Change management policies:** procedimientos que incluyen información sobre como se dan los cambios en la infraestrucutra tecnologica de la organización.
 
-## Gestion de riesgos
-Insertar contenido
+## Gestión de riesgos
+### Entendiendo que es un riesgo
+Gestionar los riesgos dentro de una organización, es una de las principales sino la principal tarea que tiene un profesional de seguridad. ¿Porqué?, pues las organizaciones enfrentan muchos tipos diferentes de riesgos y es nuestro trabajo **identificar, evaluar y administrar** esos riesgos para proteger nuestra **información y activos**.
+
+Para tener un mejor entendimiento de qué cosa son los riesgos, vamos a dividir los riesgos en las categorias de **riesgo interno y riesgo externo**.
+
+Los **riesgos internos** son aquellos que surgen desde adentro de nuestra organización y los **riesgos externos** desde afuera de la organización, por ejemplo:
+- Tenemos el riesgo externo de que un **actor malicioso (bad actor en inglés)** ataque a nuestra organización con un ataque de ransomware.
+
+- Tenemos el riesgo interno donde ocurre un incendio en nuestras instalaciones provocada por un corto-circuito.
+
+> No podemos hacer mucho para evitar que un atacante intente o inicie el ataque, pero si podemos crear controles que reduzcan la probabilidad de que el ataque en cuestion tenga éxito.
+
+También estan los **riesgos de multiples partes**, estos riesgos se comparten entre muchas organizaciones diferentes. Por ejemplo si un proveedor de software como servicio se ve comprometido, ese es un riesgo de multiples partes, porque ese compromiso representa un riesgo para todos los clientes del proveedor de software.
+
+### Algunas terminologías de la Gestión de Riesgos
+Términos como amenazas, vulnerabilidades y activos son familiares para la mayoría de los profesionales de ciberseguridad.
+
+- Un activo es algo que necesita protección.
+- Una vulnerabilidad es una brecha o debilidad en esos esfuerzos de protección.
+- Una amenaza es algo o alguien que tiene como objetivo explotar una vulnerabilidad para frustrar los esfuerzos de protección.
+
+El riesgo es la intersección de estos términos. Veámoslos más de cerca:
+- **Una amenaza es una fuerza externa que pone en peligro la seguridad de su información y sistemas**. Una amenaza es una persona o cosa que toma medidas para explotar (o hacer uso de) las vulnerabilidades del sistema de una organización objetivo, como parte del logro o la promoción de su meta u objetivos. Para comprender mejor las amenazas, considere el siguiente escenario:
+
+  En el contexto de la ciberseguridad, los actores de amenazas típicos incluyen lo siguiente:
+  - Insiders (ya sea deliberadamente, por simple error humano, o por incompetencia grave).
+  - Individuos externos o grupos informales (ya sea planificados u oportunistas, descubriendo la vulnerabilidad).
+  - Entidades formales que no son políticas (como competidores comerciales y ciberdelincuentes).
+  - Entidades formales que son políticas (como terroristas, estados-nación y hacktivistas).
+  - Recolectores de inteligencia o información (podría ser cualquiera de los anteriores).
+  - Tecnología (como bots de ejecución libre e inteligencia artificial, que podrían ser parte de cualquiera de los anteriores).
+
+- **Un vector de amenaza es el método que utiliza un atacante para llegar a su objetivo**. Esto podría ser un kit de herramientas de hackers, ingeniería social o incluso intrusión física.
+
+- **Las vulnerabilidades son debilidades en sus controles de seguridad que una amenaza podría explotar** para socavar la confidencialidad, integridad o disponibilidad de su información o sistemas.
+
+Ejemplo: 
+- Si no ha actualizado sus firmas antivirus recientemente y los actores maliciosos lanzan un nuevo virus en Internet, corre un riesgo. Eres vulnerable porque te falta un control de seguridad. Y hay una amenaza, el nuevo virus. 
+
+### Evaluacion del riesgo
+Los riesgos están presentes en todas partes en el mundo de la seguridad de la información. Desde actores maliciosos y malware hasta dispositivos perdidos y parches de seguridad faltantes, hay mucho en el plato de profesionales de seguridad de la información. Por supuesto, abordar cada uno de estos riesgos requiere tiempo y dinero.
+
+Los profesionales de la seguridad de la información deben priorizar sus listas de riesgos para gastar estos valiosos recursos (tiempo y dinero) donde tendrán el mayor efecto de seguridad. Ahí es donde entra en juego la **evaluación de riesgos**.
+
+La evaluación de riesgos es el **proceso de identificar y clasificar los riesgos** que enfrenta una organización en **función de la probabilidad de que ocurran y su impacto** esperado en la organización.
+
+Una vez que haya evaluado los riesgos que enfrenta su organización, probablemente todavía tenga una lista algo abrumadora. La siguiente etapa del proceso clasifica esos riesgos por dos factores: **probabilidad e impacto.** La probabilidad de un riesgo es la **probabilidad de que el riesgo realmente ocurra** y el impacto de un riesgo es la **cantidad de daño que ocurrirá** si el riesgo se materializa.
+
+Por ejemplo, un terremoto puede causar daños devastadores a un centro de datos, mientras que una tormenta puede no causar ningún daño en absoluto. Cuando realizamos una evaluación de riesgos, tenemos dos categorías diferentes de técnicas que podemos utilizar para evaluar la probabilidad y el impacto de un riesgo, **técnicas cualitativas** y **técnicas cuantitativas**.
+
+Las técnicas cualitativas utilizan el juicio subjetivo para evaluar los riesgos. Por lo general, categorizar los riesgos como bajos, medios o altos en las escalas de probabilidad e impacto. Las técnicas cuantitativas utilizan calificaciones numéricas objetivas para evaluar la probabilidad y el impacto. Aquí hay un ejemplo de un gráfico cualitativo de evaluación de riesgos. Cuando se considera un riesgo específico, el evaluador primero califica la probabilidad como baja, media o alta, y luego hace lo mismo para el impacto. Luego, el gráfico categoriza el riesgo general. Por ejemplo, un riesgo de alta probabilidad y alto impacto se clasificaría como un riesgo alto, mientras que un riesgo de probabilidad media y bajo impacto se clasificaría en general como un riesgo bajo. Cuando realice una evaluación cuantitativa de riesgos, hará algunos cálculos para calcular la cantidad exacta de daño financiero que puede esperar de un riesgo determinado en un año típico.
+
+> Una vez que complete una evaluación de riesgos para su organización, le quedará una lista priorizada de riesgos que debera atender.
+
+### Tratamiento del riesgo
+El tratamiento de riesgos es el proceso de analizar las posibles respuestas a esos riesgos e implementar estrategias para controlar cada riesgo de manera adecuada.
+
+Existen 4 maneras de poder atender los riesgos:
+
+- **Risk Avoindance o Evitación del riesgo**: se refiere a cambiar la práctica de cambiar algo para no tener presente el riesgo. Por ejemplo, si tienes tu oficina física en la costa, tienes el riesgo de que ocurra una inundación, entonces decides moverte a la Sierra para evitar dicho riesgo.
+
+- **Risk Treatment o Transferencia del riesgo**: practicamente es transferir o cambiar el impacto de un riesgo de su organización a otra. El ejemplo mas común es que muchas organizaciones consideran la compra de pólizas de seguro de seguridad cibernética para protegerse contra el daño financiero causado por los actores maliciosos y el robo de identidad.
+
+- **Risk Mitigation Mitigación del riesgo**: Aquí la organización toma medidas para reducir la probabilidad y/o el impacto de un riesgo. Por ejemplo, si queremos mitigar el riesgo de inundación de nuestros centro de datos, podriamos contratar a un especialista en control de inundaciones para instalar sistemas diseñados para desviar el agua de nuestras instalaciones hacia el drenaje.
+
+- **Aceptación del riesgo**: Esta es la última manera de gestionar un riesgo. A medida de que sea dificil poder evitar, transferir o miitgar un riesgo. Las organizaciones deciden aceptar algunos riesgos después de hacer un profundo análisis reflexivo que determine que el costo de realizar otra acción de gestión de riesgos, supere por mucho el beneficio de controlarlo. Por ejemplo, siguiendo con el caso de la inundación, podriamos decir moverse a la Sierra o contratar a un especialista de inundaciones es mucho mas costoso que el daño que provocaria que nuestras instalaciones en la Costa se inunde.
+
+#### Perfil de riesgo
+Cada organización debe elegir la combinación adecuada de estas estrategias de gestión de riesgos para su propio entorno técnico y empresarial. La **combinación de riesgos que afectan a una organización** se conoce como su perfil de riesgo, y la organización adopta estrategias de gestión de riesgos para abordar los riesgos en ese perfil.
+
+El nivel inicial de riesgo que existe en una organización antes de que se implementen controles es el **riesgo inherente** de la organización. Luego se aplican controles para **reducir ese riesgo**. Pero, por supuesto, no todos los riesgos pueden eliminarse por completo. **El riesgo que permanece después de que el riesgo inherente se reduce mediante los controles** se conoce como el **riesgo residual**. Y los controles mismos pueden introducir algunos riesgos nuevos.
+
+Por ejemplo, si instala un firewall para reducir el riesgo inherente de no tener control sobre el tráfico de red de su organizacion, es un buen enfoque, pero eso puede también agrega un nuevo riesgo de que el firewall en sí pueda fallar. Ese nuevo riesgo que resulta de agregar controles (como la implementación de un firewall) se conoce como *riesgo de control o control de riesgo*.
+
+La realidad es que la organización tendrá que aceptar algún riesgo continuo para continuar las operaciones. Los altos mandos tienen que decidir cuánto riesgo eligen aceptar. Este es un proceso conocido como determinar la tolerancia al riesgo de la organización. El objetivo de la gestión de riesgos es asegurarse de que la combinación del riesgo residual y el riesgo de control esté por debajo de la tolerancia al riesgo de la organización.
 
 ## Controles de seguridad
 Tras abordar en un artículo previo la importancia de la Tríada CIA (Confidencialidad, Integridad, Disponibilidad) como base de la ciberseguridad, es crucial entender cómo estos principios se aplican de manera práctica. Este ámbito corresponde a los controles de seguridad, que constituyen los mecanismos por los cuales las organizaciones materializan los fundamentos de la Tríada CIA. 
 
 ### Controles de Seguridad: Concepto y tipos
-Los controles de seguridad son medidas específicas implementadas para proteger la confidencialidad, integridad y disponibilidad de la información. Estos se categorizan en controles físicos, técnicos y administrativos. La implementación de controles debería reducir el riesgo a un nivel aceptable.
+Los controles de seguridad son medidas específicas implementadas para proteger la confidencialidad, integridad y disponibilidad de la información. Estos controles se categorizan por su propósito, ya sea que estén diseñados para prevenir, detectar o corregir problemas de seguridad, y por su mecanismo de acción, es decir la forma en que funcionan y se clasifican en [controles técnicos, administrativos y físicos](#controles-de-seguridad-concepto-y-tipos). La implementación de controles debería reducir el riesgo a un nivel aceptable.
 
+#### Por su funcionamiento
 - **Controles Físicos:** estas son las medidas palpables que se emplean para proteger activos físicos, como las cámaras de seguridad que monitorean un centro de datos.
 
 - **Controles Técnicos o Lógicos:** se trata de los mecanismos implementados mediante software o hardware para proteger la información, como el uso de un antivirus.
 
 - **Controles Administrativos o Gerenciales:** son las políticas y procedimientos que guían cómo se implementan los controles de seguridad, como una política que exige revisar los registros de seguridad semanalmente.
 
+#### Por su propósito
+- **Preventivo**: De prevenir y actúa sobre la probabilidad. Se enfoca en evitar que una amenaza o situación se materialice u ocurra.
+  > *ISO 27002:2022 define este control como: El control destinado a evitar que se produzca un incidente de seguridad de la información.*
+
+    - Una valla, que impide que personas pasen directamente hacia una zona.
+
+    - Un firewall, que bloquea conexiones o ciertos ataques hacia una red.
+
+    - Un IPS (Intrusion Prevention System), que detecta comportamientos anómalos en la red para detectar intrusiones en los sistemas y los previene al descartar paquetes y desconectar sesiones.
+
+    - Control de accesos, que pueden ser físicos o lógicos; pero permiten que accedan únicamente quienes lo tienen permitido.
+
+- **Detectivo**: De detectar y actúa sobre la probabilidad. Este tipo de control está en funcionamiento constante y emite una alarma o registro de la actividad a monitorear para que luego otro control opere.
+  > ISO 27002:2022 define este control como: las acciones de control cuando se produce un incidente de seguridad de la información.
+
+    - Una cámara de vigilancia, que registra la actividad en una zona y puede servir como evidencia, o con un guardia que observa comportamientos inusuales.
+
+    - Un sensor de movimiento, que detecta cuando hay movimiento en cierta zona u horario donde no está permitido el acceso.
+
+    - Un IDS (Intrusion Detection System), que detecta comportamientos anómalos en la red para detectar intrusiones en los sistemas.
+
+    - Un análisis de vulnerabilidades, para detectar vulnerabilidades técnicas en los sistemas.
+
+- **Correctivo**: De Corregir y actúa sobre el impacto. Suele ser más costoso y difícil de mantener por lo que se debe ser selectivo en tecnologías, activos, estrategia y frecuencia. Suele tener pérdidas de información desde la toma hasta su restauración, y para disminuir esta brecha suele aumentar el costo del control.
+  > ISO 27002:2022 define este control como: los actos de control después de que se produzca un incidente de seguridad de la información.
+
+    Este tipo de control es la última barrera que no busca reducir probabilidad, pero si impacto o el daño causado en caso tal de que una amenaza tenga éxito, sea por evasión o porque controles previos no fueron suficientes.
+
+    - Una copia de seguridad, respaldo o backup, es el control estrella de este tipo. Si la información fue comprometida o afectada, se puede recuperar la información desde el último respaldo.
+
+    - Personal alterno, cuando una persona no puede continuar su labor y esto puede afectar un servicio, una persona que pueda suplir parcial o totalmente puede minimizar el impacto.
+
+    - Mitigar/Corregir vulnerabilidad, se toman acciones para reducir vulnerabilidades en los sistemas que hayan sido detectadas o explotadas.
+
 ### Desglose de Controles y Políticas: Ejemplo de un Firewall
 Para ilustrar la relación entre controles y políticas, consideremos el ejemplo de un firewall, un sistema que controla el tráfico de red entre diferentes redes o dispositivos. Este tema se abordará con mayor profundidad en futuros artículos.
 - **Control Técnico**: Configuración del firewall para bloquear todo tráfico entrante desde direcciones IP desconocidas y/o dudosa reputación.
 
 - **Política de Seguridad**: Política que establece que solo los administradores de sistemas autorizados pueden realizar cambios en la configuración del firewall.
+
+### Seleccionando controles de seguridad
+Recuerda que los controles de seguridad son procedimientos y mecanismos que una organización implementa como contramedida para abordar los riesgos de seguridad de alguna manera. Esto podría incluir tratar de reducir la probabilidad de que se materialice un riesgo, minimizar el impacto del riesgo si ocurre o detectar problemas de seguridad que tienen lugar.
+
+Ahora, pensemos por un momento en la forma en que protege su hogar. Probablemente utilice una variedad de controles de seguridad diferentes como:
+- Cerraduras en sus puertas y ventanas diseñadas para mantener alejados a los intrusos, minimizando el riesgo de robo.
+- Tener una alarma antirrobo diseñada para detectar intrusiones.
+- Cámaras de seguridad para registrar la actividad dentro y fuera de su hogar.
+- Interruptores de luz automáticos para disuadir a un ladrón simulando la actividad humana y cualquier número de otros controles.
+
+Algunos de estos controles están diseñados para lograr el mismo propósito o, en el lenguaje de los profesionales de la seguridad, el mismo objetivo de control. Por ejemplo, tanto una alarma antirrobo como las cámaras de seguridad están diseñadas para detectar intrusos. A veces usamos más de un control para lograr el mismo objetivo porque queremos estar seguros de que permanecemos seguros incluso si un control falla. Si un ladrón logra abrir una ventana sin disparar la alarma antirrobo, aún puede ser captado por sus cámaras de seguridad. Esto se conoce como el principio de **defensa en profundidad** aplicando múltiples controles superpuestos para lograr el mismo objetivo.
 
 ## Conclusión
 La Tríada CIA no es solo un conjunto de prácticas recomendadas; es un llamado a la acción para todas las organizaciones que buscan prosperar en la era digital. La implementación efectiva de estos principios en AWS se traduce en una mayor resiliencia frente a las amenazas cibernéticas. AWS ofrece una variedad de herramientas y servicios que se alinean con los principios de la Tríada, desde la administración de identidades hasta opciones robustas de almacenamiento y recuperación de datos.

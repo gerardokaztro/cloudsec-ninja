@@ -34,7 +34,7 @@ Esta ruta de aprendizaje toma como referencia e inspiración algunas publicacion
             <td>
                 <a href="/docs/fundamentos-de-nube/introduccion" >Introducción al Cloud Computing</a>
                 <br/>
-                <a href="/docs/fundamentos-de-nube/introduccion" >Fundamentos de AWS</a>
+                <a href="/docs/fundamentos-de-nube/aws" >Fundamentos de AWS</a>
             </td>
             <td> 
                 <a href="/docs/fundamentos-de-ciberseguridad/introduccion" >Introducción a la Ciberseguridad</a>

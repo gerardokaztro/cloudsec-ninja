@@ -14,7 +14,7 @@ const sidebars = {
         'bienvenida/autor',
         'bienvenida/coautores',
         'bienvenida/ruta-de-aprendizaje',
-        'bienvenida/empezando',
+        'bienvenida/como-ser-parte',
         'bienvenida/comunidad'
       ],
     },
