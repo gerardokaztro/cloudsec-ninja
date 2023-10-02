@@ -1,37 +1,9 @@
 ---
-sidebar_label: 'Empezando'
+sidebar_label: 'Cómo ser parte'
 ---
-import ReactPlayer from 'react-player'
 
-# 🏁 Cómo iniciar este lindo viaje
-
-## Instrucciones para usuarios
-
-Lo primero, es hacer un `git clone` a este [repositorio](https://github.com/gerardokaztro/cloudsec-ninja) en una carpeta de tu local. Esto es para que puedas tener todo el código de los ejercicios que se realizarán en cada tema.
-
-```bash
-$ git clone https://github.com/gerardokaztro/cloudsec-ninja.git
-```
-
-> Si te gusta el contenido que ves aquí, no dudes en regalarle una 🌟 al repo
-
-Todo el contenido de las diferentes secciones de aprendizaje de la plataforma se encuentran dentro de la carpeta `docs`. Algunas secciones tendran código que podras usar para realizar los laboratorios, podrías encontralo dentro de ruta carpeta `code`. Por ejemplo: `docs/fundamentos/code` o `docs/gobierno/code`.
-
-```
-.docs
-├── módulo x
-│   ├── code/
-│   ├── img/
-│   └── .md
-├── fundamentos
-│   ├── code/
-│   ├── img/
-│   └── .
-└── gobierno
-    ├── code/
-    ├── img/
-    └── .
-```
+# 🗣️ Únete, sé parte y deja huella
+¿Te gustaría ser parte del equipo de co-autores para este proyecto open-source? Es muy sencillo, solo sigue las instrucciones a continuación y aporta a la comunidad parte de tu conocimiento y experiencia, ante cualquier duda puedes ponerte en contacto con el autor.
 
 ## Instrucciones para contribuidores
 
@@ -91,7 +63,7 @@ $ cd docs/
 $ git push origin development
 ```
 
-Finalmente, crea un **[Pull Request](https://github.com/gerardokaztro/cloudsec-ninja/compare/main...development)** a `main`.
+Finalmente, crea un **Pull Request** desde tu rama `development` a `main` del repositorio original.
 
 > Esto será revisado por los *code owners* y presta atención por si dejan algún comentario que debas revisar y responder, para que decidan aprobar tu cambio. 
 
@@ -104,7 +76,7 @@ Sin embargo, si quieres proponer un nuevo tema asegúrate de contactar con el au
 
 1. Si vas añadir contenido dentro de un archivo existente, entonces ubica el archivo y empeza a escribir.
 
-  1.1 Por ejemplo, quieres añadir un video sobre AWS Control Tower, o quizas hacer una correción sobre una característica mal explicada, entonces la ruta seria [`docs/gobierno/controltower.md`](https://github.com/gerardokaztro/cloudsec-ninja/blob/development/docs/gobierno/controltower.md)
+  1.1 Por ejemplo, quieres añadir un video sobre AWS Control Tower, o quizas hacer una correción sobre una característica mal explicada, entonces la ruta seria [`docs/gobierno/aws-control-tower.md`](https://github.com/gerardokaztro/cloudsec-ninja/blob/development/docs/gobierno/aws-control-tower.md)
 
 2. Si vas a añadir contenido sobre una página aun no creada y ya validaste que forma parte del roadmap, entonces puedes crearla tu mismo, asi:
 
@@ -119,4 +91,4 @@ Sin embargo, si quieres proponer un nuevo tema asegúrate de contactar con el au
   | sidebar_label: | Nombre del artículo de como se verá reflejado en el sidebar de la página |
   | tags: | Array que contiene las etiquetas para clasificar el contenido |
 
-> 💡 Usa este artículo como referencia, contiene la [estructura de un artículo](https://raw.githubusercontent.com/gerardokaztro/cloudsec-ninja/development/docs/fundamentos/redes.md) que debes seguir al momento de escribir tu contenido.
+> 💡 Usa este artículo como referencia, contiene la [estructura de un artículo](https://raw.githubusercontent.com/gerardokaztro/cloudsec-ninja/development/docs/fundamentos-de-tecnologia/redes.md) que debes seguir al momento de escribir tu contenido.

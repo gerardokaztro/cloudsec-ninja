@@ -3,12 +3,13 @@ sidebar_label: 'Sobre el autor'
 ---
 
 # 💪 ¿Cuál es la motivación?
-**[Gerardo Castro](https://www.linkedin.com/in/gerardokaztro/)** en adelante *"Gera"*, es quién diseñó **Cloud Security Ninja**. Durante su viaje hacia el mundo de tecnología, paso por muchos desafíos y la mayoría de ellos, siempre estuvo relacionado con el dinero 💸 que requería para costear su aprendizaje, lo que generaba que las oportunidades para conseguir un buen empleo y crecer profesionalmente se vieran muy limitadas.
+**[Gerardo Castro](https://www.linkedin.com/in/gerardokaztro/)** en adelante *"Gera"*, es quién diseñó **Cloud Security Ninja**. Durante su viaje hacia el mundo de tecnología, paso por muchos desafíos y la mayoría de ellos, siempre estuvo relacionado con el dinero 💸 que requería para costear su aprendizaje, lo que resultaba en que las oportunidades para conseguir un buen empleo y crecer profesionalmente se vieran muy limitadas.
 
 Por suerte algunas virtudes como la perseverancia, las ganas de aprender, de lucharla y no rendirse, era algo que tenía de sobra 😅. Con el tiempo, encontró en el camino a las personas correctas, aquellas manos amigas que le dieron la oportunidad de aprender y crecer: [Gustavo Cellerico](https://www.linkedin.com/in/adolfo-cellerico/), ¡contigo empezó todo!.
 
-Bajo esta breve anécdota es que se nace **Cloud Security Ninja**, con el único proposito de compartir el conocimiento y la experiencia que costo mucho conseguir de este lado. Dedicado con ❤️ para todas aquellas personas que buscan aprender, crecer y construir su propio camino profesional dentro de tecnología. 
+Bajo esta breve anécdota es que se nace **Cloud Security Ninja**, con el único proposito de compartir el conocimiento y la experiencia; que dicho sea de paso costo mucho conseguir de este lado.
 
+> Esto se lo dedico con ❤️ a quienes la vienen luchando, a quienes buscan aprender, crecer y hacer historia.
 
 ## Sobre el autor
 En la actualidad, **[Gerardo](https://www.linkedin.com/in/gerardokaztro/)** es consultor de Seguridad en Nube. Le gusta escribir blog técnicos y enseñar sobre ciberseguridad en eventos presenciales y virtuales para diferentes comunidades tech en Latinoamérica. Además, crea y dirige videos, podcasts, clases en línea y talleres enfocados en AWS. Con sus consejos, [ha inspirado a muchas personas a iniciar y hacer crecer su carrera en la nube](https://www.youtube.com/watch?v=woLZeatJGHg).
