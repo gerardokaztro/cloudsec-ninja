@@ -6,7 +6,7 @@ tags: [nivel 100, aws]
 
 [Amazon Web Services (AWS)](https://aws.amazon.com/es/what-is-aws/)  es una plataforma en la nube que ofrece un amplio conjunto de productos globales basados en Cloud. Estos productos se entregan a través de Internet, y permiten el acceso bajo demanda a recursos informáticos, de almacenamiento, de red, de base de datos y otros recursos de TI para utilizar en diferentes proyectos, así como las herramientas para administrarlos. A un solo clic se puede aprovisionar y lanzar recursos de AWS. Los recursos estarán listos para que los utilicemos en cuestión de minutos.
 
-AWS ofrece una gran flexibilidad permitiendo realizar nuevas configuraciones y actualizaciones bajo demanda, escalar de forma ascendente o descendente automáticamente para cumplir con los patrones de uso y optimizar el gasto. La facturación de los servicios de AWS se convierte en un gasto operativo en lugar de un gasto de capital.
+AWS ofrece una gran flexibilidad permitiendo realizar nuevas configuraciones y actualizaciones bajo demanda, escalar de forma ascendente o descendente automáticamente para cumplir con los patrones de uso y optimizar el gasto. La facturación de los servicios de AWS se convierte en un gasto operativo en lugar de un gasto de capital. 
 
 Los servicios de AWS están diseñados para trabajar en conjunto para poder desarrollar cualquier tipo de aplicación o carga de trabajo.
 
