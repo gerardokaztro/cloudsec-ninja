@@ -1,43 +1,60 @@
 ---
 sidebar_label: 'Ruta de aprendizaje'
+hide_table_of_contents: true
 ---
 
 # 🛣️ Ruta de aprendizaje
 Esta ruta de aprendizaje toma como referencia e inspiración algunas publicaciones como el **[Ramp-Up Guide de AWS Security](https://d1.awsstatic.com/training-and-certification/ramp-up_guides/Ramp-Up_Guide_Security.pdf)**, el **[Pilar de Seguridad de AWS](https://docs.aws.amazon.com/es_es/wellarchitected/latest/security-pillar/welcome.html)** y otros frameworks muy reconocidos en el mundo de la seguridad como **[NIST CyberSecurity Framework](https://www.nist.gov/cyberframework)**. Esta guía no está destinada a ser consumida en su totalidad. Diferentes secciones abordan diferentes objetivos que pueden tomarse por separado.
 
-## Para outsiders
+## Desde outsiders a principiantes
  En nuestro intento de no dejar a nadie fuera, hemos creado esta mini ruta, cortita y al pie, para todas aquellas personas ajenas al área de la tecnología. Estos temas te ayudarán a aprender los fundamentos de las principales tecnologías que como futuro profesional de TI debes saber.
 
 <table border="0" width="100%"> 
     <tbody>
         <tr>
+            <td width="120"><b>Módulo</b></td>
             <td><font color="#ff9900"><b>Fundamentos de TI</b></font></td>
+            <td><font color="#ff9900"><b>Computación en la nube</b></font></td>
+            <td><font color="#ff9900"><b>Ciberseguridad</b></font></td>
+            <td><font color="#ff9900"><b>Seguridad DE la nube</b></font></td>
+        </tr>
+        <tr>
+            <td><font color="#ff9900"><b>Temas</b></font></td>
             <td>
-                <a href="/docs/fundamentos/redes" >Redes</a>
+                <a href="/docs/fundamentos-de-tecnologia/redes" >Redes</a>
                 <br/>
-                <a href="/docs/fundamentos/serverless" >Serverless</a>
+                 <a href="/docs/fundamentos-de-tecnologia/contenedores" >Contenedores</a>
                 <br/>
-                <a href="/docs/fundamentos/devops" >DevOps</a>
+                <a href="/docs/fundamentos-de-tecnologia/serverless" >Serverless</a>
+                <br/>
+                <a href="/docs/fundamentos-de-tecnologia/devops" >DevOps</a>
+                <br/>
+                <a href="/docs/fundamentos-de-tecnologia/iac" >Infraestructura como Código</a>
+            </td>
+            <td>
+                <a href="/docs/fundamentos-de-nube/introduccion" >Introducción al Cloud Computing</a>
+                <br/>
+                <a href="/docs/fundamentos-de-nube/aws" >Fundamentos de AWS</a>
             </td>
             <td> 
-                <a href="/docs/fundamentos/contenedores" >Contenedores</a>
+                <a href="/docs/fundamentos-de-ciberseguridad/introduccion" >Introducción a la Ciberseguridad</a>
                 <br/>
-                <a href="/docs/fundamentos/iac" >Infraestructura como Código</a>
+                <a href="/docs/fundamentos-de-ciberseguridad/ethical-hacking" >Ethical Hacking</a>
                 <br/>
-                <a href="/docs/computacion-en-la-nube" >Computación en la nube</a>
+                <a href="/docs/fundamentos-de-ciberseguridad/metodologias/metodologias-y-frameworks/" >Metodologías y Frameworks</a>
             </td>
             <td> 
-                <a href="/docs/ciberseguridad" >Ciberseguridad</a>
+                <a href="/docs/fundamentos-de-seguridad-aws/responsabilidad-compartida" >Modelo de responsabilidad compartida</a>
                 <br/>
-            </td>
-            <td> 
-                <a href="/docs/seguridad-de-la-nube" >Seguridad DE la nube de AWS</a>
+                <a href="/docs/fundamentos-de-seguridad-aws/programas-de-cumplimiento" >Programas de cumplimiento</a>
+                <br/>
+                <a href="/docs/fundamentos-de-seguridad-aws/well-architected-sec" >Pilar de Seguridad del Well Architected Framework.</a>
             </td>
         </tr>
     </tbody>
 </table>
 
-## Para estudiantes y profesionales de tecnología
+## Desde principiantes a avanzados
 Al momento de la publicación oficial de esta plataforma para toda nuestra comunidad en internet, pueda que no veas la mayoria de estos temas, eso es porque lanzaremos un **EARLY PREVIEW** e iremos actualizando el contenido de manera mensual, **el desarrollo del contenido sera paulatino,** estimamos que al cabo de un año, podamos concluir una v1.0 y en adelante procuraremos mantener el contenido actualizado y **agregar contenido potencialmente nuevo.**
 
 Les pedimos que tengan mucha empatía, esto es totalmente gratis para todos ustedes, sin embargo tengan en cuenta que detrás de escena, existe mucha inversión por parte de todos los co-autores, horas de reunión, tazas de café, horas de redacción, y cuestiones varias, a la par de que cada uno tenemos nuestras propias responsabilidades como la familia, el trabajo, el estudio y demás, hacemos esto solo por pasión, voluntad y la convicción de hacer una comunidad mas representada.
@@ -46,15 +63,15 @@ Les pedimos que tengan mucha empatía, esto es totalmente gratis para todos uste
     <tbody>
         <tr>
             <td width="120"><b>Categoría</b></td>
-            <td colspan="7"><font color="#ff9900"><b>Servicio, Estrategia o Solución</b></font></td>
+            <td colspan="7"><font color="#ff9900"><b>Servicios de seguridad AWS</b></font></td>
         </tr>
         <tr bgcolor="#BED3E1">
             <td><font color="#ff9900"><b>Cloud Foundations: Estructuras Multi-Cuenta</b></font></td>
             <td colspan="3"> 
-                <a href="/docs/gobierno/organizations" >AWS Organizations</a>
+                <a href="/docs/gobierno/aws-organizations" >AWS Organizations</a>
             </td>
             <td colspan="4">
-                <a href="/docs/gobierno/controltower" >AWS Control Tower</a>
+                <a href="/docs/gobierno/aws-control-tower" >AWS Control Tower</a>
             </td>
         </tr>
         <tr bgcolor="#BED3E1">

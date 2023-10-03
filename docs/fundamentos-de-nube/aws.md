@@ -1,6 +1,6 @@
 ---
-sidebar_label: '☁️ Computación en la Nube'
-tags: [nivel 100, aws]
+sidebar_label: 'Fundamentos de AWS'
+tags: [nivel 100, cloud, aws]
 ---
 # ☁️ Introducción a Amazon Web Services
 
@@ -260,6 +260,9 @@ Cada subred en el VPC debe estar asociada a una Network ACL. Si no asociamos una
 
 ![NACL](./img/acldered_fund.jpg)
 
+### ELB
+![NACL](./img/acldered_fund.jpg)
+
 ### Elastic Load Balancig - Balanceo de Carga elastico
 
 ![ELB](./img/amazon-elb_fund.jpg)
@@ -370,6 +373,7 @@ Las instancias y el almacenamiento de base de datos difieren en cuanto a las car
 Para más información [RDS](https://aws.amazon.com/es/rds/)
 
 ### Amazon Aurora
+![Aurora](./img/amazon-aurora_fund.jpg)
 ![Aurora](./img/amazon-aurora_fund.jpg)
 
 `Amazon Aurora` es una base de datos relacional compatible con MySQL y PostgreSQL que se fue creada por AWS. Combina el rendimiento y la disponibilidad de las bases de datos comerciales de alta gama con la simplicidad y la rentabilidad de las bases de datos de código abierto. 

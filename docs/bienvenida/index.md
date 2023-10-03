@@ -1,6 +1,5 @@
 ---
-slug: /index
-sidebar_label: 'Cloud Security Ninja'
+slug: /
 ---
 
 # 👋 Bienvenido/a
@@ -30,7 +29,7 @@ Recuerda que esta plataforma es gratuita y usted asume toda la responsabilidad d
 :::
 
 ## 🤝 Audiencia
-**Cloud Security Ninja** está destinado a una variedad de audiencias: desde Usuarios finales, Desarrolladores, Arquitectos de soluciones, Ingenieros DevOps, Ingenieros SREs hasta Proveedores de soluciones, incluso miembros de equipos Comercial &Marketing asi como cualquier persona interesada en aprender sobre la seguridad en nube.
+**Cloud Security Ninja** está destinado a una variedad de audiencias: desde Usuarios finales, Desarrolladores, Arquitectos de soluciones, Ingenieros DevOps, Ingenieros SREs hasta Proveedores de soluciones, incluso miembros de equipos Comercial & Marketing asi como cualquier persona interesada en aprender sobre la seguridad en nube.
 
 A continuación se presentan algunas de las categorías de audiencia a muy alto nivel y cómo este proyecto les ayuda.
 

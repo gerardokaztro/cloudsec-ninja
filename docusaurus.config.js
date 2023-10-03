@@ -83,6 +83,8 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/gerardokaztro/cloudsec-ninja/tree/development/docs/',
+            showLastUpdateAuthor: true,
+            showLastUpdateTime: true,
          },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -123,7 +125,7 @@ const config = {
         },
         items: [
           {
-            to: '/docs/index',
+            to: '/docs',
             position: 'right',
             label: '📚 Documentación',
           },

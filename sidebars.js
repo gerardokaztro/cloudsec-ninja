@@ -1,16 +1,3 @@
-/**
- * Creating a sidebar enables you to:
- - create an ordered group of docs
- - render a sidebar for each doc of that group
- - provide next/previous navigation
-
- The sidebars can be generated from the filesystem, or explicitly defined here.
-
- Create as many sidebars as you want.
- */
-
-// @ts-check
-
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   docs: [
@@ -19,19 +6,15 @@ const sidebars = {
       label: '🙋‍♂️ Bienvenida',
       collapsible: false,
       link: {
-        slug: '/',
-        type: 'generated-index',
-        title: 'Bienvenidos a ☁️🔐🥷',
-        description:
-          "Échale un vistazo a esta sección, encontrarás una guía útil para saber como empezar de forma fácil y rápida.",
+        type: 'doc',
+        id: 'bienvenida/index',
       },
       items: [
-        'bienvenida/index',
         'bienvenida/valores-y-objetivos',
         'bienvenida/autor',
         'bienvenida/coautores',
         'bienvenida/ruta-de-aprendizaje',
-        'bienvenida/empezando',
+        'bienvenida/como-ser-parte',
         'bienvenida/comunidad'
       ],
     },
@@ -39,31 +22,88 @@ const sidebars = {
       type: 'category',
       label: '🤓 Fundamentos de TI',
       link: {
-        slug: '/fundamentos',
+        slug: '/fundamentos-de-tecnologia',
         type: 'generated-index',
         title: 'Fundamentos de tecnologías',
         description:
           "Échale un vistazo a este módulo si crees no tener las bases necesarias en el mundo techie.",
       },
       items: [
-        'fundamentos/redes',
-        'fundamentos/contenedores',
-        'fundamentos/serverless',
-        'fundamentos/devops',
-        'fundamentos/iac',
+        'fundamentos-de-tecnologia/redes',
+        'fundamentos-de-tecnologia/serverless',
+        'fundamentos-de-tecnologia/devops',
+        {
+          type: 'category',
+          label: 'Infraestructura como Código',
+          link: {
+            type: 'doc',
+            id: 'fundamentos-de-tecnologia/iac',
+          },
+          items: [
+            'fundamentos-de-tecnologia/terraform',
+          ],
+        },
       ],
     },
     {
-      type: 'doc',
-      id: 'computacion-en-la-nube',
+      type: 'category',
+      label: '☁️ Computación en la nube',
+      link: {
+        slug: '/fundamentos-de-nube',
+        type: 'generated-index',
+        title: 'Fundamentos de Computación en la nube',
+        description:
+          "Échale un vistazo a este módulo si crees no tener las bases necesarias en el mundo cloud.",
+      },
+      items: [
+        'fundamentos-de-nube/introduccion',
+        'fundamentos-de-nube/aws',
+      ],
     },
     {
-      type: 'doc',
-      id: 'ciberseguridad',
+      type: 'category',
+      label: '🔒 Ciberseguridad',
+      link: {
+        slug: '/fundamentos-de-ciberseguridad',
+        type: 'generated-index',
+        title: 'Fundamentos de Ciberseguridad',
+        description:
+          "Échale un vistazo a este módulo si crees no tener las bases necesarias en el mundo cyber.",
+      },
+      items: [
+        'fundamentos-de-ciberseguridad/introduccion',
+        'fundamentos-de-ciberseguridad/ethical-hacking',
+        {
+          type: 'category',
+          label: 'Metodologías y Frameworks',
+          link: {
+            type: 'doc',
+            id: 'fundamentos-de-ciberseguridad/metodologias/metodologias-y-frameworks',
+          },
+          items: [
+            'fundamentos-de-ciberseguridad/metodologias/mitre',
+            'fundamentos-de-ciberseguridad/metodologias/nist',
+            'fundamentos-de-ciberseguridad/metodologias/zerotrust',
+            'fundamentos-de-ciberseguridad/metodologias/principio-del-minimo-privilegio',
+          ],
+        },
+      ],
     },
     {
-      type: 'doc',
-      id: 'seguridad-de-la-nube',
+      type: 'category',
+      label:'🔐 Seguridad DE la nube',
+      link: {
+        slug: '/fundamentos-de-seguridad-aws',
+        type: 'generated-index',
+        title: 'Seguridad de la nube de AWS',
+        description:
+          "En este modulo conocerás los aspectos de seguridad DE la nube",
+      },
+      items: [
+        'fundamentos-de-seguridad-aws/responsabilidad-compartida',
+        'fundamentos-de-seguridad-aws/programas-de-cumplimiento',
+        'fundamentos-de-seguridad-aws/well-architected-sec',
+      ],
     },
     {
       type: 'category',
@@ -76,10 +116,11 @@ const sidebars = {
           "Lorem.",
       },
       items: [
-        'gobierno/organizations',
-        'gobierno/controltower',
+        'gobierno/aws-organizations',
+        'gobierno/aws-control-tower',
       ],
     },
+    
     {
       type: 'doc',
       id: 'sponsors',
