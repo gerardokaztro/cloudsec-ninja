@@ -1,11 +1,9 @@
 ---
-sidebar_label: 'Infraestructura como Código'
+sidebar_label: 'Fundamentos de Terraform'
 tags: [nivel 100, terraform, iac]
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-# 🏗️ Introducción a Terraform
 
 <Tabs>
   <TabItem value="apple" label="Apple" default>
