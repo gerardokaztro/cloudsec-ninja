@@ -2,12 +2,11 @@
 sidebar_label: 'Fundamentos de AWS'
 tags: [nivel 100, cloud, aws]
 ---
-
-# 🌤️ Introducción a Amazon Web Services
+# ☁️ Introducción a Amazon Web Services
 
 [Amazon Web Services (AWS)](https://aws.amazon.com/es/what-is-aws/)  es una plataforma en la nube que ofrece un amplio conjunto de productos globales basados en Cloud. Estos productos se entregan a través de Internet, y permiten el acceso bajo demanda a recursos informáticos, de almacenamiento, de red, de base de datos y otros recursos de TI para utilizar en diferentes proyectos, así como las herramientas para administrarlos. A un solo clic se puede aprovisionar y lanzar recursos de AWS. Los recursos estarán listos para que los utilicemos en cuestión de minutos.
 
-AWS ofrece una gran flexibilidad permitiendo realizar nuevas configuraciones y actualizaciones bajo demanda, escalar de forma ascendente o descendente automáticamente para cumplir con los patrones de uso y optimizar el gasto. La facturación de los servicios de AWS se convierte en un gasto operativo en lugar de un gasto de capital.
+AWS ofrece una gran flexibilidad permitiendo realizar nuevas configuraciones y actualizaciones bajo demanda, escalar de forma ascendente o descendente automáticamente para cumplir con los patrones de uso y optimizar el gasto. La facturación de los servicios de AWS se convierte en un gasto operativo en lugar de un gasto de capital. 
 
 Los servicios de AWS están diseñados para trabajar en conjunto para poder desarrollar cualquier tipo de aplicación o carga de trabajo.
 
@@ -196,7 +195,7 @@ Entre los usos de los volúmenes de EBS, se incluyen los siguientes:
 
 Para más información [EBS](https://aws.amazon.com/es/ebs/)
 
-### EFS
+### Amazon EFS
 
 ![EFS](./img/amazon-efs_fund.jpg)
 
@@ -212,6 +211,8 @@ Para más información [EFS](https://aws.amazon.com/es/efs/)
 ## Servicios de Redes / Networking en AWS
 
 Estos servicios permiten la definición de redes y la conectivadad dentro de AWS. También permiten la conectividad con redes On-Premise u otras nubes.
+
+Para más información [Redes](https://aws.amazon.com/es/products/networking/)
 
 ### Amazon Virtual Private Cloud - Amazon VPC
 
@@ -260,17 +261,81 @@ Cada subred en el VPC debe estar asociada a una Network ACL. Si no asociamos una
 ![NACL](./img/acldered_fund.jpg)
 
 ### ELB
+![NACL](./img/acldered_fund.jpg)
+
+### Elastic Load Balancig - Balanceo de Carga elastico
+
+![ELB](./img/amazon-elb_fund.jpg)
+
+`Elastic Load Balancing` es un servicio de AWS que distribuye el tráfico entrante de las aplicaciones o la red entre varios destinos, como las instancias de Amazon Elastic Compute Cloud (Amazon EC2), los contenedores, las direcciones de protocolo de Internet (IP) y las funciones de Lambda, en una única zona de disponibilidad o en varias. Elastic Load Balancing escala el balanceador de carga a medida que el tráfico dirigido a la aplicación cambia con el tiempo. Puede escalar automáticamente a la mayoría de las cargas de trabajo. 
+
+Elastic Load Balancing está disponible en 2 sabores:
+
+* `ALB` - El `balanceador de carga de aplicaciones` (`Application Load Balancer`) opera a nivel de aplicación (capa 7 del modelo OSI). Dirige el tráfico a los destinos (instancias de EC2, contenedores, direcciones IP y funciones de Lambda) en función del contenido de la solicitud. Es ideal para el balanceo de carga HTTP y HTTPS. El ALB brinda direccionamiento de solicitudes avanzadas en arquitecturas de aplicaciones modernas, como los microservicios y aplicaciones basadas en contenedores. El ALB simplifica y mejora la seguridad de las aplicaciones al garantizar que se utilicen en todo momento los protocolos y cifrados de la capa de conexión segura (SSL) o de la seguridad de la capa de transporte (TLS).
+
+* `NLB` - El `balanceador de carga de red` (`Network Load Balancer`) opera a nivel de capa de transporte (capa 4 del modelo OSI) y dirige las conexiones a los destinos (instancias EC2, microservicios y contenedores) en función de los datos del protocolo IP. Funciona bien para balancear la carga del tráfico TCP y UDP. El NLB es capaz de gestionar millones de solicitudes por segundo mientras mantiene latencias bajas. El NLB está optimizado para gestionar patrones de tráfico de red repentinos y volátiles. 
+
+Para más información [Elastic Load Balacing](https://aws.amazon.com/es/elasticloadbalancing/)
+
 
 ## Servicios de Integración de Aplicaciones
 
-### SQS
+![ELB](./img/amazon-appint_fund.jpg)
 
-### SNS 
+Los servicios de integración de aplicaciones de AWS son una familia de servicios que permiten la comunicación desacoplada entre aplicaciones.
 
-### Step Functions
+Estos servicios proporcionan desacoplamiento para microservicios, sistemas distribuidos y aplicaciones serverless.
+
+Los servicios de integración de aplicaciones de AWS permiten conectar aplicaciones sin necesidad de escribir código personalizado para permitir la interoperabilidad.
+
+Las aplicaciones desacopladas pueden interoperar a la vez que son tolerantes a fallas o sobrecargas de cualquier componente individual.
+
+### Amazon SQS - Simple Queue Service - Servicio Simple de Colas
+
+Amazon Simple Queue Service (Amazon SQS) es un servicio de cola de mensajes completamente administrado que permite desacoplar los componentes de una aplicación para que se ejecuten de forma independiente. Permite a las aplicaciones web poner en cola los mensajes que genera un componente de la aplicación para que los consuma otro componente. 
+
+Una cola es un repositorio temporal de mensajes que están esperando ser procesados. Los mensajes se almacenan hasta que se procesan y eliminan (de 1 a 14 días; la cantidad predeterminada es 4 días). Los mensajes pueden contener hasta 256 KB de texto en cualquier formato. Amazon SQS funciona a gran escala y procesa miles de millones de mensajes al día. Almacena todas las colas de mensajes y los mensajes dentro de una región única de AWS en alta disponibilidad con varias zonas de disponibilidad redundantes. Los mensajes pueden enviarse y leerse de manera simultánea.
+
+Podemos compartir de manera segura colas de Amazon SQS anónimamente o con cuentas de AWS específicas. También podemos restringir el uso compartido de colas por dirección IP y por hora del día. Los mensajes de las colas de SQS están cifrados con cifrado del lado del servidor (SSE) mediante claves administradas en AWS Key Management Service (AWS KMS). Amazon SQS descifra los mensajes únicamente cuando se envían a un consumidor autorizado.
+
+Para más información [SQS](https://aws.amazon.com/es/sqs/)
+
+### Amazon SNS - Simple Notification Service - Servicio de Notificaciones Simple
+
+Amazon Simple Notification Service (Amazon SNS) es un servicio web que podemos utilizar para configurar, operar y enviar notificaciones desde la nube. El servicio sigue el paradigma de mensajería de publicación/suscripción (pub/sub), donde las notificaciones se entregan a los clientes mediante un mecanismo push. Amazon SNS está diseñado para aplicaciones grandes y exigentes, y permite a las aplicaciones publicar un número ilimitado de mensajes en cualquier momento.
+ 
+Cuando utilizamos Amazon SNS, creamos un tema y establecemos políticas que restringen quién puede publicar el tema o suscribirse al mismo. Un publicador envía mensajes a los temas que ha creado o en los que tiene permiso para publicar. Amazon SNS compara el tema con una lista de los suscriptores que se han suscrito a él y entrega el mensaje a cada uno de ellos. Cada tema tiene un nombre único que define el punto de enlace de Amazon SNS para que los publicadores puedan publicar mensajes y los suscriptores puedan registrarse para recibir notificaciones. Los suscriptores recibirán todos los mensajes que están publicados en los temas a los que se suscriban; por tanto, todos ellos recibirán los mismos mensajes.
+
+Amazon SNS admite temas cifrados. Después de publicar mensajes en temas cifrados, Amazon SNS utiliza claves (CMK) para cifrar los mensajes. Las CMK son los recursos principales de AWS KMS. Amazon SNS admite CMK administradas tanto por el cliente como por AWS. 
+
+Cuando Amazon SNS recibe sus mensajes, se cifran usando un algoritmo Advanced Encryption Standard-Galois/Counter Mode (AES-GCM) de 256 bits. Los mensajes cifrados se almacenan de forma redundante en varios servidores y centros de datos, y en varias zonas de disponibilidad para mayor durabilidad. Los mensajes se descifran justo antes de que se entreguen a los puntos de enlace suscritos.
+
+Amazon SNS admite los siguientes protocolos de transporte para la entrega de mensajes:
+
+* Email o email-JSON: los mensajes se envían por email a las direcciones registradas. Email-JSON envía notificaciones como objetos JSON y emails envía mensajes de email basados en texto.
+* Protocolo HTTP o HTTPS: durante el registro de suscripción, los suscriptores especifican una URL. Los mensajes se entregan a través de una solicitud HTTP POST a la URL especificada.
+* Servicio de mensajes cortos (SMS): los mensajes se envían como mensajes de texto SMS a números de teléfono registrados.
+* Colas de Amazon SQS: los usuarios especifican una cola estándar de SQS como punto de enlace. Amazon SNS pondrá en cola un mensaje de notificación en la cola especificada. 
+* Funciones de AWS Lambda: los mensajes se entregan a las funciones de AWS Lambda, que administran las personalizaciones de los mensajes, posibilitan la persistencia de los mensajes o se comunican con otros servicios de AWS.
+
+Para más información [SNS](https://aws.amazon.com/es/sns/?nc1=h_ls)
 
 
 ### EventBridge
+
+Amazon EventBridge incorpora una secuencia de datos en tiempo real de sus propias aplicaciones, aplicaciones de software como servicio (SaaS) y servicios de AWS. Después direcciona esos datos a destinos, como por ejemplo AWS Lambda. 
+
+Un evento indica un cambio en el entorno. Puede ser un entorno de AWS, un servicio,  aplicación SaaS, una aplicacion o un servicio personalizado. Por ejemplo, Amazon EC2 genera un evento si el estado de una instancia EC2 cambia de pendiente a en ejecución, y Amazon EC2 Auto Scaling genera eventos cuando lanza o termina instancias. 
+También podemos programar eventos que se generan de forma periódica.
+
+Los usuarios pueden acceder al bus, las reglas y los eventos predeterminados que tienen en EventBridge. 
+
+Podemos establecer reglas de direccionamiento para determinar el lugar al que se enviarán los datos con el objetivo de crear arquitecturas de aplicaciones que reaccionen en tiempo real a todos los orígenes de datos. 
+
+Una regla empareja eventos entrantes y los direcciona a destinos para su procesamiento. Con una única regla podemos efectuar el direccionamiento hacia varios destinos, los cuales se procesan en paralelo. Las reglas no se procesan en un orden concreto. Permitiendo a las distintas partes de una organización buscar y procesar los eventos que les interesen. Con una regla podemos personalizar JSON que se envía al destino pasando solo ciertas partes o sobrescribiéndolo con una constante.
+
+Para más información [EventBridge](https://aws.amazon.com/es/eventbridge/)
+
 
 ## Servicios de Bases de Datos
 
@@ -309,6 +374,7 @@ Para más información [RDS](https://aws.amazon.com/es/rds/)
 
 ### Amazon Aurora
 ![Aurora](./img/amazon-aurora_fund.jpg)
+![Aurora](./img/amazon-aurora_fund.jpg)
 
 `Amazon Aurora` es una base de datos relacional compatible con MySQL y PostgreSQL que se fue creada por AWS. Combina el rendimiento y la disponibilidad de las bases de datos comerciales de alta gama con la simplicidad y la rentabilidad de las bases de datos de código abierto. 
 
@@ -337,12 +403,13 @@ La posibilidad de crear `tablas globales` permite generar réplicas de manera au
 Para más información [DynamoDB](https://aws.amazon.com/es/dynamodb/)
 
 ## Servicios de Monitoreo y Alarmas
+![CloudWatch](./img/amazon-cloudwatch.jpg)
+
 Los servicios de Monitoreo y Alarmas en AWS son los que permite poseer métricas de los servicios de AWS (Cloudwatch Metrics, X-Ray) como también tener archivos de registro (CloudWatch Logs).
 
 También permite la creación de Alarmas basados en las métricas y registros definiendo humbrales (CloudWatch Alarms)
 
-![CloudWatch](./img/amazon-cloudwatch.jpg)
-
+Para más información [Cloudwatch](https://aws.amazon.com/es/cloudwatch/)
 ### CloudWatch Metrics
 
 Amazon `CloudWatch Metrics`, recopila y procesa los datos sin formato de diferentes servicios de AWS, y los convierte en métricas legibles casi en tiempo real. Estas estadísticas se registran durante un periodo de 15 meses, de forma que podamos acceder a la información histórica y obtener una mejor perspectiva acerca del rendimiento de los servicio y/o aplicación web.
@@ -350,6 +417,8 @@ Amazon `CloudWatch Metrics`, recopila y procesa los datos sin formato de diferen
 De forma predeterminada, el monitoreo básico, envía datos de métricas a CloudWatch en intervalos de 5 minutos. Para enviar los datos de las métricas a CloudWatch cada 1 minuto, podemos habilitar el monitoreo detallado según el servicio. 
 
 Asimismo, Amazon Cloudwatch permite crear "nuevas métricas" instalando el agente de Cloudwatch en las instancias de EC2 (por ejemplo para el monitoreo de la memoria RAM).
+
+Para más información [Cloudwatch Metrics](https://docs.aws.amazon.com/es_es/AmazonCloudWatch/latest/monitoring/working_with_metrics.html)
 ### CloudWatch Alarms
 
 Las `CloudWatch Alarms` se utilizan para inicializar una acción con respecto a un valor. Una alarma controla una métrica a lo largo de un periodo de tiempo especifico y realiza una o varias acciones en función del valor de la métrica verificando un umbral a lo largo del tiempo.
@@ -357,6 +426,8 @@ Las `CloudWatch Alarms` se utilizan para inicializar una acción con respecto a 
 La acción más común es enviar una notificación a un topico de SNS o a una política de Auto Scaling. 
 
 Las alarmas de CloudWatch no invocan acciones simplemente porque se encuentren en un estado determinado. El estado debe haber cambiado y haberse mantenido durante un número determinado de periodos.
+
+Para más información [Cloudwatch Alarms](https://docs.aws.amazon.com/es_es/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html)
 
 ### CloudWath Logs
 
@@ -370,9 +441,34 @@ Los registros de CloudTrail pueden enviarse a CloudWatch Logs para ser monitorea
 
 `CloudWatch Logs` permite realizar filtros de métricas para analizar los datos de registro que genera una métrica de CloudWatch.
 
+Para más información [Cloudwatch Logs](https://docs.aws.amazon.com/es_es/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html)
+
 ## Buenas prácticas Cloud en AWS
 
-### CAF
+AWS, desde sus comienzos, acompaña a los clientes recomendando las mejoras de formas para adoptar la nube y de cómo mejorar las cargas de trabajos que llevamos a la nube. Adicional a esto, posee mejores prácticas por cada uno de sus servicios.
 
+A continuación hablaremos de los dos Framewroks más importantes, Cloud Adoption Framework (CAF) y Well Architected Framework (WAF).
 
-### Well Architecture Framework
+### AWS Cloud Adoption Framework - AWS CAF 
+
+![CloudAdoptionFramework](./img/amazon-caf.jpg)
+
+AWS Cloud Adoption Framework (AWS CAF) aprovecha la experiencia y las mejores prácticas de AWS para contribuir a la transformación digital y la aceleración de los resultados empresariales a través del uso innovador de AWS. 
+
+AWS CAF identifica las capacidades organizativas necesarias que ayudan a transformar el negocio con éxito para aprovechar al máximo la nube. Estas capacidades brindan orientación sobre prácticas recomendadas que ayudan a mejorar la preparación de la organización para ir a la nube. AWS CAF agrupa las capacidades en 6 perspectivas: Negocio, Personas, Gobernanza, Plataforma, Seguridad y Operaciones. Cada perspectiva abarca un conjunto de capacidades que ayudarán a una mejor adopción de la nube. 
+
+Con AWS CAF podemos identificar y dar prioridad a las oportunidades de transformación digital, evaluar y mejorar la preparación para ir a la nube y evolucionar de manera iterativa el plan de desarrollo de la organización.
+
+Para más información [CAF](https://aws.amazon.com/es/cloud-adoption-framework/)
+
+### AWS Well Architecture Framework 
+
+![WellArchitected](./img/amazon-waf.png)
+
+El AWS Well-Architected Framework ayuda a comprender los pros y contras en cómo crear aplicaciones en AWS.Usar este Framework ayuda a conocer las mejores prácticas de arquitectura para diseñar y operar cargas de trabajo seguras, fiables, eficientes, rentables y sostenibles en la nube de AWS. Nos brinda una forma de medir de forma coherente las arquitecturas con respecto a las prácticas recomendadas e identificar áreas de mejora. El proceso de revisión de una arquitectura nos permite desafiar las decisiones de arquitectura actuales para poder mejorarlas, no es un mecanismo de auditoría. 
+
+A partir de la experiencia en la ayuda en la creación de multiples arquitecturas, AWS identificó prácticas recomendadas y estrategias básicas para la arquitectura de sistemas en la nube.
+
+El WAF de AWS a través una serie de preguntas básicas ayudan a comprender si una arquitectura específica se ajusta a las prácticas recomendadas en la nube. El WAF proporciona un enfoque coherente para evaluar los sistemas en función de las cualidades que se esperan de sistemas modernos basados en la nube, así como las medidas correctivas necesarias para alcanzar dichas cualidades. 
+
+Para más información [CAF](https://aws.amazon.com/es/architecture/well-architected/)
