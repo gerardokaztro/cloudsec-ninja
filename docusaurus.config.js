@@ -125,7 +125,7 @@ const config = {
         },
         items: [
           {
-            to: '/docs/index',
+            to: '/docs',
             position: 'right',
             label: '📚 Documentación',
           },
