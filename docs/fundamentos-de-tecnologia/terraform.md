@@ -2,12 +2,14 @@
 sidebar_label: 'Fundamentos de Terraform'
 tags: [nivel 100, terraform, iac]
 ---
+import ReactPlayer from 'react-player'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Cómo instalar terraform
+# Fundamentos de terraform
 
-Esta [guía](https://developer.hashicorp.com/terraform/downloads) contiene la instalación de terraform en tu local para cualquier sistema operativo.
+En este vídeo, cortito y al pie, tienes la explicación de que ¿qué es terraform?
+<ReactPlayer controls url='https://www.youtube.com/watch?v=Xc9Vb2ERdaw' width="auto" /> <br/>
 
 ## Sintaxis Haschicorp Configuration Language (HCL)
 
@@ -28,13 +30,12 @@ resource "local_file" "pet" { // "local" -> representa al provider y "file" -> e
 ```
 
 Un ejemplo de un recurso de bloque terraform usando como provider a `ÀWS`
-
-💡 Interpretamos el siguiente bloque de recurso, como un bloque que va a declarar la configuracion de un recursos llamado VPC del proveedor AWS.
 ```json
 resource "aws_vpc" "example" { //"aws" -> representa el provider y "vpc" -> el recurso a utilizar
   cidr_block = "10.0.0.0/16" // argumento del recurso a desplegar
 }
 ```
+💡 Interpretamos el siguiente bloque de recurso, como un bloque que va a declarar la configuracion de un recursos llamado VPC del proveedor AWS.
 
 ## Usando Providers en Terraform
 
@@ -110,24 +111,37 @@ terraform {
 
 ☝️ Si te fijas, en main.tf estamos declarando dos recursos de dos providers diferentes, entonces en nuestro `providers.tf` tenemos la obligación de mencionarlo.
 
+### Cómo instalar terraform
+
+Esta [guía](https://developer.hashicorp.com/terraform/downloads) contiene la instalación de terraform en tu local para cualquier sistema operativo.
+
 ## Usando variables de entrada
 
-Básicamente te permite pasar de esto
+Las variables de entrada en terraform nos permiten almacenar valores en un archivo llamado `variables.tf` que son instanciadas desde otro archivo como `main.tf` u otro de configuración de recursos.
+
+Por ejemplo, puedes tener un archivo de configuracion con los valores fijos o seteados dentro del código, así:
 ```json
-resource "aws_instance" "webserver" {
-  ami = "ami-123"
-  instance_type = t2.micro
+resource "aws_instance" "webserver" { // en este recursos intentamos crear una instancia EC2 en AWS
+  ami = "ami-123" // aquií indicamos cual es el ami-id que necesitamos para nuestra instancia
+  instance_type = t2.micro // aquí el tamaño de dicha instancia
 }
 ```
-a esto
+Sin embargo, NO es la mejor práctica.
+
+Entonces, ¿cómo mejoramos ese código?, aquí es donde entra en juego las variables de entorno:
+
+<Tabs>
+  <TabItem value="main" label="main.tf">
+
 ```json
 resource "aws_instance" "webserver" {
   ami = var.ami
   instance_type = var.instance_type
 }
 ```
+  </TabItem>
+  <TabItem value="variables" label="variables.tf">
 
-Gracias a que almacenaste el valor de los argumentos en variables dentro tu archivo `variables.tf`
 ```json
 variable "ami" {
   default = "ami-123"
@@ -137,8 +151,24 @@ variable "instance_type" {
   default = "t2.micro"
 }
 ```
+  </TabItem>
+  <TabItem value="provider" label="providers.tf">
 
-## Entendiendo las variables
+```json
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "5.19.0"
+    }
+  }
+}
+```
+  </TabItem>
+</Tabs>
+
+
+### Entendiendo las variables
 
 💡 Se pueden aplicar las variables de diferentes maneras:
 - Hacer el `terraform apply` y luego ir escribiendo el valor de cada variable en la terminal. Suponiendo que no especificaste algun archivo con dichas variables
