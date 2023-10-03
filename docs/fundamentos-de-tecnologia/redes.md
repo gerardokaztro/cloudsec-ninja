@@ -14,25 +14,7 @@ Un ejemplo de red de área local o Local Area Network (LAN) son computadoras con
 
 Ahora, para que los dispositivos conectados en una red puedan comunicarse y entenderse entre sí, hacen uso de direcciones IP, puertos, servicios y protocolos los cuáles son términos que vamos a aprender.
 
-## Direcciones IPv4 y subredes
-Este video hecho por **Gabriel Marcano** explica muy bien sobre el direccionamiento IPv4 y las subredes, de paso, apoye su contenido suscríbiendose a su canal.
-<ReactPlayer controls url='https://www.youtube.com/watch?v=SHbBso63X38' width="auto" /> <br/>
-
-👉 Del vídeo podemos concluir lo siguiente:
-- Las direcciones IPv4 se expresan en connotación decimal y binaria.
-- Estan compuestas de 32 bits y se separan en 4 octetos, cada uno de 8 bits.
-- Existen direcciones IPv4 públicas y privadas
-  - Rangos de direcciones públicas
-   - Clase A: su primer octeto su rango va de 0 a 127
-   - Clase B: su primer octeto su rango va de 128 a 191
-   - Clase C: su primer octeto su rango va de 192 a 223
-  - Rangos de direcciones privadas
-    - Clase A: 10.0.0.0 a 10.255.255.255 que usa máscara de 8 bits
-      - Ejemplo: 10.x.x.x/8
-    - Clase B: 172.16.0.0 a 172.31.255.255 que usa máscara de 16 bits.
-      - Ejemplo: 172.x.x.x/16
-    - Clase C: 192.168.0.0 a 192.168.255.255 que usa máscara de 24 bits.
-      - Ejemplo: 192.x.x.x/24
+![redes informáticas](https://www.publicdomainpictures.net/pictures/530000/nahled/ai-business-structure-map-1691622296Sqo.jpg)
 
 ## Modelo OSI y TCP/IP
 El modelo OSI es un modelo conceptual que define un estandar en la forma de como se comunican los dispositivos en la red.
@@ -57,7 +39,7 @@ Revise este vídeo donde se explica que son los modelos conceptuales, que es el 
   - Transporte
   - Internet
   - Acceso a la red
-- Los datos pasan por una transformación al pasar por las capas del modelo OSI o TCP/IP 
+- Los datos pasan por una transformación al pasar por cada una de las capas del modelo OSI o TCP/IP
   - Datos
   - Segementos
   - Paquetes
@@ -66,6 +48,45 @@ Revise este vídeo donde se explica que son los modelos conceptuales, que es el 
 - A los términos mencionados arriba se les conoce como PDU (Unidad de Datos de Protocolo)
 - El Modelo TCP/IP consta de 4 capas pero agrupa las 7 capas del Modelo OSI
 - Cada una de las capas de ambos modelos utilizan un grupo de protocolos
+
+## Direcciones IPv4 y subredes
+Este video hecho por **Gabriel Marcano** explica muy bien sobre el direccionamiento IPv4 y las subredes, de paso, apoye su contenido suscríbiendose a su canal.
+<ReactPlayer controls url='https://www.youtube.com/watch?v=SHbBso63X38' width="auto" /> <br/>
+
+👉 Del vídeo podemos concluir lo siguiente:
+- Las direcciones IPv4 se expresan en connotación decimal y binaria.
+- Estan compuestas de 32 bits y se separan en 4 octetos, cada uno de 8 bits.
+- Existen direcciones IPv4 públicas y privadas
+  - Rangos de direcciones públicas
+   - Clase A: su primer octeto su rango va de 0 a 127
+   - Clase B: su primer octeto su rango va de 128 a 191
+   - Clase C: su primer octeto su rango va de 192 a 223
+  - Rangos de direcciones privadas
+    - Clase A: 10.0.0.0 a 10.255.255.255 que usa máscara de 8 bits
+      - Ejemplo: 10.x.x.x/8
+    - Clase B: 172.16.0.0 a 172.31.255.255 que usa máscara de 16 bits.
+      - Ejemplo: 172.x.x.x/16
+    - Clase C: 192.168.0.0 a 192.168.255.255 que usa máscara de 24 bits.
+      - Ejemplo: 192.x.x.x/24
+
+## Puertos de red
+Las direcciones IP nos ayudan a identificar de forma única cada sistema en una red, pero estos sistemas pueden ejecutar muchos servicios diferentes, por ejemplo un servidor puede ser capaz de ejecutar un servicio web, un servicio de transferencia de archivos, un servicio de bases de datos y muchos mas. Ahí es donde entra en juego los puertos de red. Los puertos de red son ubicaciones particulares en un sistema asociado con una aplicación específica.
+
+Por ejemplo, imagine un edificio con muchos departamentos y en cada uno de ellos viven familias diferentes, la dirección IP seria la dirección física del edificio, cada uno de los departamentos vendrían a ser los puertos de red y las familias que viven dentro del departamento serían los servicios y/o aplicaciones que se ejecutan en los puert`os.
+
+![analogía de edificio con departamentos](https://cdn.pixabay.com/photo/2019/10/23/05/49/render-4570475_1280.jpg)
+
+Los puertos de red se representan en número binario de 16 bits, cuando lo expresamos en forma decimal tenermos 2 elevado a la potencia 16, es decir, 65, 536 puertos disponibles, incluido el 0.
+
+Ahora, los puertos entre el 0 y el 1023 se conocen como puertos conocidos, que estan reservados para aplicaciones comunes asignadas por las autoridades de internet. El uso de estos puertos conocidos garantiza que todos en internet sepan como encontrar servicios comunes en un sistema, como serviores web, servidores de correo electrónico, y otras aplicaciones de uso común.
+
+Los puertos entre 1024 y 49, 151 se conocen como puertos registrados. Los proveedores de aplicaciones pueden registrar sus aplicaciones para utilizar estos puertos, por ejemplo: Microsoft reserva el puerto 1433 para las conexiones de bases de datos de SQL Server, mientras que Oracle registró el puerto 1521 para sus propias bases de datos. 
+
+Los puertos superiores a 49,151 se conocen como puertos dinámicos que las aplicaciones pueden usar de forma temporal.
+
+Revisa la [lista de los puertos](https://es.wikipedia.org/wiki/Anexo:Puertos_de_red) junto con sus protocolos y servicios asociados.
+
+![puertos de red y sus servicios asociados](https://interpolados.files.wordpress.com/2017/03/214.png)
 
 ## Protocolos Web
 Los protocolos de internet, definen un conjunto de reglas de como dos o mas dispositivos deben comunucarse entre sí, y en cada una de las capas del Modelo OSI o TCP/IP existen una serie o suite de protocolos que pueden usarse.

@@ -30,7 +30,6 @@ const sidebars = {
       },
       items: [
         'fundamentos-de-tecnologia/redes',
-        'fundamentos-de-tecnologia/contenedores',
         'fundamentos-de-tecnologia/serverless',
         'fundamentos-de-tecnologia/devops',
         {
