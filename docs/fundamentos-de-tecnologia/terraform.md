@@ -5,42 +5,13 @@ tags: [nivel 100, terraform, iac]
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs>
-  <TabItem value="apple" label="Apple" default>
-    This is an apple 🍎
-  </TabItem>
-  <TabItem value="orange" label="Orange">
-    This is an orange 🍊
-  </TabItem>
-  <TabItem value="banana" label="Banana">
-    This is a banana 🍌
-  </TabItem>
-</Tabs>
-
-##  Tipos de herramientas de IAC
-- Gestión de la configuración como Ansible y Puppet
-	- Diseñados para instalar y administrar software
-	- Mantener una estructura estandar
-	- Control de versiones
-	- Idempotencia
-
-- Plantillas de servidor como Docker, Packer y Vagrant
-	- Pre instalar software y dependencias
-	- Maquinar virtuales e imágenes docker
-	- Infraestructura inmutable
-
-- Herramientas de aprovisionamiento como Terraform, CloudFormation y Pulumi
-	- Despliegan recursos de infraestructura inmutable
-	- Servidores, bases de datos, componentes de redes, etc
-	- Soporta múltiples proveedores
-
 ## Cómo instalar terraform
 
 Esta [guía](https://developer.hashicorp.com/terraform/downloads) contiene la instalación de terraform en tu local para cualquier sistema operativo.
 
 ## Sintaxis Haschicorp Configuration Language (HCL)
 
-Estructura HCL terraform
+La estructura HCL de terraform es muy sencilla de entender, se expresa en formato `json`
 ```json
 <block name> <resource type> <resource name> {
 	key1 = value1 //argumento
@@ -48,46 +19,66 @@ Estructura HCL terraform
 }
 ```
 
-Entendiendo la estructura HCL
+Vamos a entender la estructura HCL
 ```json
-//"local" -> representa al provider y "file" -> el recurso de ese provider
-resource "local_file" "pet" {
-	filename = "/root/pets.txt"
-	content = "Hola mundo"
+resource "local_file" "pet" { // "local" -> representa al provider y "file" -> el recurso de ese provider
+	filename = "/root/pets.txt" // dentro de los {} vienen todos los argunmentos que miraremos mas adelante
+	content = "Hola mundo" // cabe decir, que cada provider, maneja sus propios argumentos
 }
 ```
 
+Un ejemplo de un recurso de bloque terraform usando como provider a `ÀWS`
+
+💡 Interpretamos el siguiente bloque de recurso, como un bloque que va a declarar la configuracion de un recursos llamado VPC del proveedor AWS.
 ```json
-//"aws" -> representa el provider y "vpc" -> el recurso a utilizar
-resource "aws_vpc" "example" {
+resource "aws_vpc" "example" { //"aws" -> representa el provider y "vpc" -> el recurso a utilizar
   cidr_block = "10.0.0.0/16" // argumento del recurso a desplegar
 }
 ```
 
 ## Usando Providers en Terraform
 
-En esta [guía](https://registry.terraform.io/browse/providers) encontrarás todos los providers que puedes usar en terraform
+Los providers en terraform son un plugin que habilita la interacción con una API, esto incluye proveedores de nube como AWS, GCP, Azure entra oras, como proveedores de Software-as-a-Services. En esta [guía](https://registry.terraform.io/browse/providers) encontrarás todos los providers que puedes usar en terraform.
 
-💡 Cuando se ejecuta el `terraform init` se descargan el o los providers de una ruta similar a esta: `registriy.terraform.io/hashicorp/local` donde `registry.terraform.io` es el **hostname**, `hashicorp` el **Organizational Namespace** y `local` el **type**.
+El primer comando que se usa para desplegar los recursos declarados en nuestros archivos de terraform es `terraform init`. Con este comando se descargan el o los providers de una ruta similar a esta: [registriy.terraform.io/hashicorp/local](https://registry.terraform.io/providers/hashicorp/local/latest) donde [registry.terraform.io](https://registry.terraform.io/) es el **hostname**, `hashicorp` el **Organizational Namespace** y `local` el **type**.
 
-## Configuración del directorio
+Ejemplo de `terraform init`
 
-- `main.tf`  archivo de configuración principal que contiene la definición de los recursos 
-- `variables.tf`  contiene la declaración de las variables 
-- `outputs.tf`  contiene la salida de los recursos
-- `provider.tf`  contiene la definición de los providers
-- `terraform.tfvars` contiene la definición de tus variables que son leidas desde el `variables.tf`
-- `locals.tf`  lorem 
-- `data.tf`  lorem 
+![terraform init](https://k21academy.com/wp-content/uploads/2020/12/terraform-inittttt.webp)
 
-## Trabajar con múltiples providers
+### Configuración del directorio
 
-Para lograrlos debes especificarlos en el `providers.tf` para que en un archivo como `main.tf` u algun otro donde declares la configuracion de tus recursos puedas hacer algo tipo:
+Antes de continuar, estos son algunos de los archivos terraforms que debes conocer:
+
+- `main.tf`  archivo de configuración principal que contiene la definición de los recursos.
+- `variables.tf`  contiene la declaración de las variables que son leídas por los recursos declarados en main.tf
+- `outputs.tf`  contiene la salida de los recursos, cada recursos en terraform genera un id del recurso o de sus argumentos.
+- `provider.tf`  contiene la definición de los providers.
+- `terraform.tfvars` contiene la definición de tus variables que son leidas desde el `variables.tf`. Usar este archivo es una buena práctica.
+
+- `locals.tf`  son valores con nombre que se pueden asignar y utilizar en su código. Sirve principalmente para reducir la duplicación dentro del código Terraform. 
+
+- `data.tf`  este objeto permite extraer y obtener datos desde diversas fuentes locales o de servicios externos para ser usados en los archivos de Configuración de Terraform
+
+⚠️ No te preocupes por entender el qué y cómo de los archivos terraform, los veremos a mas detalle en adelante. Pero, si familizarizate con los nombres de dichos archivos, ya que los verás en cualquier proyecto terraform.
+
+### Trabajar con múltiples providers
+
+Puedes hacer uso de múltiples providers en tu proyecto terraform. Por ejemplo puedes tener un un proyecto donde debas hacer uso de proveedores como AWS, Okta y Docker.
+
+Para lograrlo, debes especificar todos estos proveedores en el archivo `providers.tf`. En este archivo es donde va la configuración de todos los proveedores que usarás para tu proyecto.
+
+Entonces la configuración de los recursos de esos proveedores, podría ir en un archivo llamado `main.tf` o algún otro (mas adelante entenderás el porqué) y desde aquí busca obtener la información del proveedor al leer tu archivo `providers.tf`.
+
+Ejemplo de tu estructura de archivos terraform hasta este punto:
+
+<Tabs>
+  <TabItem value="main" label="main.tf">
 
 ```json
 resource "local_file" "pet" {
-	filename = "/root/pets.txt"
-	content = "Hola mundo"
+  filename = "/root/pets.txt"
+  content = "Hola mundo"
 }
 
 resource "random_pet" "my-pet" {
@@ -96,6 +87,28 @@ resource "random_pet" "my-pet" {
   length = "1"
 }
 ```
+  </TabItem>
+  <TabItem value="provider" label="providers.tf">
+
+```json
+terraform {
+  required_providers {
+    local = {
+      source = "hashicorp/local"
+      version = "2.4.0"
+    }
+
+	random = {
+      source = "hashicorp/random"
+      version = "3.5.1"
+    }
+  }
+}
+```
+  </TabItem>
+</Tabs>
+
+☝️ Si te fijas, en main.tf estamos declarando dos recursos de dos providers diferentes, entonces en nuestro `providers.tf` tenemos la obligación de mencionarlo.
 
 ## Usando variables de entrada
 

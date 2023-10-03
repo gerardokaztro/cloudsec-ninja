@@ -48,7 +48,7 @@ Esta ruta de aprendizaje toma como referencia e inspiración algunas publicacion
                 <br/>
                 <a href="/docs/fundamentos-de-seguridad-aws/programas-de-cumplimiento" >Programas de cumplimiento</a>
                 <br/>
-                <a href="/docs/fundamentos-de-seguridad-aws/well-architected-sec" >Pilar de Seguridad del Well Architected Framework.</a>
+                <a href="/docs/fundamentos-de-seguridad-aws/well-architected-sec" >Pilar de Seguridad del Well Architected Framework</a>
             </td>
         </tr>
     </tbody>
