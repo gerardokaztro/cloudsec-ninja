@@ -59,6 +59,8 @@ Echa un vistazo a los perfiles de cada uno de nuestros co-autores
     <TabItem value="Venezuela" label="Venezuela 🇻🇪" default>
         <table>
             <tr>
+                <td align="center"><a href="https://www.linkedin.com/in/dianaalfarobazan/"><img alt="Diana Alfaro"
+                        src="https://media.licdn.com/dms/image/D4E03AQFiOMu1Q7I33g/profile-displayphoto-shrink_800_800/0/1668432316917?e=1701907200&v=beta&t=-90rEM2N1HnbItWLO6jnZI0HnGd_Vura5WT1X_5dOzU" width="128" /><br />Diana Alfaro</a></td>
                 <td align="center"><a href="https://www.linkedin.com/in/llunarg/"><img alt="Luis Lunar"
                         src="https://media.licdn.com/dms/image/D4E03AQF8MHZ2QkJ96w/profile-displayphoto-shrink_800_800/0/1680293408394?e=1701907200&v=beta&t=XoLCguFl9kHmqqnUytAxnPlqBpb49xZfVcP_sVcWntA" width="128" /><br />Luis Lunar</a></td>
             </tr>
