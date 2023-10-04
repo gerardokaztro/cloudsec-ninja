@@ -57,6 +57,34 @@ resource "aws_vpc" "example" { //"aws" -> representa el provider y "vpc" -> el r
 
 💡 Interpretamos el siguiente bloque de recurso, como un bloque que va a declarar la configuracion de un recursos llamado VPC del proveedor AWS.
 
+## Atributos de recursos
+
+Cada bloque de recurso nos permite crear un recurso, por ejemplo, con el recurso `random_pet` buscamos crear un recurso para `my-pet` que puede resultar en "Mr. Cat".
+
+Dicho valor, se almacena en un id dentro de terraform, el cual podemos instanciar para poder usar en algún otro recurso:
+
+Los atributos son campos de almacenamiento de valores en bloques de recursos, data sources o providers.
+Cada bloque de recurso almacena su valor dentro de un ID que podemos instaciar desde el argumento de otro recurso. Por ejemplo, con el recurso `random_pet` buscamos crear un recurso para `my-pet` que puede resultar en "Mr. Cat". Dicho valor, se almacena en un id dentro de terraform, el cual instanciamos en el bloque de recurso `local_file.pet`:
+
+<Tabs>
+  <TabItem value="main" label="main.tf">
+
+```json
+resource "local_file" "pet" {
+    filename = var.filename
+    // obtenemos el valor del recurso que se almacena en random_pet.my-pet
+    content = "Mi mascota favorita es ${random_pet.my-pet.id}"
+}
+
+resource "random_pet" "my-pet" {
+  prefix = var.prefix
+  separator = var.separator
+  length = var.length
+}
+```
+  </TabItem>
+</Tabs>
+
 ## Usando Providers en Terraform
 
 Los providers en terraform son un plugin que habilita la interacción con una API, esto incluye proveedores de nube como AWS, GCP, Azure entra oras, como proveedores de Software-as-a-Services. En esta [guía](https://registry.terraform.io/browse/providers) encontrarás todos los providers que puedes usar en terraform.
@@ -194,178 +222,6 @@ variable "instance_type" {
 ```
 
 ### Variable de salida
-
-Las variables de salida se definen en un archivo .tf o en un módulo y se utilizan para exportar el valor de un bloque de recurso creado por Terraform para que se pueden usar en otros módulos o scripts externos.
-
-```
-resource "local_file" "pet" {
-    filename = var.filename
-    content = "Mi mascota favorita es ${random_pet.my-pet.id}"
-}
-
-resource "random_pet" "my-pet" {
-  prefix = var.prefix
-  separator = var.separator
-  length = var.length
-}
-```
-
-```json
-output pet-name {
-value = random_pet.my-pet.id
-description = "Obtiene el valor de Pet ID generado por el recurso random_pet"
-}
-```
-
-Gracias a que almacenaste el valor de los argumentos en variables dentro tu archivo `variables.tf`
-
-```json
-variable "ami" {
-  default = "ami-123"
-}
-
-variable "instance_type" {
-  default = "t2.micro"
-}
-```
-
-
-```json
-terraform {
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-      version = "5.19.0"
-    }
-  }
-}
-```
-
-### Entendiendo las variables
-
-💡 Se pueden aplicar las variables de diferentes maneras:
-
-- Hacer el `terraform apply` y luego ir escribiendo el valor de cada variable en la terminal. Suponiendo que no especificaste algun archivo con dichas variables
-- Se puede aplicar `export TF_VAR_nombrevariable="Valor de variable"` en tu local y al momento de hacer el `terraform apply` Terraform tomara el valor de las variables que exportaste en tu local
-- Hacer uso del archivo `terraform.tfvars.json` o `terraform.tfvars`
-
-## Tipos de datos
-
-Se pueden usar diferentes tipos de datos en terraform
-
-- `string`: Representa una cadena de texto
-
-```
-name = "mi_instancia"
-```
-
-- `number`: Representa valores numéricos enteros o de punto flotante.
-
-```
-count = 5
-```
-
-- `bool`: Representa valores booleanos, es decir, `true` o `false`.
-
-```
-enabled = true
-```
-
-- `any` (Cualquier): Este tipo de dato puede contener cualquier tipo de valor, lo que lo hace flexible pero menos seguro en términos de validación de tipos.
-
-```
-data = "cualquier_valor"
-```
-
-`list`: Representa una colección ordenada de valores. Los elementos de una lista se pueden acceder por su índice.
-
-`map`: Representa una colección de pares clave-valor. Las claves son cadenas y los valores pueden ser de cualquier tipo de dato.
-Estos son los diferentes tipos de variables en terraform que debes conocer:
-- `string`: acepta caracteres del tipo texto y numéricos en comillas.
-- `number`: acepta caracteres numéricos sin comillas.
-- `bool`: acepta valores binario como true o false.
-- `any`: acepta cualquier tipo de valor.
-
-Y tambien tenemos variables del tipo list y map
-
-<Tabs>
-  <TabItem value="list" label="list">
-
-```json
-// main.tf
-resource "random_pet" "my-pet"{
-	prefix = var.prefix[0] // obtiene el valor "Mr"
-}
-
-// variables.tf
-variable "prefix" { // al ser un array, cada valor se posiciona en un index:
-			//  0      1     2    
-	default = ["Mr", "Mrs", "Sir"]
-	type = list(string) // el type de list puede ser string o number
-}
-```
-  </TabItem>
-  <TabItem value="map" label="map">
-
-```json
-// main.tf
-resource "local_file" "my-pet"{
-	filename = "/root/pets.txt"
-	content = var.file-content["statement2"] //indicas el key para tomar solo su value
-}
-
-// variables.tf
-variable "file-content" { 
-	type = map(string) // el type del map puede ser string o number
-	default = {
-		"statement1" = "Hola mundo"
-		"statement2" = "Aprende a usar terraform"
-	}
-}
-```
-  </TabItem>
-</Tabs>
-
-## Atributos de recursos
-
-Cada bloque de recurso nos permite crear un recurso, por ejemplo, con el recurso `random_pet` buscamos crear un recurso para `my-pet` que puede resultar en "Mr. Cat".
-
-Dicho valor, se almacena en un id dentro de terraform, el cual podemos instanciar para poder usar en algún otro recurso:
-
-Los atributos son campos de almacenamiento de valores en bloques de recursos, data sources o providers.
-Cada bloque de recurso almacena su valor dentro de un ID que podemos instaciar desde el argumento de otro recurso. Por ejemplo, con el recurso `random_pet` buscamos crear un recurso para `my-pet` que puede resultar en "Mr. Cat". Dicho valor, se almacena en un id dentro de terraform, el cual instanciamos en el bloque de recurso `local_file.pet`:
-
-<Tabs>
-  <TabItem value="main" label="main.tf">
-
-```json
-resource "local_file" "pet" {
-    filename = var.filename
-    // obtenemos el valor del recurso que se almacena en random_pet.my-pet
-    content = "Mi mascota favorita es ${random_pet.my-pet.id}"
-}
-
-resource "random_pet" "my-pet" {
-  prefix = var.prefix
-  separator = var.separator
-  length = var.length
-}
-```
-  </TabItem>
-</Tabs>
-
-## Principales comandos
-
-- Terraform init: Para inicializar el proyecto de Terraform, debes ejecutar el comando terraform init en el directorio donde se encuentra el archivo de configuración de Terraform. Este comando descargará e instalará cualquier proveedor y dependencia  
-  que se necesiten.
-- Terraform plan: Para planificar los recursos que se crearán con Terraform, ejecuta el comando terraform plan. Esto mostrará una lista de los recursos que se crearán y cualquier cambio que se aplicará a los recursos existentes.
-- Terraform apply: Para aplicar los cambios a los recursos existentes o crear nuevos recursos, ejecuta el comando terraform apply. Terraform mostrará una lista de los cambios que se aplicarán y pedirá una confirmación antes de continuar.
-- Terraform destroy: Para eliminar los recursos creados con terraform.
-
-![Principales comandos en terraform](./img/tf_comandos.png)
-
-### Otros comandos
-## Variable de salida
 Las variables de salida hacen que la información sobre su infraestructura esté disponible en la línea de comando y pueden exponer información para que la utilicen otras configuraciones de Terraform. Por ejemplo, desplegamos el siguiente archivo de configuracion con los providers `local_file` y `random_pet`.
 
 <Tabs>
@@ -420,19 +276,102 @@ terraform {
   </TabItem>
 </Tabs>
 
-## Introducción a terraform State
 
-El estado de terraform es una propiedad que le permite a Terraform saber cuales son los recursos de la infraestructura deseada que declaras en los archivos de configuración y la compara con la infraestructura real en el proveedor con el que estes trabajando.
+## Precedencia de Variables
 
-Con el comando `terraform plan` puedes verificar el resultado de ese versus, para saber con exactitud cuales son los cambios a realizar.
+Terraform tiene un sistema de precedencia para determinar cómo se resuelven las variables cuando se utilizan en diferentes contextos. La precedencia se basa en la siguiente jerarquía:
 
-Sin embargo, es cuando se ejecuta el `terraform apply` donde se escribe todo la información de este estado dentro de un archivo llamado `terraform.state` el cual no debes eliminar ni modificar.
+![Precedencia de variables en terraform](./img/tf_variables.png)
 
-Dicha información es almacenada en un archivo.
+Cuando se resuelven las variables, Terraform sigue esta jerarquía y utiliza el valor con la precedencia más alta.
 
-Por temas de seguridad, cuando la configuración de tus recursos contiene datos sensibles, estos pueden ser legibles en ese archivo local por lo que se recomienda tener un state almacenado en un repositorio remoto como Terraform Cloud o un Bucket S3.
+💡 Se pueden aplicar las variables de diferentes maneras:
 
-## Algunos comandos terraform
+- Hacer el `terraform apply` y luego ir escribiendo el valor de cada variable en la terminal. Suponiendo que no especificaste algun archivo con dichas variables
+- Se puede aplicar `export TF_VAR_nombrevariable="Valor de variable"` en tu local y al momento de hacer el `terraform apply` Terraform tomara el valor de las variables que exportaste en tu local
+- Hacer uso del archivo `terraform.tfvars.json` o `terraform.tfvars`
+
+## Tipos de datos
+
+Se pueden usar diferentes tipos de datos en terraform
+
+- `string`: Representa una cadena de texto
+
+```
+name = "mi_instancia"
+```
+
+- `number`: Representa valores numéricos enteros o de punto flotante.
+
+```
+count = 5
+```
+
+- `bool`: Representa valores booleanos, es decir, `true` o `false`.
+
+```
+enabled = true
+```
+
+- `any` (Cualquier): Este tipo de dato puede contener cualquier tipo de valor, lo que lo hace flexible pero menos seguro en términos de validación de tipos.
+
+```
+data = "cualquier_valor"
+```
+
+`list`: Representa una colección ordenada de valores. Los elementos de una lista se pueden acceder por su índice.
+
+`map`: Representa una colección de pares clave-valor. Las claves son cadenas y los valores pueden ser de cualquier tipo de dato.
+
+<Tabs>
+  <TabItem value="list" label="list">
+
+```json
+// main.tf
+resource "random_pet" "my-pet"{
+	prefix = var.prefix[0] // obtiene el valor "Mr"
+}
+
+// variables.tf
+variable "prefix" { // al ser un array, cada valor se posiciona en un index:
+			//  0      1     2    
+	default = ["Mr", "Mrs", "Sir"]
+	type = list(string) // el type de list puede ser string o number
+}
+```
+  </TabItem>
+  <TabItem value="map" label="map">
+
+```json
+// main.tf
+resource "local_file" "my-pet"{
+	filename = "/root/pets.txt"
+	content = var.file-content["statement2"] //indicas el key para tomar solo su value
+}
+
+// variables.tf
+variable "file-content" { 
+	type = map(string) // el type del map puede ser string o number
+	default = {
+		"statement1" = "Hola mundo"
+		"statement2" = "Aprende a usar terraform"
+	}
+}
+```
+  </TabItem>
+</Tabs>
+
+## Principales comandos
+
+- Terraform init: Para inicializar el proyecto de Terraform, debes ejecutar el comando terraform init en el directorio donde se encuentra el archivo de configuración de Terraform. Este comando descargará e instalará cualquier proveedor y dependencia  
+  que se necesiten.
+- Terraform plan: Para planificar los recursos que se crearán con Terraform, ejecuta el comando terraform plan. Esto mostrará una lista de los recursos que se crearán y cualquier cambio que se aplicará a los recursos existentes.
+- Terraform apply: Para aplicar los cambios a los recursos existentes o crear nuevos recursos, ejecuta el comando terraform apply. Terraform mostrará una lista de los cambios que se aplicarán y pedirá una confirmación antes de continuar.
+- Terraform destroy: Para eliminar los recursos creados con terraform.
+
+![Principales comandos en terraform](./img/tf_comandos.png)
+
+### Otros comandos
 
 - `terraform validate`
 - `terraform fmt`
