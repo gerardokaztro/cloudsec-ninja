@@ -209,8 +209,6 @@ resource "random_pet" "my-pet" {
   length = var.length
 }
 ```
-  </TabItem>
-<TabItem value="outputs" label="outputs.tf">
 
 ```json
 output pet-name {
@@ -221,7 +219,7 @@ description = "Obtiene el valor de Pet ID generado por el recurso random_pet"
 
 Gracias a que almacenaste el valor de los argumentos en variables dentro tu archivo `variables.tf`
 
-```
+```json
 variable "ami" {
   default = "ami-123"
 }
@@ -230,8 +228,7 @@ variable "instance_type" {
   default = "t2.micro"
 }
 ```
-  </TabItem>
-  <TabItem value="provider" label="providers.tf">
+
 
 ```json
 terraform {
@@ -243,9 +240,6 @@ terraform {
   }
 }
 ```
-  </TabItem>
-</Tabs>
-
 
 ### Entendiendo las variables
 
@@ -338,7 +332,6 @@ Cada bloque de recurso nos permite crear un recurso, por ejemplo, con el recurso
 
 Dicho valor, se almacena en un id dentro de terraform, el cual podemos instanciar para poder usar en algún otro recurso:
 
-```
 Los atributos son campos de almacenamiento de valores en bloques de recursos, data sources o providers.
 Cada bloque de recurso almacena su valor dentro de un ID que podemos instaciar desde el argumento de otro recurso. Por ejemplo, con el recurso `random_pet` buscamos crear un recurso para `my-pet` que puede resultar en "Mr. Cat". Dicho valor, se almacena en un id dentro de terraform, el cual instanciamos en el bloque de recurso `local_file.pet`:
 
