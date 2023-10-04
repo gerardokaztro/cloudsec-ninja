@@ -152,7 +152,55 @@ Se puede crear una función de Lambda, que es el recurso de AWS que contiene el 
 
 Se paga por el tiempo que utilicemos los recursos informáticos y no se cobrará nada cuando el código no se ejecute.
 
+⚠️ Lambda admite varios runtimes, pero tiene un timeout de 15 min. Además para que la función lambda acceda a otros servicios de AWS, es necesario un rol de ejecución.
+
+![Lambda](./img/aws_lambda.png)
+
 Para más información [Lambda](https://aws.amazon.com/es/lambda/)
+
+
+### AWS Step Functions
+
+Es un servicio de orquestación, que brinda flujos de trabajo visuales. 
+Nos ayuda a enfocarnos en la lógica de negocios de mayor valor, además que soporta patrones de flujos de trabajo como reintentos y branching
+
+![Lambda](./img/aws_maquina.png)
+
+#### Máquinas de estado
+
+- Flujo de trabajo serverless
+- Compuestos de pasos llamados estados
+- Duración máxima de 1 año
+- Flujos de trabajo: estándar y express
+- Iniciado a través de API Gateway, EventBridge, Lambda
+- Amazon States Language (ASL)
+- Rol de IAM se utiliza para los permisos
+
+#### ¿Cuándo usar un servicio de orquestación?
+
+- ¿Tienes una aplicación que abarca varios servicios de AWS?
+- ¿Es importante la secuencia de interacción del servicio?
+- ¿Tu aplicación administra el estado entre AWS y las llamadas a los servicios?
+- ¿Tienes un flujo de trabajo de aplicación que requiera intervención humana?
+- ¿Tu aplicación contiene patrones de flujo de trabajo como árboles de decisión, procesamiento paralelo, reintentos y manejo de errores?
+
+
+#### Casos de Uso
+
+- Procesamiento de datos (archivos, video, imágenes)
+- Orquestación de microservicios
+- Machine learning 
+- Automatización de seguridad
+- Computación de alto rendimiento
+
+
+¿Quieres conocer más de AWS Step Functions y las funciones Lambda? Revisa este video para conocer, acerca de los diferentes casos de uso que podemos aplicar utilizando Step Functions y además ver una demo de como utilizarlas desde la consola de AWS.
+<ReactPlayer controls url='https://www.youtube.com/watch?v=rvhOKO-XROs&ab_channel=AWSUserGroupGuatemala' width="auto" /> <br/>
+
+[![Ver video](https://img.youtube.com/vi/rvhOKO-XROs/0.jpg)](https://www.youtube.com/watch?v=rvhOKO-XROs&ab_channel=AWSUserGroupGuatemala)
+
+
+💎 Revisa el código de lo demo en el siguiente repo ➡️ https://github.com/alfalfita/demo-step-functions
 
 ## Servicios de Almacenamiento en AWS
 
