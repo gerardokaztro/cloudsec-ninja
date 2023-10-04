@@ -167,7 +167,6 @@ terraform {
   </TabItem>
 </Tabs>
 
-
 ### Entendiendo las variables
 
 💡 Se pueden aplicar las variables de diferentes maneras:
@@ -175,33 +174,41 @@ terraform {
 - Se puede aplicar `export TF_VAR_nombrevariable="Valor de variable"` en tu local y al momento de hacer el `terraform apply` Terraform tomara el valor de las variables que exportaste en tu local
 - Hacer uso del archivo `terraform.tfvars`
 
-Se pueden usar diferentes tipos de variables en terraform
-- `string` 
-- `number`
-- `bool`
-- `any`
+Estos son los diferentes tipos de variables en terraform que debes conocer:
+- `string`: acepta caracteres del tipo texto y numéricos en comillas.
+- `number`: acepta caracteres numéricos sin comillas.
+- `bool`: acepta valores binario como true o false.
+- `any`: acepta cualquier tipo de valor.
 
-- `list`
+Y tambien tenemos variables del tipo list y map
+
+<Tabs>
+  <TabItem value="list" label="list">
+
 ```json
+// main.tf
 resource "random_pet" "my-pet"{
 	prefix = var.prefix[0] // obtiene el valor "Mr"
 }
 
-variable "prefix" {
-// al ser un array, cada valor se posiciona en un index:
+// variables.tf
+variable "prefix" { // al ser un array, cada valor se posiciona en un index:
 			//  0      1     2    
 	default = ["Mr", "Mrs", "Sir"]
 	type = list(string) // el type de list puede ser string o number
 }
 ```
+  </TabItem>
+  <TabItem value="map" label="map">
 
-- `map`
 ```json
+// main.tf
 resource "local_file" "my-pet"{
 	filename = "/root/pets.txt"
 	content = var.file-content["statement2"] //indicas el key para tomar solo su value
 }
 
+// variables.tf
 variable "file-content" { 
 	type = map(string) // el type del map puede ser string o number
 	default = {
@@ -210,12 +217,17 @@ variable "file-content" {
 	}
 }
 ```
+  </TabItem>
+</Tabs>
 
 ## Atributos de recursos
 
-Cada bloque de recurso nos permite crear un recurso, por ejemplo, con el recurso `random_pet` buscamos crear un recurso para `my-pet` que puede resultar en "Mr. Cat".
+Los atributos son campos de almacenamiento de valores en bloques de recursos, data sources o providers.
+Cada bloque de recurso almacena su valor dentro de un ID que podemos instaciar desde el argumento de otro recurso. Por ejemplo, con el recurso `random_pet` buscamos crear un recurso para `my-pet` que puede resultar en "Mr. Cat". Dicho valor, se almacena en un id dentro de terraform, el cual instanciamos en el bloque de recurso `local_file.pet`:
 
-Dicho valor, se almacena en un id dentro de terraform, el cual podemos instanciar para poder usar en algún otro recurso:
+<Tabs>
+  <TabItem value="main" label="main.tf">
+
 ```json
 resource "local_file" "pet" {
 	filename = var.filename
@@ -229,10 +241,15 @@ resource "random_pet" "my-pet" {
   length = var.length
 }
 ```
+  </TabItem>
+</Tabs>
 
 ## Variable de salida
+Las variables de salida hacen que la información sobre su infraestructura esté disponible en la línea de comando y pueden exponer información para que la utilicen otras configuraciones de Terraform. Por ejemplo, desplegamos el siguiente archivo de configuracion con los providers `local_file` y `random_pet`.
 
-Nos permite exportar el valor de un bloque de recurso
+<Tabs>
+  <TabItem value="main" label="main.tf">
+
 ```json
 resource "local_file" "pet" {
 	filename = var.filename
@@ -244,12 +261,43 @@ resource "random_pet" "my-pet" {
   separator = var.separator
   length = var.length
 }
+```
+  </TabItem>
+<TabItem value="outputs" label="outputs.tf">
 
+```json
 output pet-name {
-value = random_pet.my-pet.id
-description = "Obtiene el valor de Pet ID generado por el recurso random_pet"
+  value = random_pet.my-pet.id
+  description = "Obtiene el valor de Pet ID generado por el recurso random_pet"
 }
 ```
+  </TabItem>
+  <TabItem value="variables" label="variables.tf">
+
+```json
+variable "ami" {
+  default = "ami-123"
+}
+
+variable "instance_type" {
+  default = "t2.micro"
+}
+```
+  </TabItem>
+  <TabItem value="provider" label="providers.tf">
+
+```json
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "5.19.0"
+    }
+  }
+}
+```
+  </TabItem>
+</Tabs>
 
 ## Introducción a terraform State
 
