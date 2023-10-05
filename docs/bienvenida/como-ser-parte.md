@@ -3,6 +3,7 @@ sidebar_label: 'Cómo ser parte'
 ---
 
 # 🗣️ Únete, sé parte y deja huella
+
 ¿Te gustaría ser parte del equipo de co-autores para este proyecto open-source? Es muy sencillo, solo sigue las instrucciones a continuación y aporta a la comunidad parte de tu conocimiento y experiencia, ante cualquier duda puedes ponerte en contacto con el autor.
 
 ## Instrucciones para contribuidores

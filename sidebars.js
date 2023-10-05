@@ -30,6 +30,7 @@ const sidebars = {
       },
       items: [
         'fundamentos-de-tecnologia/redes',
+        // 'fundamentos-de-tecnologia/contenedores',
         'fundamentos-de-tecnologia/serverless',
         'fundamentos-de-tecnologia/devops',
         {
@@ -105,22 +106,21 @@ const sidebars = {
         'fundamentos-de-seguridad-aws/well-architected-sec',
       ],
     },
-    {
-      type: 'category',
-      label: '👩‍⚖️ Estructuras Multi-Cuenta',
-      link: {
-        slug: '/estructuras-multi-cuentas',
-        type: 'generated-index',
-        title: 'Estructura de múltiples cuentas en AWS',
-        description:
-          "Lorem.",
-      },
-      items: [
-        'gobierno/aws-organizations',
-        'gobierno/aws-control-tower',
-      ],
-    },
-    
+    // {
+    //   type: 'category',
+    //   label: '👩‍⚖️ Estructuras Multi-Cuenta',
+    //   link: {
+    //     slug: '/estructuras-multi-cuentas',
+    //     type: 'generated-index',
+    //     title: 'Estructura de múltiples cuentas en AWS',
+    //     description:
+    //       "Lorem.",
+    //   },
+    //   items: [
+    //     'gobierno/aws-organizations',
+    //     'gobierno/aws-control-tower',
+    //   ],
+    // },
     {
       type: 'doc',
       id: 'sponsors',
