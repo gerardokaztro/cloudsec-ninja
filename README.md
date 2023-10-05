@@ -16,12 +16,13 @@
     Visita la <b><a href="https://acloudsecurity.ninja/docs/index">📚 Documentación</a></b> para inciar tu carrera como Cloud Security Engineer.
 </p>
 
-[![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCmWuXyjXOJOpikS4MHmJAcQ?style=social)](https://youtube.com/channel/UCmWuXyjXOJOpikS4MHmJAcQ?sub_confirmation=1)
-[![Discord](https://img.shields.io/discord/1143323924172652705?style=social&label=Discord&logo=discord)](https://discord.gg/cV7syyA5ae)
-[![Twitter Follow](https://img.shields.io/twitter/follow/gerardokaztro?style=social)](https://twitter.com/gerardokaztro)
+[![Open Source Love](https://firstcontributions.github.io/open-source-badges/badges/open-source-v3/open-source.png)](https://github.com/firstcontributions/open-source-badges)
 ![GitHub Followers](https://img.shields.io/github/followers/gerardokaztro?style=social)
 ![GitHub Repo Stars](https://img.shields.io/github/stars/gerardokaztro?style=social)
-[![Open Source Love](https://firstcontributions.github.io/open-source-badges/badges/open-source-v3/open-source.png)](https://github.com/firstcontributions/open-source-badges)
+[![Discord](https://img.shields.io/discord/1143323924172652705?style=social&label=Discord&logo=discord)](https://discord.gg/cV7syyA5ae)
+[![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCmWuXyjXOJOpikS4MHmJAcQ?style=social)](https://youtube.com/channel/
+UCmWuXyjXOJOpikS4MHmJAcQ?sub_confirmation=1)
+[![Twitter Follow](https://img.shields.io/twitter/follow/gerardokaztro?style=social)](https://twitter.com/gerardokaztro)
 
 <h2 align="center">
   Cómo iniciar este lindo viaje 🚀
@@ -40,15 +41,15 @@ Todo el contenido de las diferentes secciones de aprendizaje de la plataforma se
 
 ```
 .docs
-├── cloud
+├── fundamentos-de-ciberseguridad
 │   ├── code/
 │   ├── img/
 │   └── .
-├── fundamentos
+├── fundamentos-de-nube
 │   ├── code/
 │   ├── img/
 │   └── .
-└── gobierno
+└── fundamentos-de-tecnologia
     ├── code/
     ├── img/
     └── .
@@ -110,7 +111,7 @@ cd docs/
 git push origin development
 ```
 
-Finalmente, crea un **[Pull Request](https://github.com/gerardokaztro/cloudsec-ninja/compare/main...development)** a `main`.
+Finalmente, crea un **Pull Request** desde tu rama `development` a `main` del repositorio original.
 
 > Esto será revisado por los *code owners* y presta atención por si dejan algún comentario que debas revisar y responder, para que decidan aprobar tu cambio. 
 
@@ -122,7 +123,7 @@ Sin embargo, si quieres proponer un nuevo tema asegúrate de contactar con el au
 
 1. Si vas añadir contenido dentro de un archivo existente, entonces ubica el archivo y empeza a escribir.
 
-    1.1 Por ejemplo, quieres añadir un video sobre AWS Control Tower, o quizas hacer una correción sobre una característica mal explicada, entonces la ruta seria [`docs/gobierno/controltower.md`](https://github.com/gerardokaztro/cloudsec-ninja/blob/development/docs/gobierno/controltower.md)
+    1.1 Por ejemplo, quieres añadir un video sobre AWS Control Tower, o quizas hacer una correción sobre una característica mal explicada, entonces la ruta seria [`docs/gobierno/aws-control-tower.md`](https://github.com/gerardokaztro/cloudsec-ninja/blob/development/docs/gobierno/aws-control-tower.md)
 
 2. Si vas a añadir contenido sobre una página aun no creada y ya validaste que forma parte del roadmap, entonces puedes crearla tu mismo, asi:
 
@@ -137,7 +138,7 @@ Sin embargo, si quieres proponer un nuevo tema asegúrate de contactar con el au
     | sidebar_label: | Nombre del artículo de como se verá reflejado en el sidebar de la página |
     | tags: | Array que contiene las etiquetas para clasificar el contenido |
 
-> 💡 Usa este artículo como referencia, contiene la [estructura de un artículo](https://raw.githubusercontent.com/gerardokaztro/cloudsec-ninja/development/docs/fundamentos/redes.md) que debes seguir al momento de escribir tu contenido.
+> 💡 Usa este artículo como referencia, contiene la [estructura de un artículo](https://raw.githubusercontent.com/gerardokaztro/cloudsec-ninja/development/docs/fundamentos-de-tecnologia/redes.md) que debes seguir al momento de escribir tu contenido.
 
 <h2 align="center">
   Descargo de responsabilidad 🚨

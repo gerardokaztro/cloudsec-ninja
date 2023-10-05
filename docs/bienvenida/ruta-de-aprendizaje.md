@@ -23,13 +23,13 @@ Esta ruta de aprendizaje toma como referencia e inspiración algunas publicacion
             <td>
                 <a href="/docs/fundamentos-de-tecnologia/redes" >Redes</a>
                 <br/>
-                 <a href="/docs/fundamentos-de-tecnologia/contenedores" >Contenedores</a>
-                <br/>
                 <a href="/docs/fundamentos-de-tecnologia/serverless" >Serverless</a>
                 <br/>
                 <a href="/docs/fundamentos-de-tecnologia/devops" >DevOps</a>
                 <br/>
                 <a href="/docs/fundamentos-de-tecnologia/iac" >Infraestructura como Código</a>
+                <br/>
+                <a href="/docs/fundamentos-de-tecnologia/terraform" >Introducción a Terraform</a>
             </td>
             <td>
                 <a href="/docs/fundamentos-de-nube/introduccion" >Introducción al Cloud Computing</a>
@@ -68,10 +68,10 @@ Les pedimos que tengan mucha empatía, esto es totalmente gratis para todos uste
         <tr bgcolor="#BED3E1">
             <td><font color="#ff9900"><b>Cloud Foundations: Estructuras Multi-Cuenta</b></font></td>
             <td colspan="3"> 
-                <a href="/docs/gobierno/aws-organizations" >AWS Organizations</a>
+                <a href="" >AWS Organizations</a>
             </td>
             <td colspan="4">
-                <a href="/docs/gobierno/aws-control-tower" >AWS Control Tower</a>
+                <a href="" >AWS Control Tower</a>
             </td>
         </tr>
         <tr bgcolor="#BED3E1">
