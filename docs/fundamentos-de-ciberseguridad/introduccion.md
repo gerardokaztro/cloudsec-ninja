@@ -22,6 +22,8 @@ Como mencionamos arriba, hoy en día uno de los **activos más importantes que t
 
 Definimos ciberseguridad como “Un conjunto de medidas de protección de la información, a través del tratamiento de las amenazas que ponen en riesgo la información que es tratada por los sistemas de información que se encuentran interconectados”, según [ISACA](https://www.isaca.org/) (Information Systems Audit and Control Association).
 
+![espectro de seguridad de la informacion](https://behind-security.com/wp-content/uploads/2020/07/CyberSpace.png)
+
 ### Diferencias entre Seguridad de la Información y Ciberseguridad
 
 Como hemos podido ver, ambos términos comparten mucha similitud pero tienen algunas diferencias.
@@ -112,6 +114,8 @@ La mejor práctica común es implementar al menos dos de las tres técnicas comu
 - basado en token (algo que tienes).
 - basado en características (algo que es).
 
+![mfa](https://live.staticflickr.com/4024/4382677300_42c6993c59_b.jpg)
+
 Cuando se comprueba la identificación del usuario mendiante el uso de los métodos de la autenticación, viene el último paso que es la autorización.
 
 #### Triple AAA: Authentication, Authorization and Accounting
@@ -142,6 +146,8 @@ La informacion privada puede venir en muchas formas, dos de los elementos mas co
 
 - PHI (Personal Health Information) incluye registros de atención médica que estan regulados por HIPPA (Health Insurance Portability and Accountability Act).
 
+![privacidad de los datos](https://cdni.iconscout.com/illustration/free/thumb/free-concept-of-data-privacy-and-policy-2112520-1785599.png)
+
 ### Regulaciones y leyes
 
 Cada vez que trabaje con información confidencial, como por ejemplo, PII, PHI y demás, nos debemos preguntar que leyes y regulaciones rigen la forma en la que debemos almacenar, procesar y transmitir dicha información. Es nuestro deber averiguar que leyes y que regulaciones específicas se aplican a nosotros.
@@ -151,6 +157,8 @@ Entender y llegar a buen puerto con este tema, realmente no es nada sencillo. Ve
 Imaginemos que tenemos una empresa física en Lima (Capital de Perú), esta claro que la ley estatal de Lima (si la hubiese) y la ley federal escrita a nivel nacional en Perú aplican a nuestro caso. Ahora, que pasa si nuestra aplicacion, junto con su infraestructura esta alojada en la región de Virginia (Este de USA) en Amazon Web Services (¿la ley de USA aplicaría a nosotros?), y que nuestros clientes (quienes consumen nuestro producto) radican en algún pais de la Unión Europea ¿Nos regimos a la ley de aquí tambien?.
 
 Como ven, no es una tarea sencilla, la Unión Europea dice que su [Reglamento General de Protección de Datos (GDPR)](https://gdpr-info.eu/), se aplica a la información personal de todos los residentes de la UE dondequiera que se encuentren. Ahora, por supuesto, GDPR, no es la única ley que deberá seguir. Los profesionales de la seguridad deben conocer las diferentes leyes nacionales, territoriales y estatales que se aplican a sus operaciones. Y algunas regulaciones provienen de fuentes distintas a la ley. 
+
+![GDPR](https://live.staticflickr.com/4771/40899487972_3a9f1414a2_c.jpg)
 
 Por ejemplo, el [Estándar de Seguridad de Datos de la Industria de Tarjetas de Pago (PCI DSS)](https://www.pcisecuritystandards.org/lang/es-es/), es un esquema de autorregulación que se aplica a las transacciones con tarjeta de crédito en todo el mundo. El cumplimiento es impuesto por los bancos que proporcionan acceso al sistema de tarjetas de pago.
 
@@ -197,6 +205,8 @@ Los **riesgos internos** son aquellos que surgen desde adentro de nuestra organi
 > No podemos hacer mucho para evitar que un atacante intente o inicie el ataque, pero si podemos crear controles que reduzcan la probabilidad de que el ataque en cuestion tenga éxito.
 
 También estan los **riesgos de multiples partes**, estos riesgos se comparten entre muchas organizaciones diferentes. Por ejemplo si un proveedor de software como servicio se ve comprometido, ese es un riesgo de multiples partes, porque ese compromiso representa un riesgo para todos los clientes del proveedor de software.
+
+![GRC](https://pix4free.org/assets/library/2021-06-16/originals/risk-management.jpg)
 
 ### Algunas terminologías de la Gestión de Riesgos
 
