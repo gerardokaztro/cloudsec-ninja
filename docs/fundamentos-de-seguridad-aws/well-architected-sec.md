@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'Pilar de seguridad del W.A.F.'
+sidebar_label: 'Pilar de seguridad del Well Architected Framework'
 tags: [nivel 100, aws, seguridad]
 ---
 
