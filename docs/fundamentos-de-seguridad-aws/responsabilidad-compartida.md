@@ -27,35 +27,32 @@ Los siguientes son responsabilidades de seguridad específicas de los clientes:
 
 El alcance de las responsabilidades varía según el tipo o modelo de servicio que estemos utilizando, por esto, es importante tener presente que nosotros como clientes, siempre tendremos un grado de responsabilidad en el aseguramiento de nuestros recursos.
 
-![modelos-de-servicios-cloud](https://kinsta.com/wp-content/uploads/2020/04/responsibilities-of-cloud-service-models-1024x953.png)
-Fuente: Tipos de servicios de nube 
 
-Mas informacion sobre los tipos de servicios de nube [aquí](https://cloudsec-ninja-development.vercel.app/docs/computacion-en-la-nube)
-
+Te invito a conocer más sobre los modelos de servicio en la nube desde el apartado de[computación en la ube](https://cloudsec-ninja-development.vercel.app/docs/fundamentos-de-nube/introduccion)
 
 Exploremos un poco más este modelo de responsabilidad compartida con el siguiente video:
 
 <ReactPlayer controls url='https://www.youtube.com/' width="auto" /> <br/>
 
 Del video podemos rescatar los siguientes ejemplos de cómo pueden variar nuestras responsabilidades de seguridad según el tipo de servicio:
-1. Infraestructura como Servicio (IaaS): Ejemplo: uso de Amazon EC2 (Elastic Compute Cloud) para alojar una aplicación web.
+1. Servicios de infraestructura: Ejemplo: uso de Amazon EC2 (Elastic Compute Cloud) para alojar una aplicación web
+
 - AWS es responsable de proteger la infraestructura física de los centros de datos, como el control de acceso y la seguridad física de los servidores, además de garantizar la disponibilidad y la redundancia de la infraestructura.
 - El cliente es responsable de configurar adecuadamente las instancias EC2, aplicar actualizaciones de seguridad al sistema operativo y las aplicaciones que utiliza, gestionar las credenciales de acceso a las instancias, proteger los datos de las instancias e implementar reglas de firewall (a través de grupos de seguridad) y configurar adecuadamente la red y las rutas de tráfico.
-2. Plataforma como Servicio (PaaS): Ejemplo:  Uso de Amazon RDS (Relational Database Service) para una base de datos.
+2. Servicios encapsulados o gestionados: Ejemplo:  Uso de Amazon RDS (Relational Database Service) para una base de datos.
 - AWS se encarga de administrar la infraestructura subyacente de la base de datos, incluyendo copias de seguridad y actualizaciones de seguridad del motor de base de datos, así como garantizar la disponibilidad de la base de datos.
 - El cliente es responsable de definir la estructura de la base de datos, gestionar la configuración de seguridad de la base de datos, controlar el acceso a los datos y realizar copias de seguridad adicionales si es necesario.
-3. Software como Servicio (SaaS): Ejemplo: Uso de AWS WorkMail, un servicio de correo electrónico gestionado.
-- La mayor parte de la responsabilidad de seguridad recae en AWS quien debe garantizar la disponibilidad y el rendimiento del servicio de correo electrónico, así como de proteger la infraestructura subyacente.
-- El cliente es responsable de gestionar las cuentas de usuario, configurar políticas de acceso y seguridad de las comunicaciones de correo electrónico y mantener la seguridad de las contraseñas de sus usuarios.
-4. Funciones como Servicio (FaaS): Ejemplo: Implementar una función en AWS Lambda.
+Dentro de esta clasificación podemos encontrar otros servicios como Amazon Elastic Beanstalk.
+3. Servicios abstractos o sin servidor: Ejemplo: Implementar una función en AWS Lambda.
 - AWS proporciona la plataforma Lambda y se encarga de la gestión de recursos subyacentes, como la escalabilidad y la seguridad a nivel de función. Así como garantizar que las funciones se ejecuten de manera segura y aislada.
 - El cliente es responsable de escribir y cargar el código de la función Lambda de manera segura y de configurar las políticas de permisos para determinar quién puede invocar la función y acceder a recursos externos.
+En esta clasificación también podemos mencionar el servicio Amazon API Gateway.
 
 
 Referencias: 
 
 [Modelo de responsabilidad compartida de AWS](https://aws.amazon.com/es/compliance/shared-responsibility-model/)
 
-[Tipos de servicios de nube](https://kinsta.com/blog/types-of-cloud-computing/)
+[Modelos de servicios en la nube](https://aws.amazon.com/es/types-of-cloud-computing/) 
 
  
