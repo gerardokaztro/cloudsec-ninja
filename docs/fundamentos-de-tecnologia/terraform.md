@@ -1,18 +1,20 @@
 ---
-## tags: \[nivel 100, iac\]
+sidebar_label: Introducción a Terraform
+tags: [nivel 100, iac]
 ---
 
 import ReactPlayer from 'react-player'  
 import Tabs from '@theme/Tabs';  
 import TabItem from '@theme/TabItem';
 
+# Introducción a Terraform
+En este vídeo, cortito y al pie, tienes la explicación de que ¿qué es terraform?
+
+<ReactPlayer controls url='https://www.youtube.com/watch?v=Xc9Vb2ERdaw&lc' width="auto" /> <br/>
+
 ## ¿Qué es terraform?
 
 Terraform es una herramienta de código abierto creada por HashiCorp y escrito en el lenguaje de programación Go. El código Go se compila en un único binario (o mejor dicho, un binario para cada uno de los sistemas operativos soportados) llamado terraform.
-
-En este vídeo, cortito y al pie, tienes la explicación de que ¿qué es terraform?
-
-
 
 ### ¿Cómo instalar terraform?
 
