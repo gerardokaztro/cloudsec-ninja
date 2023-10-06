@@ -21,7 +21,7 @@ Algunos de los componentes clave de este programa son los siguientes:
 
 Ahora, acompáñame en el siguiente video para que exploremos los recursos de cumplimiento que tenemos disponibles:.
 
-<ReactPlayer controls url='https://www.youtube.com/' width="auto" /> <br/>
+<ReactPlayer controls url='https://youtu.be/UwY7HdQuVH0' width="auto" /> <br/>
 
 
 Referencias: 
