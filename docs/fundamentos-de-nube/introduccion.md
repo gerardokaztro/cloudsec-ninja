@@ -75,6 +75,13 @@ Y aquí hay varios puntos a destacar:
 - Y esto se pone aún mejor, muchos proveedores de nube ofrecen una **capa gratuita** para poder hacer pruebas y conocer las diferentes soluciones que el servicio brinda.
 Los servicios en la nube permiten hacer pruebas de concepto, y hasta permiten equivocarse a un costo bajo o hasta sin costo en algunos casos.
 
+## Tipos de modelos de los servicios en la nube
+
+Exiten algunos agrupadores para los tipos de servicios que dependen de algunas características basadas en el llamado modelo de responsabilidad compartida.
+
+| Infraestructura como servicio (IaaS) | Plataforma como servicio (PaaS) | Software como servicio (SaaS) |
+| ------------ | ------------ | ------------ |
+| La infraestructura como servicio, que a veces se abrevia a IaaS, contiene los bloques de creación fundamentales para la TI en la nube. Por lo general, permite acceder a las características de conexión en red, a los equipos (virtuales o en software dedicado) y al espacio de almacenamiento de datos. La infraestructura como servicio ofrece el mayor nivel de flexibilidad y control de la administración en torno a los recursos de tecnología informática y guarda el mayor parecido con los recursos existentes con los que muchos departamentos de tecnología y desarrolladores están familiarizados. | Las plataformas como servicio eliminan la necesidad de las compañías de administrar la infraestructura subyacente (normalmente hardware [por ej. servidor] y sistemas operativos) y permiten centrarse en la implementación y la administración de las aplicaciones. Esto contribuye a mejorar la eficacia, pues no hace falta preocuparse del aprovisionamiento de recursos, la planificación de la capacidad, el mantenimiento de software, los parches ni ninguna de las otras tareas que conlleva la ejecución de una carga de trabajo. | El software como servicio proporciona un producto completo que el proveedor del servicio ejecuta y administra. En la mayoría de los casos, quienes hablan de software como servicio en realidad se refieren a aplicaciones de usuario final. Con una oferta de SaaS, no hay que pensar en cómo se mantiene el servicio ni en cómo se administra la infraestructura subyacente. Solo es necesario preocuparse por cómo utilizar ese sistema de software concreto. Un ejemplo común de una aplicación SaaS es un programa de correo electrónico basado en la web que permite enviar y recibir mensajes sin tener que administrar la incorporación de características ni mantener los servidores y los sistemas operativos en los que se ejecuta el programa de correo electrónico. |
 
 ## Modelos de despliegue
 
@@ -87,8 +94,33 @@ Y finalmente el modelo de nube híbrida, es una combinación de los dos modelos 
 
 
 | Nube pública | Nube privada | Nube híbrida |
-| ------------ | ------------ | ------------ |
+
 | Mayor escala, costos más bajos | Escalabilidad y flexibilidad limitadas | Si no se quiere migrar todos los servicios a la nube cuando existe información crítica. |
 | Difícil integración con "Legacy" | Riesgo de obsolescencia | Se reduce el tiempo y los gastos empleados en el mantenimiento del sistema |
 | Se desea una menor carga de TI | Si no se quiere compartir ningún recurso | Si se quiere trabajar con aplicaciones específicas en una nube privada y, en los momentos de máxima demanda optar por utilizar una nube pública |
     
+## Característica de la nube
+
+Es importante al momento de hablar de la nube, conocer algunos conceptos que ayudarán a comprender, mas ventajas de configurar las cargas de trabajo en la nube.
+
+** Agilidad **
+Cómo se mencionó anteriormente, es muy fácil y rápido configurar un servidor en la nube para poder hacer esa prueba de concepto rápida que muchas veces hace falta. Y encima se agrega en que no hace falta hacer una inversión inicial, sólo se va a pagar por los minutos que se haya usado ese servicio. (Y en algunos casos hasta puede ser gratis si entra en la llamda capa gratuita.)
+
+** Elasticidad **
+En muchas ocasiones, ya existe alguna carga de trabajo ejecutandosé en algún servicios, como por ejemplo en un servidor. Pero puede suceder que los recursos de ese servidor no sean suficientes. 
+En la computación tradicional (dentro de un centro de datos), esto puede llegar a necesitar la adquisición de más hardware al host o bien (si el host ya está en sus límites), requiera de una migración de host, o peor aún... no se puede hacer.
+En la nube esto es una tarea del día a día, que se realiza en cuestión de segundos y sin inversiones por adelantado. Simplemente se puede cambiar el tipo de instancia a una mas acorde a las necesidades y las cargas de trabajo continuarán funcionando.
+
+** Escalabilidad **
+Existen situaciones donde la demanda de mayor capacidad de cómputo es puntual. Es decir, sólo es necesario aumentar esa capacidad por unos minutos/horas/días y hasta que esto se adapte automáticamente a la demanda del momento.
+Esta es otra de las características de la nube, permite configurar los servicios para que se adapten a la demanda. Mas adelante se verá que esto se puede hacer de forma programada, o bien en función de algunos factores que se pueden definir. 
+Pero siempre las premisas serán:
+1 - Que el servicio se mantenga activo para los clientes
+2 - Mantener los costos del servicio al mínimo necesario para satisfacer esa demanda.
+
+
+
+
+
+
+
