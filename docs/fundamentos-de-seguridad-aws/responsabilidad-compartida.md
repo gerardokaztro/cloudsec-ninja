@@ -32,7 +32,7 @@ Te invito a conocer más sobre los modelos de servicio en la nube desde el apart
 
 Exploremos un poco más este modelo de responsabilidad compartida con el siguiente video:
 
-<ReactPlayer controls url='https://www.youtube.com/' width="auto" /> <br/>
+<ReactPlayer controls url='https://youtu.be/K4Xh7-m2qFg' width="auto" /> <br/>
 
 Del video podemos rescatar los siguientes ejemplos de cómo pueden variar nuestras responsabilidades de seguridad según el tipo de servicio:
 1. Servicios de infraestructura: Ejemplo: uso de Amazon EC2 (Elastic Compute Cloud) para alojar una aplicación web
