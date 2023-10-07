@@ -34,7 +34,7 @@ Recuerda que esta plataforma es gratuita y usted asume toda la responsabilidad d
 A continuación se presentan algunas de las categorías de audiencia a muy alto nivel y cómo este proyecto les ayuda.
 
 :::info Blue Team
-Comprenda cómo piensan, trabajan y explotan los problemas de seguridad los atacantes, y aplique estos conocimientos para detectarlos y nmitigarlos en el mundo real
+Comprenda cómo piensan, trabajan y explotan los problemas de seguridad los atacantes, y aplique estos conocimientos para detectarlos y mitigarlos en el mundo real
 :::
 
 :::caution Plataforma y DevOps
