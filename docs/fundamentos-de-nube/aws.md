@@ -308,9 +308,6 @@ Cada subred en el VPC debe estar asociada a una Network ACL. Si no asociamos una
 
 ![NACL](./img/acldered_fund.jpg)
 
-### ELB
-![NACL](./img/acldered_fund.jpg)
-
 ### Elastic Load Balancig - Balanceo de Carga elastico
 
 ![ELB](./img/amazon-elb_fund.jpg)
@@ -422,7 +419,6 @@ Para más información [RDS](https://aws.amazon.com/es/rds/)
 
 ### Amazon Aurora
 ![Aurora](./img/amazon-aurora_fund.jpg)
-![Aurora](./img/amazon-aurora_fund.jpg)
 
 `Amazon Aurora` es una base de datos relacional compatible con MySQL y PostgreSQL que se fue creada por AWS. Combina el rendimiento y la disponibilidad de las bases de datos comerciales de alta gama con la simplicidad y la rentabilidad de las bases de datos de código abierto. 
 
@@ -519,4 +515,4 @@ A partir de la experiencia en la ayuda en la creación de multiples arquitectura
 
 El WAF de AWS a través una serie de preguntas básicas ayudan a comprender si una arquitectura específica se ajusta a las prácticas recomendadas en la nube. El WAF proporciona un enfoque coherente para evaluar los sistemas en función de las cualidades que se esperan de sistemas modernos basados en la nube, así como las medidas correctivas necesarias para alcanzar dichas cualidades. 
 
-Para más información [CAF](https://aws.amazon.com/es/architecture/well-architected/)
+Para más información [WAF](https://aws.amazon.com/es/architecture/well-architected/)
