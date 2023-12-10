@@ -11,6 +11,7 @@ import docsearch from '@docsearch/js';
 import '@docsearch/css';
 
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import styles from './index.module.css';
 
