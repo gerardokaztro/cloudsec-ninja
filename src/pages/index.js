@@ -11,6 +11,7 @@ import docsearch from '@docsearch/js';
 import '@docsearch/css';
 
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 import styles from './index.module.css';
 
@@ -30,6 +31,7 @@ function HomepageHeader() {
           </Link>
         </div>
         <Analytics />
+        <SpeedInsights />
       </div>
     </header>
   );
