@@ -106,6 +106,22 @@ const sidebars = {
         'fundamentos-de-seguridad-aws/well-architected-sec',
       ],
     },
+    {
+      type: 'category',
+      label: 'Estrategía Multi-cuenta',
+      link: {
+        slug: '/estrategia-multi-cuenta',
+        type: 'generated-index',
+        title: 'Estrategias Multicuenta en AWS: Un vistazo a AWS Organizations y AWS Control Tower',
+        description:
+          "Habilitando la estrategia multicuenta de la mano de AWS Organization & Control Tower.",
+      },
+      items: [
+        'gobierno/aws-estrategias-multicuenta',
+        'gobierno/aws-organizations',
+        'gobierno/aws-control-tower',
+      ],
+    },
     // {
     //   type: 'category',
     //   label: '👩‍⚖️ Estructuras Multi-Cuenta',
