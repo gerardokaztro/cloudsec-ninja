@@ -108,7 +108,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Estrategía Multi-cuenta',
+      label: '👩‍⚖️ Estrategía Multi-cuenta',
       link: {
         slug: '/estrategia-multi-cuenta',
         type: 'generated-index',
@@ -120,6 +120,7 @@ const sidebars = {
         'gobierno/aws-estrategias-multicuenta',
         'gobierno/aws-organizations',
         'gobierno/aws-control-tower',
+        'gobierno/aws-configuracion-organization',
       ],
     },
     // {
@@ -135,6 +136,7 @@ const sidebars = {
     //   items: [
     //     'gobierno/aws-organizations',
     //     'gobierno/aws-control-tower',
+    //     'gobierno/aws-configuracion-organization',
     //   ],
     // },
     {
