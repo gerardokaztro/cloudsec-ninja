@@ -243,6 +243,14 @@ const config = {
           ],
         },
       ],
+
+      [
+        "docusaurus-plugin-dotenv",
+        {
+          path: "./.env.local",
+          systemvars: true,
+        },
+      ],
     ],
 };
 

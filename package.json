@@ -14,6 +14,7 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
+    "@aws-amplify/ui-react": "^4.6.5",
     "@docsearch/js": "^3.5.2",
     "@docusaurus/core": "2.4.1",
     "@docusaurus/plugin-client-redirects": "^2.4.0",
@@ -27,9 +28,13 @@
     "@mdx-js/react": "^1.6.22",
     "@vercel/analytics": "^1.0.2",
     "@vercel/speed-insights": "^1.0.1",
+    "add": "^2.0.6",
+    "aws-amplify": "^5.3.18",
+    "aws-crt": "^1.21.2",
     "clsx": "^1.2.1",
     "diff": "^5.1.0",
     "docusaurus-lunr-search": "^2.1.15",
+    "docusaurus-plugin-dotenv": "^1.0.1",
     "docusaurus-plugin-image-zoom": "^0.0.2",
     "docusaurus-plugin-sass": "^0.2.2",
     "iframe-resizer-react": "^1.1.0",
