@@ -20,8 +20,8 @@ const config = {
   title: 'Cloud Security Ninja',
   tagline: 'Desde principiante a nivel avanzado',
   favicon: 'img/favicon.ico',
-  url: 'https://acloudsecurity.ninja',
-  baseUrl: '/',
+  url: 'https://docs.acloudsecurity.ninja',
+  baseUrl: 'es/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
