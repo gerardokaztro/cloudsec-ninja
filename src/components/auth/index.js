@@ -12,7 +12,7 @@ import {
   LOGOUT_PATH,
   PROTECTED_PATHS,
 } from "../../utils/constants";
-import { Login } from "../Login";
+import { Login } from "../login";
 
 export function AuthCheck({ children }) {
   const location = useLocation();
