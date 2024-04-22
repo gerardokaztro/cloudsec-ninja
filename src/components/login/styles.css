@@ -1,0 +1,19 @@
+/* src/components/Login/styles.css */
+
+.auth-wrapper {
+    margin: auto 10px;
+  }
+  
+  /* it is necessary because of the bug in 
+    the main css library of the AWS Amplify */
+  .amplify-field-group__outer-end .amplify-field-group__control,
+  .amplify-field-group__outer-start .amplify-field-group__control {
+    height: 100%;
+    height: -webkit-fill-available;
+  }
+  
+  /* it is necessary because of the bug in 
+    the main css library of the AWS Amplify */
+  .amplify-button--fullwidth {
+    width: inherit;
+  }

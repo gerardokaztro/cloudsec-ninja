@@ -21,7 +21,7 @@ const config = {
   tagline: 'Desde principiante a nivel avanzado',
   favicon: 'img/favicon.ico',
   url: 'https://docs.acloudsecurity.ninja',
-  baseUrl: 'es/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -241,6 +241,14 @@ const config = {
               content: 'rgb(37, 194, 160)',
             },
           ],
+        },
+      ],
+
+      [
+        "docusaurus-plugin-dotenv",
+        {
+          path: "./.env.local",
+          systemvars: true,
         },
       ],
     ],
