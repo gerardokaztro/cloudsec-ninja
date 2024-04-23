@@ -1,6 +1,7 @@
 import React from 'react';
-import styles from './styles.module.css'
-import ReactPlayer from 'react-player'
+import styles from './styles.module.css';
+import ReactPlayer from 'react-player';
+import { MDXProvider } from '@mdx-js/react';
 
 export default function HomepageVideo() {
   return (
