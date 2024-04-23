@@ -247,7 +247,7 @@ const config = {
       [
         "docusaurus-plugin-dotenv",
         {
-          path: "./.env.local",
+          path: process.env.ENV !== 'localhost' ? "./.env.local" : undefined,
           systemvars: true,
         },
       ],
