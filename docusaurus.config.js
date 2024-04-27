@@ -141,12 +141,13 @@ const config = {
         ],
       },
       algolia: {
-        apiKey: '46eadf34239e60f3e091f6e882a9b1066',
+        apiKey: '6eadf34239e60f3e091f6e882a9b1066',
         indexName: 'acloudsecurity',
         appId: 'ZLMIOZBCWU',
   
         // Optional: see doc section bellow
         contextualSearch: true,
+        insights: true,
   
         //... other Algolia params
       },
