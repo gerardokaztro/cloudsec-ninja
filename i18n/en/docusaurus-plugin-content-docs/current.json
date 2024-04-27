@@ -1,0 +1,78 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docs.category.🙋‍♂️ Bienvenida": {
+    "message": "🙋‍♂️ Bienvenida",
+    "description": "The label for category 🙋‍♂️ Bienvenida in sidebar docs"
+  },
+  "sidebar.docs.category.🤓 Fundamentos de TI": {
+    "message": "🤓 Fundamentos de TI",
+    "description": "The label for category 🤓 Fundamentos de TI in sidebar docs"
+  },
+  "sidebar.docs.category.🤓 Fundamentos de TI.link.generated-index.title": {
+    "message": "Fundamentos de tecnologías",
+    "description": "The generated-index page title for category 🤓 Fundamentos de TI in sidebar docs"
+  },
+  "sidebar.docs.category.🤓 Fundamentos de TI.link.generated-index.description": {
+    "message": "Échale un vistazo a este módulo si crees no tener las bases necesarias en el mundo techie.",
+    "description": "The generated-index page description for category 🤓 Fundamentos de TI in sidebar docs"
+  },
+  "sidebar.docs.category.Infraestructura como Código": {
+    "message": "Infraestructura como Código",
+    "description": "The label for category Infraestructura como Código in sidebar docs"
+  },
+  "sidebar.docs.category.☁️ Computación en la nube": {
+    "message": "☁️ Computación en la nube",
+    "description": "The label for category ☁️ Computación en la nube in sidebar docs"
+  },
+  "sidebar.docs.category.☁️ Computación en la nube.link.generated-index.title": {
+    "message": "Fundamentos de Computación en la nube",
+    "description": "The generated-index page title for category ☁️ Computación en la nube in sidebar docs"
+  },
+  "sidebar.docs.category.☁️ Computación en la nube.link.generated-index.description": {
+    "message": "Échale un vistazo a este módulo si crees no tener las bases necesarias en el mundo cloud.",
+    "description": "The generated-index page description for category ☁️ Computación en la nube in sidebar docs"
+  },
+  "sidebar.docs.category.🔒 Ciberseguridad": {
+    "message": "🔒 Ciberseguridad",
+    "description": "The label for category 🔒 Ciberseguridad in sidebar docs"
+  },
+  "sidebar.docs.category.🔒 Ciberseguridad.link.generated-index.title": {
+    "message": "Fundamentos de Ciberseguridad",
+    "description": "The generated-index page title for category 🔒 Ciberseguridad in sidebar docs"
+  },
+  "sidebar.docs.category.🔒 Ciberseguridad.link.generated-index.description": {
+    "message": "Échale un vistazo a este módulo si crees no tener las bases necesarias en el mundo cyber.",
+    "description": "The generated-index page description for category 🔒 Ciberseguridad in sidebar docs"
+  },
+  "sidebar.docs.category.Metodologías y Frameworks": {
+    "message": "Metodologías y Frameworks",
+    "description": "The label for category Metodologías y Frameworks in sidebar docs"
+  },
+  "sidebar.docs.category.🔐 Seguridad DE la nube": {
+    "message": "🔐 Seguridad DE la nube",
+    "description": "The label for category 🔐 Seguridad DE la nube in sidebar docs"
+  },
+  "sidebar.docs.category.🔐 Seguridad DE la nube.link.generated-index.title": {
+    "message": "Seguridad de la nube de AWS",
+    "description": "The generated-index page title for category 🔐 Seguridad DE la nube in sidebar docs"
+  },
+  "sidebar.docs.category.🔐 Seguridad DE la nube.link.generated-index.description": {
+    "message": "En este modulo conocerás los aspectos de seguridad DE la nube",
+    "description": "The generated-index page description for category 🔐 Seguridad DE la nube in sidebar docs"
+  },
+  "sidebar.docs.category.👩‍⚖️ Estrategía Multi-cuenta": {
+    "message": "👩‍⚖️ Estrategía Multi-cuenta",
+    "description": "The label for category 👩‍⚖️ Estrategía Multi-cuenta in sidebar docs"
+  },
+  "sidebar.docs.category.👩‍⚖️ Estrategía Multi-cuenta.link.generated-index.title": {
+    "message": "Estrategias Multicuenta en AWS: Un vistazo a AWS Organizations y AWS Control Tower",
+    "description": "The generated-index page title for category 👩‍⚖️ Estrategía Multi-cuenta in sidebar docs"
+  },
+  "sidebar.docs.category.👩‍⚖️ Estrategía Multi-cuenta.link.generated-index.description": {
+    "message": "Habilitando la estrategia multicuenta de la mano de AWS Organization & Control Tower.",
+    "description": "The generated-index page description for category 👩‍⚖️ Estrategía Multi-cuenta in sidebar docs"
+  }
+}

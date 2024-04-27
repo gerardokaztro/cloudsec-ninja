@@ -3,6 +3,9 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
+import Grid from "@mui/material/Grid";
+import Link from "@docusaurus/Link";
+
 const FeatureList = [
   {
     title: 'Te tenemos cubierto',
