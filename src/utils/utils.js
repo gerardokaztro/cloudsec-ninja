@@ -33,8 +33,7 @@ export function useNavbarItems() {
   });
 
   // remove irrelevant items
-  if (route === AUTHENTICATED)
-    items = items.filter((x) => x.label !== LOGIN_BUTTON);
+  if (route === AUTHENTICATED) items = items.filter((x) => x.label !== LOGIN_BUTTON);
   else items = items.filter((x) => x.label !== LOGOUT_BUTTON);
 
   const uniqueItems = [...new Map(items.map((x) => [x.label, x])).values()];
