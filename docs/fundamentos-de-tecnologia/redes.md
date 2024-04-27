@@ -22,7 +22,7 @@ El modelo OSI es un modelo conceptual que define un estandar en la forma de como
 En términos simples, es como un lenguaje universal para que los dispositivos en la red puedan comunicarse en un mismo idioma. Este modelo cenceptual se divide en 7 capas y cada una de ellas cumple con funciones estrictas y necesarias.
 
 Revise este vídeo donde se explica que son los modelos conceptuales, que es el modelo OSI frente al modelo TCP/IP.
-<ReactPlayer controls url='https://www.youtube.com/watch?v=jdKRx2BxSMs' width="auto" /> <br/>
+<ReactPlayer controls url='https://www.youtube.com/watch?v=jdKRx2BxSMs' /> <br/>
 
 👉 Del vídeo podemos concluir lo siguiente:
 - El modelo conceptual permite que las diferentes tecnologías se comuniquen entre sí mediante un unico lenguaje o estándar

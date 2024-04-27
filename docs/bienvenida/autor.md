@@ -20,4 +20,4 @@ En el 2023 obtuvo 2 nominaciones por parte de **AWS** como **AWS Security Black 
 
 ![Cloud Security Ninja Banner](./img/foto_autor.png)
 
-Conoce a los demás **[AWS Heroes de Hispanoamérica](https://aws.amazon.com/developer/community/heroes/?nc1=h_ls&community-heroes-all.sort-by=item.additionalFields.sortPosition&community-heroes-all.sort-order=asc&awsf.filter-hero-category=*all&awsf.filter-location=location%23latam&awsf.filter-year=*all&awsf.filter-activity=*all).**
+Conoce a los demás <launchButton url="https://aws.amazon.com/developer/community/heroes/?nc1=h_ls&community-heroes-all.sort-by=item.additionalFields.sortPosition&community-heroes-all.sort-order=asc&awsf.filter-hero-category=*all&awsf.filter-location=location%23latam&awsf.filter-year=*all&awsf.filter-activity=*all" label="AWS Heroes de Hispanoamérica" />

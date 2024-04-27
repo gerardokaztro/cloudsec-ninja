@@ -1,0 +1,14 @@
+{
+  "logo.alt": {
+    "message": "Cloud Security Ninja Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Documentación": {
+    "message": "Documentación",
+    "description": "Navbar item with label Documentación"
+  },
+  "item.label.💬 Discord": {
+    "message": "💬 Discord",
+    "description": "Navbar item with label 💬 Discord"
+  }
+}
