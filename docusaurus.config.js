@@ -136,7 +136,12 @@ const config = {
             position: 'left',
             label: 'Documentación',
           },
-
+          {
+            className: 'navbar__coffee',
+            "aria-label": "Buy a coffee",
+            to: 'https://buymeacoffee.com/gerardokaztro',
+            position: 'right',
+          },
           {
             className: 'header-github-link',
             "aria-label": "GitHub repository",
