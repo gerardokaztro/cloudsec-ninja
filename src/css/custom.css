@@ -56,6 +56,19 @@ div[class^='announcementBar_'] {
   font-weight: bold;
 }
 
+.navbar__coffee:hover {
+  opacity: 0.6;
+}
+
+.navbar__coffee:before {
+  content: "";
+  display: flex;
+  height: 34px;
+  width: 121px;
+  background: url("/img/buycoffee-icon.png") no-repeat;
+  background-size: cover;
+}
+
 .header-github-link:hover {
   opacity: 0.6;
 }
