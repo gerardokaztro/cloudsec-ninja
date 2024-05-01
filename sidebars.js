@@ -3,7 +3,7 @@ const sidebars = {
   docs: [
     {
       type: 'category',
-      label: '🙋‍♂️ Bienvenida',
+      label: 'Bienvenida',
       collapsible: false,
       link: {
         type: 'doc',
@@ -20,7 +20,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '🤓 Fundamentos de TI',
+      label: 'Fundamentos de TI',
       link: {
         slug: '/fundamentos-de-tecnologia',
         type: 'generated-index',
@@ -48,7 +48,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '☁️ Computación en la nube',
+      label: 'Computación en la nube',
       link: {
         slug: '/fundamentos-de-nube',
         type: 'generated-index',
@@ -63,7 +63,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '🔒 Ciberseguridad',
+      label: 'Ciberseguridad',
       link: {
         slug: '/fundamentos-de-ciberseguridad',
         type: 'generated-index',
@@ -92,7 +92,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label:'🔐 Seguridad DE la nube',
+      label:'Seguridad DE la nube',
       link: {
         slug: '/fundamentos-de-seguridad-aws',
         type: 'generated-index',
@@ -108,37 +108,21 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: '👩‍⚖️ Estrategía Multi-cuenta',
+      label: 'Estructuras Multi-cuenta ',
       link: {
-        slug: '/estrategia-multi-cuenta',
+        slug: '/estructuras-multi-cuenta',
         type: 'generated-index',
         title: 'Estrategias Multicuenta en AWS: Un vistazo a AWS Organizations y AWS Control Tower',
         description:
           "Habilitando la estrategia multicuenta de la mano de AWS Organization & Control Tower.",
       },
       items: [
-        'gobierno/aws-estrategias-multicuenta',
-        'gobierno/aws-organizations',
-        'gobierno/aws-control-tower',
-        'gobierno/aws-configuracion-organization',
+        'estructuras-multi-cuenta/aws-estrategias-multicuenta',
+        'estructuras-multi-cuenta/aws-organizations',
+        'estructuras-multi-cuenta/aws-control-tower',
+        'estructuras-multi-cuenta/aws-configuracion-organization',
       ],
     },
-    // {
-    //   type: 'category',
-    //   label: '👩‍⚖️ Estructuras Multi-Cuenta',
-    //   link: {
-    //     slug: '/estructuras-multi-cuentas',
-    //     type: 'generated-index',
-    //     title: 'Estructura de múltiples cuentas en AWS',
-    //     description:
-    //       "Lorem.",
-    //   },
-    //   items: [
-    //     'gobierno/aws-organizations',
-    //     'gobierno/aws-control-tower',
-    //     'gobierno/aws-configuracion-organization',
-    //   ],
-    // },
     {
       type: 'doc',
       id: 'sponsors',

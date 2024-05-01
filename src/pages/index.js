@@ -35,7 +35,7 @@ function HomepageHeader() {
         <Link
             className="button button--secondary button--lg"
             to="docs/bienvenida/ruta-de-aprendizaje">
-            <Translate>Ruta de aprendizaje 🛣️ </Translate>
+            <Translate>Iniciar</Translate>
           </Link>
         </div>
         <Analytics />
@@ -74,7 +74,7 @@ export default function Home() {
   return (
     <Layout
       title={``}
-      description="Aprende a ser Cloud Security Engineer ¡Gratis!<head />">
+      description="Desarrolla habilidades en Seguridad en la Nube desde principiante a avanzado y aprende cómo gestionar e implementar seguridad a tus cargas de trabajo en la nube usando los principales servicios de seguridad de Amazon Web Services.<head />">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
