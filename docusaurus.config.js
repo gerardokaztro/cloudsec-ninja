@@ -15,7 +15,7 @@ const TwitterSvg =
 /** @type {import('@docusaurus/types').Config} **/
 const config = {
   title: 'CloudSecurity Ninja',
-  tagline: 'Construye habilidades sobre seguridad en la nube desde principiante a avanzado.',
+  tagline: 'Desarrolla habilidades en Seguridad en la Nube desde principiante a avanzado.',
   favicon: 'img/favicon.ico',
   url: 'https://acloudsecurity.ninja',
   baseUrl: '/',
@@ -106,7 +106,7 @@ const config = {
         }
       },
 
-      metadata: [{ name: 'keywords', content: 'AWS, Amazon Web Services, Cloud Computing, Security, Cloud Security, Containers, Cybersecurity, DevSecOps' }],
+      metadata: [{ name: 'keywords', content: 'AWS, Amazon Web Services, Cloud Computing, Security, Containers, Cybersecurity, DevSecOps, security ninja, ruta de aprendizaje ciberseguridad, cloud security'}],
 
       colorMode: {
         defaultMode: 'dark',
