@@ -1,5 +1,6 @@
 ---
 sidebar_label: 'Nuestros co-autores'
+hide_table_of_contents: true
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -67,3 +68,4 @@ Echa un vistazo a los perfiles de cada uno de nuestros co-autores
         </table>
     </TabItem>
 </Tabs>
+

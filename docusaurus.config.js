@@ -115,11 +115,11 @@ const config = {
       },
 
       announcementBar: {
-        id: 'announcementBar-2', // Increment on change
-        content: `Apoya el contenido de esta plataforma con una 🌟 en <a target="_blank" href="https://github.com/gerardokaztro/cloudsec-ninja">Github</a> + un post en <a target="_blank" href="https://twitter.com/intent/tweet/?text=%23CloudSecurityNinja%20una%20plataforma%20de%20aprendizaje%20GRATUITA%20para%20desarrollar%20habilidades%20en%20%23CloudSecurity%20usando%20%40aws_cloud%20creada%20por%20%40gerardokaztro%20y%20soportada%20por%20varios%20co-autores%20de%20hispanoamérica.%20Aprende,%20diviértete%20y%20comparte%20%F0%9F%91%8A%20&url=https://acloudsecurity.ninja">Twitter</a> ${TwitterSvg}`,
+        id: 'announcementBar-1', // Increment on change
+        content: `Apoya esta plataforma con una 🌟 en <a target="_blank" href="https://github.com/gerardokaztro/cloudsec-ninja">Github</a> + posteo en <a target="_blank" href="https://twitter.com/intent/tweet/?text=%23CloudSecurityNinja%20una%20plataforma%20de%20aprendizaje%20GRATUITA%20para%20desarrollar%20habilidades%20en%20%23CloudSecurity%20usando%20%40aws_cloud%20creada%20por%20%40gerardokaztro%20y%20soportada%20por%20varios%20co-autores%20de%20hispanoamérica.%20Aprende,%20diviértete%20y%20comparte%20%F0%9F%91%8A%20&url=https://acloudsecurity.ninja">Twitter</a> ${TwitterSvg}`,
       },
       navbar: {
-        //title: '',
+        //title: 'CloudSecNinja',
 
         logo: {
           alt: 'Logo de Cloud Security Ninja',

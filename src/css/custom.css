@@ -165,3 +165,14 @@ img[alt=drawing] { width: 50px; }
     var(--ifm-color-emphasis-100) 100%
   );
 }
+
+.video__wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* Video aspect ratio: 100 / (16 / 9) */
+}
+
+.video__player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
