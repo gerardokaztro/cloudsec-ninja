@@ -27,7 +27,7 @@ Pero, si vas a utilizar la nube para tu empresa u organización, para alguna car
 - Si desde un punto de vista temprano, sabes que vas a gestionar una infraestructura a escala, para separar las cargas de trabajo y que un despliegue de una unidad de negocio no afecte las cargas de otra unidad.
 - Para simplificar la separación de costos Unidades de negocio o proyecto, en cada cuenta.
 
-Entonces, ¿Cómo podemos gestionar a escala consistentemente múltiples cuentas de AWS? Usando [AWS Control Tower](aws-control-tower.md), el mismo que ya fué anunciado de manera global en 2019 para los clientes de AWS. Este servicio automatiza el aprovisionamiento de cuentas con una configuración básica consistente, simplifica la gobernanza, y el cumplimiento de múltiples cuentas con modelos prescriptivos y prácticas recomendadas.
+Entonces, ¿Cómo podemos gestionar a escala consistentemente múltiples cuentas de AWS? Usando [AWS Control Tower](./aws-control-tower.md), el mismo que ya fué anunciado de manera global en 2019 para los clientes de AWS. Este servicio automatiza el aprovisionamiento de cuentas con una configuración básica consistente, simplifica la gobernanza, y el cumplimiento de múltiples cuentas con modelos prescriptivos y prácticas recomendadas.
 
 ## ¿Por qué optar por un enfoque de múltiples cuentas en AWS?
 En el vasto universo de la computación en la nube, las decisiones sobre cómo estructurar y administrar recursos son cruciales. Estas decisiones no sólo influyen en la operatividad diaria, sino también en la seguridad, eficiencia y adaptabilidad a largo plazo. En este contexto, la estrategia multicuenta en Amazon Web Services (AWS) emerge como una recomendación fuertemente respaldada. Pero, ¿cuáles son las razones detrás de esta recomendación?
