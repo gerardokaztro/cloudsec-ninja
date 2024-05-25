@@ -82,7 +82,7 @@ Pedimos que tengan mucha empatía y paciencia con la publicación de cada tema, 
         <tr bgcolor="#BED3E1">
             <td><font color="#ff9900"><b>Gestión de identidades y accesos</b></font></td>
             <td>
-                <a href="" >AWS IAM</a>
+                <a href="/docs/gestion-de-identidad-y-accesos/aws-iam" >AWS IAM</a>
             </td>
             <td>
                 <a href="" >AWS Identity Center</a>
