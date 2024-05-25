@@ -48,7 +48,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Computación en la nube',
+      label: 'Computación en la Nube',
       link: {
         slug: '/fundamentos-de-nube',
         type: 'generated-index',
@@ -92,7 +92,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label:'Seguridad DE la nube',
+      label:'Seguridad DE la Nube',
       link: {
         slug: '/fundamentos-de-seguridad-aws',
         type: 'generated-index',
@@ -108,7 +108,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Estructuras Multi-cuenta ',
+      label: 'Estructuras Multi-Cuentas',
       link: {
         slug: '/estructuras-multi-cuenta',
         type: 'generated-index',
@@ -117,10 +117,23 @@ const sidebars = {
           "Habilitando la estrategia multicuenta de la mano de AWS Organization & Control Tower.",
       },
       items: [
-        'estructuras-multi-cuenta/aws-estrategias-multicuenta',
+        'estructuras-multi-cuenta/introduccion',
         'estructuras-multi-cuenta/aws-organizations',
         'estructuras-multi-cuenta/aws-control-tower',
-        'estructuras-multi-cuenta/aws-configuracion-organization',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Gestión de Identidad y Accesos',
+      link: {
+        slug: '/gestion-de-identidad-y-accesos',
+        type: 'generated-index',
+        title: 'Gestión de la Identidad y Acessos en AWS',
+        description:
+          "Aprende a gestionar las identidades y accesos de tus cargas de trabajo a escala en AWS",
+      },
+      items: [
+        'gestion-de-identidad-y-accesos/aws-iam',
       ],
     },
     {

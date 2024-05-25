@@ -159,7 +159,7 @@ const config = {
             className: "navbar__slack",
             "aria-label": "Slack channel",
             position: 'right',
-            to: 'https://join.slack.com/t/awssecuritycommunity/shared_invite/zt-1cekzassk-48CNafIjBFiPWkGdIDzfeA',
+            to: 'https://join.slack.com/t/awssecuritycommunity/shared_invite/zt-2j1qatdl1-ahEyljziW3lzevreWr3w7Q',
           },
           {
             className: "navbar__youtube navbar__icon",
@@ -203,7 +203,7 @@ const config = {
               },
               {
                 label: 'Slack',
-                to: 'https://join.slack.com/t/awssecuritycommunity/shared_invite/zt-1cekzassk-48CNafIjBFiPWkGdIDzfeA',
+                to: 'https://join.slack.com/t/awssecuritycommunity/shared_invite/zt-2j1qatdl1-ahEyljziW3lzevreWr3w7Q',
               }
             ],
           },

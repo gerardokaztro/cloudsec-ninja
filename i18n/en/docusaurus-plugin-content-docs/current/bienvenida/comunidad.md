@@ -7,7 +7,7 @@ hide_table_of_contents: true
 No olvides pasar por nuestro canal en discord, donde tenemos todo un set de canales preparado para armar grupos de estudios, resolver dudas y compartir mas conocimiento.
 
 ## ¿Cómo unirte?
-- Únete al workspace de Slack usando el siguiente [enlace](https://join.slack.com/t/awssecuritycommunity/shared_invite/zt-1cekzassk-48CNafIjBFiPWkGdIDzfeA).
+- Únete al workspace de Slack usando el siguiente [enlace](https://join.slack.com/t/awssecuritycommunity/shared_invite/zt-2j1qatdl1-ahEyljziW3lzevreWr3w7Q).
 - Busca el canal #general saluda, y cuéntanos un poco sobre ti 😀
 - Para mantener una comunidad segura, y donde predomine el respeto, es importante que aceptes las [reglas de convivencia](#reglas-de-convivencia).
 
