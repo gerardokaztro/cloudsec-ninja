@@ -134,6 +134,7 @@ const sidebars = {
       },
       items: [
         'gestion-de-identidad-y-accesos/aws-iam',
+        'gestion-de-identidad-y-accesos/aws-identity-center',
       ],
     },
     {
