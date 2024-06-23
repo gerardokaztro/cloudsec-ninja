@@ -20,5 +20,5 @@ En esta clase sobre IAM Identity Center, aprenderás:
 ## AWS IAM Identity Center
 
 <div className="video__wrapper">
-    <ReactPlayer className="video__player" controls height="100%" url="https://youtube.com/live/bAj_-XcUMlI" width="100%" />
+    <ReactPlayer className="video__player" controls height="100%" url="https://www.youtube.com/live/bAj_-XcUMlI?feature=shared&t=950" width="100%" />
 </div>

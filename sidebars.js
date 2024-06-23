@@ -136,6 +136,7 @@ const sidebars = {
         'gestion-de-identidad-y-accesos/aws-iam',
         'gestion-de-identidad-y-accesos/aws-identity-center',
         'gestion-de-identidad-y-accesos/aws-access-analyzer',
+        'gestion-de-identidad-y-accesos/aws-secret-manager',
       ],
     },
     {

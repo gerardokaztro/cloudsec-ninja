@@ -85,13 +85,13 @@ Pedimos que tengan mucha empatía y paciencia con la publicación de cada tema, 
                 <a href="/docs/gestion-de-identidad-y-accesos/aws-iam" >AWS IAM</a>
             </td>
             <td>
-                <a href="" >AWS Identity Center</a>
+                <a href="/docs/gestion-de-identidad-y-accesos/aws-identity-center" >AWS Identity Center</a>
             </td>
             <td>
-                <a href="" >IAM Access Analyzer</a>
+                <a href="/docs/gestion-de-identidad-y-accesos/aws-access-analyzer" >IAM Access Analyzer</a>
             </td>
             <td>
-                <a href="" >AWS Secrets Manager</a>
+                <a href="/docs/gestion-de-identidad-y-accesos/aws-secret-manager" >AWS Secrets Manager</a>
             </td>
             <td>
                 <a href="" >Amazon Cognito</a>
