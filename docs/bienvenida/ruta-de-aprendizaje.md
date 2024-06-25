@@ -94,7 +94,7 @@ Pedimos que tengan mucha empatía y paciencia con la publicación de cada tema, 
                 <a href="/docs/gestion-de-identidad-y-accesos/aws-secret-manager" >AWS Secrets Manager</a>
             </td>
             <td>
-                <a href="" >Amazon Cognito</a>
+                <a href="/docs/gestion-de-identidad-y-accesos/amazon-cognito" >Amazon Cognito</a>
             </td>
             <td>
                 <a href="" >Amazon Verified Permissions</a>
