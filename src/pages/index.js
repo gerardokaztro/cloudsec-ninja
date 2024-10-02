@@ -24,24 +24,50 @@ import styles from './index.module.css';
 import Translate, {translate} from '@docusaurus/Translate';
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <img src='img/logo_banner.svg' alt='' width='auto' height="auto" />
-        {/* <h1 className="hero__title">{siteConfig.title}</h1> */}
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-        <Link
-            className="button button--secondary button--lg"
-            to="docs/bienvenida/ruta-de-aprendizaje">
-            <Translate>Inicia tu aprendizaje</Translate>
-          </Link>
-        </div>
-        <Analytics />
-        <SpeedInsights />
-      </div>
-    </header>
+      <header className={clsx('container', styles.heroBanner)}>
+          <div className="row padding-horiz--md">
+              <div className="col col--7">
+                  <div className={clsx(styles.relative, 'row')}>
+                      <div className="col">
+                          <h1 className={styles.tagline}>
+                              Aprende Seguridad<br /> 
+                              EN la Nube y protege<br /> 
+                              el Ciberespacio
+                          </h1>
+                          <h1 className={styles.tagline}>
+                              Aprende <span>Seguridad</span><br /> 
+                              <span>EN la Nube</span> y protege<br /> 
+                              el <span>Ciberespacio</span>
+                          </h1>
+                      </div>
+                  </div>
+                  <div className="row">
+                      <div className="col">
+                          <h2>Desde principiante hasta avanzado.</h2>
+                      </div>
+                  </div>
+                  <div className="row">
+                      <div className="col">
+                          <div className={styles.heroButtons}>
+                              <Link to="docs/bienvenida/ruta-de-aprendizaje" className={styles.getStarted}>Empezar</Link>
+                              <iframe src="https://ghbtns.com/github-btn.html?user=gerardokaztro&repo=cloudsec-ninja&type=star&count=true&size=large" frameBorder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div className={clsx(styles.relative, 'col', 'col--5')}>
+                  <div className={styles.logoBlur}>
+                      <img src={require('../../static/img/portada_readme.png').default} className={clsx(styles.hideSmall)} />
+                  </div>
+                  {/* <div className={styles.codeBlock}>
+                      <CodeBlock className="language-bash">
+                          npx crawlee create my-crawler
+                      </CodeBlock>
+                  </div> */}
+              </div>
+          </div>
+      </header>
   );
 }
 
