@@ -14,7 +14,6 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@aws-amplify/ui-react": "^4.6.5",
     "@babel/plugin-transform-class-properties": "^7.24.1",
     "@babel/plugin-transform-logical-assignment-operators": "^7.24.1",
     "@babel/plugin-transform-numeric-separator": "^7.24.1",
@@ -27,7 +26,6 @@
     "@docusaurus/plugin-google-tag-manager": "^2.4.0",
     "@docusaurus/plugin-pwa": "^2.4.3",
     "@docusaurus/preset-classic": "2.4.3",
-    "@docusaurus/theme-search-algolia": "^2.4.3",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
@@ -41,8 +39,6 @@
     "@vercel/analytics": "^1.0.2",
     "@vercel/speed-insights": "^1.0.1",
     "add": "^2.0.6",
-    "aws-amplify": "^5.3.18",
-    "aws-crt": "^1.21.2",
     "clsx": "^1.2.1",
     "diff": "^5.1.0",
     "docusaurus-lunr-search": "^2.1.15",

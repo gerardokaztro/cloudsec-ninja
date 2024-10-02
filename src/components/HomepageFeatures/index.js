@@ -12,7 +12,7 @@ const FeatureList = [
     Svg: require('@site/static/img/covered.svg').default,
     description: (
       <>
-        No necesitas experiencia o conocimiento previo, preparamos todo para nivel usuario en adelante.
+       Sin experiencia o conocimiento previo, preparamos todo para nivel usuario en adelante.
       </>
     ),
   },
@@ -39,7 +39,7 @@ const FeatureList = [
     Svg: require('@site/static/img/build.svg').default,
     description: (
       <>
-        Sea que quieras cambiarte a Ciberseguridad o no, es importante expandir nuestro horizonte.
+        Ayúdanos a proteger el mundo digital de las amenazas cibernéticas.
       </>
     ),
   },
