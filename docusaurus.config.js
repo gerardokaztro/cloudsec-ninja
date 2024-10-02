@@ -22,7 +22,7 @@ const config = {
 
   i18n: {
     defaultLocale: 'es',
-    locales: ['es', 'en'],
+    locales: ['es'],
     localeConfigs: {
       es: {
         label: 'Spanish',
@@ -31,13 +31,13 @@ const config = {
         calendar: 'gregory',
         path: 'es',
       },
-      en: {
-        label: 'English',
-        direction: 'ltr',
-        htmlLang: 'en-US',
-        calendar: 'gregory',
-        path: 'en',
-      },
+    //   en: {
+    //     label: 'English',
+    //     direction: 'ltr',
+    //     htmlLang: 'en-US',
+    //     calendar: 'gregory',
+    //     path: 'en',
+    //   },
     }
   },
 
