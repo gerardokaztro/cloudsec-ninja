@@ -2,6 +2,9 @@
 sidebar_label: 'Fundamentos de AWS'
 tags: [nivel 100, cloud, aws]
 ---
+import ReactPlayer from 'react-player';
+
+
 # ☁️ Introducción a Amazon Web Services
 
 [Amazon Web Services (AWS)](https://aws.amazon.com/es/what-is-aws/)  es una plataforma en la nube que ofrece un amplio conjunto de productos globales basados en Cloud. Estos productos se entregan a través de Internet, y permiten el acceso bajo demanda a recursos informáticos, de almacenamiento, de red, de base de datos y otros recursos de TI para utilizar en diferentes proyectos, así como las herramientas para administrarlos. A un solo clic se puede aprovisionar y lanzar recursos de AWS. Los recursos estarán listos para que los utilicemos en cuestión de minutos.
