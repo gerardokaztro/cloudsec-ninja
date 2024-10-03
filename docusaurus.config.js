@@ -103,7 +103,7 @@ const config = {
       ],
 
       colorMode: {
-        defaultMode: 'white',
+        defaultMode: 'light',
         disableSwitch: false,
         respectPrefersColorScheme: false,
       },
@@ -259,10 +259,10 @@ const config = {
 
       [
         "docusaurus-plugin-dotenv",
-        // {
+        {
         //   path: process.env.ENV !== 'localhost' ? "./.env.local" : undefined,
         //   systemvars: true,
-        // },
+        },
       ],
     ],
 };
