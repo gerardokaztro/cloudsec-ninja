@@ -14,7 +14,10 @@
 
 <p align="center">
     Visite la <b><a href="https://acloudsecurity.ninja/docs/">📚 Documentación</a></b> para inciar tu carrera como Cloud Security Engineer.
-    > Apoya el contenido que ves aquí dejando una 🌟 al repo.
+</p>
+
+<p align="center">
+    Apoya el contenido que ves aquí dejando una 🌟 al repo.
 </p>
 
 [![Open Source Love](https://firstcontributions.github.io/open-source-badges/badges/open-source-v3/open-source.png)](https://github.com/firstcontributions/open-source-badges)
@@ -69,7 +72,7 @@ Echa un vistazo a nuestra [guía para contribuidores](https://github.com/gerardo
 - Forkear este [repositorio](https://github.com/gerardokaztro/cloudsec-ninja)
 - Despues de tener el repositorio en nuestra cuenta personal de Github, clonarlo a tu local
 
-```
+```bash
 git clone https://github.com/<tu-nombre-de-usuario>/cloudsec-ninja.git
 ```
 
@@ -82,23 +85,27 @@ git remote -v
 ```bash
 git remote add upstream https://github.com/gerardokaztro/cloudsec-ninja
 ```
+
 - Comprobar:
 ```bash
 git remote -v
 ```
+
 - Antes de empezar a trabajar, obtener los últimos cambios del repo Original:
 ```bash
 git pull -r upstream main
 ```
+
 - Crear rama `developement` en tu local
 ```bash
 git checkout -b development
 ```
+
 - Obtén un preview de la plataforma en tu localhost
 ```bash
-npm start
+npm run start
 ```
-> Esto permite obtener una previsualización de tus cambios en tu `localhost`
+
 <p align="center">
     <img alt="preview" src="docs/bienvenida/img/preview_localhost.png" />
 </p>
@@ -107,6 +114,7 @@ npm start
 ```bash
 cd docs/
 ```
+
 - Envía tus cambios al repositorio
 ```bash
 git push origin development
