@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-    Visita la <b><a href="https://acloudsecurity.ninja/docs/index">📚 Documentación</a></b> para inciar tu carrera como Cloud Security Engineer.
+    Visite la <b><a href="https://acloudsecurity.ninja/docs/">📚 Documentación</a></b> para inciar tu carrera como Cloud Security Engineer.
 </p>
 
 [![Open Source Love](https://firstcontributions.github.io/open-source-badges/badges/open-source-v3/open-source.png)](https://github.com/firstcontributions/open-source-badges)
@@ -22,6 +22,8 @@
 [![Discord](https://img.shields.io/discord/1143323924172652705?style=social&label=Discord&logo=discord)](https://discord.gg/cV7syyA5ae)
 [![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCmWuXyjXOJOpikS4MHmJAcQ?style=social)](https://youtube.com/channel/UCmWuXyjXOJOpikS4MHmJAcQ?sub_confirmation=1)
 [![Twitter Follow](https://img.shields.io/twitter/follow/gerardokaztro?style=social)](https://twitter.com/gerardokaztro)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/t/gerardokaztro/cloudsec-ninja?style=social)
+
 
 <h2 align="center">
   Cómo iniciar este lindo viaje 🚀

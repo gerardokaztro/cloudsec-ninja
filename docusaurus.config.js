@@ -109,7 +109,7 @@ const config = {
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: 'CloudSecurity Ninja' },
         { name: 'twitter:description', content: 'Construye nuevas habilidades sobre Seguridad EN la Nube y protege el ciberespacio de las amenazas cibernéticas.' },
-        { name: 'twitter:image', content: 'https://acloudsecurity.ninja/img/social-card.png' },
+        //{ name: 'twitter:image', content: 'https://acloudsecurity.ninja/img/social-card.png' },
         { name: 'twitter:creator  ', content: '@gerardokaztro' },
         { name: 'copyright', content: 'CloudSecurity Ninja' },
         { name: 'rating', content: 'General' },  // Indica que el sitio es apto para todo público.
