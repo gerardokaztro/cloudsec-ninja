@@ -1,7 +1,4 @@
 <p align="center">
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
   <a href="https://acloudsecurity.ninja">
     <img alt="Cloud Security Ninja" src="static/img/portada_readme.png" />
   </a>
@@ -17,10 +14,7 @@
 
 <p align="center">
     Visite la <b><a href="https://acloudsecurity.ninja/docs/">📚 Documentación</a></b> para inciar tu carrera como Cloud Security Engineer.
-    [![Open Source Love](https://firstcontributions.github.io/open-source-badges/badges/open-source-v3/open-source.png)](https://github.com/firstcontributions/open-source-badges)
-    [![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCVWjwOiJGog7Km90-ayFESg?style=social)](https://youtube.com/@awssecuritylatam?sub_confirmation=1)
-    [![Twitter Follow](https://img.shields.io/twitter/follow/gerardokaztro?style=social)](https://twitter.com/gerardokaztro)
-    ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/gerardokaztro/cloudsec-ninja?style=social)
+    > Apoya el contenido que ves aquí dejando una 🌟 al repo.
 </p>
 
 [![Open Source Love](https://firstcontributions.github.io/open-source-badges/badges/open-source-v3/open-source.png)](https://github.com/firstcontributions/open-source-badges)
@@ -34,14 +28,12 @@
   Cómo iniciar este lindo viaje 🚀
 </h2>
 
-### 👨‍💻 Sigue estas instrucciones si eres usuario
+### 👨‍💻 Instrucciones para público en general
 Lo primero, es hacer un `git clone` a este [repositorio](https://github.com/gerardokaztro/cloudsec-ninja) en una carpeta de tu local. Esto es para que puedas tener todo el código de los ejercicios que se realizarán en cada tema.
 
-```bash
+```
 git clone https://github.com/gerardokaztro/cloudsec-ninja.git
 ```
-
-> Si te gusta el contenido que ves aquí, no dudes en regalarle una 🌟 al repo
 
 Todo el contenido de las diferentes secciones de aprendizaje de la plataforma se encuentran dentro de la carpeta `docs`. Algunas secciones tendran código que podras usar para realizar los laboratorios, podrás encontralo dentro de la carpeta `code`. Por ejemplo: `docs/fundamentos/code` o `docs/cloud/code`.
 
@@ -61,28 +53,31 @@ Todo el contenido de las diferentes secciones de aprendizaje de la plataforma se
     └── .
 ```
 
-### 👷‍♀️ Sigue estas instrucciones si eres contribuidor
+### 👷‍♀️ Instrucciones para contribuir en este proyecto
 Esta plataforma esta basada en [Docusaurus](https://docusaurus.io) un generador de sitios estáticos hecho en React, una de las principales bibliotecas de JavaScript, como biblioteca de interfaz de usuario para la creación de páginas.
 
 Y se ha utilizado [Vercel](https://vercel.com/) como hosting debido a su capacidad de desplegar, gestionar y escalar aplicaciones y sitios web. Además que Vercel proporciona una amplia gama de funciones, como despliegues automatizados, entre otras funciones interesantes.
 
 Con esto, la fase `build` se encuentra automatizada al momento de merguear los cambios a la rama `main`,
 
-> Asegúrate de echarle un vistazo a nuestra [guía para contribuidores](https://github.com/gerardokaztro/cloudsec-ninja/blob/main/CONTRIBUTING.md) antes de empezar como contributor.
+Echa un vistazo a nuestra [guía para contribuidores](https://github.com/gerardokaztro/cloudsec-ninja/blob/main/CONTRIBUTING.md) antes de empezar.
 
-#### 🎮 Pre requisitos
+#### 🎮 Pre-requisitos
 
-- Tener instalado Git
-- Tener instalado Node.js v18.x.x o superior
+- Instalar Git
+- Instalar Node.js v18.x.x o superior
 - Forkear este [repositorio](https://github.com/gerardokaztro/cloudsec-ninja)
-- Despues de tener el repositorio en nuestra cuenta personal de Github, clonarlo
-```bash
+- Despues de tener el repositorio en nuestra cuenta personal de Github, clonarlo a tu local
+
+```
 git clone https://github.com/<tu-nombre-de-usuario>/cloudsec-ninja.git
 ```
+
 - Dentro de la carpeta local que genera, comprobar la URL del repositorio:
 ```bash
 git remote -v
 ```
+
 - Antes de realizar modificaciones agregar la URL del repositorio **original** del proyecto:
 ```bash
 git remote add upstream https://github.com/gerardokaztro/cloudsec-ninja
@@ -155,25 +150,3 @@ Sin embargo, si quieres proponer un nuevo tema asegúrate de contactar con el au
 > Esta plataforma **NO** ofrece cuentas sandbox ni se hace responsable por los gastos que pueden llegar a generar los laboratorios que se compartan aquí.
 
 > Recuerda que esta plataforma es gratuita y usted asume toda la responsabilidad de los recursos que utilice para el desarrollo de los ejercicios.
-
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/elissamburu"><img src="https://avatars.githubusercontent.com/u/25186465?v=4?s=100" width="100px;" alt="Rodrigo Elissamburu"/><br /><sub><b>Rodrigo Elissamburu</b></sub></a><br /><a href="#content-elissamburu" title="Content">🖋</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
