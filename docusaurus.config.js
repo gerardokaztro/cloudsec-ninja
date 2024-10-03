@@ -166,7 +166,7 @@ const config = {
             className: "navbar__youtube navbar__icon",
             "aria-label": "YouTube channel",
             position: "right",
-            to: "https://www.youtube.com/@AWSSecurityLATAM",
+            to: "https://youtube.com/@awssecuritylatam?sub_confirmation=1",
           },
         ],
       },

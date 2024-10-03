@@ -17,13 +17,14 @@
 </p>
 
 [![Open Source Love](https://firstcontributions.github.io/open-source-badges/badges/open-source-v3/open-source.png)](https://github.com/firstcontributions/open-source-badges)
-![GitHub Followers](https://img.shields.io/github/followers/gerardokaztro?style=social)
-![GitHub Repo Stars](https://img.shields.io/github/stars/gerardokaztro?style=social)
-[![Discord](https://img.shields.io/discord/1143323924172652705?style=social&label=Discord&logo=discord)](https://discord.gg/cV7syyA5ae)
-[![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCmWuXyjXOJOpikS4MHmJAcQ?style=social)](https://youtube.com/channel/UCmWuXyjXOJOpikS4MHmJAcQ?sub_confirmation=1)
+<!-- ![GitHub Followers](https://img.shields.io/github/followers/gerardokaztro?style=social)
+![GitHub Repo Stars](https://img.shields.io/github/stars/gerardokaztro?style=social) -->
+[![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCmWuXyjXOJOpikS4MHmJAcQ?style=social)](https://youtube.com/@awssecuritylatam?sub_confirmation=1)
 [![Twitter Follow](https://img.shields.io/twitter/follow/gerardokaztro?style=social)](https://twitter.com/gerardokaztro)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/gerardokaztro/cloudsec-ninja?style=social)
 ![GitHub contributors from allcontributors.org](https://img.shields.io/github/all-contributors/gerardokaztro/cloudsec-ninja?style=social)
+![GitHub top language](https://img.shields.io/github/languages/top/gerardokaztro/cloudsec-ninja?style=social)
+![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/gerardokaztro/cloudsec-ninja?style=social)
 
 <h2 align="center">
   Cómo iniciar este lindo viaje 🚀
