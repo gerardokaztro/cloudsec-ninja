@@ -100,6 +100,11 @@ const config = {
 
       metadata: [
         { name: 'keywords', content: 'AWS, Amazon Web Services, Cloud Computing, Security, Cybersecurity, DevSecOps, cloud security, protección de datos, gestión de identidad, auditoría de seguridad, cumplimiento normativo, automatización de seguridad' },
+        { property: 'og:site_name', content: 'CloudSecurity Ninja' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: 'CloudSecurity Ninja' },
+        { name: 'twitter:description', content: 'Construye nuevas habilidades sobre Seguridad EN la Nube y protege el ciberespacio de las amenazas cibernéticas.' },
+        { name: 'twitter:image', content: 'img/social-card.png' }
       ],
 
       colorMode: {
@@ -110,7 +115,7 @@ const config = {
 
       announcementBar: {
         id: 'announcementBar-1',
-        content: `SOMOS +3000 USUARIOS EN 🌎 Y CELEBRAMOS CON NUEVA APARIENCIA 🍪`,
+        content: `SOMOS +3000 USUARIOS EN 🌎 Y CELEBRAMOS CON NUEVA APARIENCIA 🍫`,
       },
       navbar: {
         logo: {
