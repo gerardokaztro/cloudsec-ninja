@@ -155,18 +155,6 @@ Sin embargo, si quieres proponer un nuevo tema asegúrate de contactar con el au
 > Esta plataforma **NO** ofrece cuentas sandbox ni se hace responsable por los gastos que pueden llegar a generar los laboratorios que se compartan aquí.
 
 > Recuerda que esta plataforma es gratuita y usted asume toda la responsabilidad de los recursos que utilice para el desarrollo de los ejercicios.
-<!-- 
-<h2 align="center">
-  Reglas de la casa ✋
-</h2>
-
-[Código de conducta](https://github.com/gerardokaztro/cloudsec-ninja/blob/main/CODE_OF_CONDUCT.md)
-
-<h2 align="center">
-  Licencia 📜
-</h2>
-
-[GNU General Public License v3.0](https://github.com/gerardokaztro/cloudsec-ninja/blob/main/LICENSE) -->
 
 ## Contributors ✨
 
