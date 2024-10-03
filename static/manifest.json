@@ -5,7 +5,7 @@
     "background_color": "#424242",
     "display": "standalone",
     "scope": "./",
-    "start_url": "./index.html",
+    "start_url": "/",
     "related_applications": [
       {
         "platform": "webapp",

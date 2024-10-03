@@ -48,7 +48,7 @@ const config = {
       ({
         googleAnalytics: {
           trackingID: 'G-LWTRTR89ZG',
-          anonymizeIP: false,
+          anonymizeIP: true,
         },
         gtag: {
           trackingID: 'G-LWTRTR89ZG',
@@ -59,8 +59,8 @@ const config = {
         },
         sitemap: {
           changefreq: 'monthly',
-          priority: 0.5,
-          ignorePatterns: ['/tags/**'],
+          priority: 0.7,
+          ignorePatterns: ['/tags/**', '/404/**'],
           filename: 'sitemap.xml',
         },
 
@@ -99,12 +99,21 @@ const config = {
       },
 
       metadata: [
+        { name: 'author', content: 'Gerardo Castro Arica' },
         { name: 'keywords', content: 'AWS, Amazon Web Services, Cloud Computing, Security, Cybersecurity, DevSecOps, cloud security, protección de datos, gestión de identidad, auditoría de seguridad, cumplimiento normativo, automatización de seguridad' },
+        { name: 'robots', content: 'index, follow' },
+        { name: 'content-language', content: 'es' },
+        { property: 'og:locale', content: 'es_ES' },
         { property: 'og:site_name', content: 'CloudSecurity Ninja' },
+        { property: 'og:url', content: 'https://acloudsecurity.ninja' },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: 'CloudSecurity Ninja' },
         { name: 'twitter:description', content: 'Construye nuevas habilidades sobre Seguridad EN la Nube y protege el ciberespacio de las amenazas cibernéticas.' },
-        { name: 'twitter:image', content: 'img/social-card.png' }
+        { name: 'twitter:image', content: 'https://acloudsecurity.ninja/img/social-card.png' },
+        { name: 'twitter:creator  ', content: '@gerardokaztro' },
+        { name: 'copyright', content: 'CloudSecurity Ninja' },
+        { name: 'rating', content: 'General' },  // Indica que el sitio es apto para todo público.
+        { name: 'twitter:site', content: '@gerardokaztro' },
       ],
 
       colorMode: {
