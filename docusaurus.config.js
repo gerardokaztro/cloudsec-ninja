@@ -98,10 +98,12 @@ const config = {
         },
       },
 
-      metadata: [{ name: 'keywords', content: 'AWS, Amazon Web Services, Cloud Computing, Security, Containers, Cybersecurity, DevSecOps, security ninja, ruta de aprendizaje ciberseguridad, cloud security'}],
+      metadata: [
+        { name: 'keywords', content: 'AWS, Amazon Web Services, Cloud Computing, Security, Cybersecurity, DevSecOps, cloud security, protección de datos, gestión de identidad, auditoría de seguridad, cumplimiento normativo, automatización de seguridad' },
+      ],
 
       colorMode: {
-        defaultMode: 'dark',
+        defaultMode: 'light',
         disableSwitch: false,
         respectPrefersColorScheme: false,
       },
@@ -239,7 +241,7 @@ const config = {
             {
               tagName: 'link',
               rel: 'icon',
-              href: '/img/portada_pwa.png',
+              href: '/img/pwa-icons/portada_pwa.png',
             },
             {
               tagName: 'link',
@@ -258,8 +260,8 @@ const config = {
       [
         "docusaurus-plugin-dotenv",
         {
-          path: process.env.ENV !== 'localhost' ? "./.env.local" : undefined,
-          systemvars: true,
+        //   path: process.env.ENV !== 'localhost' ? "./.env.local" : undefined,
+        //   systemvars: true,
         },
       ],
     ],
