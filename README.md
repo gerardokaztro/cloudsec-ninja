@@ -23,7 +23,7 @@
 [![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCmWuXyjXOJOpikS4MHmJAcQ?style=social)](https://youtube.com/channel/UCmWuXyjXOJOpikS4MHmJAcQ?sub_confirmation=1)
 [![Twitter Follow](https://img.shields.io/twitter/follow/gerardokaztro?style=social)](https://twitter.com/gerardokaztro)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/gerardokaztro/cloudsec-ninja?style=social)
-
+![GitHub contributors from allcontributors.org](https://img.shields.io/github/all-contributors/gerardokaztro/cloudsec-ninja?style=social)
 
 <h2 align="center">
   Cómo iniciar este lindo viaje 🚀
