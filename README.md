@@ -17,14 +17,18 @@
 
 <p align="center">
     Visite la <b><a href="https://acloudsecurity.ninja/docs/">📚 Documentación</a></b> para inciar tu carrera como Cloud Security Engineer.
+    [![Open Source Love](https://firstcontributions.github.io/open-source-badges/badges/open-source-v3/open-source.png)](https://github.com/firstcontributions/open-source-badges)
+    [![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCVWjwOiJGog7Km90-ayFESg?style=social)](https://youtube.com/@awssecuritylatam?sub_confirmation=1)
+    [![Twitter Follow](https://img.shields.io/twitter/follow/gerardokaztro?style=social)](https://twitter.com/gerardokaztro)
+    ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/gerardokaztro/cloudsec-ninja?style=social)
 </p>
 
 [![Open Source Love](https://firstcontributions.github.io/open-source-badges/badges/open-source-v3/open-source.png)](https://github.com/firstcontributions/open-source-badges)
-<!-- ![GitHub Followers](https://img.shields.io/github/followers/gerardokaztro?style=social)
-![GitHub Repo Stars](https://img.shields.io/github/stars/gerardokaztro?style=social) -->
 [![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCVWjwOiJGog7Km90-ayFESg?style=social)](https://youtube.com/@awssecuritylatam?sub_confirmation=1)
 [![Twitter Follow](https://img.shields.io/twitter/follow/gerardokaztro?style=social)](https://twitter.com/gerardokaztro)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/gerardokaztro/cloudsec-ninja?style=social)
+<!-- ![GitHub Followers](https://img.shields.io/github/followers/gerardokaztro?style=social)
+![GitHub Repo Stars](https://img.shields.io/github/stars/gerardokaztro?style=social) -->
 
 <h2 align="center">
   Cómo iniciar este lindo viaje 🚀
