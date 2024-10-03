@@ -99,8 +99,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`asd`}
-      description="Desarrolla habilidades en Seguridad en la Nube desde principiante a avanzado y aprende cómo gestionar e implementar seguridad a tus cargas de trabajo en la nube usando los principales servicios de seguridad de Amazon Web Services.<head />">
+      title={`Sitio web gratuito de aprendizaje sobre Seguridad EN la Nube`}
+      description="Construye nuevas habilidades sobre Seguridad EN la Nube y protege el ciberespacio de las amenazas cibernéticas. Aprende cómo gestionar e implementar seguridad a tus cargas de trabajo en la nube usando los principales servicios de seguridad de Amazon Web Services.<head />">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
