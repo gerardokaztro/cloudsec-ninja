@@ -141,6 +141,20 @@ const sidebars = {
       ],
     },
     {
+      type: 'category',
+      label: 'Compliance Continuo',
+      link: {
+        slug: '/compliance-continuo',
+        type: 'generated-index',
+        title: 'Compliance Continuo',
+        description:
+          "Descripción Pendiente",
+      },
+      items: [
+        'compliance-continuo/aws-config'
+      ],
+    },
+    {
       type: 'doc',
       id: 'sponsors',
     },
