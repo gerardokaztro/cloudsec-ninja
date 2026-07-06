@@ -1,0 +1,26 @@
+# AWS Amplify Hosting build config.
+#
+# This uses Amplify's monorepo format: the build is scoped to `appRoot: app`,
+# so it ONLY builds the Next.js product layer under /app. It does not touch the
+# existing Docusaurus site at the repo root (which is deployed separately via
+# Vercel). Point the Amplify app at this repo and it will pick up this file.
+version: 1
+applications:
+  - appRoot: app
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - npm ci
+        build:
+          commands:
+            - npm run build
+      artifacts:
+        # .next is the standard artifact dir for Next.js SSR on Amplify.
+        baseDirectory: .next
+        files:
+          - "**/*"
+      cache:
+        paths:
+          - node_modules/**/*
+          - .next/cache/**/*
