@@ -1,3 +1,8 @@
 export default function HomePage() {
-  return <h1>CloudSec Ninja — en construcción</h1>;
+  return (
+    <main>
+      <h1>CloudSec Ninja — en construcción</h1>
+      <a href="/login">Iniciar sesión</a>
+    </main>
+  );
 }
