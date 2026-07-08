@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+/*
+ * Tokens de diseño extraídos de design-reference/mockup.html (referencia
+ * visual validada en una fase anterior del proyecto, no es código de
+ * producción). Paleta teal + acento ámbar, tipografía
+ * Space Grotesk/Inter/JetBrains Mono.
+ */
+@theme {
+  --color-bg: #fcfcfb;
+  --color-surface: #ffffff;
+  --color-surface-2: #eef4f2;
+  --color-ink: #0d1613;
+  --color-ink-2: #3d4c47;
+  --color-ink-3: #728f86;
+  --color-border: #dce6e3;
+
+  --color-accent: #1e9e80;
+  --color-accent-hover: #188a70;
+  --color-accent-dark: #0e5c48;
+  --color-accent-soft: #ddf2eb;
+
+  --color-ember: #e8934d;
+  --color-ember-hover: #d67d36;
+  --color-ember-soft: #fbe8d6;
+  --color-ember-dark: #8a4a1b;
+
+  --font-display: var(--font-space-grotesk), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+}

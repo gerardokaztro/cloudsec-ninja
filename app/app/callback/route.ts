@@ -1,5 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server";
 import * as client from "openid-client";
+import { saveCognitoRefreshTokenCookie } from "@/lib/auth/cognito-tokens";
 import { getOidcConfig } from "@/lib/auth/oidc";
 import { consumeOAuthStateCookie } from "@/lib/auth/oauth-state";
 import { createSessionCookie } from "@/lib/auth/session";
@@ -31,6 +32,14 @@ export async function GET(request: NextRequest) {
   }
 
   await createSessionCookie({ sub: claims.sub, email: claims.email });
+
+  // Cognito siempre devuelve refresh_token en el grant authorization_code
+  // (no depende del scope pedido, a diferencia de OIDC genérico con
+  // "offline_access"). Se guarda para poder pedir access_tokens frescos
+  // más adelante y llamar a la API de progreso — ver cognito-tokens.ts.
+  if (typeof tokens.refresh_token === "string") {
+    await saveCognitoRefreshTokenCookie(tokens.refresh_token);
+  }
 
   return NextResponse.redirect(new URL("/dashboard", request.url));
 }
