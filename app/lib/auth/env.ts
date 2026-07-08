@@ -25,6 +25,12 @@ export const authEnv = {
   get sessionSecret(): string {
     return required("SESSION_SECRET");
   },
+  get progressApiUrl(): string {
+    // URL base del HTTP API de progreso (cloudsec-ninja-infra, output
+    // progress_api_endpoint), sin slash final, ej:
+    // https://v84fwide76.execute-api.us-east-1.amazonaws.com
+    return required("PROGRESS_API_URL").replace(/\/$/, "");
+  },
   get region(): string {
     // El user_pool_id de Cognito tiene el formato "{region}_{id}", ej. "us-east-1_qHj16czdO".
     const region = this.userPoolId.split("_")[0];

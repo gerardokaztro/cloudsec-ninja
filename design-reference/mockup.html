@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CloudSec Ninja — Preview de identidad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FCFCFB; --surface:#FFFFFF; --surface2:#EEF4F2; --ink:#0D1613; --ink2:#3D4C47; --ink3:#728F86;
+    --border:#DCE6E3; --accent:#1E9E80; --accent-hover:#188A70; --accentDark:#0E5C48; --accentSoft:#DDF2EB;
+    --code-bg:#0F1613; --code-text:#B8E6D4; --gold:#C99A2E; --silver:#8AA098; --bronze:#B5652E;
+    --ember:#E8934D; --ember-hover:#D67D36; --ember-soft:#FBE8D6; --ember-dark:#8A4A1B;
+    --display:'Space Grotesk',sans-serif; --body:'Inter',sans-serif; --mono:'JetBrains Mono',monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:var(--body); background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased;}
+  button{font-family:inherit; cursor:pointer; border:none; background:none;}
+  a{color:inherit; text-decoration:none;}
+  code{font-family:var(--mono); font-size:0.9em; background:var(--surface2); color:var(--accentDark); padding:1px 5px; border-radius:4px;}
+
+  .topnav{border-bottom:1px solid var(--border); padding:16px 32px; display:flex; justify-content:space-between; align-items:center; background:var(--surface); position:sticky; top:0; z-index:50;}
+  .brand{display:flex; align-items:center; gap:10px;}
+  .brand span{font-family:var(--display); font-weight:600; font-size:16px;}
+  .nav-links{display:flex; gap:24px; align-items:center; font-size:13px; color:var(--ink2);}
+  .nav-item{cursor:pointer; padding:6px 2px; border-bottom:2px solid transparent; transition:color .15s, border-color .15s;}
+  .nav-item:hover{color:var(--ink);}
+  .nav-item.active{color:var(--accentDark); border-color:var(--accent); font-weight:600;}
+  .icon-link{display:flex; align-items:center; gap:6px; padding:6px 10px; border-radius:7px; transition:background .15s;}
+  .icon-link:hover{background:var(--surface2);}
+  .nav-badge{display:inline-flex; align-items:center; justify-content:center; min-width:16px; height:16px; background:var(--ember); color:#2E1607; font-size:10px; font-weight:700; border-radius:8px; margin-left:5px; padding:0 4px;}
+  .pill{background:var(--accent); color:#04231A; padding:10px 20px; border-radius:8px; font-size:13px; font-weight:600; transition:background .15s, transform .1s;}
+  .pill:hover{background:var(--accent-hover);}
+  .pill:active{transform:scale(0.97);}
+  .ghost{background:transparent; color:var(--ink); border:1px solid var(--border); padding:9px 18px; border-radius:8px; font-size:13px; transition:background .15s, border-color .15s;}
+  .ghost:hover{background:var(--surface2); border-color:var(--ink3);}
+
+  .view{animation:fadeIn .4s ease;}
+  @keyframes fadeIn{from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);}}
+
+  /* ---------- HERO ---------- */
+  .hero{background:var(--ink); padding:0; position:relative; overflow:hidden; min-height:560px; display:flex; align-items:center;}
+  .hero-bg-glow{position:absolute; width:900px; height:900px; border-radius:50%; background:radial-gradient(circle, rgba(30,158,128,0.18) 0%, rgba(30,158,128,0) 65%); top:-320px; right:-260px; animation:driftGlow 14s ease-in-out infinite;}
+  @keyframes driftGlow{0%,100%{transform:translate(0,0);} 50%{transform:translate(-30px,20px);}}
+  .hero-grid{position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px); background-size:44px 44px; -webkit-mask-image:radial-gradient(ellipse 900px 500px at 30% 40%, black 0%, transparent 75%);}
+  .floating-shape{position:absolute; opacity:0.5;}
+  .fs1{top:14%; left:8%; animation:floatY 7s ease-in-out infinite;}
+  .fs2{bottom:18%; left:14%; animation:floatY 9s ease-in-out infinite 1.2s;}
+  .fs3{top:22%; right:10%; animation:floatY 8s ease-in-out infinite .6s;}
+  .fs4{bottom:12%; right:6%; animation:floatY 10s ease-in-out infinite 2s;}
+  @keyframes floatY{0%,100%{transform:translateY(0px);} 50%{transform:translateY(-14px);}}
+
+  .hero-content{max-width:1100px; margin:0 auto; padding:70px 40px; display:grid; grid-template-columns:1.1fr 0.9fr; gap:20px; align-items:center; position:relative; width:100%;}
+  .badge-live{display:inline-flex; align-items:center; gap:7px; background:rgba(30,158,128,0.18); color:#5FE8C4; font-size:12px; padding:6px 14px; border-radius:20px; margin-bottom:22px; font-weight:600;}
+  .pulse-dot{width:6px; height:6px; border-radius:50%; background:#5FE8C4; animation:pulse 1.8s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:1; box-shadow:0 0 0 0 rgba(95,232,196,0.5);} 50%{opacity:0.7; box-shadow:0 0 0 6px rgba(95,232,196,0);}}
+  .hero h1{font-family:var(--display); font-size:42px; font-weight:600; line-height:1.14; margin-bottom:18px; color:#fff;}
+  .hero h1 span{color:var(--accent); position:relative; white-space:nowrap;}
+  .hero p{color:#A8BDB6; font-size:16px; line-height:1.65; margin-bottom:30px; max-width:460px;}
+  .hero-ctas{display:flex; gap:12px; margin-bottom:38px;}
+  .hero-ctas .ghost{color:#fff; border-color:rgba(255,255,255,0.25);}
+  .hero-ctas .ghost:hover{background:rgba(255,255,255,0.06);}
+  .hero-stats{display:flex; gap:38px;}
+  .hero-stat-n{font-family:var(--display); font-size:24px; font-weight:600; color:#fff;}
+  .hero-stat-l{font-size:11.5px; color:#7A9089; margin-top:2px;}
+
+  .ninja-stage{position:relative; display:flex; align-items:center; justify-content:center; height:440px;}
+  .ninja-platform{position:absolute; bottom:18px; width:200px; height:22px; background:rgba(30,158,128,0.15); border-radius:50%; filter:blur(4px);}
+  .ninja-figure{position:relative; animation:ninjaFloat 5s ease-in-out infinite;}
+  @keyframes ninjaFloat{0%,100%{transform:translateY(0) rotate(-1deg);} 50%{transform:translateY(-16px) rotate(1deg);}}
+  .spark{position:absolute; border-radius:50%; background:var(--accent); opacity:0;}
+  .spark1{width:5px; height:5px; top:20%; left:10%; animation:sparkle 3s ease-in-out infinite;}
+  .spark2{width:4px; height:4px; top:60%; right:8%; animation:sparkle 3.5s ease-in-out infinite 1s;}
+  .spark3{width:6px; height:6px; bottom:20%; left:20%; animation:sparkle 4s ease-in-out infinite 2s;}
+  @keyframes sparkle{0%,100%{opacity:0; transform:scale(0.5);} 50%{opacity:0.9; transform:scale(1.3);}}
+
+  .roadmap{padding:76px 32px; max-width:940px; margin:0 auto;}
+  .eyebrow{font-size:12px; color:var(--accentDark); font-weight:600; letter-spacing:0.5px; text-align:center; margin-bottom:8px;}
+  .roadmap h2{font-family:var(--display); font-size:28px; text-align:center; margin-bottom:46px;}
+  .rm-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  .rm-card{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:22px; position:relative; transition:transform .2s, box-shadow .2s;}
+  .rm-card:hover{transform:translateY(-4px); box-shadow:0 10px 26px rgba(13,22,19,0.07);}
+  .rm-card.popular{border:2px solid var(--ember);}
+  .rm-badge{position:absolute; top:-11px; right:16px; background:var(--ember); color:#2E1607; font-size:10px; font-weight:600; padding:4px 11px; border-radius:20px;}
+  .rm-icon{width:36px; height:36px; background:var(--accentSoft); border-radius:9px; display:flex; align-items:center; justify-content:center; margin-bottom:16px;}
+  .rm-num{font-size:11px; color:var(--ink3); margin-bottom:5px;}
+  .rm-title{font-weight:600; font-size:15px; margin-bottom:7px;}
+  .rm-desc{font-size:12.5px; color:var(--ink2); line-height:1.55;}
+
+  .benefits{background:var(--surface2); padding:64px 32px;}
+  .benefits-grid{max-width:880px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+  .benefit-icon{width:40px; height:40px; background:var(--ink); border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:16px;}
+  .benefit h3{font-weight:600; font-size:15.5px; margin-bottom:7px;}
+  .benefit p{font-size:13px; color:var(--ink2); line-height:1.6;}
+
+  .stats-strip{background:var(--ink); padding:44px 32px; display:flex; justify-content:center; gap:64px;}
+  .strip-stat{text-align:center;}
+  .strip-stat .n{font-family:var(--display); font-size:32px; font-weight:600; color:var(--accent);}
+  .strip-stat .l{font-size:12px; color:#7A9089; margin-top:4px;}
+
+  .final-cta{padding:70px 32px; text-align:center;}
+  .final-cta h2{font-family:var(--display); font-size:27px; margin-bottom:12px;}
+  .final-cta p{color:var(--ink2); font-size:14px; margin-bottom:26px;}
+
+  .footer{border-top:1px solid var(--border); padding:48px 32px 24px;}
+  .footer-inner{max-width:960px; margin:0 auto;}
+  .footer-cols{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:32px; margin-bottom:36px;}
+  .footer-brand{display:flex; align-items:center; gap:9px; margin-bottom:12px;}
+  .footer-brand span{font-family:var(--display); font-weight:600; font-size:15px;}
+  .footer-tagline{font-size:12.5px; color:var(--ink3); line-height:1.6; max-width:200px;}
+  .footer-col h4{font-size:12px; font-weight:600; color:var(--ink3); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:14px;}
+  .footer-col a{display:block; font-size:13px; color:var(--ink2); margin-bottom:10px; transition:color .15s;}
+  .footer-col a:hover{color:var(--accentDark);}
+  .footer-bottom{border-top:1px solid var(--border); padding-top:20px; display:flex; justify-content:space-between; font-size:12px; color:var(--ink3);}
+
+  /* ---------- DASHBOARD ---------- */
+  .dash-hero{background:var(--ink); padding:36px 32px 30px; position:relative; overflow:hidden;}
+  .dash-hero-inner{max-width:960px; margin:0 auto; display:flex; justify-content:space-between; align-items:flex-end; position:relative;}
+  .dash-welcome{display:flex; align-items:center; gap:14px;}
+  .dash-welcome-text .label{font-size:12px; color:#7A9089;}
+  .dash-welcome-text .name{font-family:var(--display); font-size:22px; font-weight:600; color:#fff; margin-top:2px;}
+  .streak{display:flex; align-items:center; gap:8px; background:rgba(30,158,128,0.15); padding:8px 14px; border-radius:10px;}
+  .streak-flame{font-size:15px;}
+  .streak-text{font-size:12.5px; color:#5FE8C4; font-weight:600;}
+
+  .dash-body{max-width:960px; margin:-28px auto 0; padding:0 32px 60px; position:relative;}
+  .stat-row{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:28px;}
+  .stat-card{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px 22px; box-shadow:0 4px 18px rgba(13,22,19,0.05);}
+  .stat-card .n{font-family:var(--display); font-size:26px; font-weight:600; color:var(--ink);}
+  .stat-card .l{font-size:12px; color:var(--ink3); margin-top:3px;}
+
+  .section-title{font-size:12px; color:var(--ink3); letter-spacing:0.5px; font-weight:600; margin-bottom:14px; text-transform:uppercase;}
+  .module-list{display:flex; flex-direction:column; gap:10px; margin-bottom:32px;}
+  .mod-row{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:16px 20px; transition:border-color .2s;}
+  .mod-row:hover{border-color:var(--ink3);}
+  .mod-row.active-mod{border:2px solid var(--accent);}
+  .mod-row.locked{opacity:0.5;}
+  .mod-top{display:flex; justify-content:space-between; align-items:center;}
+  .mod-left{display:flex; align-items:center; gap:12px;}
+  .mod-status-icon{width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .mod-name{font-size:14px; font-weight:600;}
+  .mod-meta{font-size:11.5px; color:var(--ink3); margin-top:2px;}
+  .mod-progress-track{height:5px; background:var(--surface2); border-radius:3px; overflow:hidden; margin-top:12px;}
+  .mod-progress-fill{height:100%; background:var(--accent); border-radius:3px; transition:width 1s ease;}
+
+  .goal-card{background:linear-gradient(135deg,var(--ink),#152520); border-radius:16px; padding:26px 28px; color:#fff; display:flex; justify-content:space-between; align-items:center; margin-bottom:32px;}
+  .goal-left .k{font-size:12px; color:#7A9089; margin-bottom:6px;}
+  .goal-left .v{font-family:var(--display); font-size:20px; font-weight:600;}
+  .goal-ring{position:relative; width:64px; height:64px;}
+
+  /* ---------- LEADERBOARD ---------- */
+  .lb-hero{background:var(--ink); padding:44px 32px 60px; text-align:center; position:relative; overflow:hidden;}
+  .lb-hero h2{font-family:var(--display); font-size:28px; color:#fff; margin-bottom:8px;}
+  .lb-hero p{color:#A8BDB6; font-size:14px;}
+
+  .podium-wrap{max-width:760px; margin:-46px auto 0; padding:0 32px; position:relative; z-index:2;}
+  .podium{display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; align-items:end; margin-bottom:36px;}
+  .podium-card{background:var(--surface); border-radius:16px; padding:22px 16px; text-align:center; box-shadow:0 8px 24px rgba(13,22,19,0.08); position:relative;}
+  .podium-card.first{padding-top:30px; padding-bottom:26px; order:2; border:2px solid var(--gold);}
+  .podium-card.second{order:1;}
+  .podium-card.third{order:3;}
+  .crown{position:absolute; top:-16px; left:50%; transform:translateX(-50%); font-size:22px;}
+  .rank-chip{display:inline-block; font-size:11px; font-weight:700; padding:4px 12px; border-radius:20px; margin-bottom:12px;}
+  .rank-chip.g{background:#FBF0D9; color:#8A6A1E;}
+  .rank-chip.s{background:#EEF2F1; color:#5C6F68;}
+  .rank-chip.b{background:#F7E2D3; color:#8A4A20;}
+  .pod-avatar{margin:0 auto 10px;}
+  .pod-name{font-weight:600; font-size:15px; margin-bottom:4px;}
+  .pod-score{font-family:var(--display); font-size:20px; font-weight:600; color:var(--accentDark);}
+  .pod-score-label{font-size:11px; color:var(--ink3);}
+
+  .lb-table-wrap{max-width:760px; margin:0 auto 60px; padding:0 32px;}
+  .lb-table{background:var(--surface); border:1px solid var(--border); border-radius:14px; overflow:hidden;}
+  .lb-row{display:flex; align-items:center; gap:14px; padding:13px 20px; border-bottom:1px solid var(--border); transition:background .15s;}
+  .lb-row:last-child{border-bottom:none;}
+  .lb-row:hover{background:var(--surface2);}
+  .lb-row.me{background:var(--accentSoft);}
+  .lb-rank{width:22px; font-size:13px; color:var(--ink3); font-weight:600;}
+  .lb-name{flex:1; font-size:13.5px; font-weight:500;}
+  .lb-bar-track{width:100px; height:5px; background:var(--surface2); border-radius:3px; overflow:hidden; margin-right:12px;}
+  .lb-bar-fill{height:100%; background:var(--accent); border-radius:3px;}
+  .lb-count{font-size:12.5px; color:var(--ink3); width:70px; text-align:right;}
+
+  /* ---------- MODAL ---------- */
+  .modal-overlay{display:none; position:fixed; inset:0; background:rgba(13,22,19,0.55); align-items:center; justify-content:center; z-index:100;}
+  .modal-overlay.show{display:flex;}
+  .modal-box{background:var(--surface); border-radius:14px; padding:30px; width:340px; animation:fadeIn .25s ease;}
+  .modal-box .title{font-family:var(--display); font-weight:600; font-size:17px; margin-bottom:18px;}
+  .oauth-row{display:flex; gap:10px; margin-bottom:14px;}
+  .oauth-btn{flex:1; padding:9px; font-size:13px; border:1px solid var(--border); border-radius:8px; display:flex; align-items:center; justify-content:center; gap:6px;}
+  .divider{text-align:center; font-size:11px; color:var(--ink3); margin:14px 0;}
+  input[type="email"], input[type="password"]{width:100%; margin-bottom:10px; padding:10px 13px; border-radius:8px; border:1px solid var(--border); font-size:13px; font-family:inherit;}
+
+  @media (max-width: 900px){
+    .hero-content{grid-template-columns:1fr; text-align:center;}
+    .hero p{margin-left:auto; margin-right:auto;}
+    .hero-ctas{justify-content:center;}
+    .hero-stats{justify-content:center;}
+    .ninja-stage{height:280px;}
+  }
+  @media (max-width: 760px){
+    .rm-grid{grid-template-columns:repeat(2,1fr);}
+    .benefits-grid{grid-template-columns:1fr;}
+    .stat-row{grid-template-columns:1fr;}
+    .footer-cols{grid-template-columns:1fr 1fr;}
+    .podium{grid-template-columns:1fr; gap:10px;}
+    .podium-card.first,.podium-card.second,.podium-card.third{order:0;}
+    .nav-links{display:none;}
+    .hero h1{font-size:30px;}
+    .stats-strip{gap:32px; flex-wrap:wrap;}
+  }
+
+  /* ---------- SOBRE NOSOTROS ---------- */
+  .page-hero{background:var(--ink); padding:56px 32px; text-align:center;}
+  .page-hero .eyebrow{color:#5FE8C4;}
+  .page-hero h1{font-family:var(--display); font-size:32px; color:#fff; margin-bottom:10px;}
+  .page-hero p{color:#A8BDB6; font-size:14.5px; max-width:520px; margin:0 auto;}
+  .prose-section{max-width:720px; margin:0 auto; padding:56px 32px;}
+  .prose-section h2{font-family:var(--display); font-size:22px; margin-bottom:16px;}
+  .prose-section p{color:var(--ink2); font-size:15px; line-height:1.75; margin-bottom:16px;}
+  .prose-section ul{margin:0 0 16px; padding-left:20px; color:var(--ink2); font-size:15px; line-height:1.75;}
+  .disclaimer-box{background:var(--surface2); border-left:3px solid var(--ember); border-radius:0 10px 10px 0; padding:16px 20px; margin-bottom:14px; font-size:13.5px; color:var(--ink2); line-height:1.6;}
+  .author-card{display:flex; gap:24px; align-items:flex-start; background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:28px; margin-bottom:20px;}
+  .author-avatar{width:88px; height:88px; border-radius:50%; flex-shrink:0;}
+  .author-badges{display:flex; gap:6px; flex-wrap:wrap; margin-top:12px;}
+  .author-badge{font-size:11px; background:var(--accentSoft); color:var(--accentDark); padding:4px 10px; border-radius:6px; font-weight:600;}
+  .coauthor-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:20px;}
+  .coauthor-card{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:16px; text-align:center;}
+  .coauthor-flag{font-size:20px; margin-bottom:8px;}
+
+  .testimonial-strip{background:var(--surface2); padding:56px 32px;}
+  .testimonial-inner{max-width:840px; margin:0 auto;}
+  .testimonial-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+  .t-card{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px;}
+  .t-quote{font-size:13.5px; color:var(--ink2); line-height:1.65; margin-bottom:16px;}
+  .t-person{display:flex; align-items:center; gap:10px;}
+  .t-name{font-weight:600; font-size:13px;}
+  .t-role{font-size:11.5px; color:var(--ink3);}
+
+  /* ---------- COMUNIDAD / FAQ ---------- */
+  .community-cards{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:820px; margin:0 auto 48px; padding:0 32px;}
+  .community-card{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:24px; text-align:center; transition:transform .2s, box-shadow .2s;}
+  .community-card:hover{transform:translateY(-3px); box-shadow:0 8px 22px rgba(13,22,19,0.06);}
+  .community-icon{width:44px; height:44px; background:var(--accentSoft); border-radius:12px; display:flex; align-items:center; justify-content:center; margin:0 auto 14px;}
+  .community-card h3{font-weight:600; font-size:15px; margin-bottom:6px;}
+  .community-card p{font-size:12.5px; color:var(--ink2); line-height:1.55; margin-bottom:14px;}
+  .rules-box{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:26px 30px; max-width:720px; margin:0 auto;}
+  .rules-box h3{font-family:var(--display); font-size:17px; margin-bottom:14px;}
+  .rules-box li{font-size:13.5px; color:var(--ink2); line-height:1.7; margin-bottom:8px;}
+
+  .faq-item{border-bottom:1px solid var(--border); padding:20px 0;}
+  .faq-item:last-child{border-bottom:none;}
+  .faq-q{font-weight:600; font-size:15px; margin-bottom:8px;}
+  .faq-a{font-size:14px; color:var(--ink2); line-height:1.65;}
+  .review-card{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px; margin-bottom:14px;}
+
+  /* ---------- TEMARIO: buscador y acordeón ---------- */
+  .temario-search-wrap{display:flex; align-items:center; gap:10px; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:12px 16px;}
+  .temario-search-wrap input{flex:1; border:none; outline:none; font-size:14px; font-family:inherit; background:transparent; color:var(--ink);}
+  .temario-search-wrap input::placeholder{color:var(--ink3);}
+  .temario-card{background:var(--surface); border:1px solid var(--border); border-radius:12px; overflow:hidden; transition:border-color .2s;}
+  .temario-card.open{border-color:var(--accent);}
+  .temario-card-header{display:flex; justify-content:space-between; align-items:center; padding:18px 20px; cursor:pointer;}
+  .temario-card-title{font-weight:600; font-size:14.5px; margin-bottom:4px;}
+  .temario-card-meta{font-size:12.5px; color:var(--ink3);}
+  .temario-chevron{flex-shrink:0; transition:transform .25s ease;}
+  .temario-card.open .temario-chevron{transform:rotate(180deg); stroke:var(--accentDark);}
+  .temario-card-body{max-height:0; overflow:hidden; transition:max-height .3s ease;}
+  .temario-card.open .temario-card-body{max-height:600px;}
+  .temario-lesson-list{list-style:none; padding:0 20px 18px; margin:0; border-top:1px solid var(--border); padding-top:12px;}
+  .temario-lesson-list li{font-size:13.5px; color:var(--ink2); padding:8px 0 8px 24px; position:relative; border-bottom:1px solid var(--surface2);}
+  .temario-lesson-list li:last-child{border-bottom:none;}
+  .temario-lesson-list li::before{content:''; position:absolute; left:4px; top:15px; width:6px; height:6px; border-radius:50%; background:var(--accent);}
+  .temario-lesson-list li.lesson-hit{color:var(--ember-dark); font-weight:600;}
+  .temario-lesson-list li.lesson-hit::before{background:var(--ember);}
+
+  /* ---------- BÚSQUEDA GLOBAL (command palette) ---------- */
+  .search-trigger{display:flex; align-items:center; gap:8px; background:var(--surface2); border:1px solid var(--border); border-radius:8px; padding:7px 10px; color:var(--ink2); font-size:13px;}
+  .search-trigger:hover{border-color:var(--ink3);}
+  .search-kbd{font-size:10.5px; background:rgba(0,0,0,0.06); color:var(--ink3); padding:2px 6px; border-radius:5px; font-family:var(--mono);}
+  .search-overlay{display:none; position:fixed; inset:0; background:rgba(13,22,19,0.65); align-items:flex-start; justify-content:center; z-index:200; padding-top:12vh;}
+  .search-overlay.show{display:flex;}
+  .search-palette{background:var(--ink); border-radius:14px; width:600px; max-width:90vw; max-height:70vh; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 24px 60px rgba(0,0,0,0.4); animation:fadeIn .2s ease;}
+  .search-palette-input-row{display:flex; align-items:center; gap:12px; padding:18px 22px; border-bottom:1px solid rgba(255,255,255,0.08);}
+  .search-palette-input-row input{flex:1; background:transparent; border:none; outline:none; color:#fff; font-size:16px; font-family:inherit;}
+  .search-palette-input-row input::placeholder{color:#5C7268;}
+  .search-palette-input-row .search-kbd{background:rgba(255,255,255,0.08); color:#A8BDB6;}
+  #search-results-area, #search-lesson-results{overflow-y:auto; padding:16px 12px;}
+  .search-section-label{font-size:11px; color:#5C7268; text-transform:uppercase; letter-spacing:0.5px; font-weight:600; padding:6px 10px 10px;}
+  .search-quick-links{display:flex; flex-direction:column; gap:2px;}
+  .search-quick-item, .search-result-item{display:flex; align-items:center; gap:12px; padding:11px 12px; border-radius:9px; cursor:pointer; transition:background .1s;}
+  .search-quick-item:hover, .search-result-item:hover, .search-result-item.kbd-active{background:rgba(255,255,255,0.06);}
+  .search-quick-icon{width:30px; height:30px; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .search-quick-item span:not(.search-kbd), .search-result-item .sr-title{color:#fff; font-size:13.5px;}
+  .search-result-item{flex-direction:column; align-items:flex-start; gap:2px;}
+  .search-result-item .sr-meta{font-size:11.5px; color:#5C7268;}
+  .search-result-item .sr-title mark{background:none; color:var(--ember); font-weight:600;}
+  .search-empty{text-align:center; color:#5C7268; font-size:13px; padding:28px 0;}
+  .search-palette-footer{display:flex; gap:18px; padding:12px 20px; border-top:1px solid rgba(255,255,255,0.08); font-size:11.5px; color:#5C7268;}
+
+  /* ---------- ASISTENTE DE ESTUDIO ---------- */
+  #assistant-fab{position:fixed; bottom:24px; right:24px; width:52px; height:52px; border-radius:50%; background:var(--ink); color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(13,22,19,0.3); z-index:150; transition:transform .15s;}
+  #assistant-fab:hover{transform:scale(1.06);}
+  .assistant-panel{display:none; position:fixed; bottom:24px; right:24px; width:360px; max-height:70vh; background:var(--surface); border-radius:16px; box-shadow:0 16px 48px rgba(13,22,19,0.25); z-index:151; flex-direction:column; overflow:hidden;}
+  .assistant-panel.show{display:flex;}
+  .assistant-header{background:var(--ink); padding:14px 16px; display:flex; justify-content:space-between; align-items:center; color:#fff;}
+  .assistant-avatar{width:30px; height:30px; border-radius:8px; background:var(--accent); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .assistant-avatar-sm{width:22px; height:22px; border-radius:6px; background:var(--accent); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .assistant-close{color:#A8BDB6; padding:4px;}
+  .assistant-close:hover{color:#fff;}
+  .assistant-disclaimer{display:flex; gap:8px; background:var(--ember-soft); color:var(--ember-dark); font-size:11px; line-height:1.5; padding:10px 14px;}
+  .assistant-messages{flex:1; overflow-y:auto; padding:14px 16px; display:flex; flex-direction:column; gap:12px; min-height:160px; max-height:280px;}
+  .assistant-msg{display:flex; gap:8px; align-items:flex-start;}
+  .assistant-msg.user{flex-direction:row-reverse;}
+  .assistant-bubble{background:var(--surface2); border-radius:12px; padding:9px 13px; font-size:13px; color:var(--ink); line-height:1.55; max-width:250px;}
+  .assistant-msg.user .assistant-bubble{background:var(--accent); color:#04231A;}
+  .assistant-suggestions{display:flex; flex-wrap:wrap; gap:6px; padding:0 16px 12px;}
+  .assistant-suggestions button{font-size:11.5px; background:var(--surface2); color:var(--ink2); padding:6px 11px; border-radius:20px; border:1px solid var(--border);}
+  .assistant-suggestions button:hover{border-color:var(--ink3);}
+  .assistant-input-row{display:flex; gap:8px; padding:12px 14px; border-top:1px solid var(--border);}
+  .assistant-input-row input{flex:1; border:1px solid var(--border); border-radius:10px; padding:9px 13px; font-size:13px; font-family:inherit; outline:none;}
+  .assistant-send{width:36px; height:36px; border-radius:10px; background:var(--accent); color:#04231A; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .assistant-typing{display:flex; gap:3px; padding:9px 13px; background:var(--surface2); border-radius:12px; width:fit-content;}
+  .assistant-typing span{width:5px; height:5px; border-radius:50%; background:var(--ink3); animation:typingDot 1.2s infinite;}
+  .assistant-typing span:nth-child(2){animation-delay:.2s;}
+  .assistant-typing span:nth-child(3){animation-delay:.4s;}
+  @keyframes typingDot{0%,60%,100%{opacity:.3;} 30%{opacity:1;}}
+  @media (max-width:480px){ .assistant-panel{width:calc(100vw - 32px); right:16px; bottom:16px;} #assistant-fab{right:16px; bottom:16px;} }
+  .assistant-limit-banner{display:none; align-items:flex-start; gap:8px; background:var(--surface2); border-top:1px solid var(--border); color:var(--ink2); font-size:12px; line-height:1.5; padding:12px 16px;}
+  .assistant-limit-banner.show{display:flex;}
+  .assistant-input-row.disabled input, .assistant-input-row.disabled .assistant-send{opacity:0.4; pointer-events:none;}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="brand">
+    <svg width="26" height="26" viewBox="0 0 100 100"><path d="M50 18 C33 18 20 30 20 47 C20 62 31 75 50 80 C69 75 80 62 80 47 C80 30 67 18 50 18 Z" fill="#0D1613"/><path d="M32 45 C32 39 40 35 50 35 C60 35 68 39 68 45 L68 49 C68 43 60 40 50 40 C40 40 32 43 32 49 Z" fill="#FCFCFB"/><path d="M40 60 Q50 65 60 60" stroke="#FCFCFB" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+    <span>CloudSec Ninja</span>
+  </div>
+  <div class="nav-links">
+    <span class="nav-item active" data-view="landing">Inicio</span>
+    <span class="nav-item" data-view="temario" id="nav-temario">Temario</span>
+    <span class="nav-item" data-view="dashboard" id="nav-dashboard" style="display:none;">Dashboard</span>
+    <span class="nav-item" data-view="writer" id="nav-writer" style="display:none;">Escribir</span>
+    <span class="nav-item" data-view="admin-review" id="nav-admin" style="display:none;">Revisión<span id="admin-badge-count" class="nav-badge" style="display:none;"></span></span>
+    <span class="nav-item" data-view="leaderboard">Leaderboard</span>
+    <span class="nav-item" data-view="sobre">Nosotros</span>
+    <span class="nav-item" data-view="comunidad">Comunidad</span>
+    <button id="global-search-trigger" class="search-trigger" style="display:none;" onclick="openSearch()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <span>Buscar</span>
+      <span class="search-kbd">Ctrl K</span>
+    </button>
+    <a href="https://roadtocloudsec.la" target="_blank" rel="noopener" class="icon-link" title="roadtocloudsec.la">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20 15 15 0 010-20"/></svg>
+    </a>
+    <a href="https://github.com/gerardokaztro/cloudsec-ninja" target="_blank" rel="noopener" class="icon-link" title="GitHub">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-1.04-.01-1.88-2.78.62-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.93.85.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.3 9.3 0 015 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .28.18.61.69.5A10.26 10.26 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
+    </a>
+  </div>
+</nav>
+
+<div class="search-overlay" id="search-overlay">
+  <div class="search-palette">
+    <div class="search-palette-input-row">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ink3)" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input type="text" id="global-search-input" placeholder="¿Qué quieres aprender hoy?" oninput="filterGlobalSearch(this.value)">
+      <span class="search-kbd">Esc</span>
+    </div>
+    <div id="search-results-area">
+      <div class="search-section-label">Accesos rápidos</div>
+      <div class="search-quick-links" id="search-quick-links">
+        <div class="search-quick-item" onclick="go('temario'); closeSearch();">
+          <div class="search-quick-icon" style="background:var(--accentSoft); color:var(--accentDark);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l7 4v6c0 5-3 8-7 10-4-2-7-5-7-10V6z"/></svg></div>
+          <span>Temario completo</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink3)" stroke-width="2" style="margin-left:auto;"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+        <div class="search-quick-item" onclick="go('leaderboard'); closeSearch();">
+          <div class="search-quick-icon" style="background:var(--ember-soft); color:var(--ember-dark);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div>
+          <span>Leaderboard</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink3)" stroke-width="2" style="margin-left:auto;"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </div>
+    </div>
+    <div id="search-lesson-results"></div>
+    <div class="search-palette-footer">
+      <span><span class="search-kbd">↑↓</span> navegar</span>
+      <span><span class="search-kbd">↵</span> seleccionar</span>
+      <span><span class="search-kbd">esc</span> cerrar</span>
+    </div>
+  </div>
+</div>
+
+<main id="app"></main>
+
+<button id="assistant-fab" style="display:none;" onclick="toggleAssistant()" title="Asistente de estudio">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+</button>
+
+<div class="assistant-panel" id="assistant-panel">
+  <div class="assistant-header">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <div class="assistant-avatar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2a4 4 0 00-4 4v2a4 4 0 008 0V6a4 4 0 00-4-4zM6 12v2a6 6 0 0012 0v-2M12 20v2"/></svg></div>
+      <div>
+        <div style="font-weight:600; font-size:13.5px;">Asistente de estudio</div>
+        <div style="font-size:11px; color:#7A9089;">Powered by Kimi · gratuito</div>
+      </div>
+    </div>
+    <button class="assistant-close" onclick="toggleAssistant()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+
+  <div class="assistant-disclaimer">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0; margin-top:1px;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+    <span>Ayuda de estudio generada por IA. No reemplaza la documentación oficial de AWS — verifica antes de aplicar en producción. Puede tener límites de uso por ser gratuito.</span>
+  </div>
+
+  <div class="assistant-messages" id="assistant-messages">
+    <div class="assistant-msg bot">
+      <div class="assistant-avatar-sm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2a4 4 0 00-4 4v2a4 4 0 008 0V6a4 4 0 00-4-4zM6 12v2a6 6 0 0012 0v-2M12 20v2"/></svg></div>
+      <div class="assistant-bubble">¡Hola! Soy tu asistente de estudio. Pregúntame sobre AWS, seguridad en la nube, o cualquier duda de las lecciones. ¿En qué te ayudo hoy?</div>
+    </div>
+  </div>
+
+  <div class="assistant-suggestions" id="assistant-suggestions">
+    <button onclick="assistantAsk('¿Cuál es la diferencia entre IAM Role y IAM User?')">¿IAM Role vs IAM User?</button>
+    <button onclick="assistantAsk('¿Qué es una Service Control Policy?')">¿Qué es una SCP?</button>
+  </div>
+  <div style="text-align:center; padding:0 16px 8px;">
+    <span onclick="simulateRateLimit()" style="font-size:10.5px; color:var(--ink3); cursor:pointer; text-decoration:underline;">Simular límite alcanzado (demo)</span>
+  </div>
+
+  <div class="assistant-limit-banner" id="assistant-limit-banner">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--ink3)" stroke-width="2" style="flex-shrink:0; margin-top:1px;"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+    <span>El asistente alcanzó su límite gratuito de uso por ahora. Vuelve a intentar en unos minutos, o consulta el <a href="#" onclick="go('temario'); toggleAssistant(); return false;" style="color:var(--accentDark); text-decoration:underline;">temario</a> mientras tanto.</span>
+  </div>
+
+  <div class="assistant-input-row" id="assistant-input-row">
+    <input type="text" id="assistant-input" placeholder="Escribe tu duda..." onkeydown="if(event.key==='Enter') assistantSend();">
+    <button class="assistant-send" onclick="assistantSend()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>
+    </button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal">
+  <div class="modal-box">
+    <div class="title">Inicia sesión con</div>
+    <div class="oauth-row">
+      <button class="oauth-btn">Google</button>
+      <button class="oauth-btn">GitHub</button>
+    </div>
+    <div class="divider">o con tu correo</div>
+    <input type="email" placeholder="nombre@correo.com">
+    <input type="password" placeholder="Contraseña">
+    <button class="pill" id="modal-submit" style="width:100%; padding:11px;">Continuar</button>
+    <div style="margin-top:14px; padding-top:12px; border-top:1px solid var(--border);">
+      <div style="font-size:10.5px; color:var(--ink3); margin-bottom:6px;">Entrar como (demo de roles):</div>
+      <div style="display:flex; gap:6px;">
+        <button class="ghost" style="flex:1; padding:6px; font-size:11px;" onclick="closeModal(); setSession(true,'student'); go('dashboard');">Estudiante</button>
+        <button class="ghost" style="flex:1; padding:6px; font-size:11px;" onclick="closeModal(); setSession(true,'writer'); go('writer');">Writer</button>
+        <button class="ghost" style="flex:1; padding:6px; font-size:11px;" onclick="closeModal(); setSession(true,'admin'); go('admin-review');">Admin</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function avatar(gender, size){
+  size = size || 34;
+  const skin = gender==='f' ? '#E8C4A0' : '#D4A574';
+  const hair = gender==='f' ? '#3A2A1E' : '#241A12';
+  const hairShape = gender==='f'
+    ? '<path d="M8 15 C8 6 14 2 22 2 C30 2 36 6 36 15 L36 20 L31 18 L31 24 L26 20 L26 26 L18 26 L18 20 L13 24 L13 18 L8 20 Z" fill="'+hair+'"/>'
+    : '<path d="M9 14 C9 6 15 3 22 3 C29 3 35 6 35 14 L35 17 L9 17 Z" fill="'+hair+'"/>';
+  return '<svg width="'+size+'" height="'+size+'" viewBox="0 0 44 44"><circle cx="22" cy="22" r="22" fill="'+(gender==='f'?'#F4E3D3':'#E8D4BC')+'"/><circle cx="22" cy="24" r="11" fill="'+skin+'"/><path d="M11 40 C11 31 15 27 22 27 C29 27 33 31 33 40 Z" fill="'+skin+'"/>'+hairShape+'</svg>';
+}
+
+function ninjaIllustration(){
+  return `
+  <svg width="240" height="360" viewBox="0 0 240 360">
+    <ellipse cx="120" cy="345" rx="62" ry="12" fill="#1E9E80" opacity="0.12"/>
+
+    <path d="M75 210 L68 300 L86 300 L96 225 Z" fill="#14211C"/>
+    <path d="M145 210 L152 300 L134 300 L124 225 Z" fill="#14211C"/>
+    <path d="M64 296 L90 296 L92 312 L58 312 Z" fill="#0D1613"/>
+    <path d="M130 296 L156 296 L162 312 L128 312 Z" fill="#0D1613"/>
+
+    <path d="M80 130 L74 150 Q66 200 72 228 L100 228 Q98 190 104 155 L112 130 Z" fill="#1C2E27"/>
+    <path d="M140 130 L146 150 Q154 200 148 228 L120 228 Q122 190 116 155 L108 130 Z" fill="#1C2E27"/>
+
+    <path d="M82 108 Q120 96 158 108 L162 175 Q160 210 120 216 Q80 210 78 175 Z" fill="#1A2B25"/>
+    <path d="M82 108 Q120 96 158 108 L160 130 Q120 118 80 130 Z" fill="#213A31"/>
+    <rect x="98" y="150" width="44" height="6" rx="3" fill="#1E9E80" opacity="0.9"/>
+    <path d="M78 175 Q120 188 162 175 L161 190 Q120 202 79 190 Z" fill="#12201A"/>
+
+    <path d="M68 118 L28 96 L36 88 L72 104 Q60 108 68 118 Z" fill="#1C2E27"/>
+    <path d="M28 96 L14 82 L22 76 L36 88 Z" fill="#D4A574"/>
+    <path d="M172 118 L212 96 L204 88 L168 104 Q180 108 172 118 Z" fill="#1C2E27"/>
+    <path d="M212 96 L226 82 L218 76 L204 88 Z" fill="#D4A574"/>
+
+    <path d="M92 55 C92 34 104 20 120 20 C136 20 148 34 148 55 L148 78 C148 98 136 110 120 110 C104 110 92 98 92 78 Z" fill="#1C2E27"/>
+    <path d="M92 66 C92 60 104 56 120 56 C136 56 148 60 148 66 L148 76 C148 68 136 64 120 64 C104 64 92 68 92 76 Z" fill="#0A130F"/>
+    <ellipse cx="106" cy="70" rx="6.5" ry="4.6" fill="#0A130F"/>
+    <ellipse cx="134" cy="70" rx="6.5" ry="4.6" fill="#0A130F"/>
+    <ellipse cx="108" cy="68.5" rx="2.2" ry="2.8" fill="#5FE8C4"/>
+    <ellipse cx="136" cy="68.5" rx="2.2" ry="2.8" fill="#5FE8C4"/>
+
+    <rect x="90" y="48" width="60" height="14" rx="3" fill="#1E9E80"/>
+    <rect x="90" y="48" width="60" height="5" rx="2" fill="#5FE8C4" opacity="0.5"/>
+    <path d="M96 60 L84 100 L94 104 L106 64 Z" fill="#1E9E80"/>
+    <path d="M148 60 L160 100 L150 104 L138 64 Z" fill="#1E9E80"/>
+
+    <path d="M78 175 L34 210 Q22 220 28 232 Q34 242 46 236 Q52 233 56 226 L92 195 Z" fill="#1C2E27"/>
+    <circle cx="30" cy="228" r="10" fill="#D4A574"/>
+    <path d="M162 175 L206 210 Q218 220 212 232 Q206 242 194 236 Q188 233 184 226 L148 195 Z" fill="#1C2E27"/>
+    <circle cx="210" cy="228" r="10" fill="#D4A574"/>
+
+    <path d="M96 224 L86 226 L94 232 Z" fill="#0A130F"/>
+    <path d="M144 224 L154 226 L146 232 Z" fill="#0A130F"/>
+  </svg>`;
+}
+
+const VIEWS = {
+
+landing: function(){ return `
+<div class="view">
+  <div class="hero">
+    <div class="hero-bg-glow"></div>
+    <div class="hero-grid"></div>
+    <svg class="floating-shape fs1" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1E9E80" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/></svg>
+    <svg class="floating-shape fs2" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5FE8C4" stroke-width="1.5"><circle cx="12" cy="12" r="9"/></svg>
+    <svg class="floating-shape fs3" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1E9E80" stroke-width="1.5"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+    <svg class="floating-shape fs4" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5FE8C4" stroke-width="1.5"><path d="M4 4h16v16H4z"/></svg>
+
+    <div class="hero-content">
+      <div>
+        <div class="badge-live"><span class="pulse-dot"></span>Contenido nuevo cada semana</div>
+        <h1>Conviértete en un<br/><span>ninja de seguridad</span> en la nube</h1>
+        <p>Rutas prácticas de AWS security, hands-on, 100% en español. Progreso guardado, certificados y una comunidad que ya lleva más de 3,000 estudiantes.</p>
+        <div class="hero-ctas">
+          <button class="pill" onclick="openModal()" style="padding:13px 30px; font-size:15px;">Empezar gratis</button>
+          <button class="ghost" onclick="go('temario')" style="padding:13px 30px; font-size:15px;">Ver temario</button>
+        </div>
+        <div class="hero-stats">
+          <div><div class="hero-stat-n">3,200+</div><div class="hero-stat-l">ninjas activos</div></div>
+          <div><div class="hero-stat-n">14</div><div class="hero-stat-l">módulos</div></div>
+          <div><div class="hero-stat-n">100%</div><div class="hero-stat-l">gratis</div></div>
+        </div>
+      </div>
+      <div class="ninja-stage">
+        <div class="ninja-platform"></div>
+        <div class="spark spark1"></div><div class="spark spark2"></div><div class="spark spark3"></div>
+        <div class="ninja-figure">${ninjaIllustration()}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="roadmap">
+    <div class="eyebrow">TU RUTA DE APRENDIZAJE</div>
+    <h2>De los fundamentos a producción</h2>
+    <div class="rm-grid">
+      <div class="rm-card">
+        <div class="rm-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#0E5C48" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg></div>
+        <div class="rm-num">Módulo 1</div><div class="rm-title">Fundamentos de TI</div>
+        <div class="rm-desc">Redes, sistemas y bases antes de la nube.</div>
+      </div>
+      <div class="rm-card">
+        <div class="rm-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#0E5C48" stroke-width="2"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg></div>
+        <div class="rm-num">Módulo 2</div><div class="rm-title">Seguridad DE la nube</div>
+        <div class="rm-desc">El modelo de responsabilidad compartida.</div>
+      </div>
+      <div class="rm-card popular">
+        <div class="rm-badge">Popular</div>
+        <div class="rm-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#0E5C48" stroke-width="2"><path d="M12 2l7 4v6c0 5-3 8-7 10-4-2-7-5-7-10V6z"/></svg></div>
+        <div class="rm-num">Módulo 3</div><div class="rm-title">Gestión de identidad</div>
+        <div class="rm-desc">IAM, roles, STS y control de acceso.</div>
+      </div>
+      <div class="rm-card">
+        <div class="rm-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#0E5C48" stroke-width="2"><path d="M9 12l2 2 4-4M21 12c0 5-4 9-9 9s-9-4-9-9 4-9 9-9c2 0 4 .7 5.5 2"/></svg></div>
+        <div class="rm-num">Módulo 4</div><div class="rm-title">Compliance continuo</div>
+        <div class="rm-desc">Automatiza auditoría con GitHub Actions.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="benefits">
+    <div class="benefits-grid">
+      <div class="benefit">
+        <div class="benefit-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E9E80" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16"/></svg></div>
+        <h3>Aprende haciendo</h3><p>Laboratorios reales sobre cuentas de AWS, con Terraform y CloudFormation descargable.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E9E80" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div>
+        <h3>Certificado y badge</h3><p>Al completar cada módulo, recibes una credencial verificable en PDF.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E9E80" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h3>Comunidad abierta</h3><p>Contenido en GitHub. Contribuye, gana reconocimiento y sube en el leaderboard.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-strip">
+    <div class="strip-stat"><div class="n">14</div><div class="l">módulos publicados</div></div>
+    <div class="strip-stat"><div class="n">3,200+</div><div class="l">ninjas registrados</div></div>
+    <div class="strip-stat"><div class="n">40+</div><div class="l">contribuidores</div></div>
+    <div class="strip-stat"><div class="n">100%</div><div class="l">código abierto</div></div>
+  </div>
+
+  <div class="final-cta">
+    <h2>Empieza tu primer módulo hoy</h2>
+    <p>Sin tarjeta, sin costos ocultos, sin límite de tiempo.</p>
+    <button class="pill" onclick="openModal()" style="padding:13px 32px; font-size:15px;">Crear mi cuenta</button>
+  </div>
+
+  <div class="footer">
+    <div class="footer-inner">
+      <div class="footer-cols">
+        <div>
+          <div class="footer-brand">
+            <svg width="22" height="22" viewBox="0 0 100 100"><path d="M50 18 C33 18 20 30 20 47 C20 62 31 75 50 80 C69 75 80 62 80 47 C80 30 67 18 50 18 Z" fill="#0D1613"/><path d="M32 45 C32 39 40 35 50 35 C60 35 68 39 68 45 L68 49 C68 43 60 40 50 40 C40 40 32 43 32 49 Z" fill="#FCFCFB"/><path d="M40 60 Q50 65 60 60" stroke="#FCFCFB" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+            <span>CloudSec Ninja</span>
+          </div>
+          <div class="footer-tagline">Seguridad en la nube, en español, para todos.</div>
+        </div>
+        <div class="footer-col">
+          <h4>Aprende</h4>
+          <a href="#" onclick="go('temario'); return false;">Temario completo</a>
+          <a href="#" onclick="go('dashboard'); return false;">Mi progreso</a>
+          <a href="#" onclick="go('leaderboard'); return false;">Leaderboard</a>
+        </div>
+        <div class="footer-col">
+          <h4>Conecta</h4>
+          <a href="#" onclick="go('comunidad'); return false;">Comunidad Slack</a>
+          <a href="#" onclick="go('comunidad'); return false;">YouTube</a>
+          <a href="#" onclick="go('comunidad'); return false;">Twitter / X</a>
+        </div>
+        <div class="footer-col">
+          <h4>Construye</h4>
+          <a href="https://github.com/gerardokaztro/cloudsec-ninja" target="_blank" rel="noopener">Repositorio en GitHub</a>
+          <a href="https://roadtocloudsec.la" target="_blank" rel="noopener">roadtocloudsec.la</a>
+          <a href="#">Sé un writer</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 CloudSec Ninja</span>
+        <span>Hecho con 🥷 en Perú</span>
+      </div>
+    </div>
+  </div>
+</div>`; },
+
+dashboard: function(){
+  if(dashHasProgress){
+    return `
+<div class="view">
+  <div class="dash-hero">
+    <div class="dash-hero-inner">
+      <div class="dash-welcome" style="cursor:pointer;" onclick="go('perfil')">
+        ${avatar('m',48)}
+        <div class="dash-welcome-text">
+          <div class="label">Bienvenido de vuelta</div>
+          <div class="name">Gera</div>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <div class="streak"><span class="streak-flame">🔥</span><span class="streak-text">4 días seguidos</span></div>
+        <button class="ghost" style="color:#fff; border-color:rgba(255,255,255,0.25);" onclick="setSession(false); go('landing')">Salir</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="dash-body">
+    <div style="text-align:right; margin-bottom:10px;">
+      <span onclick="dashHasProgress=false; go('dashboard');" style="font-size:11px; color:var(--ink3); cursor:pointer; text-decoration:underline;">Ver estado vacío (demo)</span>
+    </div>
+    <div class="stat-row">
+      <div class="stat-card"><div class="n">31%</div><div class="l">Progreso general</div></div>
+      <div class="stat-card"><div class="n">4</div><div class="l">Módulos en curso</div></div>
+      <div class="stat-card"><div class="n">#12</div><div class="l">Tu puesto en el leaderboard</div></div>
+    </div>
+
+    <div class="goal-card">
+      <div class="goal-left">
+        <div class="k">Siguiente meta</div>
+        <div class="v">Termina AWS Identity Center para desbloquear tu badge</div>
+      </div>
+      <div class="goal-ring">
+        <svg width="64" height="64" viewBox="0 0 64 64">
+          <circle cx="32" cy="32" r="27" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="6"/>
+          <circle cx="32" cy="32" r="27" fill="none" stroke="#1E9E80" stroke-width="6" stroke-dasharray="169.6" stroke-dashoffset="135.7" stroke-linecap="round" transform="rotate(-90 32 32)"/>
+        </svg>
+        <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#fff; font-family:var(--display); font-size:13px; font-weight:600;">20%</div>
+      </div>
+    </div>
+
+    <div class="section-title">Contenido nuevo esta semana</div>
+    <div style="background:var(--ember-soft); border:1px solid var(--ember); border-radius:12px; padding:14px 18px; display:flex; justify-content:space-between; align-items:center; margin-bottom:28px;">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <span style="background:var(--ember); color:#2E1607; font-size:10px; font-weight:700; padding:3px 9px; border-radius:5px;">NUEVO</span>
+        <div>
+          <div style="font-weight:600; font-size:13.5px; color:var(--ember-dark);">AWS Access Analyzer: detección de acceso externo</div>
+          <div style="font-size:11.5px; color:var(--ember-dark); opacity:0.8;">Publicado hace 2 días por Alejandro Castañeda</div>
+        </div>
+      </div>
+      <button class="ghost" style="padding:6px 14px; font-size:12px; border-color:var(--ember); color:var(--ember-dark);">Ver</button>
+    </div>
+
+    <div class="section-title">Gestión de identidad y accesos</div>
+    <div class="module-list">
+      <div class="mod-row">
+        <div class="mod-top">
+          <div class="mod-left">
+            <div class="mod-status-icon" style="background:var(--accentSoft);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0E5C48" stroke-width="2.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+            <div><div class="mod-name">AWS IAM</div><div class="mod-meta">15 de 15 lecciones</div></div>
+          </div>
+          <button class="ghost" id="badge-btn-iam" style="padding:7px 14px; font-size:12px; border-color:var(--ember); color:var(--ember-dark);" onclick="generateBadge('badge-btn-iam','AWS IAM')">Generar badge</button>
+        </div>
+      </div>
+      <div class="mod-row active-mod">
+        <div class="mod-top">
+          <div class="mod-left">
+            <div class="mod-status-icon" style="background:var(--accentSoft); border:2px solid var(--accent);"></div>
+            <div><div class="mod-name">AWS Identity Center</div><div class="mod-meta">3 de 15 lecciones</div></div>
+          </div>
+          <button class="pill" style="padding:7px 16px; font-size:12.5px;" onclick="go('lesson')">Continuar</button>
+        </div>
+        <div class="mod-progress-track"><div class="mod-progress-fill" style="width:20%;"></div></div>
+      </div>
+      <div class="mod-row locked">
+        <div class="mod-top">
+          <div class="mod-left">
+            <div class="mod-status-icon" style="border:1.5px solid var(--ink3);"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--ink3)" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="1"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></div>
+            <div><div class="mod-name">AWS Access Analyzer</div><div class="mod-meta">Se desbloquea al completar el anterior</div></div>
+          </div>
+          <span style="font-size:12px; color:var(--ink3);">Bloqueado</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">Detección de amenazas</div>
+    <div class="module-list">
+      <div class="mod-row">
+        <div class="mod-top">
+          <div class="mod-left">
+            <div class="mod-status-icon" style="background:var(--accentSoft);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0E5C48" stroke-width="2.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+            <div><div class="mod-name">GuardDuty y Security Hub</div><div class="mod-meta">10 de 10 lecciones</div></div>
+          </div>
+          <button class="ghost" id="badge-btn-threat" style="padding:7px 14px; font-size:12px; border-color:var(--ember); color:var(--ember-dark);" onclick="generateBadge('badge-btn-threat','Detección de amenazas')">Generar badge</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--surface2); border-radius:12px; padding:16px 20px; display:flex; align-items:center; gap:12px; margin-bottom:8px;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--ink3)" stroke-width="2" style="flex-shrink:0;"><path d="M12 2l2.5 6.5H21l-5.5 4 2 6.5L12 15l-5.5 4 2-6.5L3 8.5h6.5z"/></svg>
+      <div style="font-size:12.5px; color:var(--ink2);"><strong>El certificado de culminación</strong> se emite al completar los 4 módulos del programa. Llevas 2 de 4 — cada módulo completado te da su propio badge digital mientras avanzas.</div>
+    </div>
+  </div>
+</div>`;
+  }
+  return `
+<div class="view">
+  <div class="dash-hero">
+    <div class="dash-hero-inner">
+      <div class="dash-welcome">
+        ${avatar('m',48)}
+        <div class="dash-welcome-text">
+          <div class="label">Bienvenido a CloudSec Ninja</div>
+          <div class="name">Gera</div>
+        </div>
+      </div>
+      <button class="ghost" style="color:#fff; border-color:rgba(255,255,255,0.25);" onclick="setSession(false); go('landing')">Salir</button>
+    </div>
+  </div>
+
+  <div class="dash-body" style="text-align:center; padding-top:56px; padding-bottom:70px;">
+    <div style="width:64px; height:64px; background:var(--accentSoft); border-radius:16px; display:flex; align-items:center; justify-content:center; margin:0 auto 20px;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accentDark)" stroke-width="2"><path d="M12 2l7 4v6c0 5-3 8-7 10-4-2-7-5-7-10V6z"/></svg>
+    </div>
+    <h2 style="font-family:var(--display); font-size:22px; margin-bottom:10px;">Todavía no empiezas ningún módulo</h2>
+    <p style="color:var(--ink2); font-size:14px; margin-bottom:28px; max-width:380px; margin-left:auto; margin-right:auto;">Te recomendamos comenzar por Gestión de identidad — es el módulo con el que más ninjas arrancan su ruta.</p>
+    <button class="pill" onclick="go('lesson')" style="padding:12px 28px; font-size:14px;">Empezar AWS IAM</button>
+    <div style="margin-top:10px;">
+      <span onclick="dashHasProgress=true; go('dashboard');" style="font-size:11px; color:var(--ink3); cursor:pointer; text-decoration:underline;">Ver estado con progreso (demo)</span>
+    </div>
+  </div>
+</div>`;
+},
+
+lesson: function(){ return `
+<div class="view" style="padding:32px 32px 60px; display:flex; gap:32px; max-width:960px; margin:0 auto;">
+  <div style="flex:1; min-width:0;">
+    <div style="font-size:12px; color:var(--ink3); margin-bottom:6px;">Gestión de identidad y accesos</div>
+    <h2 style="font-family:var(--display); font-size:23px; margin-bottom:6px;">AWS Identity Center: acceso centralizado multi-cuenta</h2>
+    <div style="display:flex; gap:6px; margin-bottom:20px;">
+      <span style="background:var(--accentSoft); color:var(--accentDark); font-size:11px; padding:4px 10px; border-radius:6px; font-weight:600;">nivel 200</span>
+      <span style="background:var(--surface2); color:var(--ink2); font-size:11px; padding:4px 10px; border-radius:6px;">identity-center</span>
+      <span style="background:var(--surface2); color:var(--ink2); font-size:11px; padding:4px 10px; border-radius:6px;">sso</span>
+    </div>
+
+    <div style="position:relative; background:#000; border-radius:12px; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; overflow:hidden; margin-bottom:24px;">
+      <div style="width:56px; height:56px; background:rgba(255,255,255,0.15); border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer;"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+      <div style="position:absolute; bottom:12px; left:14px; color:white; font-size:12px; opacity:0.85;">Clase en vivo · AWS Identity Center paso a paso · 41:07</div>
+    </div>
+
+    <h3 style="font-family:var(--display); font-size:17px; margin-bottom:10px;">¿Qué problema resuelve?</h3>
+    <p style="color:var(--ink2); font-size:14.5px; line-height:1.7; margin-bottom:16px;">Cuando una organización maneja <strong>más de una cuenta de AWS</strong>, administrar accesos usuario por usuario en cada cuenta se vuelve inmanejable. <code>AWS Identity Center</code> (antes conocido como <code>AWS SSO</code>) centraliza esto: un solo punto de federación, y desde ahí defines qué usuarios acceden a qué cuentas, con qué nivel de permiso.</p>
+    <p style="color:var(--ink2); font-size:14.5px; line-height:1.7; margin-bottom:20px;">A diferencia de IAM tradicional, Identity Center <em>no crea usuarios ni contraseñas nuevas</em> — se conecta a tu proveedor de identidad existente (Okta, Microsoft Entra ID, Active Directory) o usa su propio directorio interno, y desde ahí sincroniza usuarios y grupos.</p>
+
+    <div style="border-radius:10px; overflow:hidden; margin-bottom:20px; border:1px solid var(--border);">
+      <div style="background:#1a1a1a; padding:8px 14px; display:flex; align-items:center; gap:6px;">
+        <div style="width:9px; height:9px; border-radius:50%; background:#EE6A5F;"></div>
+        <div style="width:9px; height:9px; border-radius:50%; background:#F5BD4F;"></div>
+        <div style="width:9px; height:9px; border-radius:50%; background:#61C454;"></div>
+        <span style="color:#8a8a8a; font-size:11px; margin-left:8px;">consola AWS — IAM Identity Center</span>
+      </div>
+      <svg width="100%" viewBox="0 0 700 280" style="display:block; background:#f4f6f5;">
+        <rect x="0" y="0" width="700" height="44" fill="#232f3e"/>
+        <text x="16" y="27" font-family="Inter, sans-serif" font-size="13" fill="#fff" font-weight="600">AWS IAM Identity Center</text>
+        <text x="600" y="27" font-family="Inter, sans-serif" font-size="11" fill="#9fb3c8">us-east-1</text>
+        <rect x="20" y="64" width="200" height="196" fill="#fff" stroke="#d5dbdb"/>
+        <text x="34" y="90" font-family="Inter, sans-serif" font-size="12" fill="#16191f" font-weight="600">Usuarios</text>
+        <text x="34" y="114" font-family="Inter, sans-serif" font-size="12" fill="#0972d3">Grupos</text>
+        <text x="34" y="138" font-family="Inter, sans-serif" font-size="12" fill="#0972d3">Cuentas de AWS</text>
+        <text x="34" y="162" font-family="Inter, sans-serif" font-size="12" fill="#0972d3">Conjuntos de permisos</text>
+        <text x="34" y="186" font-family="Inter, sans-serif" font-size="12" fill="#0972d3">Aplicaciones</text>
+        <rect x="240" y="64" width="440" height="196" fill="#fff" stroke="#d5dbdb"/>
+        <text x="256" y="90" font-family="Inter, sans-serif" font-size="13" fill="#16191f" font-weight="600">Conjuntos de permisos</text>
+        <rect x="256" y="104" width="408" height="28" fill="#f2f8fd"/>
+        <text x="264" y="122" font-family="Inter, sans-serif" font-size="11" fill="#16191f">AdministratorAccess</text>
+        <text x="560" y="122" font-family="Inter, sans-serif" font-size="10" fill="#5f6b7a">PT1H</text>
+        <rect x="256" y="134" width="408" height="28" fill="#fff"/>
+        <text x="264" y="152" font-family="Inter, sans-serif" font-size="11" fill="#16191f">ReadOnlyAccess</text>
+        <text x="560" y="152" font-family="Inter, sans-serif" font-size="10" fill="#5f6b7a">PT4H</text>
+        <rect x="256" y="164" width="408" height="28" fill="#f2f8fd"/>
+        <text x="264" y="182" font-family="Inter, sans-serif" font-size="11" fill="#16191f">SecurityAudit</text>
+        <text x="560" y="182" font-family="Inter, sans-serif" font-size="10" fill="#5f6b7a">PT2H</text>
+      </svg>
+    </div>
+    <div style="text-align:center; font-size:11.5px; color:var(--ink3); margin:-12px 0 24px;">Captura: panel de conjuntos de permisos en IAM Identity Center</div>
+
+    <h3 style="font-family:var(--display); font-size:17px; margin-bottom:10px;">Permission sets, la pieza central</h3>
+    <p style="color:var(--ink2); font-size:14.5px; line-height:1.7; margin-bottom:14px;">Un <strong>permission set</strong> es una plantilla reutilizable de permisos. Internamente, Identity Center crea un <code>IAM Role</code> por cada combinación de permission set + cuenta asignada — tú no gestionas esos roles a mano.</p>
+
+    <table style="width:100%; border-collapse:collapse; font-size:13px; margin-bottom:20px;">
+      <tr><th style="background:var(--surface2); text-align:left; padding:9px 12px; border:1px solid var(--border);">Permission set</th><th style="background:var(--surface2); text-align:left; padding:9px 12px; border:1px solid var(--border);">Duración de sesión</th><th style="background:var(--surface2); text-align:left; padding:9px 12px; border:1px solid var(--border);">Uso típico</th></tr>
+      <tr><td style="padding:9px 12px; border:1px solid var(--border);"><code>AdministratorAccess</code></td><td style="padding:9px 12px; border:1px solid var(--border);">1 hora</td><td style="padding:9px 12px; border:1px solid var(--border);">Break-glass, uso puntual</td></tr>
+      <tr><td style="padding:9px 12px; border:1px solid var(--border);"><code>ReadOnlyAccess</code></td><td style="padding:9px 12px; border:1px solid var(--border);">4 horas</td><td style="padding:9px 12px; border:1px solid var(--border);">Auditoría, soporte</td></tr>
+      <tr><td style="padding:9px 12px; border:1px solid var(--border);"><code>SecurityAudit</code></td><td style="padding:9px 12px; border:1px solid var(--border);">2 horas</td><td style="padding:9px 12px; border:1px solid var(--border);">Equipo de seguridad</td></tr>
+    </table>
+
+    <p style="color:var(--ink2); font-size:14.5px; line-height:1.7; margin-bottom:8px;">Cosas que <strong>debes recordar</strong> sobre permission sets:</p>
+    <ul style="margin:0 0 20px; padding-left:20px; color:var(--ink2); font-size:14px; line-height:1.75;">
+      <li>Un permission set define <em>qué</em> puede hacer un usuario, no <em>quién</em> es</li>
+      <li>La duración de sesión (<code>SessionDuration</code>) limita cuánto dura la credencial temporal antes de expirar</li>
+      <li>Identity Center <strong>no modifica</strong> tus IAM users o roles existentes — convive con ellos</li>
+    </ul>
+
+    <h3 style="font-family:var(--display); font-size:17px; margin-bottom:10px;">El rol que se crea por detrás</h3>
+    <p style="color:var(--ink2); font-size:14.5px; line-height:1.7; margin-bottom:14px;">Cuando asignas un permission set a un usuario sobre una cuenta, Identity Center provisiona un <code>IAM Role</code> con un nombre reservado (<code>AWSReservedSSO_*</code>). Su trust policy confía en el proveedor SAML interno de Identity Center — nunca directamente en el usuario final:</p>
+
+    <div style="background:var(--code-bg); border-radius:10px; padding:18px 20px; overflow-x:auto; margin-bottom:20px;">
+      <pre style="margin:0; font-family:var(--mono); font-size:12.5px; color:var(--code-text); line-height:1.7;">{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws:iam::123456789012:saml-provider/AWSSSO_..."
+      },
+      "Action": ["sts:AssumeRoleWithSAML", "sts:TagSession"],
+      "Condition": {
+        "StringEquals": { "SAML:aud": "https://signin.aws.amazon.com/saml" }
+      }
+    }
+  ]
+}</pre>
+    </div>
+
+    <p style="color:var(--ink2); font-size:14.5px; line-height:1.7; margin-bottom:14px;">Nota el uso de <code>sts:TagSession</code> — esto permite que el rol asumido lleve atributos del usuario (como su departamento o equipo), habilitando <strong>ABAC</strong> incluso dentro de sesiones federadas.</p>
+
+    <div style="background:var(--surface2); border:1px solid var(--border); border-radius:10px; padding:15px 18px; display:flex; align-items:center; justify-content:space-between; margin-bottom:16px;">
+      <div style="display:flex; align-items:center; gap:10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accentDark)" stroke-width="2"><path d="M12 15V3M7 10l5 5 5-5M5 21h14"/></svg><span style="font-size:13px;">identity-center-permission-sets.tf</span></div>
+      <button class="ghost" style="padding:7px 14px; font-size:12px;">Descargar Terraform</button>
+    </div>
+    <div style="background:var(--surface2); border:1px solid var(--border); border-radius:10px; padding:15px 18px; display:flex; align-items:center; justify-content:space-between; margin-bottom:24px;">
+      <div style="display:flex; align-items:center; gap:10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accentDark)" stroke-width="2"><path d="M12 15V3M7 10l5 5 5-5M5 21h14"/></svg><span style="font-size:13px;">identity-center-scp-baseline.yaml</span></div>
+      <button class="ghost" style="padding:7px 14px; font-size:12px;">Descargar CloudFormation</button>
+    </div>
+
+    <h3 style="font-family:var(--display); font-size:17px; margin-bottom:10px;">Reforzando con Service Control Policies</h3>
+    <p style="color:var(--ink2); font-size:14.5px; line-height:1.7; margin-bottom:14px;">Un permission set mal configurado no es el fin del mundo si tienes <strong>SCPs</strong> (Service Control Policies) a nivel de organización — estas actúan como un techo que <em>ni siquiera un administrador</em> puede traspasar, sin importar qué permission set tenga asignado:</p>
+
+    <div style="background:var(--code-bg); border-radius:10px; padding:18px 20px; overflow-x:auto; margin-bottom:20px;">
+      <pre style="margin:0; font-family:var(--mono); font-size:12.5px; color:var(--code-text); line-height:1.7;">{
+  "Version": "2012-10-17",
+  "Statement": [{
+    "Sid": "DenyUnapprovedRegions",
+    "Effect": "Deny",
+    "Action": "*",
+    "Resource": "*",
+    "Condition": {
+      "StringNotEquals": {
+        "aws:RequestedRegion": ["us-east-1", "us-west-2"]
+      }
+    }
+  }]
+}</pre>
+    </div>
+
+    <div style="display:flex; align-items:center; gap:10px; background:var(--accentSoft); border-radius:10px; padding:12px 16px; margin-bottom:24px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accentDark)" stroke-width="2" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      <span style="font-size:13px; color:var(--accentDark);"><strong>Dato clave:</strong> las SCPs restringen, nunca otorgan permisos. Un permission set con <code>AdministratorAccess</code> sigue bloqueado si la SCP lo deniega explícitamente.</span>
+    </div>
+
+    <h3 style="font-family:var(--display); font-size:17px; margin-bottom:10px;">Ejercicio práctico</h3>
+    <p style="color:var(--ink2); font-size:14.5px; line-height:1.7; margin-bottom:14px;">Verifica desde tu terminal qué identidad federada estás usando en este momento:</p>
+
+    <div style="background:var(--code-bg); border-radius:10px; padding:18px 20px; overflow-x:auto; margin-bottom:24px;">
+      <pre style="margin:0; font-family:var(--mono); font-size:12.5px; color:var(--code-text); line-height:1.7;">$ aws sts get-caller-identity
+
+{
+    "UserId": "AROAEXAMPLE:jgarcia",
+    "Account": "123456789012",
+    "Arn": "arn:aws:sts::123456789012:assumed-role/AWSReservedSSO_ReadOnlyAccess_a1b2c3/jgarcia"
+}</pre>
+    </div>
+
+    <p style="color:var(--ink2); font-size:14.5px; line-height:1.7; margin-bottom:24px;">Observa el <code>Arn</code>: confirma que estás operando bajo un rol de Identity Center (<code>AWSReservedSSO_*</code>), no con credenciales de un <code>IAM User</code> tradicional.</p>
+
+    <div style="display:flex; gap:10px; margin-bottom:24px;">
+      <button class="pill" style="padding:10px 20px; font-size:13px;">Marcar lección como leída</button>
+      <button class="ghost" style="padding:10px 20px; font-size:13px;">Hacer pregunta en Slack</button>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border); padding-top:20px;">
+      <span style="font-size:12px; color:var(--ink3);">Última actualización 12 nov 2024 · Gerardo Castro</span>
+      <button class="pill" onclick="go('cert')">Completar lección</button>
+    </div>
+  </div>
+</div>`; },
+
+cert: function(){ return `
+<div class="view" style="background:var(--ink); min-height:70vh; text-align:center; padding:70px 32px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+  <div style="width:60px; height:60px; background:rgba(232,147,77,0.18); border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:18px;">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--ember)" stroke-width="2"><path d="M12 2l2.5 6.5H21l-5.5 4 2 6.5L12 15l-5.5 4 2-6.5L3 8.5h6.5z"/></svg>
+  </div>
+  <h2 style="font-family:var(--display); font-size:21px; color:#fff; margin-bottom:6px;">Módulo completado</h2>
+  <p style="color:#A8BDB6; font-size:13.5px; margin-bottom:28px;">AWS Identity Center — badge y certificado emitidos</p>
+  <div style="border:1px solid rgba(232,147,77,0.3); border-radius:14px; padding:36px; background:#1F1712; max-width:420px;">
+    <div style="font-size:11px; color:var(--ember); letter-spacing:1.5px;">CLOUDSEC NINJA</div>
+    <div style="font-family:var(--display); font-size:22px; font-weight:600; margin:18px 0 6px; color:#fff;">Gerardo Castro</div>
+    <div style="font-size:12.5px; color:#A8BDB6;">ha completado AWS Identity Center</div>
+    <div style="font-size:11px; color:#7A9089; margin-top:18px;">3 de julio, 2026 · CSN-2026-0913</div>
+  </div>
+  <button class="pill" style="margin-top:20px; padding:12px 28px; background:var(--ember); color:#2E1607;">Descargar PDF</button>
+</div>`; },
+
+leaderboard: function(){
+  const datasets = {
+    todos: {
+      podium: [
+        {name:'Thalia Rosales', gender:'f', score:12, rank:'s'},
+        {name:'Gerardo Castro', gender:'m', score:14, rank:'g'},
+        {name:'Diego R.', gender:'m', score:11, rank:'b'}
+      ],
+      rest: [
+        ['4','Karla V.','f','9','60'],['5','Bruno S.','m','9','60'],['6','Fabiola N.','f','8','53'],
+        ['7','Iván M.','m','7','47'],['8','Lucía P.','f','7','47'],['9','Renzo Q.','m','6','40'],['10','Camila F.','f','6','40']
+      ]
+    },
+    mes: {
+      podium: [
+        {name:'Camila F.', gender:'f', score:5, rank:'s'},
+        {name:'Iván M.', gender:'m', score:6, rank:'g'},
+        {name:'Gerardo Castro', gender:'m', score:4, rank:'b'}
+      ],
+      rest: [
+        ['4','Renzo Q.','m','4','80'],['5','Karla V.','f','3','60'],['6','Thalia Rosales','f','3','60'],
+        ['7','Bruno S.','m','2','40'],['8','Diego R.','m','2','40'],['9','Lucía P.','f','1','20'],['10','Fabiola N.','f','1','20']
+      ]
+    }
+  };
+  const d = datasets[lbPeriod];
+  const rowsHtml = d.rest.map(r => `
+    <div class="lb-row ${r[1]==='Gerardo Castro' ? 'me' : ''}">
+      <span class="lb-rank">${r[0]}</span>
+      ${avatar(r[2],28)}
+      <span class="lb-name">${r[1]}${r[1]==='Gerardo Castro' ? ' (tú)' : ''}</span>
+      <div class="lb-bar-track"><div class="lb-bar-fill" style="width:${r[4]}%;"></div></div>
+      <span class="lb-count">${r[3]} módulos</span>
+    </div>`).join('');
+  const rankLabel = {g:'1er lugar', s:'2do lugar', b:'3er lugar'};
+  return `
+<div class="view">
+  <div class="lb-hero">
+    <h2>Leaderboard</h2>
+    <p>Los ninjas más constantes de la comunidad</p>
+  </div>
+  <div class="podium-wrap">
+    <div style="display:flex; justify-content:center; gap:8px; margin:0 0 28px; padding-top:6px;">
+      <button class="ghost" style="padding:7px 16px; font-size:12.5px; ${lbPeriod==='todos' ? 'background:var(--ink); color:#fff; border-color:var(--ink);' : ''}" onclick="lbPeriod='todos'; go('leaderboard');">Todos los tiempos</button>
+      <button class="ghost" style="padding:7px 16px; font-size:12.5px; ${lbPeriod==='mes' ? 'background:var(--ink); color:#fff; border-color:var(--ink);' : ''}" onclick="lbPeriod='mes'; go('leaderboard');">Este mes</button>
+    </div>
+    <div class="podium">
+      <div class="podium-card second">
+        <div class="rank-chip s">${rankLabel.s}</div>
+        <div class="pod-avatar">${avatar(d.podium[0].gender,52)}</div>
+        <div class="pod-name">${d.podium[0].name}</div>
+        <div class="pod-score">${d.podium[0].score}</div><div class="pod-score-label">módulos</div>
+      </div>
+      <div class="podium-card first" style="border:2px solid var(--ember);">
+        <div class="crown">👑</div>
+        <div class="rank-chip" style="background:var(--ember-soft); color:var(--ember-dark);">${rankLabel.g}</div>
+        <div class="pod-avatar">${avatar(d.podium[1].gender,60)}</div>
+        <div class="pod-name">${d.podium[1].name}</div>
+        <div class="pod-score" style="color:var(--ember-dark);">${d.podium[1].score}</div><div class="pod-score-label">módulos</div>
+      </div>
+      <div class="podium-card third">
+        <div class="rank-chip b">${rankLabel.b}</div>
+        <div class="pod-avatar">${avatar(d.podium[2].gender,52)}</div>
+        <div class="pod-name">${d.podium[2].name}</div>
+        <div class="pod-score">${d.podium[2].score}</div><div class="pod-score-label">módulos</div>
+      </div>
+    </div>
+  </div>
+  <div class="lb-table-wrap">
+    <div class="section-title">Top 10 completo · ${lbPeriod==='todos' ? 'Todos los tiempos' : 'Este mes'}</div>
+    <div class="lb-table">${rowsHtml}</div>
+  </div>
+</div>`; },
+
+sobre: function(){ return `
+<div class="view">
+  <div class="page-hero">
+    <div class="eyebrow">SOBRE CLOUDSEC NINJA</div>
+    <h1>Aprende, comparte, protege el ciberespacio</h1>
+    <p>CloudSec Ninja es una plataforma de aprendizaje de seguridad en la nube construida para ayudar a quienes deseen dar sus primeros pasos en esta área de la tecnología.</p>
+  </div>
+
+  <div class="prose-section">
+    <h2>Bienvenida</h2>
+    <p>Con el propósito de hacer que el viaje hacia la seguridad en la nube sea lo más parecido a lo que el mercado laboral necesita, diseñamos una ruta de aprendizaje que aborda diferentes dominios del área al mismo tiempo que aprendes a usar cada servicio de seguridad de AWS.</p>
+    <p>Está destinado para estudiantes, trainees, juniors, seniors, desarrolladores, arquitectos de soluciones, ingenieros DevOps y cualquier persona interesada en aprender sobre seguridad en la nube.</p>
+
+    <div class="disclaimer-box"><strong>No</strong> ejecutes ninguno de los laboratorios junto con tus entornos e infraestructura de producción. Recomendamos un entorno seguro y aislado.</div>
+    <div class="disclaimer-box">Esta plataforma <strong>no</strong> ofrece cuentas sandbox ni se hace responsable por los gastos que los laboratorios puedan generar en tu cuenta.</div>
+  </div>
+
+  <div class="prose-section" style="background:var(--surface2); max-width:none; padding:56px 32px;">
+    <div style="max-width:720px; margin:0 auto;">
+      <h2>Valores y objetivos</h2>
+      <p>No somos los únicos propietarios del contenido que se publica aquí: gran parte de la información viene de otros sitios, blogs, podcasts, videos, libros — incluso tu propio contenido podría estar aquí. No sería ético atribuirnos autoría exclusiva.</p>
+      <ul>
+        <li>Contenido <strong>gratuito</strong> al alcance de toda la comunidad, siempre</li>
+        <li>Documentación clara y de fácil acceso</li>
+        <li>Crédito a los autores originales de donde se extraiga la información</li>
+        <li>Uso de soluciones de seguridad top del mercado</li>
+        <li>Ruta de aprendizaje desde cero, para no dejar a nadie fuera</li>
+        <li>Aprendizaje interactivo con ejemplos reales</li>
+        <li>Comunidad activa que se ayuda mutuamente</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="prose-section">
+    <h2>Sobre el autor</h2>
+    <div class="author-card">
+      ${avatar('m',88)}
+      <div>
+        <p style="margin-bottom:8px;"><strong>Gerardo Castro</strong> — "Gera" — es quien construyó CloudSec Ninja. Durante su viaje hacia la tecnología enfrentó muchos desafíos económicos que dificultaban costear su aprendizaje.</p>
+        <p style="margin-bottom:0;">Hoy es consultor de seguridad en la nube, escribe blogs técnicos, organiza meetups y talleres de AWS Security en Latinoamérica. Fue AWS Community Builder en Security & Identity (2020–2023) y es organizador del AWS Security Users Group en América Latina desde 2021. En 2023 fue nominado AWS Security Hero, el primero en Hispanoamérica.</p>
+        <div class="author-badges">
+          <span class="author-badge">AWS Security Hero</span>
+          <span class="author-badge">AWS Security Users Group LatAm</span>
+          <span class="author-badge">Perú</span>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="margin-top:36px;">Nuestros co-autores</h2>
+    <p>Todo el contenido que ves aquí ha sido también gracias a la contribución de nuestros co-autores, quienes dedicaron su tiempo, esfuerzo y experiencia para co-crear este recurso.</p>
+    <div class="coauthor-grid">
+      <div class="coauthor-card"><div class="coauthor-flag">🇦🇷</div><div style="font-weight:600; font-size:13px;">Jose R. Castiñeiras</div></div>
+      <div class="coauthor-card"><div class="coauthor-flag">🇦🇷</div><div style="font-weight:600; font-size:13px;">Martin Ferrini</div></div>
+      <div class="coauthor-card"><div class="coauthor-flag">🇦🇷</div><div style="font-weight:600; font-size:13px;">Rodrigo Elissamburu</div></div>
+    </div>
+  </div>
+
+  <div class="testimonial-strip">
+    <div class="testimonial-inner">
+      <div style="text-align:center; margin-bottom:32px;">
+        <div class="eyebrow">LO QUE DICE LA COMUNIDAD</div>
+        <h2 style="font-family:var(--display); font-size:22px;">Ninjas reales, resultados reales</h2>
+      </div>
+      <div class="testimonial-grid">
+        <div class="t-card">
+          <div class="t-quote">"Empecé sin saber nada de AWS y en tres meses ya estaba aplicando lo aprendido en mi trabajo."</div>
+          <div class="t-person">${avatar('f',36)}<div><div class="t-name">Karla V.</div><div class="t-role">Cloud Engineer</div></div></div>
+        </div>
+        <div class="t-card">
+          <div class="t-quote">"El contenido es directo al grano, sin relleno. Se nota que está hecho por alguien que trabaja en esto."</div>
+          <div class="t-person">${avatar('m',36)}<div><div class="t-name">Bruno S.</div><div class="t-role">DevOps Engineer</div></div></div>
+        </div>
+        <div class="t-card">
+          <div class="t-quote">"La comunidad en Slack es lo que más valoro. Siempre hay alguien dispuesto a ayudar."</div>
+          <div class="t-person">${avatar('f',36)}<div><div class="t-name">Fabiola N.</div><div class="t-role">Security Analyst</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>`; },
+
+comunidad: function(){ return `
+<div class="view">
+  <div class="page-hero">
+    <div class="eyebrow">COMUNIDAD</div>
+    <h1>Aprende acompañado</h1>
+    <p>Únete a más de 3,000 ninjas construyendo su carrera en seguridad de la nube, en español.</p>
+  </div>
+
+  <div style="padding:48px 0 0;">
+    <div class="community-cards">
+      <div class="community-card">
+        <div class="community-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accentDark)" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h3>Slack</h3>
+        <p>Canales para armar grupos de estudio, resolver dudas y compartir conocimiento.</p>
+        <button class="ghost" style="padding:8px 18px; font-size:12.5px;">Unirme al workspace</button>
+      </div>
+      <div class="community-card">
+        <div class="community-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accentDark)" stroke-width="2"><path d="M23 7l-7 5 7 5V7zM1 5h15v14H1z"/></svg></div>
+        <h3>YouTube</h3>
+        <p>Clases en vivo y contenido grabado sobre AWS Security, en español.</p>
+        <button class="ghost" style="padding:8px 18px; font-size:12.5px;">Suscribirme</button>
+      </div>
+      <div class="community-card">
+        <div class="community-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accentDark)" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12a10 10 0 007 9.5"/><path d="M12 2a10 10 0 016 18"/></svg></div>
+        <h3>GitHub</h3>
+        <p>El repositorio es público. Propón contenido y aparece como contribuidor.</p>
+        <button class="ghost" style="padding:8px 18px; font-size:12.5px;">Ver repositorio</button>
+      </div>
+    </div>
+
+    <div class="rules-box">
+      <h3>Reglas de convivencia</h3>
+      <ul style="padding-left:20px;">
+        <li>Trata a todos con respeto.</li>
+        <li>No se tolera el acoso, la caza de brujas, el sexismo, el racismo o la incitación al odio.</li>
+        <li>Sin contenido NSFW ni obsceno, en texto, imágenes o enlaces.</li>
+        <li>Si ves algo que va contra las reglas, avisa a los administradores.</li>
+        <li>Mantén las discusiones en los canales relevantes de cada tema.</li>
+        <li>El idioma por defecto de los canales es el español.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="prose-section" style="max-width:760px;">
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-item">
+      <div class="faq-q">El contenido me ha servido mucho, ¿cómo puedo agradecerte?</div>
+      <div class="faq-a">Puedes hacerlo públicamente compartiendo en Twitter, LinkedIn o cualquier otra red social.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Me interesa contribuir al proyecto, ¿cómo empezamos?</div>
+      <div class="faq-a">Sigue las instrucciones del README del repositorio en GitHub. Cualquier duda, escríbenos por Slack.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">¿Puedo extraer contenido de CloudSec Ninja y ponerlo en mi sitio web?</div>
+      <div class="faq-a">Sí, siempre que menciones los enlaces específicos de donde se tomó el contenido.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">¿Debo pagar para acceder a esta plataforma y su contenido?</div>
+      <div class="faq-a">No, esto es y será siempre gratis. Creado por la comunidad, para la comunidad.</div>
+    </div>
+  </div>
+</div>`; },
+
+writer: function(){ return `
+<div class="view" style="max-width:820px; margin:0 auto; padding:40px 32px 70px;">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+    <div>
+      <div class="eyebrow">CONTENIDO</div>
+      <h2 style="font-family:var(--display); font-size:24px;">Escribir lección</h2>
+    </div>
+    <span style="background:var(--surface2); color:var(--ink2); font-size:11.5px; padding:5px 12px; border-radius:20px; font-weight:600;">Rol: writer</span>
+  </div>
+
+  <div style="background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:24px; margin-bottom:20px;">
+    <label style="font-size:12px; color:var(--ink3); font-weight:600; display:block; margin-bottom:6px;">Título de la lección</label>
+    <input type="text" value="Hardening de S3 buckets" style="width:100%; padding:10px 13px; border:1px solid var(--border); border-radius:8px; font-size:14px; font-family:inherit; margin-bottom:16px;">
+
+    <label style="font-size:12px; color:var(--ink3); font-weight:600; display:block; margin-bottom:6px;">Módulo</label>
+    <select style="width:100%; padding:10px 13px; border:1px solid var(--border); border-radius:8px; font-size:14px; font-family:inherit; margin-bottom:16px; background:var(--surface);">
+      <option>Compliance continuo</option>
+      <option>Gestión de identidad</option>
+    </select>
+
+    <label style="font-size:12px; color:var(--ink3); font-weight:600; display:block; margin-bottom:6px;">Contenido (Markdown)</label>
+    <textarea rows="9" style="width:100%; padding:12px 14px; border:1px solid var(--border); border-radius:8px; font-family:var(--mono); font-size:12.5px; line-height:1.6; color:var(--ink);">## Hardening de S3 buckets
+
+Primero, bloquea el acceso público a nivel de cuenta con \`aws s3control put-public-access-block\`...
+
+### Checklist mínimo
+- Bloqueo de acceso público habilitado
+- Versionado activado
+- Cifrado en reposo con SSE-KMS</textarea>
+  </div>
+
+  <div style="display:flex; justify-content:space-between; align-items:center;">
+    <span style="font-size:12px; color:var(--ink3);">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px; margin-right:4px;"><path d="M6 3v12M6 15a3 3 0 100 6 3 3 0 000-6zM18 9a3 3 0 100-6 3 3 0 000 6zM18 9v6a6 6 0 01-6 6"/></svg>
+      Al enviar, se crea un Pull Request en GitHub
+    </span>
+    <button class="pill" onclick="submitForReview()" style="padding:10px 22px; font-size:13.5px;">Enviar a revisión</button>
+  </div>
+
+  <div id="writer-status" style="display:none; margin-top:18px; background:var(--ember-soft); border-radius:10px; padding:14px 18px; font-size:13px; color:var(--ember-dark);">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-3px; margin-right:5px;"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+    Enviado. <strong>PR #47</strong> abierto en <code>gerardokaztro/cloudsec-ninja</code>, en cola de revisión.
+  </div>
+
+  <div style="margin-top:36px;">
+    <div class="section-title">Tus envíos recientes</div>
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:13px 16px; display:flex; justify-content:space-between; align-items:center;">
+        <div><div style="font-weight:600; font-size:13.5px;">Detección de secretos con Gitleaks</div><div style="font-size:11.5px; color:var(--ink3);">PR #44 · hace 5 días</div></div>
+        <span style="background:var(--accentSoft); color:var(--accentDark); font-size:11px; padding:4px 10px; border-radius:6px; font-weight:600;">Publicado</span>
+      </div>
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:13px 16px; display:flex; justify-content:space-between; align-items:center;">
+        <div><div style="font-weight:600; font-size:13.5px;">Escaneo de imágenes con Grype</div><div style="font-size:11.5px; color:var(--ink3);">PR #41 · hace 12 días</div></div>
+        <span style="background:#F7E2D3; color:#8A4A20; font-size:11px; padding:4px 10px; border-radius:6px; font-weight:600;">Cambios solicitados</span>
+      </div>
+    </div>
+  </div>
+</div>`; },
+
+'admin-review': function(){ return `
+<div class="view" style="max-width:860px; margin:0 auto; padding:40px 32px 70px;">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+    <div>
+      <div class="eyebrow">PANEL ADMIN</div>
+      <h2 style="font-family:var(--display); font-size:24px;">Cola de revisión</h2>
+    </div>
+    <span style="background:var(--surface2); color:var(--ink2); font-size:11.5px; padding:5px 12px; border-radius:20px; font-weight:600;">Rol: admin</span>
+  </div>
+
+  <div class="stat-row" style="margin-bottom:28px;">
+    <div class="stat-card"><div class="n">2</div><div class="l">PRs pendientes</div></div>
+    <div class="stat-card"><div class="n">128</div><div class="l">Estudiantes activos</div></div>
+    <div class="stat-card"><div class="n">37%</div><div class="l">Progreso promedio</div></div>
+  </div>
+
+  <div class="section-title">Pendientes de revisión</div>
+
+  <div class="review-card" id="review-card-47">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+      <div style="display:flex; gap:12px;">
+        ${avatar('m',40)}
+        <div>
+          <div style="font-weight:600; font-size:14.5px;">Hardening de S3 buckets</div>
+          <div style="font-size:11.5px; color:var(--ink3); margin-top:2px;">PR #47 · Alejandro Castañeda · hace 2 horas · rol asignado: <strong>writer</strong> (automático, primer PR)</div>
+        </div>
+      </div>
+      <span style="background:var(--ember-soft); color:var(--ember-dark); font-size:11px; padding:4px 11px; border-radius:6px; font-weight:600;">Pendiente</span>
+    </div>
+    <div style="background:var(--surface2); border-radius:8px; padding:12px 14px; margin:14px 0; font-size:12.5px; color:var(--ink2); font-family:var(--mono); line-height:1.6;">
+      + ## Hardening de S3 buckets<br/>
+      + Primero, bloquea el acceso público a nivel de cuenta...<br/>
+      + ### Checklist mínimo
+    </div>
+    <div style="display:flex; gap:8px;">
+      <button class="ghost" style="padding:8px 16px; font-size:12.5px; border-color:var(--accent); color:var(--accentDark);" onclick="approveReview(47)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:-2px; margin-right:4px;"><path d="M20 6L9 17l-5-5"/></svg>Aprobar y publicar
+      </button>
+      <button class="ghost" style="padding:8px 16px; font-size:12.5px; border-color:#D85A30; color:#993C1D;" onclick="showDenyBox(47)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:-2px; margin-right:4px;"><path d="M18 6L6 18M6 6l12 12"/></svg>Denegar
+      </button>
+    </div>
+    <div id="deny-box-47" style="display:none; margin-top:12px;">
+      <textarea id="deny-reason-47" rows="2" placeholder="Motivo de la corrección..." style="width:100%; padding:9px 12px; border:1px solid var(--border); border-radius:8px; font-size:12.5px; font-family:inherit; margin-bottom:8px;"></textarea>
+      <button class="pill" style="padding:7px 16px; font-size:12px;" onclick="denyReview(47)">Enviar y notificar por correo</button>
+    </div>
+    <div id="review-result-47"></div>
+  </div>
+
+  <div class="review-card" id="review-card-48">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+      <div style="display:flex; gap:12px;">
+        ${avatar('f',40)}
+        <div>
+          <div style="font-weight:600; font-size:14.5px;">Detección de anomalías con GuardDuty</div>
+          <div style="font-size:11.5px; color:var(--ink3); margin-top:2px;">PR #48 · Karla Villanueva · hace 6 horas · rol asignado: <strong>writer</strong> (automático, primer PR)</div>
+        </div>
+      </div>
+      <span style="background:var(--ember-soft); color:var(--ember-dark); font-size:11px; padding:4px 11px; border-radius:6px; font-weight:600;">Pendiente</span>
+    </div>
+    <div style="display:flex; gap:8px; margin-top:14px;">
+      <button class="ghost" style="padding:8px 16px; font-size:12.5px; border-color:var(--accent); color:var(--accentDark);" onclick="approveReview(48)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:-2px; margin-right:4px;"><path d="M20 6L9 17l-5-5"/></svg>Aprobar y publicar
+      </button>
+      <button class="ghost" style="padding:8px 16px; font-size:12.5px; border-color:#D85A30; color:#993C1D;" onclick="showDenyBox(48)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:-2px; margin-right:4px;"><path d="M18 6L6 18M6 6l12 12"/></svg>Denegar
+      </button>
+    </div>
+    <div id="deny-box-48" style="display:none; margin-top:12px;">
+      <textarea id="deny-reason-48" rows="2" placeholder="Motivo de la corrección..." style="width:100%; padding:9px 12px; border:1px solid var(--border); border-radius:8px; font-size:12.5px; font-family:inherit; margin-bottom:8px;"></textarea>
+      <button class="pill" style="padding:7px 16px; font-size:12px;" onclick="denyReview(48)">Enviar y notificar por correo</button>
+    </div>
+    <div id="review-result-48"></div>
+  </div>
+
+  <div style="margin-top:32px; background:var(--surface2); border-radius:10px; padding:16px 20px;">
+    <div style="font-weight:600; font-size:13px; margin-bottom:6px;">Gestión de roles</div>
+    <div style="font-size:12.5px; color:var(--ink2); line-height:1.6;">Cualquiera que envíe un PR directo al repositorio se reconoce automáticamente como <strong>writer</strong>. Para promover a <strong>admin</strong>, hazlo desde la consola de administración — nunca es automático.</div>
+  </div>
+</div>`; },
+
+perfil: function(){ return `
+<div class="view" style="max-width:760px; margin:0 auto; padding:40px 32px 70px;">
+  <div style="display:flex; align-items:center; gap:16px; margin-bottom:32px;">
+    ${avatar('m',64)}
+    <div>
+      <h2 style="font-family:var(--display); font-size:22px; margin-bottom:2px;">Gerardo Castro</h2>
+      <div style="font-size:12.5px; color:var(--ink3);">Ninja desde febrero 2026 · #1 en el leaderboard</div>
+    </div>
+  </div>
+
+  <div class="stat-row" style="margin-bottom:28px;">
+    <div class="stat-card"><div class="n">2</div><div class="l">Badges obtenidos</div></div>
+    <div class="stat-card"><div class="n">1</div><div class="l">Certificados</div></div>
+    <div class="stat-card"><div class="n">18</div><div class="l">Racha máxima (días)</div></div>
+  </div>
+
+  <div class="section-title">Tus badges</div>
+  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:32px;">
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:18px; text-align:center;">
+      <div style="width:44px; height:44px; background:var(--ember-soft); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 10px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--ember-dark)" stroke-width="2"><path d="M12 2l2.5 6.5H21l-5.5 4 2 6.5L12 15l-5.5 4 2-6.5L3 8.5h6.5z"/></svg></div>
+      <div style="font-weight:600; font-size:12.5px;">AWS IAM</div>
+    </div>
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:18px; text-align:center;">
+      <div style="width:44px; height:44px; background:var(--ember-soft); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 10px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--ember-dark)" stroke-width="2"><path d="M12 2l2.5 6.5H21l-5.5 4 2 6.5L12 15l-5.5 4 2-6.5L3 8.5h6.5z"/></svg></div>
+      <div style="font-weight:600; font-size:12.5px;">Detección de amenazas</div>
+    </div>
+    <div style="background:var(--surface2); border:1px dashed var(--border); border-radius:12px; padding:18px; text-align:center; opacity:0.5;">
+      <div style="width:44px; height:44px; background:var(--surface); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 10px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--ink3)" stroke-width="2"><path d="M12 2l2.5 6.5H21l-5.5 4 2 6.5L12 15l-5.5 4 2-6.5L3 8.5h6.5z"/></svg></div>
+      <div style="font-weight:600; font-size:12.5px; color:var(--ink3);">Identity Center</div>
+    </div>
+  </div>
+
+  <div class="section-title">Certificados de culminación</div>
+  <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:18px 20px; display:flex; justify-content:space-between; align-items:center;">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accentDark)" stroke-width="2"><path d="M12 2l2.5 6.5H21l-5.5 4 2 6.5L12 15l-5.5 4 2-6.5L3 8.5h6.5z"/></svg>
+      <div><div style="font-weight:600; font-size:13.5px;">Gestión de identidad y accesos</div><div style="font-size:11.5px; color:var(--ink3);">Emitido 2 jun 2026 · CSN-2026-0913</div></div>
+    </div>
+    <button class="ghost" style="padding:7px 14px; font-size:12px;">Descargar</button>
+  </div>
+</div>`; },
+
+temario: function(){
+  const modules = [
+    {num:1, title:'Fundamentos de TI', level:100, lessons:['Redes básicas para seguridad en la nube','Sistemas operativos y virtualización','Introducción a Linux para cloud security','Conceptos de cifrado y criptografía']},
+    {num:2, title:'Seguridad DE la nube', level:100, lessons:['El modelo de responsabilidad compartida','Regiones, zonas de disponibilidad y aislamiento','Shared responsibility en AWS, Azure y GCP']},
+    {num:3, title:'Gestión de identidad — AWS IAM, roles, STS', level:200, lessons:['Introducción a AWS IAM','IAM Users, Groups y Roles','Políticas basadas en identidad vs. en recursos','AWS STS y credenciales temporales','RBAC vs ABAC','Permission boundaries','AWS Identity Center','Federación con proveedores externos','Access Analyzer','Auditoría de accesos con CloudTrail','Principio de menor privilegio','Root user: buenas prácticas','MFA y hardware keys','Cross-account access','Proyecto: pipeline de auditoría IAM']},
+    {num:4, title:'Compliance continuo', level:200, lessons:['Automatiza auditoría con GitHub Actions','AWS Config y reglas de compliance','Checkov y escaneo de IaC','Reportes de compliance automatizados']}
+  ];
+
+  const cardsHtml = modules.map((m, i) => `
+    <div class="temario-card" data-idx="${i}">
+      <div class="temario-card-header" onclick="toggleModule(${i})">
+        <div>
+          <div class="temario-card-title">${m.num}. ${m.title}</div>
+          <div class="temario-card-meta">${m.lessons.length} lecciones · nivel ${m.level}</div>
+        </div>
+        <svg class="temario-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ink3)" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+      <div class="temario-card-body">
+        <ul class="temario-lesson-list">
+          ${m.lessons.map(l => `<li>${l}</li>`).join('')}
+        </ul>
+      </div>
+    </div>`).join('');
+
+  return `
+<div class="view" style="max-width:820px; margin:0 auto; padding:48px 32px 70px;">
+  <div style="text-align:center; margin-bottom:32px;">
+    <div class="eyebrow">EXPLORA ANTES DE EMPEZAR</div>
+    <h2 style="font-family:var(--display); font-size:26px; margin-bottom:10px;">Temario completo</h2>
+    <p style="color:var(--ink2); font-size:14px;">Público, sin necesidad de cuenta. Crea la tuya cuando quieras guardar tu progreso.</p>
+  </div>
+
+  <div class="temario-search-wrap">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--ink3)" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+    <input type="text" id="temario-search" placeholder="Busca por tema, ej. IAM, cifrado, compliance..." oninput="filterTemario(this.value)">
+  </div>
+  <div id="temario-no-results" style="display:none; text-align:center; color:var(--ink3); font-size:13.5px; padding:24px 0;">No encontramos lecciones para esa búsqueda.</div>
+
+  <div id="temario-list" style="display:flex; flex-direction:column; gap:12px; margin:24px 0 32px;">
+    ${cardsHtml}
+  </div>
+
+  <div style="text-align:center;">
+    <button class="pill" onclick="openModal()" style="padding:13px 30px; font-size:14px;">Empezar mi ruta</button>
+  </div>
+</div>`;
+}
+};
+
+const TEMARIO_DATA = [
+  {title:'Fundamentos de TI', lessons:['Redes básicas para seguridad en la nube','Sistemas operativos y virtualización','Introducción a Linux para cloud security','Conceptos de cifrado y criptografía']},
+  {title:'Seguridad DE la nube', lessons:['El modelo de responsabilidad compartida','Regiones, zonas de disponibilidad y aislamiento','Shared responsibility en AWS, Azure y GCP']},
+  {title:'Gestión de identidad', lessons:['Introducción a AWS IAM','IAM Users, Groups y Roles','Políticas basadas en identidad vs. en recursos','AWS STS y credenciales temporales','RBAC vs ABAC','Permission boundaries','AWS Identity Center','Federación con proveedores externos','Access Analyzer','Auditoría de accesos con CloudTrail','Principio de menor privilegio','Root user: buenas prácticas','MFA y hardware keys','Cross-account access','Proyecto: pipeline de auditoría IAM']},
+  {title:'Compliance continuo', lessons:['Automatiza auditoría con GitHub Actions','AWS Config y reglas de compliance','Checkov y escaneo de IaC','Reportes de compliance automatizados']}
+];
+
+function generateBadge(btnId, moduleName){
+  const btn = document.getElementById(btnId);
+  if(!btn || btn.dataset.generated === 'true') return;
+  btn.dataset.generated = 'true';
+  btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:-2px; margin-right:4px;"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Badge generado';
+  btn.style.background = 'var(--ember-soft)';
+  btn.style.borderColor = 'var(--ember)';
+  btn.style.color = 'var(--ember-dark)';
+  btn.style.cursor = 'default';
+}
+
+function toggleModule(idx){
+  document.querySelectorAll('.temario-card').forEach(card => {
+    const isTarget = parseInt(card.dataset.idx) === idx;
+    const isOpen = card.classList.contains('open');
+    if(isTarget){
+      card.classList.toggle('open', !isOpen);
+    } else {
+      card.classList.remove('open');
+    }
+  });
+}
+
+function filterTemario(query){
+  const q = query.trim().toLowerCase();
+  const cards = document.querySelectorAll('.temario-card');
+  let anyVisible = false;
+  cards.forEach((card, i) => {
+    const mod = TEMARIO_DATA[i];
+    const titleMatch = mod.title.toLowerCase().includes(q);
+    const matchingLessons = mod.lessons.filter(l => l.toLowerCase().includes(q));
+    const shouldShow = q === '' || titleMatch || matchingLessons.length > 0;
+    card.style.display = shouldShow ? 'block' : 'none';
+    if(shouldShow) anyVisible = true;
+
+    if(q !== '' && matchingLessons.length > 0 && !titleMatch){
+      card.classList.add('open');
+      const list = card.querySelector('.temario-lesson-list');
+      list.innerHTML = mod.lessons.map(l => {
+        const hit = l.toLowerCase().includes(q);
+        return `<li${hit ? ' class="lesson-hit"' : ''}>${l}</li>`;
+      }).join('');
+    } else if(q === ''){
+      card.classList.remove('open');
+      const list = card.querySelector('.temario-lesson-list');
+      list.innerHTML = mod.lessons.map(l => `<li>${l}</li>`).join('');
+    }
+  });
+  document.getElementById('temario-no-results').style.display = anyVisible ? 'none' : 'block';
+}
+
+let isLoggedIn = false;
+let dashHasProgress = true;
+let lbPeriod = 'todos';
+let userRole = 'student';
+
+function setSession(loggedIn, role){
+  isLoggedIn = loggedIn;
+  userRole = role || 'student';
+  document.getElementById('nav-temario').style.display = loggedIn ? 'none' : 'inline';
+  document.getElementById('nav-dashboard').style.display = loggedIn ? 'inline' : 'none';
+  document.getElementById('global-search-trigger').style.display = loggedIn ? 'flex' : 'none';
+  document.getElementById('assistant-fab').style.display = loggedIn ? 'flex' : 'none';
+  document.getElementById('nav-writer').style.display = (loggedIn && (userRole === 'writer' || userRole === 'admin')) ? 'inline' : 'none';
+  document.getElementById('nav-admin').style.display = (loggedIn && userRole === 'admin') ? 'inline' : 'none';
+  const badge = document.getElementById('admin-badge-count');
+  if(loggedIn && userRole === 'admin'){ badge.style.display = 'inline-flex'; badge.textContent = '2'; } else { badge.style.display = 'none'; }
+  if(!loggedIn) document.getElementById('assistant-panel').classList.remove('show');
+}
+
+function go(view){
+  document.getElementById('app').innerHTML = VIEWS[view]();
+  document.querySelectorAll('.nav-item').forEach(el => el.classList.toggle('active', el.dataset.view === view));
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+function openModal(){ document.getElementById('modal').classList.add('show'); }
+function closeModal(){ document.getElementById('modal').classList.remove('show'); }
+
+document.querySelectorAll('.nav-item').forEach(el => el.addEventListener('click', () => go(el.dataset.view)));
+document.getElementById('modal-submit').addEventListener('click', () => { closeModal(); setSession(true, 'student'); go('dashboard'); });
+document.getElementById('modal').addEventListener('click', (e) => { if(e.target.id === 'modal') closeModal(); });
+
+const ASSISTANT_KB = [
+  { keys:['iam role','role vs user','user y role'], answer:'Un <strong>IAM User</strong> tiene credenciales de largo plazo (contraseña o access keys) y representa a una persona o servicio fijo. Un <strong>IAM Role</strong> no tiene credenciales propias — cualquier entidad de confianza lo "asume" temporalmente vía AWS STS, y recibe credenciales que expiran. En seguridad, siempre que puedas, prefiere roles sobre usuarios.' },
+  { keys:['scp','service control polic'], answer:'Una <strong>Service Control Policy</strong> (SCP) es una política a nivel de AWS Organizations que define el <em>techo máximo</em> de permisos que una cuenta puede tener. No otorga permisos — solo los restringe. Aunque un usuario tenga <code>AdministratorAccess</code>, si una SCP lo deniega explícitamente, la acción no se permite.' },
+  { keys:['sts','security token service'], answer:'<strong>AWS STS</strong> (Security Token Service) emite credenciales temporales cuando una entidad asume un rol. Estas credenciales expiran automáticamente, lo que reduce el riesgo comparado con access keys de larga duración.' },
+  { keys:['mfa', 'multi factor'], answer:'MFA (Multi-Factor Authentication) agrega una segunda verificación además de la contraseña. En AWS, es especialmente crítico protegerlo en el <strong>usuario root</strong> — te recomendamos usar una hardware key o app autenticadora, nunca solo SMS si puedes evitarlo.' }
+];
+
+function toggleAssistant(){
+  document.getElementById('assistant-panel').classList.toggle('show');
+}
+
+function assistantAsk(text){
+  document.getElementById('assistant-input').value = text;
+  assistantSend();
+}
+
+function submitForReview(){
+  const btn = event.target.closest('button');
+  btn.disabled = true;
+  btn.textContent = 'Enviando...';
+  setTimeout(() => {
+    document.getElementById('writer-status').style.display = 'block';
+    btn.textContent = 'Enviado';
+  }, 700);
+}
+
+function approveReview(prNum){
+  const card = document.getElementById('review-card-' + prNum);
+  document.getElementById('review-result-' + prNum).innerHTML =
+    '<div style="margin-top:12px; background:var(--accentSoft); color:var(--accentDark); border-radius:8px; padding:10px 14px; font-size:12.5px;">' +
+    '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:-2px; margin-right:5px;"><path d="M20 6L9 17l-5-5"/></svg>' +
+    'PR #' + prNum + ' mergeado. Contenido publicado y desplegado.</div>';
+  card.style.opacity = '0.6';
+  card.querySelectorAll('button').forEach(b => b.disabled = true);
+  const countBadge = document.getElementById('admin-badge-count');
+  const current = parseInt(countBadge.textContent) || 0;
+  if(current > 0) countBadge.textContent = current - 1;
+}
+
+function showDenyBox(prNum){
+  document.getElementById('deny-box-' + prNum).style.display = 'block';
+}
+
+function denyReview(prNum){
+  const reason = document.getElementById('deny-reason-' + prNum).value.trim();
+  if(reason === ''){ return; }
+  document.getElementById('review-result-' + prNum).innerHTML =
+    '<div style="margin-top:12px; background:#FAECE7; color:#712B13; border-radius:8px; padding:10px 14px; font-size:12.5px;">' +
+    '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:-2px; margin-right:5px;"><path d="M18 6L6 18M6 6l12 12"/></svg>' +
+    'Comentario publicado en el PR #' + prNum + '. Email enviado al autor con el motivo.</div>';
+  document.getElementById('deny-box-' + prNum).style.display = 'none';
+}
+
+let assistantLimited = false;
+
+function simulateRateLimit(){
+  assistantLimited = true;
+  document.getElementById('assistant-limit-banner').classList.add('show');
+  document.getElementById('assistant-input-row').classList.add('disabled');
+  document.getElementById('assistant-suggestions').style.display = 'none';
+}
+
+function assistantSend(){
+  if(assistantLimited) return;
+  const input = document.getElementById('assistant-input');
+  const text = input.value.trim();
+  if(text === '') return;
+  const messages = document.getElementById('assistant-messages');
+
+  messages.innerHTML += '<div class="assistant-msg user"><div class="assistant-bubble">' + text.replace(/</g,'&lt;') + '</div></div>';
+  input.value = '';
+  messages.scrollTop = messages.scrollHeight;
+
+  const typingId = 'typing-' + Date.now();
+  messages.innerHTML += '<div class="assistant-msg bot" id="' + typingId + '"><div class="assistant-avatar-sm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2a4 4 0 00-4 4v2a4 4 0 008 0V6a4 4 0 00-4-4zM6 12v2a6 6 0 0012 0v-2M12 20v2"/></svg></div><div class="assistant-typing"><span></span><span></span><span></span></div></div>';
+  messages.scrollTop = messages.scrollHeight;
+
+  setTimeout(() => {
+    const typingEl = document.getElementById(typingId);
+    if(typingEl) typingEl.remove();
+
+    const q = text.toLowerCase();
+    const match = ASSISTANT_KB.find(item => item.keys.some(k => q.includes(k)));
+    const answer = match ? match.answer : 'No tengo una respuesta preparada para esa pregunta específica en esta demo, pero en la versión real consultaría el modelo para darte una respuesta completa. Prueba con preguntas sobre IAM Roles, SCPs, STS o MFA.';
+
+    messages.innerHTML += '<div class="assistant-msg bot"><div class="assistant-avatar-sm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2a4 4 0 00-4 4v2a4 4 0 008 0V6a4 4 0 00-4-4zM6 12v2a6 6 0 0012 0v-2M12 20v2"/></svg></div><div class="assistant-bubble">' + answer + '</div></div>';
+    messages.scrollTop = messages.scrollHeight;
+  }, 1100);
+}
+
+const GLOBAL_LESSON_INDEX = [];
+TEMARIO_DATA.forEach(mod => {
+  mod.lessons.forEach(lesson => {
+    GLOBAL_LESSON_INDEX.push({ lesson, module: mod.title });
+  });
+});
+
+let searchActiveIndex = -1;
+
+function openSearch(){
+  document.getElementById('search-overlay').classList.add('show');
+  const input = document.getElementById('global-search-input');
+  input.value = '';
+  input.focus();
+  document.getElementById('search-results-area').style.display = 'block';
+  document.getElementById('search-lesson-results').innerHTML = '';
+  searchActiveIndex = -1;
+}
+function closeSearch(){
+  document.getElementById('search-overlay').classList.remove('show');
+}
+
+function filterGlobalSearch(query){
+  const q = query.trim().toLowerCase();
+  const resultsArea = document.getElementById('search-results-area');
+  const lessonResults = document.getElementById('search-lesson-results');
+  searchActiveIndex = -1;
+
+  if(q === ''){
+    resultsArea.style.display = 'block';
+    lessonResults.innerHTML = '';
+    return;
+  }
+  resultsArea.style.display = 'none';
+
+  const matches = GLOBAL_LESSON_INDEX.filter(item => item.lesson.toLowerCase().includes(q));
+
+  if(matches.length === 0){
+    lessonResults.innerHTML = '<div class="search-empty">No encontramos lecciones para "' + query + '".</div>';
+    return;
+  }
+
+  lessonResults.innerHTML = '<div class="search-section-label">' + matches.length + ' resultado' + (matches.length===1?'':'s') + '</div>' +
+    matches.map((item, i) => {
+      const regex = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const highlighted = item.lesson.replace(regex, '<mark>$1</mark>');
+      return '<div class="search-result-item" data-idx="' + i + '" onclick="selectSearchResult()">' +
+             '<div class="sr-title">' + highlighted + '</div>' +
+             '<div class="sr-meta">' + item.module + '</div>' +
+             '</div>';
+    }).join('');
+}
+
+function selectSearchResult(){
+  closeSearch();
+  go('lesson');
+}
+
+document.getElementById('search-overlay').addEventListener('click', (e) => {
+  if(e.target.id === 'search-overlay') closeSearch();
+});
+
+document.addEventListener('keydown', (e) => {
+  if((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k'){
+    e.preventDefault();
+    if(isLoggedIn) openSearch();
+    return;
+  }
+  const overlay = document.getElementById('search-overlay');
+  if(!overlay.classList.contains('show')) return;
+
+  if(e.key === 'Escape'){ closeSearch(); return; }
+
+  const items = document.querySelectorAll('.search-result-item');
+  if(items.length === 0) return;
+
+  if(e.key === 'ArrowDown'){
+    e.preventDefault();
+    searchActiveIndex = Math.min(searchActiveIndex + 1, items.length - 1);
+    items.forEach((it, i) => it.classList.toggle('kbd-active', i === searchActiveIndex));
+    items[searchActiveIndex].scrollIntoView({block:'nearest'});
+  } else if(e.key === 'ArrowUp'){
+    e.preventDefault();
+    searchActiveIndex = Math.max(searchActiveIndex - 1, 0);
+    items.forEach((it, i) => it.classList.toggle('kbd-active', i === searchActiveIndex));
+    items[searchActiveIndex].scrollIntoView({block:'nearest'});
+  } else if(e.key === 'Enter' && searchActiveIndex >= 0){
+    e.preventDefault();
+    selectSearchResult();
+  }
+});
+
+go('landing');
+</script>
+</body>
+</html>
