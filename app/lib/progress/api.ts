@@ -49,3 +49,41 @@ export async function fetchProgress(): Promise<ProgressResult> {
   const data = (await response.json()) as { progress: ProgressItem[] };
   return { ok: true, items: data.progress };
 }
+
+export type MarkLessonCompleteResult = { ok: true } | { ok: false; reason: "unauthenticated" | "api_error" };
+
+/**
+ * Llama a POST /progress (cloudsec-ninja-infra) para marcar una lección
+ * como completada. El endpoint solo acepta {module_id, lesson_id} — no es
+ * un update genérico de status, siempre marca "completed" y calcula los
+ * timestamps del lado del servidor.
+ */
+export async function markLessonComplete(moduleId: string, lessonId: string): Promise<MarkLessonCompleteResult> {
+  const accessToken = await getFreshCognitoAccessToken();
+  if (!accessToken) {
+    return { ok: false, reason: "unauthenticated" };
+  }
+
+  let response: Response;
+  try {
+    response = await fetch(`${authEnv.progressApiUrl}/progress`, {
+      method: "POST",
+      headers: { Authorization: accessToken, "Content-Type": "application/json" },
+      body: JSON.stringify({ module_id: moduleId, lesson_id: lessonId }),
+      cache: "no-store",
+    });
+  } catch (error) {
+    console.error("Error de red al llamar a POST /progress:", error);
+    return { ok: false, reason: "api_error" };
+  }
+
+  if (response.status === 401) {
+    return { ok: false, reason: "unauthenticated" };
+  }
+  if (!response.ok) {
+    console.error(`POST /progress devolvió ${response.status}`);
+    return { ok: false, reason: "api_error" };
+  }
+
+  return { ok: true };
+}

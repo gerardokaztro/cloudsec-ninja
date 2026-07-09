@@ -28,6 +28,11 @@ function metaText(module: ModuleView): string {
   return `${module.completedLessons} de ${module.totalLessons} lecciones`;
 }
 
+// Único módulo con una lección real construida en la app (S2-03) — el
+// resto sigue enlazando al sitio de docs hasta que tengan su propia página.
+const MODULE_ID_WITH_LESSON_PAGE = "gestion-de-identidad-y-accesos";
+const LESSON_PAGE_HREF = "/lecciones/identity-center";
+
 function ModuleAction({ module }: { module: ModuleView }) {
   if (module.status === "completed") {
     return <span className="text-xs font-semibold text-accent-dark">Completado</span>;
@@ -35,9 +40,10 @@ function ModuleAction({ module }: { module: ModuleView }) {
   if (module.status === "locked") {
     return <span className="text-xs text-ink-3">Bloqueado</span>;
   }
+  const href = module.id === MODULE_ID_WITH_LESSON_PAGE ? LESSON_PAGE_HREF : moduleDocsUrl(module);
   return (
     <a
-      href={moduleDocsUrl(module)}
+      href={href}
       className="rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-[#04231a] transition-colors hover:bg-accent-hover"
     >
       {module.completedLessons === 0 ? "Empezar" : "Continuar"}
