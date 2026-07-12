@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import ReactMarkdown from "react-markdown";
+import { MarkdownContent } from "@/components/markdown-content";
 import { UploadIcon } from "./icons";
 
 export function MarkdownEditor({ value, onChange }: { value: string; onChange: (value: string) => void }) {
@@ -49,12 +49,8 @@ export function MarkdownEditor({ value, onChange }: { value: string; onChange: (
           placeholder="# Título de la lección&#10;&#10;Contenido en markdown..."
           className="w-full resize-y rounded-lg border border-border bg-surface p-3 font-mono text-[12.5px] leading-relaxed text-ink outline-none focus:border-accent"
         />
-        <div className="overflow-y-auto rounded-lg border border-border bg-surface-2 p-3 text-[13px] leading-relaxed text-ink-2 [&_a]:text-accent-dark [&_code]:font-mono [&_code]:text-[12px] [&_h1]:font-display [&_h1]:text-base [&_h1]:font-semibold [&_h1]:text-ink [&_h2]:font-display [&_h2]:text-[15px] [&_h2]:font-semibold [&_h2]:text-ink [&_pre]:overflow-x-auto [&_pre]:rounded-md [&_pre]:bg-ink [&_pre]:p-2 [&_pre]:text-white">
-          {value.trim() ? (
-            <ReactMarkdown>{value}</ReactMarkdown>
-          ) : (
-            <p className="text-ink-3 italic">La preview aparece acá mientras escribes.</p>
-          )}
+        <div className="overflow-y-auto rounded-lg border border-border bg-surface-2 p-3">
+          <MarkdownContent markdown={value} />
         </div>
       </div>
     </div>

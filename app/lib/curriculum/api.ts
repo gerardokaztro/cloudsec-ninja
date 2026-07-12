@@ -4,15 +4,15 @@ import { authEnv } from "@/lib/auth/env";
 export interface AdminCurriculumLesson {
   lesson_id: string;
   title: string;
-  order?: number;
+  order?: number | null;
   tags?: string[];
 }
 
 export interface AdminCurriculumModule {
   module_id: string;
   title: string;
-  order?: number;
-  level?: number;
+  order?: number | null;
+  level?: number | null;
   lessons: AdminCurriculumLesson[];
 }
 
@@ -40,6 +40,51 @@ export async function fetchCurriculum(): Promise<FetchCurriculumResult> {
 
   const data = (await response.json()) as { modules: AdminCurriculumModule[] };
   return { ok: true, modules: data.modules };
+}
+
+export interface CurriculumLessonDetail {
+  module_id: string;
+  lesson_id: string;
+  title: string;
+  order?: number | null;
+  content_markdown: string;
+  tags: string[];
+  created_at: number;
+  updated_at: number;
+}
+
+export type FetchLessonResult =
+  | { ok: true; lesson: CurriculumLessonDetail }
+  | { ok: false; reason: "not_found" | "api_error" };
+
+/**
+ * Llama a GET /curriculum/{module_id}/{lesson_id} (cloudsec-ninja-infra) —
+ * endpoint público. Distingue 404 ("not_found", alguien navegó con IDs
+ * inválidos) de cualquier otra falla ("api_error"), para que el caller no
+ * los trate igual.
+ */
+export async function fetchLesson(moduleId: string, lessonId: string): Promise<FetchLessonResult> {
+  let response: Response;
+  try {
+    response = await fetch(
+      `${authEnv.progressApiUrl}/curriculum/${encodeURIComponent(moduleId)}/${encodeURIComponent(lessonId)}`,
+      { cache: "no-store" },
+    );
+  } catch (error) {
+    console.error("Error de red al llamar a GET /curriculum/{module_id}/{lesson_id}:", error);
+    return { ok: false, reason: "api_error" };
+  }
+
+  if (response.status === 404) {
+    return { ok: false, reason: "not_found" };
+  }
+  if (!response.ok) {
+    console.error(`GET /curriculum/${moduleId}/${lessonId} devolvió ${response.status}`);
+    return { ok: false, reason: "api_error" };
+  }
+
+  const lesson = (await response.json()) as CurriculumLessonDetail;
+  return { ok: true, lesson };
 }
 
 export interface CreateModuleInput {

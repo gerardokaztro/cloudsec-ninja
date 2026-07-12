@@ -1,4 +1,4 @@
-import { CURRICULUM } from "./curriculum";
+import type { AdminCurriculumModule } from "@/lib/curriculum/api";
 import type { ProgressItem } from "./api";
 
 export type ModuleStatus = "completed" | "in_progress" | "locked" | "not_started";
@@ -6,10 +6,11 @@ export type ModuleStatus = "completed" | "in_progress" | "locked" | "not_started
 export interface ModuleView {
   id: string;
   title: string;
-  docsPath: string;
   totalLessons: number;
   completedLessons: number;
   status: ModuleStatus;
+  /** Lección a la que debe apuntar "Empezar"/"Continuar" — null si el módulo no tiene lecciones. */
+  nextLessonId: string | null;
 }
 
 export interface GoalView {
@@ -27,26 +28,42 @@ export interface DashboardView {
   goal: GoalView | null;
 }
 
+function sortByOrder<T extends { order?: number | null }>(items: T[]): T[] {
+  return [...items].sort((a, b) => (a.order ?? Infinity) - (b.order ?? Infinity));
+}
+
 /**
  * Deriva el estado del dashboard a partir del progreso real (S2-01/S2-02)
- * cruzado con el temario hardcodeado (CURRICULUM). Los módulos se
- * desbloquean en orden: un módulo está "locked" si el anterior en
- * CURRICULUM no está 100% completado. El primer módulo nunca está locked.
+ * cruzado con el currículum real (GET /curriculum, S2-04c) — antes venía
+ * de una lista hardcodeada de 8 módulos, ahora puede ser cualquier
+ * cantidad, incluyendo cero. Los módulos se desbloquean en orden: un
+ * módulo está "locked" si el anterior (por su campo `order`) no está
+ * completo. Un módulo sin lecciones no cuenta como bloqueante para el
+ * siguiente (no hay nada que completar ahí), pero tampoco se ofrece
+ * como "meta" del goal card ni participa del CTA de EmptyState.
  */
-export function buildDashboardView(items: ProgressItem[]): DashboardView {
-  const totalLessons = CURRICULUM.reduce((sum, m) => sum + m.lessons.length, 0);
+export function buildDashboardView(curriculumModules: AdminCurriculumModule[], items: ProgressItem[]): DashboardView {
+  const sortedModules = sortByOrder(curriculumModules);
+  const totalLessons = sortedModules.reduce((sum, m) => sum + m.lessons.length, 0);
 
-  let previousModuleCompleted = true;
-  const modules: ModuleView[] = CURRICULUM.map((module) => {
-    const moduleItems = items.filter((item) => item.module_id === module.id);
-    const completedLessons = moduleItems.filter((item) => item.status === "completed").length;
-    const totalModuleLessons = module.lessons.length;
+  let previousModulePassed = true;
+  const modules: ModuleView[] = sortedModules.map((module) => {
+    const moduleItems = items.filter((item) => item.module_id === module.module_id);
+    const completedLessonIds = new Set(
+      moduleItems.filter((item) => item.status === "completed").map((item) => item.lesson_id),
+    );
+    const sortedLessons = sortByOrder(module.lessons);
+    const totalModuleLessons = sortedLessons.length;
+    const completedLessons = sortedLessons.filter((lesson) => completedLessonIds.has(lesson.lesson_id)).length;
     const fullyCompleted = totalModuleLessons > 0 && completedLessons === totalModuleLessons;
+    // Un módulo vacío no bloquea el desbloqueo del siguiente, aunque no
+    // se muestre como "completed" (ver status más abajo).
+    const passesForUnlock = totalModuleLessons === 0 || fullyCompleted;
 
     let status: ModuleStatus;
     if (fullyCompleted) {
       status = "completed";
-    } else if (!previousModuleCompleted) {
+    } else if (!previousModulePassed) {
       status = "locked";
     } else if (completedLessons > 0 || moduleItems.length > 0) {
       status = "in_progress";
@@ -54,31 +71,35 @@ export function buildDashboardView(items: ProgressItem[]): DashboardView {
       status = "not_started";
     }
 
-    previousModuleCompleted = fullyCompleted;
+    previousModulePassed = passesForUnlock;
+
+    const nextLesson = sortedLessons.find((lesson) => !completedLessonIds.has(lesson.lesson_id));
 
     return {
-      id: module.id,
+      id: module.module_id,
       title: module.title,
-      docsPath: module.docsPath,
       totalLessons: totalModuleLessons,
       completedLessons,
       status,
+      nextLessonId: nextLesson?.lesson_id ?? null,
     };
   });
 
   const completedModulesCount = modules.filter((m) => m.status === "completed").length;
   const inProgressModulesCount = modules.filter((m) => m.status === "in_progress").length;
 
-  const currentModule = modules.find((m) => m.status === "in_progress" || m.status === "not_started");
-  const goal: GoalView | null = currentModule
-    ? {
-        moduleTitle: currentModule.title,
-        percent:
-          currentModule.totalLessons === 0
-            ? 0
-            : Math.round((currentModule.completedLessons / currentModule.totalLessons) * 100),
-      }
-    : null;
+  // Salta módulos sin lecciones para la meta del goal card — no tendría
+  // ningún CTA accionable.
+  const currentModule = modules.find(
+    (m) => (m.status === "in_progress" || m.status === "not_started") && m.totalLessons > 0,
+  );
+  const goal: GoalView | null =
+    currentModule && currentModule.nextLessonId
+      ? {
+          moduleTitle: currentModule.title,
+          percent: Math.round((currentModule.completedLessons / currentModule.totalLessons) * 100),
+        }
+      : null;
 
   const totalCompletedLessons = modules.reduce((sum, m) => sum + m.completedLessons, 0);
 
