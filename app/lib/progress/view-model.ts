@@ -2,6 +2,13 @@ import type { AdminCurriculumModule } from "@/lib/curriculum/api";
 import type { ProgressItem } from "./api";
 
 export type ModuleStatus = "completed" | "in_progress" | "locked" | "not_started";
+export type LessonStatus = "completed" | "available" | "locked";
+
+export interface LessonView {
+  id: string;
+  title: string;
+  status: LessonStatus;
+}
 
 export interface ModuleView {
   id: string;
@@ -11,6 +18,7 @@ export interface ModuleView {
   status: ModuleStatus;
   /** Lección a la que debe apuntar "Empezar"/"Continuar" — null si el módulo no tiene lecciones. */
   nextLessonId: string | null;
+  lessons: LessonView[];
 }
 
 export interface GoalView {
@@ -73,7 +81,29 @@ export function buildDashboardView(curriculumModules: AdminCurriculumModule[], i
 
     previousModulePassed = passesForUnlock;
 
-    const nextLesson = sortedLessons.find((lesson) => !completedLessonIds.has(lesson.lesson_id));
+    // Estado por lección: completada (por progreso real, sin importar su
+    // posición), la primera no completada en orden queda "available", y
+    // el resto de las no completadas después de esa quedan "locked". Si
+    // el módulo entero está locked, ninguna lección es accionable todavía
+    // aunque individualmente "sería" la disponible.
+    let availableAssigned = false;
+    const lessons: LessonView[] = sortedLessons.map((lesson) => {
+      const completedLesson = completedLessonIds.has(lesson.lesson_id);
+      let lessonStatus: LessonStatus;
+      if (status === "locked") {
+        lessonStatus = "locked";
+      } else if (completedLesson) {
+        lessonStatus = "completed";
+      } else if (!availableAssigned) {
+        availableAssigned = true;
+        lessonStatus = "available";
+      } else {
+        lessonStatus = "locked";
+      }
+      return { id: lesson.lesson_id, title: lesson.title, status: lessonStatus };
+    });
+
+    const nextLessonId = lessons.find((lesson) => lesson.status === "available")?.id ?? null;
 
     return {
       id: module.module_id,
@@ -81,7 +111,8 @@ export function buildDashboardView(curriculumModules: AdminCurriculumModule[], i
       totalLessons: totalModuleLessons,
       completedLessons,
       status,
-      nextLessonId: nextLesson?.lesson_id ?? null,
+      nextLessonId,
+      lessons,
     };
   });
 

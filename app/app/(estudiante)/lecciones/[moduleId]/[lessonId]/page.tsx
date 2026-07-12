@@ -3,6 +3,8 @@ import { redirect } from "next/navigation";
 import { MarkdownContent } from "@/components/markdown-content";
 import { getSession } from "@/lib/auth/session";
 import { fetchCurriculum, fetchLesson } from "@/lib/curriculum/api";
+import { fetchProgress } from "@/lib/progress/api";
+import { CheckIcon } from "./components/icons";
 import { CompleteLessonButton } from "./components/complete-lesson-button";
 
 export default async function LessonPage({
@@ -18,8 +20,16 @@ export default async function LessonPage({
   }
 
   // GET /curriculum y GET /curriculum/{moduleId}/{lessonId} son públicos
-  // (no necesitan el refresh_token) y no dependen uno del otro.
-  const [lessonResult, curriculumResult] = await Promise.all([fetchLesson(moduleId, lessonId), fetchCurriculum()]);
+  // (no necesitan el refresh_token) y no dependen uno del otro. GET
+  // /progress sí lo necesita — si falla (token vencido, red, etc.) no
+  // bloqueamos el contenido público: se asume "no completada todavía" y
+  // se muestra el botón activo, cuyo propio manejo de error ya cubre un
+  // fallo real al hacer clic.
+  const [lessonResult, curriculumResult, progressResult] = await Promise.all([
+    fetchLesson(moduleId, lessonId),
+    fetchCurriculum(),
+    fetchProgress(),
+  ]);
 
   if (!lessonResult.ok) {
     return (
@@ -43,6 +53,11 @@ export default async function LessonPage({
 
   const lesson = lessonResult.lesson;
   const module = curriculumResult.ok ? curriculumResult.modules.find((m) => m.module_id === moduleId) : undefined;
+  const alreadyCompleted =
+    progressResult.ok &&
+    progressResult.items.some(
+      (item) => item.module_id === moduleId && item.lesson_id === lessonId && item.status === "completed",
+    );
 
   return (
     <main className="min-h-screen bg-bg">
@@ -76,7 +91,14 @@ export default async function LessonPage({
         <MarkdownContent markdown={lesson.content_markdown} />
 
         <div className="mt-8">
-          <CompleteLessonButton moduleId={moduleId} lessonId={lessonId} />
+          {alreadyCompleted ? (
+            <div className="flex w-fit items-center gap-2 rounded-lg bg-accent-soft px-5 py-3 text-sm font-semibold text-accent-dark">
+              <CheckIcon className="h-4 w-4" />
+              Ya completaste esta lección
+            </div>
+          ) : (
+            <CompleteLessonButton moduleId={moduleId} lessonId={lessonId} />
+          )}
         </div>
       </div>
     </main>
