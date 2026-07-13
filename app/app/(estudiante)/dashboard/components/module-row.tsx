@@ -1,5 +1,8 @@
-import type { ModuleView } from "@/lib/progress/view-model";
-import { CheckIcon, LockIcon } from "./icons";
+"use client";
+
+import { useState } from "react";
+import type { LessonView, ModuleView } from "@/lib/progress/view-model";
+import { CheckIcon, ChevronIcon, LockIcon } from "./icons";
 
 function StatusIcon({ status }: { status: ModuleView["status"] }) {
   if (status === "completed") {
@@ -52,7 +55,38 @@ function ModuleAction({ module }: { module: ModuleView }) {
   );
 }
 
+function LessonRow({ moduleId, lesson }: { moduleId: string; lesson: LessonView }) {
+  if (lesson.status === "locked") {
+    return (
+      <div className="flex cursor-not-allowed items-center gap-2.5 rounded-lg px-2.5 py-2 opacity-60">
+        <LockIcon className="h-3.5 w-3.5 shrink-0 text-ink-3" />
+        <span className="text-[13px] text-ink-3">{lesson.title}</span>
+      </div>
+    );
+  }
+
+  const isCompleted = lesson.status === "completed";
+  return (
+    <a
+      href={`/lecciones/${moduleId}/${lesson.id}`}
+      className={`flex items-center gap-2.5 rounded-lg px-2.5 py-2 transition-colors hover:bg-surface-2 ${
+        isCompleted ? "" : "bg-accent-soft"
+      }`}
+    >
+      {isCompleted ? (
+        <CheckIcon className="h-3.5 w-3.5 shrink-0 text-accent-dark" />
+      ) : (
+        <span className="h-2 w-2 shrink-0 rounded-full bg-accent" />
+      )}
+      <span className={`text-[13px] ${isCompleted ? "text-ink-2" : "font-semibold text-accent-dark"}`}>
+        {lesson.title}
+      </span>
+    </a>
+  );
+}
+
 export function ModuleRow({ module }: { module: ModuleView }) {
+  const [expanded, setExpanded] = useState(false);
   const isActive = module.status === "in_progress" || module.status === "not_started";
   const percent = module.totalLessons === 0 ? 0 : Math.round((module.completedLessons / module.totalLessons) * 100);
 
@@ -70,11 +104,31 @@ export function ModuleRow({ module }: { module: ModuleView }) {
             <p className="mt-0.5 text-[11.5px] text-ink-3">{metaText(module)}</p>
           </div>
         </div>
-        <ModuleAction module={module} />
+        <div className="flex items-center gap-3">
+          <ModuleAction module={module} />
+          <button
+            type="button"
+            onClick={() => setExpanded((value) => !value)}
+            aria-label={expanded ? "Ocultar lecciones" : "Ver lecciones"}
+            className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-ink-3 transition-colors hover:bg-surface-2 hover:text-ink-2"
+          >
+            <ChevronIcon className={`h-4 w-4 transition-transform ${expanded ? "rotate-180" : ""}`} />
+          </button>
+        </div>
       </div>
       {isActive ? (
         <div className="mt-3 h-[5px] overflow-hidden rounded-full bg-surface-2">
           <div className="h-full rounded-full bg-accent transition-[width]" style={{ width: `${percent}%` }} />
+        </div>
+      ) : null}
+
+      {expanded ? (
+        <div className="mt-3 flex flex-col gap-0.5 border-t border-border pt-3">
+          {module.lessons.length > 0 ? (
+            module.lessons.map((lesson) => <LessonRow key={lesson.id} moduleId={module.id} lesson={lesson} />)
+          ) : (
+            <p className="px-2.5 py-2 text-[13px] text-ink-3 italic">Sin lecciones todavía.</p>
+          )}
         </div>
       ) : null}
     </div>
